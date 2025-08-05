@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2013-06-28'
+date: 2013-06-28
 excerpt: '**Note: Article Written on Server 2012 R2 Preview Build, the functionality
   may change when released.** ![]({{ site.baseurl...'
 tags:

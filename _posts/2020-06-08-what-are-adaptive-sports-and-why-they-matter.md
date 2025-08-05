@@ -2,7 +2,7 @@
 categories:
 - athletics
 - oob
-date: '2020-06-08'
+date: 2020-06-08
 excerpt: My entire blog has historically been about my background in technology and
   my technology career. To be honest, I started this blog reasonably early in my professional
   career, and I was living,...

@@ -1,7 +1,7 @@
 ---
 categories:
 - administrator
-date: '2014-05-19'
+date: 2014-05-19
 excerpt: I've been fairly distant from my blog for quite a few months... work has
   been very busy and preparing for the PowerShell Summit really took quite a bit of
   time. On top of all of that I was also...

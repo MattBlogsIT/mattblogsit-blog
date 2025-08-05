@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2012-05-30'
+date: 2012-05-30
 excerpt: Hello All! We are a mere 10 days until Tech Ed Day 0, with that in mind I’ve
   began throwing my schedule together and getting organized! I wanted to provide some
   links and quick notes on important...

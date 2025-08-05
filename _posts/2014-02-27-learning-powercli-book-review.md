@@ -1,7 +1,7 @@
 ---
 categories:
 - review
-date: '2014-02-27'
+date: 2014-02-27
 excerpt: I was recently asked to write a review for [Learning...
 tags:
 - book-review

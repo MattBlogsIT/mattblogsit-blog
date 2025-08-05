@@ -2,7 +2,7 @@
 categories:
 - developer
 - microsoft
-date: '2016-06-03'
+date: 2016-06-03
 excerpt: it's been over two weeks since my last post; however I have an excuse! It
   may not be a good excuse, however I went on a vacation to beautiful Las Vegas and
   shockingly decided I didn't want to do...

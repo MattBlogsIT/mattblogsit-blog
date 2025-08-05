@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2012-07-31'
+date: 2012-07-31
 excerpt: I first want to start off by apologizing on my disappearance from Twitter
   and blogging for the past 1 1/2 months. Things have been quite crazy since the return
   from TechEd but all is fine… now. I...

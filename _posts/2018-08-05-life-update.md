@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2018-08-05'
+date: 2018-08-05
 excerpt: This blog has been quite dead for a while now. Never fear I am still around!
   Life has been busy, work has been busy, and I took a step back from being on the
   computer...

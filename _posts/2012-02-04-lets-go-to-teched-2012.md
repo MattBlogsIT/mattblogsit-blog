@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-date: '2012-02-04'
+date: 2012-02-04
 excerpt: This week at work I was informed that I was approved to go to TechEd 2012!
   Last year was my first year going, and getting to go back again sounds fantastic
   to me because it is such a fun and...

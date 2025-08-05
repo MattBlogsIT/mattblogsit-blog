@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2012-06-19'
+date: 2012-06-19
 excerpt: TechEd was an extremely busy week, and it was a ton of fun. There were many
   challenges throughout the week maintaining my schedule however it was overall another
   amazing year. I had 3 goals I wanted...

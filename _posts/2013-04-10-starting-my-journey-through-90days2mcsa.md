@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2013-04-10'
+date: 2013-04-10
 excerpt: '![]({{ site.baseurl }}/assets/img/90dayshead.jpg) Hello Everyone! I apologize
   for my months disappearance from blogging, it''s been a busy March and will continue
   to be busy throughout TechEd! That is...'

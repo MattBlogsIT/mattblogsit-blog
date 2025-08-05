@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2020-07-02'
+date: 2020-07-02
 excerpt: About a year and a half ago, I decided to jump headfirst into Smart Home
   Technology. I had used some smart home tech previously, but never tried to tie it
   together harmoniously. I had used the Nest...

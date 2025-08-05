@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2012-06-05'
+date: 2012-06-05
 excerpt: If you read my post on [Important Resources](http://mattblogsit.com/2012/05/30/tech-ed-2012-important-resources/)
   for TechEd you will notice that I mentioned building your schedule, and overbooking...
 tags:

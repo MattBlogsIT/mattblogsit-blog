@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - user
-date: '2020-09-07'
+date: 2020-09-07
 excerpt: The time has come in my Modern Collaboration blog series to start diving
   deep into the how-to. We started this series by broadly talking about [what Modern
   Collaboration is and how it impacts...

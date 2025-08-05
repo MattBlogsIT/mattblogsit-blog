@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2018-11-08'
+date: 2018-11-08
 excerpt: As businesses grow, it becomes challenging to keep up with business processes.
   To keep up with a constant flow of tasks associated with these processes, you need
   to track them, especially when...

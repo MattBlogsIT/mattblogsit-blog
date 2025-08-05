@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - user
-date: '2020-09-15'
+date: 2020-09-15
 excerpt: We are getting deep into the Modern Collaboration blog series. If you haven't
   read the previous articles, I'd strongly recommend starting from the...
 tags:

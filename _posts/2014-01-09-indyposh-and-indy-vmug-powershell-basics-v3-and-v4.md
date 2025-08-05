@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2014-01-09'
+date: 2014-01-09
 excerpt: Hello everyone! Long time no post; more details surrounding that will be
   coming! Tonight I would like to share the PowerPoint I used for the IndyPoSh/Indy
   VMUG presentation I presented tonight! This...

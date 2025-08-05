@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2012-12-31'
+date: 2012-12-31
 excerpt: Now I know this is an IT focused blog, but it is also my personal blog and
   I feel like cooking is big chunk of what I enjoy doing in my free time. Recently
   I've crafted a couple of my own recipes...

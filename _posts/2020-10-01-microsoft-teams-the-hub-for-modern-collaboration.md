@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - user
-date: '2020-10-01'
+date: 2020-10-01
 excerpt: We are getting deep and will wrap up the Modern Collaboration blog series
   by tying all of the products we have discussed together using Microsoft Teams as
   our hub! Before we do that, I'd recommend...

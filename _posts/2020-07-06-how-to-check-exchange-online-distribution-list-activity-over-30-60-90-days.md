@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2020-07-06'
+date: 2020-07-06
 excerpt: All growing and/or large organizations will experience this. We have all
   of these Distribution Lists, but does anyone even use them or know why they were
   created 5, 10, 15 years ago? I recently ran...

@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2014-09-26'
+date: 2014-09-26
 excerpt: Recently I presenting at the Indianapolis PowerShell User Group and talked
   about Desired State Configuration. The presentation was 100% demonstrations, and
   I decided it would be a good idea to...

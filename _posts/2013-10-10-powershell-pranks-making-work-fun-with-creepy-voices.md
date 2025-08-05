@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2013-10-10'
+date: 2013-10-10
 excerpt: In every IT office I have worked in, pulling pranks co-workers has been a
   standard. They tend to be low-tech; co-workers leave their computers unlocked, change
   their background, and maybe change...

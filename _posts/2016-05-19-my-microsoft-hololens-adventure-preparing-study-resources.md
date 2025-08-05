@@ -2,7 +2,7 @@
 categories:
 - developer
 - microsoft
-date: '2016-05-19'
+date: 2016-05-19
 excerpt: As I continue my adventure of learning how to program for the HoloLens, the
   first step is actually learning how to program! I am lucky enough that I took some
   programming classes while in College and...

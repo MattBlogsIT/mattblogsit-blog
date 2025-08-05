@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2013-02-06'
+date: 2013-02-06
 excerpt: Hello Everyone! Sorry for the delay in posting but this is super important!
   Tech Ed 2013 registration will be opening on February 12th so make sure you start
   begging your bosses for approval to go to...

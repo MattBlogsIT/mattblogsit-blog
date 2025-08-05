@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2013-06-19'
+date: 2013-06-19
 excerpt: 'The last three years I have been extraordinarily lucky that I have been
   able to attend Microsoft TechEd. Every year I have participated in a group known
   as #TheKrewe and I have striven to force...'

@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2014-06-01'
+date: 2014-06-01
 excerpt: The Windows Management Framework 5.0 Preview was released in early April,
   and an update to it was posted during Microsoft TechEd in May. Some major things
   are changing with PowerShell; the main one...

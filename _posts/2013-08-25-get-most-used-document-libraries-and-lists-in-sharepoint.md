@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2013-08-25'
+date: 2013-08-25
 excerpt: Lately I have been putting a lot of my time into developing useful PowerShell
   scripts for managing Windows environments. While working on these scripts I've developed
   some really cool 1-liner scripts...

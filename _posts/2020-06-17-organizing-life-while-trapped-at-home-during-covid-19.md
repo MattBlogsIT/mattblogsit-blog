@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2020-06-17'
+date: 2020-06-17
 excerpt: A couple of weeks ago, I wrote about "[Getting things done while working
   from home using Microsoft To...
 tags:

@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2012-04-20'
+date: 2012-04-20
 excerpt: On April 15th **[@MichaelBender](http://twitter.com/#/MichaelBender)** challenged
   the readers of MS Learning’s **[Born To Learn](http://borntolearn.mslearn.net/)**
   blog. The challenge is to complete...

@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2013-06-01'
+date: 2013-06-01
 excerpt: 'As I sit here reflecting on my last 2 years being with #TheKrewe I was thinking.
   There are quite a few new people this year and the majority of you are probably
   like me when I joined and have NO IDEA...'

@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2015-05-17'
+date: 2015-05-17
 excerpt: It has been nearly 8 months since my last blog post. For that I'd like to
   apologize, as I really would love to have been posting all of this time; it just
   hasn't been realistic for me. Let me recap...

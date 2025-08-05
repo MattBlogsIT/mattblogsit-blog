@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - oob
-date: '2013-10-09'
+date: 2013-10-09
 excerpt: I have had a goal over the last two years to become a Microsoft Certified
   Trainer (MCT). I was already half way there by holding an MCITP certificate in Windows
   7 and Server 2008; however I still had...

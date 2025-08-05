@@ -3,7 +3,7 @@ categories:
 - administrator
 - microsoft
 - vmwave
-date: '2014-04-28'
+date: 2014-04-28
 excerpt: This morning I presenting PowerCLI - Automating Your VMware Environment Reporting
   at the PowerShell Summit 2014. Below is the PowerPoint that was used during this
   presentation, with additional slides...

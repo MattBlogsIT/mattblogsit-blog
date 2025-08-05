@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-date: '2020-08-03'
+date: 2020-08-03
 excerpt: Modern Collaboration, Collaboration Transformation, Technology Revolution,
   Technology Transformation; I'm sure you have heard one or more of these terms before.
   They are very common to talk about in...

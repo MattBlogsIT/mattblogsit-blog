@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2012-10-27'
+date: 2012-10-27
 excerpt: While recently blogging about using my Surface to share media from my desktop
   to my Xbox it occurred to me. Some people may not know how to setup a HomeGroup,
   and it would be very useful to have step...

@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2012-12-27'
+date: 2012-12-27
 excerpt: I've been running websites for nearly a decade now and I've always been interested
   in what brings in actual consistent visitors. In my early web days I was doing things
   just for fun, then I jumped...

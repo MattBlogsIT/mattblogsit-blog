@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2013-02-10'
+date: 2013-02-10
 excerpt: So I recently had to rebuild my Server 2012 virtual server. I had storage
   spaces setup and after I finished the install the Virtual Disk was not mounted.
   I realized that I was able to bring it all...

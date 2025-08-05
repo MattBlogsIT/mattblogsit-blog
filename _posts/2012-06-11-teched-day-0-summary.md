@@ -3,7 +3,7 @@ layout: post
 categories:
 - microsoft
 - oob
-date: '2012-06-11'
+date: 2012-06-11
 excerpt: "The drive from Indianapolis to Orlando wasn't as bad as I anticipated. I arrived within 16 hours and got registered at the massive OCCC convention center."
 tags:
 - community

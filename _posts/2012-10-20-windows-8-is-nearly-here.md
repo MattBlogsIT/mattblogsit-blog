@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - user
-date: '2012-10-20'
+date: 2012-10-20
 excerpt: I personally have been using Windows 8 off and on since the Developer Preview
   was released over a year ago, more frequently after I received a Samsung Series
   7 Slate in February to start working on...

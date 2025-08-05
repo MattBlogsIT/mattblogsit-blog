@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2012-12-29'
+date: 2012-12-29
 excerpt: As a follow up to [Backups are Important! Here is How I do it!](http://mattblogsit.com/oob/backups-are-important-here-is-how-i-do-it
   "Backups are Important! Here is How I do it!") I decided I should...
 tags:

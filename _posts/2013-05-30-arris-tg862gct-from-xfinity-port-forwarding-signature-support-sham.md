@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2013-05-30'
+date: 2013-05-30
 excerpt: Recently I received a letter in the mail that Xfinity had increased the speed
   of the internet in my area... SWEET! However I needed to upgrade my modem as it
   cannot handle the increased speed, sounds...

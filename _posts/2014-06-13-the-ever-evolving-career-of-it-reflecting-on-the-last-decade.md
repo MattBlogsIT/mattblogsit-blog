@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2014-06-13'
+date: 2014-06-13
 excerpt: I've been working professionally in IT for 6 years, and I have been working
   with computers for over 10. I quickly realized that if I continued down this path
   for my life, I would be in a constant...

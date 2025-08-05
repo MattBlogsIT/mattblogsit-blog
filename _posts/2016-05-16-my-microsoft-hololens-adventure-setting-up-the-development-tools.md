@@ -2,7 +2,7 @@
 categories:
 - developer
 - microsoft
-date: '2016-05-16'
+date: 2016-05-16
 excerpt: I've started my adventure of learning how to program for the Microsoft HoloLens.
   If you haven't heard about this new adventure please check out my blog post [My
   Microsoft HoloLens Adventure -...

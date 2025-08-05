@@ -2,7 +2,7 @@
 categories:
 - microsoft
 - user
-date: '2020-06-18'
+date: 2020-06-18
 excerpt: In the last few months, I've spent a lot of time organizing and planning.
   Most of this time was spent on my personal life organization around the house, but
   contrary to my most recent blog posts,...

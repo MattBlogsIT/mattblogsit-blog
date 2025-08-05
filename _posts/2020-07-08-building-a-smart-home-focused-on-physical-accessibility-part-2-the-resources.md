@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2020-07-08'
+date: 2020-07-08
 excerpt: Just over a week ago, I blogged about the [Smart Home I've just started to
   build](https://mattblogsit.com/oob/building-a-smart-home-focused-on-physical-accessibility).
   The post seems to have been...

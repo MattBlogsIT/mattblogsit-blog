@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2012-11-09'
+date: 2012-11-09
 excerpt: As I promised I would blog about the additional backup procedures I planned
   on putting in place after the outage I had last time. I still have more things I'd
   like to implement but have not had the...

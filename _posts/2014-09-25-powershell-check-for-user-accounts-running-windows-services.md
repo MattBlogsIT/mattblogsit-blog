@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2014-09-25'
+date: 2014-09-25
 excerpt: Recently I worked with a client to validate that if a user account were to
   be disabled that it wasn't going to break any of their currently running applications.
   You can be bitten by an accidental...

@@ -1,7 +1,7 @@
 ---
 categories:
 - oob
-date: '2012-01-25'
+date: 2012-01-25
 excerpt: I get this question almost daily. It seems like a very easy question to answer,
   but when it comes to a technical job it becomes much more challenging to answer.
   When I started working as a Support...

@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2018-08-06'
+date: 2018-08-06
 excerpt: In the last few months at work, we have been concentrating on integrating
   different cloud-hosted systems with our on-premise systems. Integration usually
   means using some ETL Tool to interact with an...

@@ -2,7 +2,7 @@
 categories:
 - administrator
 - microsoft
-date: '2014-06-19'
+date: 2014-06-19
 excerpt: This evening I've decided to add additional functionality to the GriffinMonitor
   Module. I noticed that I am filling up my storage on my lab server fairly quickly.
   With that in mind I knew I needed to...

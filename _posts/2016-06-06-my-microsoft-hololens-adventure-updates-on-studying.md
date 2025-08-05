@@ -2,7 +2,7 @@
 categories:
 - developer
 - microsoft
-date: '2016-06-06'
+date: 2016-06-06
 excerpt: A couple of weeks ago, I made a post on the study materials I planned on
   leveraging to learn how to program for the Microsoft HoloLens. This weekend was
   the first time I finally started digging into...
