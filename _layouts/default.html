@@ -16,7 +16,7 @@
         <span id="theme-text">Dark</span>
     </button>
     
-    <h1>{{ site.title }}</h1>
+    <h1><a href="{{ site.baseurl }}/" class="site-title-link">{{ site.title }}</a></h1>
     
     {% include navigation.html %}
     
@@ -116,6 +116,9 @@
     
     <div class="site-container">
         <main class="main-content" id="main-content">
+            {% unless page.url == "/" %}
+                {% include breadcrumbs.html %}
+            {% endunless %}
             {{ content }}
         </main>
         

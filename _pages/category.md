@@ -39,5 +39,4 @@ title: Categories
 </div>
 
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/category.css">
 <script src="{{ site.baseurl }}/assets/js/collapsible.js"></script>

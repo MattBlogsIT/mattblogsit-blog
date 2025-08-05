@@ -1,0 +1,101 @@
+<!-- Breadcrumbs navigation -->
+<nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+  <ol class="breadcrumb-list">
+    <!-- Home link is always first -->
+    <li class="breadcrumb-item">
+      <a href="{{ site.baseurl }}/" class="breadcrumb-link">
+        <span class="breadcrumb-icon">🏠</span>
+        <span class="breadcrumb-text">Home</span>
+      </a>
+    </li>
+
+    {% if page.layout == "post" %}
+      <!-- For blog posts, add Posts and category if available -->
+      <li class="breadcrumb-item">
+        <a href="{{ site.baseurl }}/posts/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">📝</span>
+          <span class="breadcrumb-text">Posts</span>
+        </a>
+      </li>
+      
+      {% if page.categories and page.categories.size > 0 %}
+        {% assign category = page.categories.first %}
+        <li class="breadcrumb-item">
+          <a href="{{ site.baseurl }}/category/{{ category | slugify }}/" class="breadcrumb-link">
+            <span class="breadcrumb-icon">🏷️</span>
+            <span class="breadcrumb-text">{{ category | capitalize }}</span>
+          </a>
+        </li>
+      {% endif %}
+      
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">{{ page.title }}</span>
+      </li>
+
+    {% elsif page.layout == "archive" %}
+      <!-- For archive pages -->
+      <li class="breadcrumb-item">
+        <a href="{{ site.baseurl }}/archive/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">📁</span>
+          <span class="breadcrumb-text">Archive</span>
+        </a>
+      </li>
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">{{ page.year }} Archive</span>
+      </li>
+
+    {% elsif page.layout == "category" %}
+      <!-- For category pages -->
+      <li class="breadcrumb-item">
+        <a href="{{ site.baseurl }}/category/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">🏷️</span>
+          <span class="breadcrumb-text">Categories</span>
+        </a>
+      </li>
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">{{ page.category | capitalize }}</span>
+      </li>
+
+    {% elsif page.url contains "/posts/" %}
+      <!-- For posts page -->
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">All Posts</span>
+      </li>
+
+    {% elsif page.url contains "/archive/" and page.url != "/archive/" %}
+      <!-- For specific archive year pages -->
+      <li class="breadcrumb-item">
+        <a href="{{ site.baseurl }}/archive/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">📁</span>
+          <span class="breadcrumb-text">Archive</span>
+        </a>
+      </li>
+      {% assign url_parts = page.url | split: "/" %}
+      {% for part in url_parts %}
+        {% if part != "" and part != "archive" and part != "index.html" %}
+          <li class="breadcrumb-item current" aria-current="page">
+            <span class="breadcrumb-current">{{ part }} Archive</span>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+    {% elsif page.url contains "/category/" and page.url != "/category/" %}
+      <!-- For specific category pages -->
+      <li class="breadcrumb-item">
+        <a href="{{ site.baseurl }}/category/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">🏷️</span>
+          <span class="breadcrumb-text">Categories</span>
+        </a>
+      </li>
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">{{ page.title | default: "Category" }}</span>
+      </li>
+
+    {% elsif page.title and page.url != "/" %}
+      <!-- For other pages (About, Contact, etc.) -->
+      <li class="breadcrumb-item current" aria-current="page">
+        <span class="breadcrumb-current">{{ page.title }}</span>
+      </li>
+    {% endif %}
+  </ol>
+</nav>

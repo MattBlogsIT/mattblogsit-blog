@@ -4,8 +4,6 @@ title: About Me
 permalink: /about-me/
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/about-me.css">
-
 <img src="{{ site.baseurl }}/assets/img/20170216_213340-e1566312838997-576x1024.jpg" alt="Matt Griffin Profile Photo" class="about-me-profile" />
 
 Matt Griffin graduated in May 2012 with a Bachelor of Science in Computer Information Technology from the Purdue School of Engineering and Technology. Currently, he is the Systems Architect at Gaylor Electric. He owns his own IT Consulting and Managed Services firm, The IT Fellas. Matt is passionate about volunteering. He serves on the Purdue School of Engineering and Technology Alumni Association Board of Directors at IUPUI since 2014. In January of 2019, Matt joined the Board of Directors for a non-profit organization named the Muscular Dystrophy Family Foundation (MDFF). The MDFF focuses on increasing the quality of life and independence of people with Muscular Dystrophy and their family through advocacy, education, and financial resources. Outside of work and volunteering, Matt enjoys participating in Adaptive Sports. Currently, he is playing for the Wheelchair Lacrosse team Indy RIP based in Indianapolis, IN.

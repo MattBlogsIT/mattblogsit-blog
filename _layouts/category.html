@@ -2,29 +2,45 @@
 layout: default
 ---
 
-<h1>{{ page.category | capitalize }} Posts</h1>
+<div class="category-container">
+  <header class="category-header">
+    <h1>{{ page.category | capitalize }} Posts</h1>
+    {% assign category_posts = site.posts | where: 'categories', page.category %}
+    
+    <div class="category-meta">
+      {{ category_posts.size }} post{% if category_posts.size > 1 %}s{% endif %} in this category
+    </div>
+  </header>
 
-{% assign category_posts = site.posts | where: 'categories', page.category %}
+  {% if category_posts.size > 0 %}
+    <div class="post-list">
+      {% for post in category_posts %}
+        <article class="post-preview">
+          <header class="post-preview-header">
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="post-date">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+          </header>
+          {% if post.excerpt %}
+            <div class="post-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </div>
+          {% endif %}
+          <footer class="post-preview-footer">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-posts">
+      <p>No posts found in this category.</p>
+    </div>
+  {% endif %}
 
-{% if category_posts.size > 0 %}
-<p>{{ category_posts.size }} post{% if category_posts.size > 1 %}s{% endif %} in this category:</p>
-
-<div class="post-list">
-  {% for post in category_posts %}
-    <article class="post-preview">
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-      {% if post.excerpt %}
-        <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </div>
-      {% endif %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
-    </article>
-  {% endfor %}
+  <nav class="category-navigation">
+    <a href="{{ site.baseurl }}/category/" class="back-link">← Back to Categories</a>
+    <a href="{{ site.baseurl }}/posts/" class="back-link">View All Posts</a>
+  </nav>
 </div>
-{% else %}
-<p>No posts found in this category.</p>
-{% endif %}
-
-<p><a href="{{ site.baseurl }}/posts/">← Back to All Posts</a></p>

@@ -2,36 +2,52 @@
 layout: default
 ---
 
-<h1>{{ page.year }} Archive</h1>
-
-{% assign year_posts = "" | split: "" %}
-{% assign target_year = page.year | append: "" %}
-{% for post in site.posts %}
-  {% assign post_year = post.date | date: "%Y" %}
-  {% if post_year == target_year %}
-    {% assign year_posts = year_posts | push: post %}
-  {% endif %}
-{% endfor %}
-
-{% if year_posts.size > 0 %}
-<p>{{ year_posts.size }} post{% if year_posts.size > 1 %}s{% endif %} from {{ page.year }}:</p>
-
-<div class="post-list">
-  {% for post in year_posts %}
-    <article class="post-preview">
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-      {% if post.excerpt %}
-        <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </div>
+<div class="archive-container">
+  <header class="archive-header">
+    <h1>{{ page.year }} Archive</h1>
+    {% assign year_posts = "" | split: "" %}
+    {% assign target_year = page.year | append: "" %}
+    {% for post in site.posts %}
+      {% assign post_year = post.date | date: "%Y" %}
+      {% if post_year == target_year %}
+        {% assign year_posts = year_posts | push: post %}
       {% endif %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
-    </article>
-  {% endfor %}
-</div>
-{% else %}
-<p>No posts found from {{ page.year }}.</p>
-{% endif %}
+    {% endfor %}
+    
+    <div class="archive-meta">
+      {{ year_posts.size }} post{% if year_posts.size > 1 %}s{% endif %} from {{ page.year }}
+    </div>
+  </header>
 
-<p><a href="{{ site.baseurl }}/posts/">← Back to All Posts</a></p>
+  {% if year_posts.size > 0 %}
+    <div class="post-list">
+      {% for post in year_posts %}
+        <article class="post-preview">
+          <header class="post-preview-header">
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="post-date">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+          </header>
+          {% if post.excerpt %}
+            <div class="post-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </div>
+          {% endif %}
+          <footer class="post-preview-footer">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-posts">
+      <p>No posts found from {{ page.year }}.</p>
+    </div>
+  {% endif %}
+
+  <nav class="archive-navigation">
+    <a href="{{ site.baseurl }}/archive/" class="back-link">← Back to Archives</a>
+    <a href="{{ site.baseurl }}/posts/" class="back-link">View All Posts</a>
+  </nav>
+</div>
