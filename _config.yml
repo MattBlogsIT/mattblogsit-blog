@@ -41,18 +41,11 @@ defaults:
 
 # Exclude from processing
 exclude:
-  - _backup/
   - README.md
-  - js/navigation.js
   - Gemfile
   - Gemfile.lock
   - node_modules/
   - vendor/
   - .sass-cache/
   - .jekyll-cache/
-  - gemfiles/
-  - about.html
-  - contact.html
-  - index.html
-  - posts.html
-  - posts/
+  - mattblogsit.WordPress.2025-08-05.xml

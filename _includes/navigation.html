@@ -24,6 +24,10 @@ Maintains dynamic nature - just add pages to _pages folder and they appear
   {% endif %}
   
   {% comment %} Search icon in top right {% endcomment %}
-  <a href="{{ site.baseurl }}/search/" class="search-icon" title="Search" {% if current_path == "/search/" %}class="active search-icon"{% endif %}>⌛</a>
+  <span class="search-icon" title="Search" onclick="toggleSearch()">🔍</span>
+  <div id="search-dropdown" class="search-dropdown">
+    <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+    <div id="search-results"></div>
+  </div>
 </div>
 
