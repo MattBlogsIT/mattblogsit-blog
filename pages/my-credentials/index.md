@@ -3,7 +3,7 @@ title: "My Credentials"
 date: 2012-11-05
 ---
 
-[![View Matthew Griffin's profile on LinkedIn](/assets/images/pages/my-credentials/btn_viewmy_160x33.png)](http://www.linkedin.com/in/mattgrif)
+[![View Matthew Griffin's profile on LinkedIn]({{ "/assets/images/btn_viewmy_160x33.png" | relative_url }})](http://www.linkedin.com/in/mattgrif)
 
 # My Degree
 
@@ -43,10 +43,10 @@ Indiana University Purdue University Indianapolis Bachelor of Science, Computer 
 
 # My Certifications
 
-[![MCT_2013(rgb)](/assets/images/pages/my-credentials/MCT_2013rgb.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/MCT_2013rgb.jpg)
+[![MCT_2013(rgb)]({{ "/assets/images/MCT_2013rgb.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/MCT_2013rgb.jpg)
 
-[![MCSA(rgb)_1481_1480](/assets/images/pages/my-credentials/MCSArgb_1481_1480.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/MCSArgb_1481_1480.jpg)
+[![MCSA(rgb)_1481_1480]({{ "/assets/images/MCSArgb_1481_1480.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/MCSArgb_1481_1480.jpg)
 
-[![MCITP(rgb)_1416](/assets/images/pages/my-credentials/MCITPrgb_1416.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/MCITPrgb_1416.jpg)
+[![MCITP(rgb)_1416]({{ "/assets/images/MCITPrgb_1416.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/MCITPrgb_1416.jpg)
 
-[![MCTS(rgb)_1082_537](/assets/images/pages/my-credentials/MCTSrgb_1082_537.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/MCTSrgb_1082_537.jpg)
+[![MCTS(rgb)_1082_537]({{ "/assets/images/MCTSrgb_1082_537.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/MCTSrgb_1082_537.jpg)

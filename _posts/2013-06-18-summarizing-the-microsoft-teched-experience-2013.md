@@ -18,7 +18,7 @@ Two weeks ago I was lucky enough to be sent to Microsoft TechEd by the company I
 
 _**Warning:** Long blog post!_
 
-[![Welcome_TechEd](/assets/images/posts/WP_20130601_015.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_015.jpg)This summarization of TechEd does not do a justice to how fantastic the experience is and how much you learn while there.<!--more-->
+[![Welcome_TechEd]({{ "/assets/images/WP_20130601_015.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_015.jpg)This summarization of TechEd does not do a justice to how fantastic the experience is and how much you learn while there.<!--more-->
 
 # Day -1 - Saturday June 1st:
 
@@ -28,13 +28,13 @@ My day started at 6:00am when I had to wake up to prepare for my flight to New O
 
 First thing on my agenda was opening box of #TheKrewe swag we were giving away that year. It was an interesting experience opening a 20 pound box of lanyards but they turned out fantastic and it was great to see #TheKrewe representing.
 
-\[caption id="attachment\_226" align="aligncenter" width="600"\][![#TheKrewe TechEd 2013 Lanyards](/assets/images/posts/WP_20130601_004.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_004.jpg) #TheKrewe TechEd 2013 Lanyards\[/caption\]
+\[caption id="attachment\_226" align="aligncenter" width="600"\][![#TheKrewe TechEd 2013 Lanyards]({{ "/assets/images/WP_20130601_004.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_004.jpg) #TheKrewe TechEd 2013 Lanyards\[/caption\]
 
 After a short break to re-charge in the hotel we decided to meet up and start browsing the convention center and surrounding area, while browsing the convention center we decided to sneak around a bit to get a glimpse into the next day. We walked over near the registration area to check things out to get a sneak peak.
 
 Once we wrapped things up there we went and met up with a few of #TheKrewe to pickup some 190 Octanes, all I can say is WOW! While drinking the 190 Octanes I got to hang out with some good friends I hadn't seen for a year!
 
-[![WP_20130601_018](/assets/images/posts/WP_20130601_018.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_018.jpg)
+[![WP_20130601_018]({{ "/assets/images/WP_20130601_018.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130601_018.jpg)
 
 Once we got a big group of us together we moved our way down to grab some dinner at Drago's and ended up having 25+ people show up for our get together. I knew I had a big day ahead of me the next day so I wrapped things up around 10PM, headed back to the hotel and crashed.
 
@@ -42,7 +42,7 @@ Once we got a big group of us together we moved our way down to grab some dinner
 
 Day 0 hit, and it hit hard having to wake up at 6AM to jump in the shower, get breakfast and get registered all by 9AM when my Pre-con started. I arrived a bit early to my session which was Lessons from the Field: Useful Hacker Techniques for Administrators and I was able to get settled in, this was a very challenging day to focus because I was on twitter keeping up with all of my friends and trying to focus on a topic that was WAY over my head. I have very few "hacker" skills but this was an extremely useful session. The best part was they provided all of their tools for later use to the attendees to us in their own networks!
 
-[![WP_20130602_004](/assets/images/posts/WP_20130602_004.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130602_004.jpg)
+[![WP_20130602_004]({{ "/assets/images/WP_20130602_004.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130602_004.jpg)
 
  
 
@@ -52,7 +52,7 @@ After awhile in the presentation I did lose my attention span, but it wasn't too
 
 Sunday was #TheKrewe Sunday Meet 'N Greet, this year it was a lot less meeting and greeting and a lot more of a crazy party with an amazing live band! I do not know the exact attendance numbers but we had approximately 600 people crammed into this bar with live music, I did get to meet TONS of new people, very few I got to have a conversation with but that is what the rest of the week was for!
 
-[![WP_20130602_023](/assets/images/posts/WP_20130602_023.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130602_023.jpg)
+[![WP_20130602_023]({{ "/assets/images/WP_20130602_023.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/WP_20130602_023.jpg)
 
 # Day 1 - Monday June 3rd
 
@@ -66,7 +66,7 @@ I was lucky enough to talk to a few vendors about backup solutions which was one
 
 That evening I got to spend about an hour at the Welcome Reception talking to vendors before heading to The Rusty Nail to get setup for #TheKrewe Monday Mixer.  I was amazed at how much work it was to make The Monday Mixer go off without a flaw, and I got much more respect for Michael Bender for the work he has put in over the years to get #TheKrewe to where we are now. It takes a lot of passion and hard work to pull off an event and by the amount of people I met that evening I would say it was a huge success.
 
-\[caption id="attachment\_230" align="aligncenter" width="600"\][![Massive Thanks to Kenji D'Aguiar for this picture!](/assets/images/posts/02Mon_MondayMixer-1.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/02Mon_MondayMixer-1.jpg) Massive Thanks to Kenji D'Aguiar for this picture!\[/caption\]
+\[caption id="attachment\_230" align="aligncenter" width="600"\][![Massive Thanks to Kenji D'Aguiar for this picture!]({{ "/assets/images/02Mon_MondayMixer-1.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/02Mon_MondayMixer-1.jpg) Massive Thanks to Kenji D'Aguiar for this picture!\[/caption\]
 
 # Day 2 - Tuesday June 4th
 
@@ -90,7 +90,7 @@ Tonight was the night of the biggest, craziest party of the week, however I had 
 
 Luckily I was a few blocks away from the Microsoft Springboard Party so I went over there and started hanging out with a few of my friends from #TheKrewe. While waiting I got a chance to network with many new people, and people I had not had a chance to have an actual conversation with that week. Time flew by and the party started. They had some of the most amazing food, music and overall a fantastic time! During my evening at the Springboard Party I was lucky enough to meet one of the coordinators for TechEd Europe and talk about various topics relating to it.
 
-\[caption id="attachment\_232" align="aligncenter" width="600"\][![](/assets/images/posts/MJM_1609.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1609.jpg) Many Thanks to Michael McAtee for this picture!\[/caption\]
+\[caption id="attachment\_232" align="aligncenter" width="600"\][![]({{ "/assets/images/MJM_1609.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1609.jpg) Many Thanks to Michael McAtee for this picture!\[/caption\]
 
 Day 4 - Thursday June 6th
 
@@ -114,4 +114,4 @@ Please keep on eye on my blog for some more #TheKrewe specific posts!
 
 Check out my pictures from TechEd on [**My Skydrive**](http://sdrv.ms/11LlPSm)!
 
-\[caption id="attachment\_233" align="aligncenter" width="620"\][![Many thanks to Michael McAtee for this picture!](/assets/images/posts/MJM_1595-1024x680.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1595.jpg) Many thanks to Michael McAtee for this picture!\[/caption\]
+\[caption id="attachment\_233" align="aligncenter" width="620"\][![Many thanks to Michael McAtee for this picture!]({{ "/assets/images/MJM_1595-1024x680.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1595.jpg) Many thanks to Michael McAtee for this picture!\[/caption\]

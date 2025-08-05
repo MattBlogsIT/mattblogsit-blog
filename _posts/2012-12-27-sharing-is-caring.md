@@ -15,6 +15,6 @@ I continued to dig deeper and found where the traffic was coming from, a site ca
 
 After reading through the article I saw no mention of me. So I searched on the page my blog, boom a comment that was just one off where someone was explaining a way to accomplish what the article's purpose was using my method.
 
-![google_analytics](/assets/images/posts/google_analytics.jpg)
+![google_analytics]({{ "/assets/images/google_analytics.jpg" | relative_url }})
 
 After the user posted this information I have consistently been receiving more than triple my average visitors when I am not posting new content. I let this go throughout the holidays and I am still seeing the same results. So I finally came to the conclusion that Sharing original content you find online is truly the best thing you can do if you are a reader. So I would like to thank woodyu388 for being a reader and even better sharing my blog!

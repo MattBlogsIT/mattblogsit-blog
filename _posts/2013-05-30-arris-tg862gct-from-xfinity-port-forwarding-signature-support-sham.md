@@ -12,7 +12,7 @@ tags:
 
 Recently I received a letter in the mail that Xfinity had increased the speed of the internet in my area... SWEET! However I needed to upgrade my modem as it cannot handle the increased speed, sounds reasonable they will send me a new one. This is where the sage begins with my discovery of xfinity's Signature Support Sham and their horrible support and customer service.
 
-[![xfinity_sham](/assets/images/posts/xfinity_sham.jpg)](http://mattblogsit.com/wp-content/uploads/2013/05/xfinity_sham.jpg)
+[![xfinity_sham]({{ "/assets/images/xfinity_sham.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/05/xfinity_sham.jpg)
 
 # The Story
 

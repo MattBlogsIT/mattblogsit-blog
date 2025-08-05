@@ -23,7 +23,7 @@ Before we dive exactly into the how-to share them, I'd like to review all of the
 
 The following sharing options we will review give you the ability to 'allow editing.' The allow editing checkbox is critical to verify every time you create a sharing link. In most instances, you may only want people to look at a file and provide feedback to you. In this case, you should uncheck the 'allow editing' checkbox; if you leave it checked, they can change the file contents.
 
-![](/assets/images/posts/2020-09-07_13-37-29-e1599500522308.png)
+![]({{ "/assets/images/2020-09-07_13-37-29-e1599500522308.png" | relative_url }})
 
 ## Anyone with the link
 

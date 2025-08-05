@@ -14,7 +14,7 @@ tags:
 
 I've started my adventure of learning how to program for the Microsoft HoloLens. If you haven't heard about this new adventure please check out my blog post [My Microsoft HoloLens Adventure - Introduction](http://mattblogsit.com/microsoft/windows/my-microsoft-hololens-adventure-introduction). On that blog post I have a video introducing myself, and my intentions. In addition I've included a video of the unboxing of the Microsoft HoloLens. Throughout this blog post I will highlight the steps required to get your PC setup to program the HoloLens.
 
-[![Matt wearing the Hololens](/assets/images/posts/20160513_195217-e1463184960514-225x300.jpg)](http://mattblogsit.com/wp-content/uploads/2016/05/20160513_195217-e1463184975460.jpg)
+[![Matt wearing the Hololens]({{ "/assets/images/20160513_195217-e1463184960514-225x300.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2016/05/20160513_195217-e1463184975460.jpg)
 
 # System Requirements:
 

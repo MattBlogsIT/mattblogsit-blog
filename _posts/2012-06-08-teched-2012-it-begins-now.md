@@ -18,4 +18,4 @@ Over the past week is has been crazy for me, getting my schedule finalized, gett
 
 I will be tweeting my whole drive down to Florida (only when we stop of course!) I will also be tweeting our arrival and how the Hands-on-labs are once I get myself registered! If you are unable to attend TechEd I highly encourage you watch my [twitter feed](http://twitter.com/mattgrif) which I will be posting pictures on, and hopefully I will get some time to blog too!
 
-[![](/assets/images/posts/pre-teched-767x1024.jpg "pre teched")](http://mattblogsit.com/wp-content/uploads/2012/11/pre-teched.jpg)
+[![]({{ "/assets/images/pre-teched-767x1024.jpg "pre teched"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/pre-teched.jpg)

@@ -12,7 +12,7 @@ tags:
   - "virtualization"
 ---
 
-[![](/assets/images/posts/MCSE_WebBanners_180x150_jpg-550x0.jpg "MCSE_WebBanners_180x150_jpg-550x0")](http://mattblogsit.com/wp-content/uploads/2012/11/MCSE_WebBanners_180x150_jpg-550x0.jpg)
+[![]({{ "/assets/images/MCSE_WebBanners_180x150_jpg-550x0.jpg "MCSE_WebBanners_180x150_jpg-550x0"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/MCSE_WebBanners_180x150_jpg-550x0.jpg)
 
 ## Personal Updates:
 

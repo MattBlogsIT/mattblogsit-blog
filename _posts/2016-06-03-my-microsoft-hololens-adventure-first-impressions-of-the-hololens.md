@@ -14,7 +14,7 @@ tags:
 
 it's been over two weeks since my last post; however I have an excuse! It may not be a good excuse, however I went on a vacation to beautiful Las Vegas and shockingly decided I didn't want to do anything computer related while out there (who would have thought?) Also before you ask - no I didn't take the HoloLens to Vegas with me - in retrospect I think I could have made some decent money if I had and let people take pictures with it, everyone dressed like Mickey Mouse and Minions on the strip seem to make a good of enough of a living!
 
-\[caption id="attachment\_485" align="aligncenter" width="300"\]![Matt in Las Vegas riding the High Rider](/assets/images/posts/20160521_173245-300x225.jpg) On the High Roller in Las Vegas\[/caption\]
+\[caption id="attachment\_485" align="aligncenter" width="300"\]![Matt in Las Vegas riding the High Rider]({{ "/assets/images/20160521_173245-300x225.jpg" | relative_url }}) On the High Roller in Las Vegas\[/caption\]
 
 Anyway, I have now been back to reality for about a week and it is time to get my butt back in gear! So let's talk the well over-due first impressions I need to share regarding the Microsoft HoloLens.
 
@@ -44,7 +44,7 @@ You can see all of this for yourself in my unboxing video below.
 
 Upon opening the box I was greeted with the carrying case which felt very sturdy and I may have accidentally tested how sturdy it was the very next week. Long story short I kind of crushed the case between the electric seat in my car and the door - I put a decent dent into the case, panicked opened it up and the HoloLens was fine, I was even able to pop the dent out of the carrying case with minor cosmetic damage to the case - see the below picture.
 
-![20160603_183711](/assets/images/posts/20160603_183711-300x219.jpg)
+![20160603_183711]({{ "/assets/images/20160603_183711-300x219.jpg" | relative_url }})
 
 The device itself is surprisingly light considering it is a full-on computer that sits on your head. Upon initially picking it up I was a bit worried how light it felt meant that it'd be flimsy and easy to break - I haven't put this to the test and have no intentions to, but overall I've gotten much more comfortable with it and believe it is much more sturdy than my initial expectations.
 
@@ -70,7 +70,7 @@ In addition to gestures you can use the clicker that comes with the HoloLens, a 
 
 Have you used Windows 8+ or Windows Phone 7+? Well you are familiar with the interface then! It is a very simple tile interface that you interact with. The major difference between those devices and the HoloLens is you have an initial start menu that pops up in your field of view, and when you go to launch an application you have to pin it to a wall in your home/office. No more complaining about having a start screen you Windows 8 users! The world (my living room) is your start screen! Check out the below screenshot to see what the interface looks like. Please note that the graininess of the photo is how the screen captures come out, the interface itself is actually much more crisp and clear than that.
 
-![20160603_192118_HoloLens](/assets/images/posts/20160603_192118_HoloLens-300x169.jpg)
+![20160603_192118_HoloLens]({{ "/assets/images/20160603_192118_HoloLens-300x169.jpg" | relative_url }})
 
 # Hardware/Performance
 

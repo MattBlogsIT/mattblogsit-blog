@@ -27,11 +27,11 @@ Once TechEd finally arrived I had no idea what I was doing, I had talked to all 
 
 That evening was #TheKrewe Meet N Greet, upon arrival was the fun of unpacking all of the free stuff for #TheKrewe Survival Pack, once sorted we had to put together an assembly line for 350 bags of free stuff to be completed before the party. I had anticipated only 13 volunteers, when we were going full force we were at 22 volunteers! I was thrilled with the attendance and surprised we had everything completed within 40 minutes and everyone was able to start their party early.
 
-\[caption id="attachment\_51" align="aligncenter" width="620"\][![](/assets/images/posts/2012-06-11T06-04-22_10-1024x768.jpg "2012-06-11T06-04-22_10")](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_10.jpg) Preparing for #TheKrewe Meet-N-Greet\[/caption\]
+\[caption id="attachment\_51" align="aligncenter" width="620"\][![]({{ "/assets/images/2012-06-11T06-04-22_10-1024x768.jpg "2012-06-11T06-04-22_10"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_10.jpg) Preparing for #TheKrewe Meet-N-Greet\[/caption\]
 
 During my night at #TheKrewe Meet N Greet I was able to meet many people, and I was excited for the night to begin. I had a chance to hang out with some of the people I had talked with via twitter leading up the the event and I was able to meet new people who I found out live less then 30 minutes from my house. The night ended with me having met many new people and feeling finally like a real #TheKrewe member.
 
-\[caption id="attachment\_52" align="aligncenter" width="1024"\][![](/assets/images/posts/2012-06-11T06-04-22_20.jpg "2012-06-11T06-04-22_20")](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_20.jpg) Calm before the beer\[/caption\]
+\[caption id="attachment\_52" align="aligncenter" width="1024"\][![]({{ "/assets/images/2012-06-11T06-04-22_20.jpg "2012-06-11T06-04-22_20"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_20.jpg) Calm before the beer\[/caption\]
 
 The week of TechEd went on and every day I saw someone who I had met the first night, and some that I had not but still were coming up and talking to me because of the work I had done. I was really glad to have done what I did and will continue to do such things to maintain these connections and enjoy my time at TechEd.
 

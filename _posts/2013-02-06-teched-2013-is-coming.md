@@ -38,4 +38,4 @@ The best way to learn about #TheKrewe is by reading my post [#IAMKREWE, Should y
 
 Finally the best way to learn about TechEd and TheKrewe is by looking at all the pictures!
 
-\[caption id="" align="aligncenter" width="600"\][![](/assets/images/posts/2012-06-11T06-04-22_20.jpg)](https://skydrive.live.com/?cid=9CE6817C08D7DE07&id=9CE6817C08D7DE07%21766&authkey=%21AJsFWqTWy79pxNg#cid=9CE6817C08D7DE07&id=9CE6817C08D7DE07%21766&authkey=%21AJsFWqTWy79pxNg) Click the picture to view all pictures I took last year at TechEd 2012. Thanks to Skydrive for having the capability to embed my entire directory!\[/caption\]
+\[caption id="" align="aligncenter" width="600"\][![]({{ "/assets/images/2012-06-11T06-04-22_20.jpg" | relative_url }})](https://skydrive.live.com/?cid=9CE6817C08D7DE07&id=9CE6817C08D7DE07%21766&authkey=%21AJsFWqTWy79pxNg#cid=9CE6817C08D7DE07&id=9CE6817C08D7DE07%21766&authkey=%21AJsFWqTWy79pxNg) Click the picture to view all pictures I took last year at TechEd 2012. Thanks to Skydrive for having the capability to embed my entire directory!\[/caption\]

@@ -69,4 +69,4 @@ The final thing on my list seems a bit out of place, why would you want an empty
 - Camera (If you don’t use cell phone camera)
 - Empty suitcase (Unless you plan on shipping swag home)
 
-\[caption id="attachment\_59" align="aligncenter" width="445"\][![](/assets/images/posts/IMG_0403.jpg "IMG_0403")](http://mattblogsit.com/wp-content/uploads/2012/11/IMG_0403.jpg) TechEd 2011 Swag Suitcase (Was empty when I arrived)\[/caption\]
+\[caption id="attachment\_59" align="aligncenter" width="445"\][![]({{ "/assets/images/IMG_0403.jpg "IMG_0403"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/IMG_0403.jpg) TechEd 2011 Swag Suitcase (Was empty when I arrived)\[/caption\]

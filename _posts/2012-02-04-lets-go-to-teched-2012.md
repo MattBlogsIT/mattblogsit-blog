@@ -12,7 +12,7 @@ tags:
 
 This week at work I was informed that I was approved to go to TechEd 2012! Last year was my first year going, and getting to go back again sounds fantastic to me because it is such a fun and educational time! However planning everything can get a bit tricky because there are so many hotels to choose from, and it gets a lot more complicated planning what all break-out sessions you want to go to. This article is written to help you get approval to go, and getting travel arrangements made. Once time gets closer to the actual convention I will be writing articles on ways to best plan your schedule there.
 
-[![](/assets/images/posts/BLUE_msteched_250.png "BLUE_msteched_250")](http://mattblogsit.com/wp-content/uploads/2012/11/BLUE_msteched_250.png)
+[![]({{ "/assets/images/BLUE_msteched_250.png "BLUE_msteched_250"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/BLUE_msteched_250.png)
 
 <!--more-->
 
@@ -62,4 +62,4 @@ Now the option I went with was being as close as possible to the TechEd 2012 Con
 
 This is going to be short simply because I am driving and this isn’t relevant to me. If you decide you are going to fly; I highly suggest Southwest, I’ve always flown them and it is a good deal with the 2 bags free. During your week at TechEd you will get a ton of free stuff you and you will need an empty suite case just for it NO JOKE! Look at the below picture, that suite case was completely empty on arrival at the conference. Currently from Indianapolis to Orlando Florida you are looking at paying $291.60 for round trip. I wouldn’t be surprised to see the price drop at some point and go back up as usual.
 
-\[caption id="attachment\_59" align="aligncenter" width="445"\][![](/assets/images/posts/IMG_0403.jpg "IMG_0403")](http://mattblogsit.com/wp-content/uploads/2012/11/IMG_0403.jpg) TechEd 2011 Swag\[/caption\]
+\[caption id="attachment\_59" align="aligncenter" width="445"\][![]({{ "/assets/images/IMG_0403.jpg "IMG_0403"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/IMG_0403.jpg) TechEd 2011 Swag\[/caption\]

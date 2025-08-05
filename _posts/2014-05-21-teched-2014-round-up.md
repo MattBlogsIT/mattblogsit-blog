@@ -15,7 +15,7 @@ tags:
 
 TechEd has come, and TechEd has gone... there were some cool announcements and some disappointments in the overall conference. Let's start with the cool announcements and fun things that did happen at Microsoft TechEd 2014.
 
-[![WP_20140513_015](/assets/images/posts/WP_20140513_015-1024x576.jpg)](http://mattblogsit.com/wp-content/uploads/2014/05/WP_20140513_015.jpg)<!--more-->
+[![WP_20140513_015]({{ "/assets/images/WP_20140513_015-1024x576.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2014/05/WP_20140513_015.jpg)<!--more-->
 
 # Some of the Cool Announcements:
 
@@ -36,7 +36,7 @@ TechEd is a fantastic opportunity for new announcements and learning really cool
 
 Later on in the week, on Tuesday night at the Aquarium, I had a short encounter with Mark Russinovich, which is every nerds dream come true. We didn't really talk about anything, just praised him for the most part and I got my picture with him!
 
-[![WP_20140513_045](/assets/images/posts/WP_20140513_045-1024x576.jpg)](http://mattblogsit.com/wp-content/uploads/2014/05/WP_20140513_045.jpg)
+[![WP_20140513_045]({{ "/assets/images/WP_20140513_045-1024x576.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2014/05/WP_20140513_045.jpg)
 
 Throughout the rest of the week I was able to socialize with many other friends who I've met over the years and catch up on their happenings over the last year or so since I had seen them.
 

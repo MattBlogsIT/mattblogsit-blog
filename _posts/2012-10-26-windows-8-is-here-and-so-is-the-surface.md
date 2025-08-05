@@ -12,7 +12,7 @@ tags:
 
 Today was a big day for Microsoft. Today was the release of Windows 8 and of the Surface RT. I have been using Windows 8 quite a bit already and so I wasn't expecting much aside from my excitement for the Surface RT to show up.
 
-[![](/assets/images/posts/2012-10-26T20-33-15_2-1024x768.jpg "2012-10-26T20-33-15_2")](http://mattblogsit.com/wp-content/uploads/2012/11/2012-10-26T20-33-15_2.jpg)
+[![]({{ "/assets/images/2012-10-26T20-33-15_2-1024x768.jpg "2012-10-26T20-33-15_2"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/2012-10-26T20-33-15_2.jpg)
 
 My day started by as soon as I woke up I grabbed my phone and tracked the delivery of my Surface RT. I saw that it was on the truck for delivery so I decided for sure I was working from home in the morning. I had completed quite a bit of work and just finished up with a conference call when I heard a knock at the door. I rushed into the living room to find my Surface RT with Cyan Touch Cover waiting for me.
 
@@ -24,7 +24,7 @@ My next steps included rushing into the office and showing it off, which made ev
 
 I ended my day by meeting up with other IWUG members at the new Microsoft Holiday Store a the Fashion Mall in Indianapolis. I was surprised to find such a large crowd still at the Microsoft Kiosk and to see they still were selling Surfaces left and right. While there I got hands on with the Type Cover and I was quite amazed with it’s quality. I still prefer the Touch Cover since it is a bit slimmer and looks to fit more flush with the Surface; however I must note the feedback the keys provided did improve my ability to type.
 
-[![](/assets/images/posts/2012-10-26T20-33-15_0-1024x768.jpg "2012-10-26T20-33-15_0")](http://mattblogsit.com/wp-content/uploads/2012/11/2012-10-26T20-33-15_0.jpg)
+[![]({{ "/assets/images/2012-10-26T20-33-15_0-1024x768.jpg "2012-10-26T20-33-15_0"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/2012-10-26T20-33-15_0.jpg)
 
 Microsoft Holiday Store
 

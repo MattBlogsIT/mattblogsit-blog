@@ -13,7 +13,7 @@ Lets start with my favorite and newest recipe!
 
 # Matt's Bacon-Wrapped Jalapeño Poppers
 
-\[caption id="attachment\_149" align="aligncenter" width="620"\]![Matt's Bacon-Wrapped Jalapeño Poppers](/assets/images/posts/WP_20121231_002-1-1024x515.jpg) Matt's Bacon-Wrapped Jalapeño Poppers\[/caption\]
+\[caption id="attachment\_149" align="aligncenter" width="620"\]![Matt's Bacon-Wrapped Jalapeño Poppers]({{ "/assets/images/WP_20121231_002-1-1024x515.jpg" | relative_url }}) Matt's Bacon-Wrapped Jalapeño Poppers\[/caption\]
 
 ## Ingredients
 

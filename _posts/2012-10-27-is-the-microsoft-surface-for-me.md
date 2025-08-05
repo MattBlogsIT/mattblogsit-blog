@@ -13,7 +13,7 @@ tags:
 
 In the last 2 days the biggest question I've heard is what makes this device good for me? The best response I've had for that is if you are a standard user, the Surface can be your only computer and you will not skip a beat with your day to day life.
 
-\[caption id="attachment\_48" align="aligncenter" width="800"\][![](/assets/images/posts/bgr-surface-cyan-touch-cover-front-view.jpg "bgr-surface-cyan-touch-cover-front-view")](http://mattblogsit.com/wp-content/uploads/2012/11/bgr-surface-cyan-touch-cover-front-view.jpg) Microsoft Surface with Cyan Touch Cover\[/caption\]
+\[caption id="attachment\_48" align="aligncenter" width="800"\][![]({{ "/assets/images/bgr-surface-cyan-touch-cover-front-view.jpg "bgr-surface-cyan-touch-cover-front-view"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/bgr-surface-cyan-touch-cover-front-view.jpg) Microsoft Surface with Cyan Touch Cover\[/caption\]
 
 First I would like to start out by defining what I consider a “Standard User”. A standard user is someone who uses a computer for email, social media, blogging, consuming media (Music/Video) and casual gaming. This user can potentially be on the go and doing all of these things but this is not a requirement nor does it hurt if they are.<!--more-->
 
@@ -36,6 +36,6 @@ So to summarize the moral of this blog post I would like to note the following.
 
 ### **If you do then the Surface is your new best friend!**
 
-\[caption id="attachment\_49" align="aligncenter" width="800"\][![](/assets/images/posts/bgr-surface-layered-touch-cover.jpg "bgr-surface-layered-touch-cover")](http://mattblogsit.com/wp-content/uploads/2012/11/bgr-surface-layered-touch-cover.jpg) Microsoft Surface with all Touch Cover Colors\[/caption\]
+\[caption id="attachment\_49" align="aligncenter" width="800"\][![]({{ "/assets/images/bgr-surface-layered-touch-cover.jpg "bgr-surface-layered-touch-cover"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/bgr-surface-layered-touch-cover.jpg) Microsoft Surface with all Touch Cover Colors\[/caption\]
 
 Image Source: [BGR](http://bgr.com/gallery/microsoft-surface-press-/assets/images/posts/)
