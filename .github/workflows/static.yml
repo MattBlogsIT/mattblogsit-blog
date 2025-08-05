@@ -31,12 +31,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Remove backup directory
+        run: rm -rf _backup
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload root files only, excluding backup
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
