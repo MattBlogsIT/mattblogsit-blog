@@ -1,0 +1,40 @@
+# Site settings
+title: Matt Blogs IT
+description: >-
+  A blog about IT, technology, and life by Matt Griffin.
+  Systems Architect passionate about technology, volunteering, and adaptive sports.
+baseurl: "/mattblogsit-dev"
+url: "https://mattgrif.github.io"
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Permalink settings
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - _backup/
+  - README.md
+  - js/navigation.js
