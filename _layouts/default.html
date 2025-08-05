@@ -156,6 +156,39 @@
         .image-modal .close:hover {
             color: #ccc;
         }
+        /* Footer styling */
+        .site-footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            border-top: 2px solid #3498db;
+            background-color: #f8f9fa;
+            color: #555;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-copyright {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer-disclaimer {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .footer-links {
+            text-align: center;
+        }
+        .footer-links a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -166,6 +199,8 @@
     <main>
         {{ content }}
     </main>
+    
+    {% include footer.html %}
     
     <!-- Image Modal -->
     <div id="imageModal" class="image-modal">
