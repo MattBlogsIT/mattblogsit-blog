@@ -13,7 +13,7 @@ Maintains dynamic nature - just add pages to _pages folder and they appear
   {% comment %} Auto-discover all pages in _pages collection {% endcomment %}
   {% assign sorted_pages = site.pages | sort: 'title' %}
   {% for page_item in sorted_pages %}
-    {% if page_item.title and page_item.title != "Home" %}
+    {% if page_item.title and page_item.title != "Home" and page_item.title != "Search" %}
       <a href="{{ site.baseurl }}{{ page_item.url }}" {% if current_path == page_item.url %}class="active"{% endif %}>{{ page_item.title }}</a>
     {% endif %}
   {% endfor %}
@@ -22,5 +22,8 @@ Maintains dynamic nature - just add pages to _pages folder and they appear
   {% if site.posts.size > 0 %}
     <a href="{{ site.baseurl }}/posts/" {% if current_path contains '/posts/' or page.layout == 'post' %}class="active"{% endif %}>Posts</a>
   {% endif %}
+  
+  {% comment %} Search icon in top right {% endcomment %}
+  <a href="{{ site.baseurl }}/search/" class="search-icon" title="Search" {% if current_path == "/search/" %}class="active search-icon"{% endif %}>⌛</a>
 </div>
 
