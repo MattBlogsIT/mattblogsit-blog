@@ -11,6 +11,16 @@
     
     {% include navigation.html %}
     
+    <!-- Hamburger menu button (mobile only) -->
+    <button class="hamburger-menu" aria-label="Toggle sidebar menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar overlay (mobile only) -->
+    <div class="sidebar-overlay"></div>
+    
     <div class="site-container">
         <main class="main-content">
             {{ content }}
@@ -29,5 +39,6 @@
     
     <script src="{{ site.baseurl }}/assets/js/search.js"></script>
     <script src="{{ site.baseurl }}/assets/js/modal.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/hamburger.js"></script>
 </body>
 </html>
