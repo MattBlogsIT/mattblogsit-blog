@@ -15,7 +15,7 @@ title: TechEd Day 1 Summary
 
 Day 1 is coming to a close as I write it sitting pool side using the Samsung Series 7 Slate. I have learned a lot of new cool stuff is coming to the Microsoft world in the area of virtualization. However I am disappointed in the lack of technical knowledge that I've gained.
 
-[![]({{ site.baseurl }}/assets/img/2012-06-11T21-53-03_1-1024x768.jpg "2012-06-11T21-53-03_1")]({{ site.baseurl }}/assets/img/2012-06-11T21-53-03_1.jpg)
+![]({{ site.baseurl }}/assets/img/2012-06-11T21-53-03_1-1024x768.jpg "2012-06-11T21-53-03_1")
 
 It is not that the technical knowledge wasn’t available, it was that I spent my day taking certifications. I started my day early at 7:30am for the Twitter Army, which lead up to going into the TechEd Keynote, I had to leave the keynote early to get to my first certification exam.
 
@@ -25,4 +25,4 @@ The TechExpo was rough on me, however I still managed to make it around a d have
 
 Once I finished scouring the floor looking for freebies I headed back to the hotel and made the decision to take it easy tonight, blog and regenerate for tomorrows exams.
 
-[![]({{ site.baseurl }}/assets/img/2012-06-11T22-08-16_1-1024x768.jpg "2012-06-11T22-08-16_1")]({{ site.baseurl }}/assets/img/2012-06-11T22-08-16_1.jpg)
+![]({{ site.baseurl }}/assets/img/2012-06-11T22-08-16_1-1024x768.jpg "2012-06-11T22-08-16_1")

@@ -25,7 +25,7 @@ It has been nearly 8 months since my last blog post. For that I'd like to apolog
 
 I started looking at houses around September of last year, and fell in love with one of the houses I looked at. I made an offer on the house and within a months time I was moving it. I wasn't expecting it to happen so fast, but I am glad it did. I've been here since November of last year and it provided a great private recording studio for me!
 
-[![ShowCover]({{ site.baseurl }}/assets/img/ShowCover.jpg)]({{ site.baseurl }}/assets/img/ShowCover.jpg)
+![ShowCover]({{ site.baseurl }}/assets/img/ShowCover.jpg)
 
 The new videos I've been working on are about to come out! It is a video series focused on helping you pass the 70-346 exam. You can take a look at it for when it will be coming out later this month! On [InformIT](http://www.informit.com/store/managing-office-365-identities-and-requirements-livelessons-9780672337376), or if you have a Safari Books Online Subscription you can see it there.
 

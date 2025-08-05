@@ -33,7 +33,7 @@ After dinner I headed back to the hotel and crashed, I had a huge week ahead of 
 
 Sunday rolled around and it was time for me to go to the convention center. This is the day I got to try out my [Ventra CTA Pass](https://www.ventrachicago.com/). I live in Indianapolis, we are known for having notoriously bad public transit. I had heard mixed feelings about Chicago Public Transit, and I just have to say in the week that I was there it was fantastic! It would had been even better had I not made a stupid mistake and got on the wrong bus on my first try! To get around Chicago I used the [HERE Transit](http://www.windowsphone.com/en-gb/store/app/here-transit/adfdad16-b54a-4ec3-b11e-66bd691be4e6) Windows Phone App and it was amazing! Once I got to the convention center, I did a bit of exploring before I went to my training for working the Hands On Labs, where I got my extremely stylish hat that I was honored I got to wear all week!
 
-[![WP_20150503_10_43_16_Pro 1]({{ site.baseurl }}/assets/img/WP_20150503_10_43_16_Pro-1-300x256.jpg)]({{ site.baseurl }}/assets/img/WP_20150503_10_43_16_Pro-1.jpg)That evening was TheKrewe Meet 'N Greet, at Kaiser Tiger - the best party for the week. Kaiser Tiger specializes in Bacon and Beer tastings. They pair different beers with different kinds of bacon. It had some of the best food the entire week!
+![WP_20150503_10_43_16_Pro 1]({{ site.baseurl }}/assets/img/WP_20150503_10_43_16_Pro-1-300x256.jpg)That evening was TheKrewe Meet 'N Greet, at Kaiser Tiger - the best party for the week. Kaiser Tiger specializes in Bacon and Beer tastings. They pair different beers with different kinds of bacon. It had some of the best food the entire week!
 
 Monday was the start of it all. There were lots of sessions, lots of content, and lots of people. So let's jump into the Good, the Bad and The Ugly. I want to note that 'The Bad' really isn't all that bad, it is the small things that could have been improved on. 'The Ugly' are the things that seriously hindered the experience.
 
@@ -65,7 +65,7 @@ After that escapade the transportation staff had asked me to provide a schedule 
 
 Tuesday morning rolls around. I'm supposed to be picked up at 8am, I get down there on time and no shuttle. No problem everyone is late occasionally so I speak with the volunteer staff working the conference and she calls in letting them know I am waiting. She was told 15 minutes - no problem. 30 minutes rolls around, no shuttle. At this point I'm quite unhappy and vocalize it on Twitter. I didn't get picked up until about 9AM, luckily I wasn't working a morning shift that day. I do want to give a shout out to the CRG volunteer Ginny who was quite fun to chat with while I waited and helped ease the terrible experience.
 
-[![2015-05-17_0-11-22]({{ site.baseurl }}/assets/img/2015-05-17_0-11-22-300x208.png)]({{ site.baseurl }}/assets/img/2015-05-17_0-11-22.png)
+![2015-05-17_0-11-22]({{ site.baseurl }}/assets/img/2015-05-17_0-11-22-300x208.png)
 
 The next morning I had a shuttle show up on time, being one of the nicest guys ever. I was thrilled to see they corrected the issue and I didn't have any more the remainder of the week. This was by far the worst experience the entire week and Microsoft was very responsive in correcting it. There is nothing further they could do, unless they can somehow time travel and stop it before it happens!
 

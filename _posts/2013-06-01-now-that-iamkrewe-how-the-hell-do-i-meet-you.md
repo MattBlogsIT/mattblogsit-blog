@@ -15,7 +15,7 @@ title: 'Now that #IAMKREWE, how the hell do I meet you?'
 
 As I sit here reflecting on my last 2 years being with #TheKrewe I was thinking. There are quite a few new people this year and the majority of you are probably like me when I joined and have NO IDEA how you are going to meet new people. So I've decided it would be good to share some helpful tips on socializing with other members of #TheKrewe
 
-[![matt_springboard]({{ site.baseurl }}/assets/img/matt_springboard-225x300.jpg)]({{ site.baseurl }}/assets/img/matt_springboard.jpg)
+![matt_springboard]({{ site.baseurl }}/assets/img/matt_springboard-225x300.jpg)
 
 # The Basics:
 

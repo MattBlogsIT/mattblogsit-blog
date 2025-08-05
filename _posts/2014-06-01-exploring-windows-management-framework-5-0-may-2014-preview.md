@@ -20,7 +20,7 @@ Two of the major changes with PowerShell v5.0 include two new modules; the OneGe
 
 Please note that this is just a very quick overview of the modules and we will dive into more depth on them in upcoming blog posts.
 
-[![psv5]({{ site.baseurl }}/assets/img/psv5.png)]({{ site.baseurl }}/assets/img/psv5.png)<!--more-->
+![psv5]({{ site.baseurl }}/assets/img/psv5.png)<!--more-->
 
  
 
@@ -34,13 +34,13 @@ I personally have been using Chocolatey for about a year now, and I am very exci
 
 Currently detailed Help documents do not exist for the below cmdlets. I've provided a quick summary of what these cmdlets can do from what I've gathered by analyzing the parameters available with them.
 
-[![OneGetCmdlets]({{ site.baseurl }}/assets/img/OneGetCmdlets.png)]({{ site.baseurl }}/assets/img/OneGetCmdlets.png)
+![OneGetCmdlets]({{ site.baseurl }}/assets/img/OneGetCmdlets.png)
 
 ### Add-PackageSource
 
 Add-PackageSource will add additional sources outside of the default ones provided with PowerShell OneGet. The below parameters are available.
 
-[![add-packagesource]({{ site.baseurl }}/assets/img/add-packagesource.png)]({{ site.baseurl }}/assets/img/add-packagesource.png)
+![add-packagesource]({{ site.baseurl }}/assets/img/add-packagesource.png)
 
 ### Find-Package
 
@@ -52,37 +52,37 @@ Fine-Package will perform a search of multiple Package Sources with ability to f
 - Hint
 - LeavePartialPackageInstalled
 
-[![find-package]({{ site.baseurl }}/assets/img/find-package.png)]({{ site.baseurl }}/assets/img/find-package.png)
+![find-package]({{ site.baseurl }}/assets/img/find-package.png)
 
 ### Get-Package
 
 Get-Package will return a list of all packages currently installed with a few parameters you can use to filter the results a bit.
 
-[![get-package]({{ site.baseurl }}/assets/img/get-package.png)]({{ site.baseurl }}/assets/img/get-package.png)
+![get-package]({{ site.baseurl }}/assets/img/get-package.png)
 
 ### Get-PackageSource
 
 Get-PackageSource will return a list of PackageSource repositories that you have setup with OneGet. It includes some minor filtering parameters you can use.
 
-[![Get-PackageSource]({{ site.baseurl }}/assets/img/Get-PackageSource.png)]({{ site.baseurl }}/assets/img/Get-PackageSource.png)
+![Get-PackageSource]({{ site.baseurl }}/assets/img/Get-PackageSource.png)
 
 ### Install-Package
 
 This is one of the more self explanatory cmdlets included with the OneGet Module. This will install a package that you specify or multiple packages that you specify. This cmdlet includes quite a few parameters that you can use to filter for where you want the package installed from all the way down to exactly which version of the package you want installed.
 
-[![Install-Package]({{ site.baseurl }}/assets/img/Install-Package-959x1024.png)]({{ site.baseurl }}/assets/img/Install-Package.png)
+![Install-Package]({{ site.baseurl }}/assets/img/Install-Package-959x1024.png)
 
 ### Remove-PackageSource
 
 Remove-PackageSource is used to remove package repositories that have been added to your OneGet Module.
 
-[![Remove-PackageSource]({{ site.baseurl }}/assets/img/Remove-PackageSource.png)]({{ site.baseurl }}/assets/img/Remove-PackageSource.png)
+![Remove-PackageSource]({{ site.baseurl }}/assets/img/Remove-PackageSource.png)
 
 ### Uninstall-Package
 
 Another fairly self explanatory cmdlet. This will uninstall a package that you have previously installed using OneGet.
 
-[![Uninstall-Package]({{ site.baseurl }}/assets/img/Uninstall-Package.png)]({{ site.baseurl }}/assets/img/Uninstall-Package.png)
+![Uninstall-Package]({{ site.baseurl }}/assets/img/Uninstall-Package.png)
 
 # PowerShellGet Module:
 
@@ -92,20 +92,20 @@ The PowerShellGet Module is new in the May preview and is similar to OneGet in t
 
 The nice thing about the PowerShellGet Module is that a lot of the help is already available if you run an Update-Help. The Module includes only 4 cmdlets, but that is all it really needs.
 
-[![PowerShellGetCmdlets]({{ site.baseurl }}/assets/img/PowerShellGetCmdlets.png)]({{ site.baseurl }}/assets/img/PowerShellGetCmdlets.png)
+![PowerShellGetCmdlets]({{ site.baseurl }}/assets/img/PowerShellGetCmdlets.png)
 
 ### Find-Module
 
-[![Find-Module]({{ site.baseurl }}/assets/img/Find-Module.png)]({{ site.baseurl }}/assets/img/Find-Module.png)
+![Find-Module]({{ site.baseurl }}/assets/img/Find-Module.png)
 
 ### Install-Module
 
-[![Install-Module]({{ site.baseurl }}/assets/img/Install-Module.png)]({{ site.baseurl }}/assets/img/Install-Module.png)
+![Install-Module]({{ site.baseurl }}/assets/img/Install-Module.png)
 
 ### Publish-Module
 
-[![Publish-Module]({{ site.baseurl }}/assets/img/Publish-Module-876x1024.png)]({{ site.baseurl }}/assets/img/Publish-Module.png)
+![Publish-Module]({{ site.baseurl }}/assets/img/Publish-Module-876x1024.png)
 
 ### Update-Module
 
-[![Update-Module]({{ site.baseurl }}/assets/img/Update-Module.png)]({{ site.baseurl }}/assets/img/Update-Module.png)
+![Update-Module]({{ site.baseurl }}/assets/img/Update-Module.png)

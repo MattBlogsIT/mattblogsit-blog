@@ -15,7 +15,7 @@ title: Arris TG862G/CT from Xfinity Port Forwarding - Signature Support Sham
 
 Recently I received a letter in the mail that Xfinity had increased the speed of the internet in my area... SWEET! However I needed to upgrade my modem as it cannot handle the increased speed, sounds reasonable they will send me a new one. This is where the sage begins with my discovery of xfinity's Signature Support Sham and their horrible support and customer service.
 
-[![xfinity_sham]({{ site.baseurl }}/assets/img/xfinity_sham.jpg)]({{ site.baseurl }}/assets/img/xfinity_sham.jpg)
+![xfinity_sham]({{ site.baseurl }}/assets/img/xfinity_sham.jpg)
 
 # The Story
 

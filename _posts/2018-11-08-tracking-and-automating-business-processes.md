@@ -19,7 +19,7 @@ As businesses grow, it becomes challenging to keep up with business processes. T
 
 In recent months I've been tasked with helping different business units improve and track their processes. Specifically, I started with our onboarding experience. The process tasks get assigned to people that are geographically dispersed, and sometimes the people involved with the onboarding only do a few a month. There is a lot that needs to go into it. You want to factor in things such as IT, Payroll, Equipment, Licensing, Training, which makes it keeping everyone in the loop difficult.
 
-[![]({{ site.baseurl }}/assets/img/tallyfy-300x146.jpg)]({{ site.baseurl }}/assets/img/tallyfy.jpg)
+![]({{ site.baseurl }}/assets/img/tallyfy-300x146.jpg)
 
 To combat these difficulties we settled on a product called **[TallyFy](https://tallyfy.com/)**. TallyFy gives us a dashboard that will show us how our processes are progressing. It helps keep everyone on the same page and helps communicate issues in a more rapid manner.
 

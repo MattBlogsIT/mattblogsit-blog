@@ -21,7 +21,7 @@ After the first week, I noticed that I was struggling to find what to focus on; 
 
 I'm a huge fan of audiobooks, so I did a bit of digging and stumbled across "[Getting Things Done: The Art of Stress-Free Productivity](https://www.amazon.com/gp/product/0143126563/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0143126563&linkCode=as2&tag=mattblogsi0b1-20&linkId=29a2e91332dd6aa4dba71d4a3c3a66e3)" (GTD) by David Allen on Audible. I had some credits available, so I went ahead and picked it up. The GTD methods talk about getting things off your mind. It encourages you to write it on paper, in an app, in a journal - somewhere as a reminder.
 
-[![]({{ site.baseurl }}/assets/img/q)](https://www.amazon.com/gp/product/0143126563/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0143126563&linkCode=as2&tag=mattblogsi0b1-20&linkId=e8203a90d84e4033be6b9101aa71f857)![]({{ site.baseurl }}/assets/img/ir)
+![]({{ site.baseurl }}/assets/img/q)![]({{ site.baseurl }}/assets/img/ir)
 
 Being the technologist I am, there was no way I was hand-writing a to-do list for home, all the organizations I'm a part of, and work. I had always known about Microsoft To Do since the preview, and I am heavily invested in the Microsoft 365 cloud suite, so it made sense.
 

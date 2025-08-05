@@ -14,7 +14,7 @@ tags:
 title: '#60Days2MCSE Challenge – Week 6 Update'
 ---
 
-[![]({{ site.baseurl }}/assets/img/MCSE_WebBanners_180x150_jpg-550x0.jpg "MCSE_WebBanners_180x150_jpg-550x0")]({{ site.baseurl }}/assets/img/MCSE_WebBanners_180x150_jpg-550x0.jpg)
+![]({{ site.baseurl }}/assets/img/MCSE_WebBanners_180x150_jpg-550x0.jpg "MCSE_WebBanners_180x150_jpg-550x0")
 
 ## Personal Updates:
 

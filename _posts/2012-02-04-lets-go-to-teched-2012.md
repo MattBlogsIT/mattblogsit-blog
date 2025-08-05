@@ -15,7 +15,7 @@ title: Lets Go To TechEd 2012!
 
 This week at work I was informed that I was approved to go to TechEd 2012! Last year was my first year going, and getting to go back again sounds fantastic to me because it is such a fun and educational time! However planning everything can get a bit tricky because there are so many hotels to choose from, and it gets a lot more complicated planning what all break-out sessions you want to go to. This article is written to help you get approval to go, and getting travel arrangements made. Once time gets closer to the actual convention I will be writing articles on ways to best plan your schedule there.
 
-[![]({{ site.baseurl }}/assets/img/BLUE_msteched_250.png "BLUE_msteched_250")]({{ site.baseurl }}/assets/img/BLUE_msteched_250.png)
+![]({{ site.baseurl }}/assets/img/BLUE_msteched_250.png "BLUE_msteched_250")
 
 <!--more-->
 
@@ -65,7 +65,5 @@ Now the option I went with was being as close as possible to the TechEd 2012 Con
 
 This is going to be short simply because I am driving and this isn’t relevant to me. If you decide you are going to fly; I highly suggest Southwest, I’ve always flown them and it is a good deal with the 2 bags free. During your week at TechEd you will get a ton of free stuff you and you will need an empty suite case just for it NO JOKE! Look at the below picture, that suite case was completely empty on arrival at the conference. Currently from Indianapolis to Orlando Florida you are looking at paying $291.60 for round trip. I wouldn’t be surprised to see the price drop at some point and go back up as usual.
 
-<figure class="aligncenter">
-    <img src="{{ site.baseurl }}/assets/img/IMG_0403.jpg" alt="TechEd 2011 Swag">
-    <figcaption>TechEd 2011 Swag</figcaption>
-</figure>
+![TechEd 2011 Swag]({{ site.baseurl }}/assets/img/IMG_0403.jpg)
+*TechEd 2011 Swag*

@@ -21,7 +21,7 @@ Two weeks ago I was lucky enough to be sent to Microsoft TechEd by the company I
 
 _**Warning:** Long blog post!_
 
-[![Welcome_TechEd]({{ site.baseurl }}/assets/img/WP_20130601_015.jpg)]({{ site.baseurl }}/assets/img/WP_20130601_015.jpg)This summarization of TechEd does not do a justice to how fantastic the experience is and how much you learn while there.<!--more-->
+![Welcome_TechEd]({{ site.baseurl }}/assets/img/WP_20130601_015.jpg)This summarization of TechEd does not do a justice to how fantastic the experience is and how much you learn while there.<!--more-->
 
 # Day -1 - Saturday June 1st:
 
@@ -38,7 +38,7 @@ After a short break to re-charge in the hotel we decided to meet up and start br
 
 Once we wrapped things up there we went and met up with a few of #TheKrewe to pickup some 190 Octanes, all I can say is WOW! While drinking the 190 Octanes I got to hang out with some good friends I hadn't seen for a year!
 
-[![WP_20130601_018]({{ site.baseurl }}/assets/img/WP_20130601_018.jpg)]({{ site.baseurl }}/assets/img/WP_20130601_018.jpg)
+![WP_20130601_018]({{ site.baseurl }}/assets/img/WP_20130601_018.jpg)
 
 Once we got a big group of us together we moved our way down to grab some dinner at Drago's and ended up having 25+ people show up for our get together. I knew I had a big day ahead of me the next day so I wrapped things up around 10PM, headed back to the hotel and crashed.
 
@@ -46,7 +46,7 @@ Once we got a big group of us together we moved our way down to grab some dinner
 
 Day 0 hit, and it hit hard having to wake up at 6AM to jump in the shower, get breakfast and get registered all by 9AM when my Pre-con started. I arrived a bit early to my session which was Lessons from the Field: Useful Hacker Techniques for Administrators and I was able to get settled in, this was a very challenging day to focus because I was on twitter keeping up with all of my friends and trying to focus on a topic that was WAY over my head. I have very few "hacker" skills but this was an extremely useful session. The best part was they provided all of their tools for later use to the attendees to us in their own networks!
 
-[![WP_20130602_004]({{ site.baseurl }}/assets/img/WP_20130602_004.jpg)]({{ site.baseurl }}/assets/img/WP_20130602_004.jpg)
+![WP_20130602_004]({{ site.baseurl }}/assets/img/WP_20130602_004.jpg)
 
  
 
@@ -56,7 +56,7 @@ After awhile in the presentation I did lose my attention span, but it wasn't too
 
 Sunday was #TheKrewe Sunday Meet 'N Greet, this year it was a lot less meeting and greeting and a lot more of a crazy party with an amazing live band! I do not know the exact attendance numbers but we had approximately 600 people crammed into this bar with live music, I did get to meet TONS of new people, very few I got to have a conversation with but that is what the rest of the week was for!
 
-[![WP_20130602_023]({{ site.baseurl }}/assets/img/WP_20130602_023.jpg)]({{ site.baseurl }}/assets/img/WP_20130602_023.jpg)
+![WP_20130602_023]({{ site.baseurl }}/assets/img/WP_20130602_023.jpg)
 
 # Day 1 - Monday June 3rd
 

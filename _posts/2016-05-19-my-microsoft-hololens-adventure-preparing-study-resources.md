@@ -19,7 +19,7 @@ title: My Microsoft HoloLens Adventure - Preparing Study Resources
 
 As I continue my adventure of learning how to program for the HoloLens, the first step is actually learning how to program! I am lucky enough that I took some programming classes while in College and I've done a lot of Scripting in Windows PowerShell - this helps me understand programming constructs. I just need to become more well-practices in the area of Object Oriented Programming and understanding the C# Syntax.
 
-[![visual-studio-2013-logo]({{ site.baseurl }}/assets/img/visual-studio-2013-logo-300x150.png)]({{ site.baseurl }}/assets/img/visual-studio-2013-logo.png)
+![visual-studio-2013-logo]({{ site.baseurl }}/assets/img/visual-studio-2013-logo-300x150.png)
 
 # Basics:
 
