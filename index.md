@@ -7,6 +7,17 @@ title: Home
 
 Welcome to my blog about IT, technology, and life. I'm Matt Griffin, a Systems Architect passionate about technology, volunteering, and adaptive sports.
 
+## Pages
+
+<div class="page-list">
+  {% assign sorted_pages = site.pages | where: "layout", "page" | sort: "title" %}
+  {% for page in sorted_pages %}
+    {% unless page.title == "Test Image Loading" %}
+    <p><a href="{{ page.url | relative_url }}">{{ page.title }}</a></p>
+    {% endunless %}
+  {% endfor %}
+</div>
+
 ## Recent Posts
 
 <div class="post-list">
@@ -19,4 +30,4 @@ Welcome to my blog about IT, technology, and life. I'm Matt Griffin, a Systems A
   {% endfor %}
 </div>
 
-[View all posts →](/archive/)
+<p><a href="{{ '/posts/' | relative_url }}">View all posts →</a></p>
