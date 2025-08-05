@@ -13,8 +13,8 @@ title: Categories
   {% if category != "" %}
     {% assign category_posts = site.posts | where: 'categories', category %}
     <div class="category-section">
-      <h3 class="collapsible-header">
-        {{ category | capitalize }}
+      <h3 class="collapsible-header" id="{{ category | slugify }}">
+        <a href="#{{ category | slugify }}" class="category-anchor">{{ category }}</a>
         <span class="post-count">({{ category_posts.size }} post{% if category_posts.size > 1 %}s{% endif %})</span>
         <span class="toggle-icon">▼</span>
       </h3>

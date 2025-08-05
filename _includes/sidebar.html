@@ -15,8 +15,8 @@ Automatically generates category-based post summaries
                     {% if category != "" %}
                         {% assign category_posts = site.posts | where: 'categories', category %}
                         <li>
-                            <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
-                                {{ category | capitalize }} ({{ category_posts.size }})
+                            <a href="{{ site.baseurl }}/category/#{{ category | slugify }}">
+                                {{ category }} ({{ category_posts.size }})
                             </a>
                         </li>
                     {% endif %}
