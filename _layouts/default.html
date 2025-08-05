@@ -11,15 +11,99 @@
     
     {% include navigation.html %}
     
+    <!-- Mobile search icon (mobile only) -->
+    <span class="mobile-search" title="Search" onclick="toggleSearch()">🔍</span>
+    
     <!-- Hamburger menu button (mobile only) -->
-    <button class="hamburger-menu" aria-label="Toggle sidebar menu">
+    <button class="hamburger-menu" aria-label="Toggle navigation menu">
         <span></span>
         <span></span>
         <span></span>
     </button>
     
-    <!-- Sidebar overlay (mobile only) -->
+    <!-- Mobile overlay -->
     <div class="sidebar-overlay"></div>
+    
+    <!-- Combined mobile menu -->
+    <div class="combined-menu">
+        <!-- Main Navigation Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">Main Navigation</h3>
+            <ul class="menu-items">
+                <li><a href="{{ site.baseurl }}/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}><span class="menu-icon">🏠</span>Home</a></li>
+                {% assign sorted_pages = site.pages | sort: 'title' %}
+                {% for page_item in sorted_pages %}
+                    {% if page_item.title and page_item.title != "Home" and page_item.title != "Search" %}
+                        <li><a href="{{ site.baseurl }}{{ page_item.url }}" {% if page.url == page_item.url %}class="active"{% endif %}>
+                            <span class="menu-icon">
+                                {% if page_item.title == "About Me" %}👤
+                                {% elsif page_item.title == "Contact" %}📧
+                                {% elsif page_item.title == "Archive" %}📁
+                                {% elsif page_item.title == "Category" %}🏷️
+                                {% else %}📄{% endif %}
+                            </span>{{ page_item.title }}
+                        </a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if site.posts.size > 0 %}
+                    <li><a href="{{ site.baseurl }}/posts/" {% if page.url contains '/posts/' or page.layout == 'post' %}class="active"{% endif %}><span class="menu-icon">📝</span>Posts</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">Categories</h3>
+            <ul class="menu-items">
+                {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+                {% for category in categories limit: 5 %}
+                    {% if category != "" %}
+                        {% assign category_posts = site.posts | where: 'categories', category %}
+                        <li><a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+                            <span class="menu-icon">🏷️</span>{{ category | capitalize }}
+                            <span class="menu-count">{{ category_posts.size }}</span>
+                        </a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if categories.size > 5 %}
+                    <li><a href="{{ site.baseurl }}/category/"><span class="menu-icon">📂</span>View All Categories</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        
+        <!-- Archives Section -->
+        <div class="menu-section">
+            <h3 class="menu-section-title">Archives</h3>
+            <ul class="menu-items">
+                {% assign years = "" | split: "" %}
+                {% for post in site.posts %}
+                    {% assign post_year = post.date | date: "%Y" %}
+                    {% unless years contains post_year %}
+                        {% assign years = years | push: post_year %}
+                    {% endunless %}
+                {% endfor %}
+                {% assign years = years | sort | reverse %}
+                {% for year in years limit: 5 %}
+                    {% assign count = 0 %}
+                    {% for post in site.posts %}
+                        {% assign post_year = post.date | date: "%Y" %}
+                        {% if post_year == year %}
+                            {% assign count = count | plus: 1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if count > 0 %}
+                        <li><a href="{{ site.baseurl }}/archive/{{ year }}/">
+                            <span class="menu-icon">📅</span>{{ year }}
+                            <span class="menu-count">{{ count }}</span>
+                        </a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if years.size > 5 %}
+                    <li><a href="{{ site.baseurl }}/archive/"><span class="menu-icon">📁</span>View All Archives</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
     
     <div class="site-container">
         <main class="main-content">
