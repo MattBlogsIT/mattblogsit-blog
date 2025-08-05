@@ -4,7 +4,7 @@ layout: default
 
 <h1>{{ page.year }} Archive</h1>
 
-{% assign year_posts = site.posts | where_exp: 'post', 'post.date | date: "%Y" == page.year' %}
+{% assign year_posts = site.posts | where_exp: "post", "post.date | date: '%Y' == page.year" %}
 
 {% if year_posts.size > 0 %}
 <p>{{ year_posts.size }} post{% if year_posts.size > 1 %}s{% endif %} from {{ page.year }}:</p>
