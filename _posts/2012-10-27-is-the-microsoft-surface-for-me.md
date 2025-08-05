@@ -38,4 +38,4 @@ So to summarize the moral of this blog post I would like to note the following.
 
 \[caption id="attachment\_49" align="aligncenter" width="800"\][![]({{ "/assets/images/bgr-surface-layered-touch-cover.jpg "bgr-surface-layered-touch-cover"" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2012/11/bgr-surface-layered-touch-cover.jpg) Microsoft Surface with all Touch Cover Colors\[/caption\]
 
-Image Source: [BGR](http://bgr.com/gallery/microsoft-surface-press-/assets/images/posts/)
+Image Source: [BGR](http://bgr.com/gallery/microsoft-surface-press-images/)

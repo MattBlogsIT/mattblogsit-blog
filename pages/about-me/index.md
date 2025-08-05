@@ -13,7 +13,7 @@ Upon leaving Apparatus in 2015, Matt joined Gaylor Electric as the Systems Archi
 
 <figure>
 
-![]({{ "/assets/images/20170216_213340-e1566312838997-576x1024.jpg" | relative_url }})
+[![]({{ "/assets/images/20170216_213340-e1566312838997-576x1024.jpg" | relative_url }})](https://mattblogsit.com/wp-content/uploads/2020/06/20170216_213340-e1566312838997-scaled.jpg)
 
 <figcaption>
 
@@ -31,7 +31,7 @@ Matt has always had a competitive spirit. He played soccer at a young age, baske
 
 <figure>
 
-![]({{ "/assets/images/40548_420093671401_404646_n-1.jpg" | relative_url }})
+[![]({{ "/assets/images/40548_420093671401_404646_n-1.jpg" | relative_url }})](https://mattblogsit.com/wp-content/uploads/2020/06/40548_420093671401_404646_n-1.jpg)
 
 <figcaption>
 
@@ -49,7 +49,7 @@ During the 2018 RHI Adaptive Sports Expo, Matt discovered the sport of Wheelchai
 
 <figure>
 
-![]({{ "/assets/images/IMG_1108-1024x683.jpg" | relative_url }})
+[![]({{ "/assets/images/IMG_1108-1024x683.jpg" | relative_url }})](https://mattblogsit.com/wp-content/uploads/2020/06/IMG_1108-scaled.jpg)
 
 <figcaption>
 
