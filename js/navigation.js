@@ -5,34 +5,57 @@
 
 class Navigation {
     constructor() {
-        this.baseDepth = 0;
         this.currentPath = window.location.pathname;
+        this.repositoryName = 'mattblogsit-dev';
+        this.basePath = this.getRepositoryBasePath();
         this.currentFolder = this.getCurrentFolder();
-        this.isInSubfolder = this.baseDepth > 0;
+        this.isInSubfolder = this.currentFolder !== '';
         this.init();
     }
 
     init() {
-        this.determineBaseDepth();
         this.renderNavigation();
         this.renderChildNavigation();
         this.setActiveNavItem();
     }
 
-    determineBaseDepth() {
-        const pathSegments = this.currentPath.split('/').filter(segment => segment && segment !== 'index.html');
-        
-        // Count how many directories deep we are from the root
-        const fileName = pathSegments[pathSegments.length - 1];
-        if (fileName && fileName.includes('.html')) {
-            this.baseDepth = pathSegments.length - 1;
+    getRepositoryBasePath() {
+        // Determine if we're running locally or on GitHub Pages
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Local development - use relative paths from current directory
+            return this.getLocalBasePath();
         } else {
-            this.baseDepth = pathSegments.length;
+            // GitHub Pages - use absolute paths within repository
+            return `/${this.repositoryName}/`;
         }
     }
 
-    getCurrentFolder() {
+    getLocalBasePath() {
+        // For local development, calculate relative path based on current directory depth
         const pathSegments = this.currentPath.split('/').filter(segment => segment && segment !== 'index.html');
+        let depth = 0;
+        
+        const fileName = pathSegments[pathSegments.length - 1];
+        if (fileName && fileName.includes('.html')) {
+            depth = pathSegments.length - 1;
+        } else {
+            depth = pathSegments.length;
+        }
+        
+        if (depth === 0) {
+            return './';
+        }
+        return '../'.repeat(depth);
+    }
+
+    getCurrentFolder() {
+        // Remove repository name from path for analysis
+        let analysisPath = this.currentPath;
+        if (analysisPath.includes(`/${this.repositoryName}/`)) {
+            analysisPath = analysisPath.replace(`/${this.repositoryName}/`, '/');
+        }
+        
+        const pathSegments = analysisPath.split('/').filter(segment => segment && segment !== 'index.html');
         if (pathSegments.length > 0) {
             const fileName = pathSegments[pathSegments.length - 1];
             if (fileName && fileName.includes('.html')) {
@@ -46,22 +69,14 @@ class Navigation {
         return '';
     }
 
-    getBasePath() {
-        if (this.baseDepth === 0) {
-            return './';
-        }
-        return '../'.repeat(this.baseDepth);
-    }
-
     getMainNavItems() {
         // Auto-discover main navigation based on site structure
-        const basePath = this.getBasePath();
         const mainNav = [];
 
         // Always include Home
         mainNav.push({
             text: 'Home',
-            href: basePath,
+            href: this.basePath,
             id: 'home',
             isActive: this.currentPath.endsWith('index.html') || this.currentPath.endsWith('/') || this.currentPath.split('/').pop() === ''
         });
@@ -73,7 +88,7 @@ class Navigation {
         siteStructure.pages.forEach(page => {
             mainNav.push({
                 text: this.capitalize(page.replace('.html', '')),
-                href: basePath + page,
+                href: this.basePath + page,
                 id: page.replace('.html', ''),
                 isActive: this.currentPath.endsWith(page)
             });
@@ -82,7 +97,7 @@ class Navigation {
         siteStructure.folders.forEach(folder => {
             mainNav.push({
                 text: this.capitalize(folder),
-                href: basePath + folder + '.html',
+                href: this.basePath + folder + '.html',
                 id: folder,
                 isActive: this.currentFolder === folder
             });
@@ -150,9 +165,13 @@ class Navigation {
         
         if (this.currentFolder === 'posts') {
             // Auto-discover posts (in a real implementation, this would scan the folder)
+            const childBasePath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? './' 
+                : `${this.basePath}posts/`;
+                
             childPages.push({
                 text: 'Sample Post - Getting Started',
-                href: './sample-post.html',
+                href: childBasePath + 'sample-post.html',
                 id: 'sample-post'
             });
         }
