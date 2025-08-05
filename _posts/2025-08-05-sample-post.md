@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sample Post - Getting Started"
-date: 2025-08-05
+date: '2025-08-05'
 categories: posts
 ---
 

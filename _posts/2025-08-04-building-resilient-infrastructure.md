@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building Resilient IT Infrastructure for Growing Organizations"
-date: 2025-08-04
+date: '2025-08-04'
 categories: posts
 excerpt: "Lessons learned from rebuilding enterprise IT systems at scale. When your organization is growing from $185M to $300M in revenue, your infrastructure needs to be ready for the challenge."
 ---

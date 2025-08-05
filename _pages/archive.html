@@ -34,10 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const yearPosts = posts.filter(post => {
                 if (!post.date) return false;
-                // Handle both "August 05, 2025" and "2025-08-05" formats
-                const postYear = post.date.includes(',') ? 
-                    post.date.split(', ')[1] : 
-                    post.date.substring(0, 4);
+                // Extract year from various date formats
+                let postYear;
+                if (post.date.includes(',')) {
+                    // "February 04, 2012" format
+                    postYear = post.date.split(', ')[1];
+                } else if (post.date.includes('-')) {
+                    // "2012-02-04" format
+                    postYear = post.date.split('-')[0];
+                } else {
+                    // Fallback to first 4 digits
+                    const yearMatch = post.date.match(/\d{4}/);
+                    postYear = yearMatch ? yearMatch[0] : null;
+                }
                 const matches = postYear === year;
                 if (matches) {
                     console.log('Found matching post:', post.title, 'date:', post.date, 'year:', postYear);
@@ -104,14 +113,25 @@ function showAllArchives() {
             
             posts.forEach(post => {
                 if (post.date) {
-                    // Handle both "August 05, 2025" and "2025-08-05" formats
-                    const year = post.date.includes(',') ? 
-                        post.date.split(', ')[1] : 
-                        post.date.substring(0, 4);
-                    if (!years[year]) {
+                    // Extract year from various date formats
+                    let year;
+                    if (post.date.includes(',')) {
+                        // "February 04, 2012" format
+                        year = post.date.split(', ')[1];
+                    } else if (post.date.includes('-')) {
+                        // "2012-02-04" format
+                        year = post.date.split('-')[0];
+                    } else {
+                        // Fallback to first 4 digits
+                        const yearMatch = post.date.match(/\d{4}/);
+                        year = yearMatch ? yearMatch[0] : null;
+                    }
+                    if (year && !years[year]) {
                         years[year] = 0;
                     }
-                    years[year]++;
+                    if (year) {
+                        years[year]++;
+                    }
                 }
             });
             
