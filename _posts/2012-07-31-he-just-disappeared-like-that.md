@@ -23,7 +23,7 @@ The next day rolls around I came into the office and it was just like your avera
 
 One of the guys on our team was searching the local news websites and found this article. [Motorcyclist Dies In Apparent Hit-And-Run Crash](http://www.theindychannel.com/news/31269988/detail.html), everyone instantly became completely silent on the team worrying about the worst. We sat around for a couple of minutes before going back to the meeting room where the executives were, we let them know what was found and that this looked like the same motorcycle our boss drove. Our CSO said he would head to the hospital and keep us posted. We all returned to our desk to try and complete some work but found ourselves just staring at the screen wondering what could have happened, how could it have happened and that there was no way in hell that this happened.
 
-![]({{ site.baseurl }}/assets/img/Motorcyclist-Critically-Hurt-In-Apparent-Hit-And-Run-31270090_8961_ver1_0_320_240.jpg "Motorcyclist-Critically-Hurt-In-Apparent-Hit-And-Run-31270090_8961_ver1_0_320_240")
+![Motorcyclist Critically Hurt In Apparent Hit And Run]({{ site.baseurl }}/assets/img/Motorcyclist-Critically-Hurt-In-Apparent-Hit-And-Run-31270090_8961_ver1_0_320_240.jpg)
 
 We were in constant contact with the executives who were looking into this but before it was confirmed we were all almost certain because he always let us know he was going to work from home in the morning and it was getting close to the time we would have gone for our lunch meeting. At 10:29AM our CEO sent a message out to all employee’s letting them know that we believe he may have been in an accident the night before but we had not received confirmation, but were trying to reach his family. At 10:56AM we received confirmation from the CEO in a mass email to all employee’s that it was Mike and he had passed away last night after the accident.
 
@@ -31,7 +31,7 @@ At this point with confirmation we were feeling sick just sitting there thinking
 
 Once I got on the road I was able to clear my head a little bit and realize what had happened was real, it was very heart breaking to leave work that day and drive through the intersection along the same route he was driving the night before when he was killed by a hit and run driver. All I could think is we were going to have a nice lunch out, as a team, but now he is gone… in a blink of an eye he had his life taken away because of a stupid mistake someone made.
 
-![]({{ site.baseurl }}/assets/img/holcomb-profile.jpg "holcomb-profile")
+![Mike Holcomb]({{ site.baseurl }}/assets/img/holcomb-profile.jpg)
 
 When I got home I really didn’t do much and then I was receiving calls from work for things I needed to work on. No matter what happened I was still on call and still needed to provide top notch service to the best of my abilities. The issue I ran into was a bit complex and I must thank Jim and Nat who were on our SharePoint consulting team and helped me a tremendous amount.
 

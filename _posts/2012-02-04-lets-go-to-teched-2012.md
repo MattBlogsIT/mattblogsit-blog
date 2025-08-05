@@ -15,7 +15,7 @@ title: Lets Go To TechEd 2012!
 
 This week at work I was informed that I was approved to go to TechEd 2012! Last year was my first year going, and getting to go back again sounds fantastic to me because it is such a fun and educational time! However planning everything can get a bit tricky because there are so many hotels to choose from, and it gets a lot more complicated planning what all break-out sessions you want to go to. This article is written to help you get approval to go, and getting travel arrangements made. Once time gets closer to the actual convention I will be writing articles on ways to best plan your schedule there.
 
-![]({{ site.baseurl }}/assets/img/BLUE_msteched_250.png "BLUE_msteched_250")
+![TechEd 2012]({{ site.baseurl }}/assets/img/BLUE_msteched_250.png)
 
 <!--more-->
 

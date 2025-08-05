@@ -2,9 +2,7 @@
 categories:
 - oob
 date: '2012-11-06'
-excerpt: '[![]({{ site.baseurl }}/assets/img/captain_hindsight.jpg "captain_hindsight")]({{
-  site.baseurl }}/assets/img/11/captain_hindsight.jpg) On Thursday afternoon I started
-  receiving alerts that both of my...'
+excerpt: 'On Thursday afternoon I started receiving alerts that both of my personal websites had gone offline. My provider had been attacked and the hackers nuked the drives.'
 tags:
 - centos
 - vps
@@ -12,7 +10,7 @@ tags:
 title: Captain Hindsight! Always have Remote Backups!
 ---
 
-![]({{ site.baseurl }}/assets/img/captain_hindsight.jpg "captain_hindsight")
+![Captain Hindsight]({{ site.baseurl }}/assets/img/captain_hindsight.jpg)
 
 On Thursday afternoon I started receiving alerts that both of my personal websites had gone offline, which were on separate VPS Servers through the same provider. I thought this was quite unusual because it isn't usually simultaneous. Once I got home I looked into it and the servers were completely unreachable, I looked at my providers twitter and they had mentioned an attack on their servers that had been compromised. That is never a good sign!
 

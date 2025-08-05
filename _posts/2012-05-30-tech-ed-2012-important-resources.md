@@ -72,5 +72,5 @@ The final thing on my list seems a bit out of place, why would you want an empty
 - Camera (If you don’t use cell phone camera)
 - Empty suitcase (Unless you plan on shipping swag home)
 
-![TechEd 2011 Swag Suitcase (Was empty when I arrived)]({{ site.baseurl }}/assets/img/IMG_0403.jpg "IMG_0403")
+![TechEd 2011 Swag Suitcase (Was empty when I arrived)]({{ site.baseurl }}/assets/img/IMG_0403.jpg)
 *TechEd 2011 Swag Suitcase (Was empty when I arrived)*
