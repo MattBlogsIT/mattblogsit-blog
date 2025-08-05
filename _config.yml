@@ -7,9 +7,15 @@ baseurl: "/mattblogsit-dev"
 url: "https://mattgrif.github.io"
 
 # Build settings
+markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Plugins
+safe: true
+incremental: false
 
 # Permalink settings
 permalink: /:categories/:title/
@@ -38,3 +44,15 @@ exclude:
   - _backup/
   - README.md
   - js/navigation.js
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - about.html
+  - contact.html
+  - index.html
+  - posts.html
+  - posts/
