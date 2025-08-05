@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Windows Management Framework 5.0 May 2014 Preview - Matt Blogs IT</title>
+    <meta name="description" content="The Windows Management Framework 5.0 Preview was released in early April, and an update to it was posted during Microsoft TechEd in May. Some major things ar...">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Matt Blogs IT" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Exploring Windows Management Framework 5.0 May 2014 Preview | Matt Blogs IT</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Exploring Windows Management Framework 5.0 May 2014 Preview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Windows Management Framework 5.0 Preview was released in early April, and an update to it was posted during Microsoft TechEd in May. Some major things are changing with PowerShell; the main one being that new versions of PowerShell are not going to be tied to major OS releases. PowerShell will be released as it is ready, and then added into the OS for the latest version." />
+<meta property="og:description" content="The Windows Management Framework 5.0 Preview was released in early April, and an update to it was posted during Microsoft TechEd in May. Some major things are changing with PowerShell; the main one being that new versions of PowerShell are not going to be tied to major OS releases. PowerShell will be released as it is ready, and then added into the OS for the latest version." />
+<link rel="canonical" href="http://0.0.0.0:4000/exploring-windows-management-framework-5-0-may-2014-preview/" />
+<meta property="og:url" content="http://0.0.0.0:4000/exploring-windows-management-framework-5-0-may-2014-preview/" />
+<meta property="og:site_name" content="Matt Blogs IT" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-06-01T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Exploring Windows Management Framework 5.0 May 2014 Preview" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2014-06-01T00:00:00-07:00","datePublished":"2014-06-01T00:00:00-07:00","description":"The Windows Management Framework 5.0 Preview was released in early April, and an update to it was posted during Microsoft TechEd in May. Some major things are changing with PowerShell; the main one being that new versions of PowerShell are not going to be tied to major OS releases. PowerShell will be released as it is ready, and then added into the OS for the latest version.","headline":"Exploring Windows Management Framework 5.0 May 2014 Preview","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/exploring-windows-management-framework-5-0-may-2014-preview/"},"url":"http://0.0.0.0:4000/exploring-windows-management-framework-5-0-may-2014-preview/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Matt Blogs IT</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/about-me/">About</a>
+                <a href="/archive/">Archive</a>
+                <a href="/contact-me/">Contact</a>
+                <a href="/my-credentials/">Credentials</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Exploring Windows Management Framework 5.0 May 2014 Preview</h1>
+        <p class="post-meta">
+            <time datetime="2014-06-01T00:00:00-07:00" itemprop="datePublished">
+                June 01, 2014
+            </time>
+            
+                | Categories: 
+                
+                    <span class="category">administrator</span>, 
+                
+                    <span class="category">microsoft</span>
+                
+            
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        <p>The Windows Management Framework 5.0 Preview was released in early April, and an update to it was posted during Microsoft TechEd in May. Some major things are changing with PowerShell; the main one being that new versions of PowerShell are not going to be tied to major OS releases. PowerShell will be released as it is ready, and then added into the OS for the latest version.</p>
+
+<p>Two of the major changes with PowerShell v5.0 include two new modules; the OneGet Module and the PowerShellGet Module. In this blog post we are going to explore some of the basics for these modules. If you would like to play with the Windows Management Framework 5.0, if can be downloaded from the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42936">Microsoft Download Center</a>. Please note that this is preview code and should not be used in production. You are using this at your own risk and I strongly encourage testing it on the VM until the final code is released.</p>
+
+<p>Please note that this is just a very quick overview of the modules and we will dive into more depth on them in upcoming blog posts.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/psv5.png"><img src="/assets/images/posts/psv5.png" alt="psv5" /></a><!--more--></p>
+
+<p> </p>
+
+<h1 id="powershell-oneget-module">PowerShell OneGet Module:</h1>
+
+<p>The PowerShell OneGet Module was available in the April preview of the WMF 5.0. The OneGet Module is used as a method to obtain software in an automated fashion; very similar to YUM (Yellowdog Updated, Modified) or APT-GET (Advanced Packaging Tool) that you would have used while working with Linux distributions. While in a Windows World you may have worked with the <a href="http://chocolatey.org/">Chocolatey Gallery</a> which is a NuGet based package installer.</p>
+
+<p>I personally have been using Chocolatey for about a year now, and I am very excited to see OneGet coming along. It is even more exciting to see that Microsoft isn’t just ignoring the existence of Chocolatey, they are using it as their first publicly available software repository.</p>
+
+<h2 id="the-cmdlets">The Cmdlet’s:</h2>
+
+<p>Currently detailed Help documents do not exist for the below cmdlets. I’ve provided a quick summary of what these cmdlets can do from what I’ve gathered by analyzing the parameters available with them.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/OneGetCmdlets.png"><img src="/assets/images/posts/OneGetCmdlets.png" alt="OneGetCmdlets" /></a></p>
+
+<h3 id="add-packagesource">Add-PackageSource</h3>
+
+<p>Add-PackageSource will add additional sources outside of the default ones provided with PowerShell OneGet. The below parameters are available.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/add-packagesource.png"><img src="/assets/images/posts/add-packagesource.png" alt="add-packagesource" /></a></p>
+
+<h3 id="find-package">Find-Package</h3>
+
+<p>Fine-Package will perform a search of multiple Package Sources with ability to filter by Version, Name, Provider, and Source. On top of the parameters that the Get-help returns it also has additional Parameters in including…</p>
+
+<ul>
+  <li>AllowPrereleaseVersions</li>
+  <li>AllVersions</li>
+  <li>LocalOnly</li>
+  <li>Hint</li>
+  <li>LeavePartialPackageInstalled</li>
+</ul>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/find-package.png"><img src="/assets/images/posts/find-package.png" alt="find-package" /></a></p>
+
+<h3 id="get-package">Get-Package</h3>
+
+<p>Get-Package will return a list of all packages currently installed with a few parameters you can use to filter the results a bit.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/get-package.png"><img src="/assets/images/posts/get-package.png" alt="get-package" /></a></p>
+
+<h3 id="get-packagesource">Get-PackageSource</h3>
+
+<p>Get-PackageSource will return a list of PackageSource repositories that you have setup with OneGet. It includes some minor filtering parameters you can use.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Get-PackageSource.png"><img src="/assets/images/posts/Get-PackageSource.png" alt="Get-PackageSource" /></a></p>
+
+<h3 id="install-package">Install-Package</h3>
+
+<p>This is one of the more self explanatory cmdlets included with the OneGet Module. This will install a package that you specify or multiple packages that you specify. This cmdlet includes quite a few parameters that you can use to filter for where you want the package installed from all the way down to exactly which version of the package you want installed.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Install-Package.png"><img src="/assets/images/posts/Install-Package-959x1024.png" alt="Install-Package" /></a></p>
+
+<h3 id="remove-packagesource">Remove-PackageSource</h3>
+
+<p>Remove-PackageSource is used to remove package repositories that have been added to your OneGet Module.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Remove-PackageSource.png"><img src="/assets/images/posts/Remove-PackageSource.png" alt="Remove-PackageSource" /></a></p>
+
+<h3 id="uninstall-package">Uninstall-Package</h3>
+
+<p>Another fairly self explanatory cmdlet. This will uninstall a package that you have previously installed using OneGet.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Uninstall-Package.png"><img src="/assets/images/posts/Uninstall-Package.png" alt="Uninstall-Package" /></a></p>
+
+<h1 id="powershellget-module">PowerShellGet Module:</h1>
+
+<p>The PowerShellGet Module is new in the May preview and is similar to OneGet in the manor that it will automatically download files for you and place them in the correct folder. The big difference between OneGet and PowerShellGet is that PowerShellGet is used to download PowerShell Modules from a trusted repository hosted by Microsoft. Currently there isn’t much in the repository, only 62 modules with 18 of them being experimental currently.</p>
+
+<h2 id="the-cmdlets-1">The Cmdlet’s:</h2>
+
+<p>The nice thing about the PowerShellGet Module is that a lot of the help is already available if you run an Update-Help. The Module includes only 4 cmdlets, but that is all it really needs.</p>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/PowerShellGetCmdlets.png"><img src="/assets/images/posts/PowerShellGetCmdlets.png" alt="PowerShellGetCmdlets" /></a></p>
+
+<h3 id="find-module">Find-Module</h3>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Find-Module.png"><img src="/assets/images/posts/Find-Module.png" alt="Find-Module" /></a></p>
+
+<h3 id="install-module">Install-Module</h3>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Install-Module.png"><img src="/assets/images/posts/Install-Module.png" alt="Install-Module" /></a></p>
+
+<h3 id="publish-module">Publish-Module</h3>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Publish-Module.png"><img src="/assets/images/posts/Publish-Module-876x1024.png" alt="Publish-Module" /></a></p>
+
+<h3 id="update-module">Update-Module</h3>
+
+<p><a href="http://mattblogsit.com/wp-content/uploads/2014/06/Update-Module.png"><img src="/assets/images/posts/Update-Module.png" alt="Update-Module" /></a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        <strong>Tags:</strong>
+        
+            <span class="tag">powershell</span>, 
+        
+            <span class="tag">powershell-v5</span>, 
+        
+            <span class="tag">server-2012-r2</span>, 
+        
+            <span class="tag">windows-management-framework-5-0</span>
+        
+    </div>
+    
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Matt Blogs IT. All rights reserved.</p>
+            <p>
+                
+                <a href="https://github.com/mattgriffin">GitHub</a> |
+                
+                
+                <a href="https://twitter.com/mattgriffinit">Twitter</a>
+                
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

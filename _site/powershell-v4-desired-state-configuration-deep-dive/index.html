@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell v4 Desired State Configuration Deep Dive - Matt Blogs IT</title>
+    <meta name="description" content="During my time at Microsoft TechEd many new things were announced. My all time favorite announcement was PowerShell v4. There are many great things coming ou...">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Matt Blogs IT" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PowerShell v4 Desired State Configuration Deep Dive | Matt Blogs IT</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PowerShell v4 Desired State Configuration Deep Dive" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="During my time at Microsoft TechEd many new things were announced. My all time favorite announcement was PowerShell v4. There are many great things coming out with PowerShell v4, things that I haven’t really gotten a chance to dig into much yet. However the one of the few things I have run through would be the Desired State Configuration which I will refer to as DSC throughout this blog." />
+<meta property="og:description" content="During my time at Microsoft TechEd many new things were announced. My all time favorite announcement was PowerShell v4. There are many great things coming out with PowerShell v4, things that I haven’t really gotten a chance to dig into much yet. However the one of the few things I have run through would be the Desired State Configuration which I will refer to as DSC throughout this blog." />
+<link rel="canonical" href="http://0.0.0.0:4000/powershell-v4-desired-state-configuration-deep-dive/" />
+<meta property="og:url" content="http://0.0.0.0:4000/powershell-v4-desired-state-configuration-deep-dive/" />
+<meta property="og:site_name" content="Matt Blogs IT" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-01T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PowerShell v4 Desired State Configuration Deep Dive" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2013-07-01T00:00:00-07:00","datePublished":"2013-07-01T00:00:00-07:00","description":"During my time at Microsoft TechEd many new things were announced. My all time favorite announcement was PowerShell v4. There are many great things coming out with PowerShell v4, things that I haven’t really gotten a chance to dig into much yet. However the one of the few things I have run through would be the Desired State Configuration which I will refer to as DSC throughout this blog.","headline":"PowerShell v4 Desired State Configuration Deep Dive","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/powershell-v4-desired-state-configuration-deep-dive/"},"url":"http://0.0.0.0:4000/powershell-v4-desired-state-configuration-deep-dive/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Matt Blogs IT</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/about-me/">About</a>
+                <a href="/archive/">Archive</a>
+                <a href="/contact-me/">Contact</a>
+                <a href="/my-credentials/">Credentials</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">PowerShell v4 Desired State Configuration Deep Dive</h1>
+        <p class="post-meta">
+            <time datetime="2013-07-01T00:00:00-07:00" itemprop="datePublished">
+                July 01, 2013
+            </time>
+            
+                | Categories: 
+                
+                    <span class="category">administrator</span>, 
+                
+                    <span class="category">microsoft</span>
+                
+            
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        <p>During my time at Microsoft TechEd many new things were announced. My all time favorite announcement was PowerShell v4. There are many great things coming out with PowerShell v4, things that I haven’t really gotten a chance to dig into much yet. However the one of the few things I have run through would be the Desired State Configuration which I will refer to as DSC throughout this blog.</p>
+
+<p>DSC is a way to manage the configuration for multiple servers utilizing a single script for the deployment. In the example I will use is managing an IIS Configuration across multiple servers. However as the DSC is developed there will be other usability options for this.<!--more--></p>
+
+<h1 id="step-outline">Step Outline:</h1>
+
+<p>The DSC requires a couple of steps. It isn’t just a single script you create and execute; but it is very close.</p>
+
+<ol>
+  <li>Create a DSC script.</li>
+  <li>Execute DSC script to create DSC file (MOF File).</li>
+  <li>Deploy and enact Desired State Configuration file to server(s)</li>
+</ol>
+
+<h2 id="step-1-creating-a-desired-state-configuration-file">Step 1: Creating a Desired State Configuration File</h2>
+
+<p>The first step, in utilizing the DSC is creating the DSC Script. This script is used to generate the DSC file which is a MOF document. To create the DSC Script you can simply open the PowerShell ISE and start writing PowerShell utilizing a couple of new keywords and identifiers.</p>
+
+<p>You will notice in the below example script the keyword configuration, with a nested identifier of Node.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration MattBlogsITDemo
+{
+    Node Server1
+    {
+        WindowsFeature IIS
+        {
+            Ensure = "Present"
+            Name = "Web-Server"
+        }
+
+        WindowsFeature ASP
+        {
+            Ensure = "Present"
+            Name = "Web-Asp-Net45"
+        }
+
+        Website DefaultSite
+        {
+            Ensure = "Present"
+            Name = "Default Web Site"
+            PhysicalPath = "C:\inetpub\wwwroot"
+            State = "Stopped"
+            Requires = "[WindowsFeature]IIS"
+        }
+
+        File WebContent
+        {
+            Ensure = "Present"
+            Type = "Directory"
+            SourcePath = "\\fileserver01\WebContent\DemoSite"
+            DestinationPath = "D:\websites\DemoSite"
+            Recurse = $true
+        }
+
+        Website DemoSite
+        {
+            Ensure = "Present"
+            Name = "DemoSite"
+            PhysicalPath = "D:\websites\DemoSite"
+            State = "Started"
+            Protocol = @("http")
+            BindingInfo = @("*:80:")
+            Requires = "[File]WebContent"
+        }
+    }
+}
+</code></pre></div></div>
+
+<h2 id="step-2execute-dscscript-to-create-dsc-mof-configuration-file">Step 2: Execute DSC script to create DSC (MOF Configuration File)</h2>
+
+<p>Once you have finalized, or possibly updated your DSC Script you now have to generate the MOF Configuration File that is actually used to perform the deployment. When you are ready to create this file all you must do is execute the script you created in step one.</p>
+
+<h2 id="step-3deploy-and-enact-desired-state-configuration-file-to-servers">Step 3: Deploy and enact Desired State Configuration file to server(s)</h2>
+
+<p>Once you have setup your script, and created the MOF Configuration File all you have to do is execute a single cmdlet and it will run and deploy to 1-many servers depending on the script.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start-DscConfiguration -ComputerName -Path MattBlogsITDemo -Credential Get-Credential
+</code></pre></div></div>
+
+<h2 id="summary">Summary:</h2>
+
+<p>Overall this is a fantastic new feature and will make a big difference for maintaining a standard configuration across an entire environment. You can combine this with Azure cmdlets and automate the deployment of web servers as your environment starts taking a much higher load.</p>
+
+<p><strong>Note: I used the following <a href="http://technet.microsoft.com/en-us/library/dn249918.aspx">TechNet Article</a> and HOL I attended at TechEd to assist in writing this.</strong></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        <strong>Tags:</strong>
+        
+            <span class="tag">indyposh</span>, 
+        
+            <span class="tag">powershell</span>, 
+        
+            <span class="tag">powershell-v4</span>, 
+        
+            <span class="tag">scripting</span>, 
+        
+            <span class="tag">server-2012-r2</span>, 
+        
+            <span class="tag">teched</span>
+        
+    </div>
+    
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Matt Blogs IT. All rights reserved.</p>
+            <p>
+                
+                <a href="https://github.com/mattgriffin">GitHub</a> |
+                
+                
+                <a href="https://twitter.com/mattgriffinit">Twitter</a>
+                
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

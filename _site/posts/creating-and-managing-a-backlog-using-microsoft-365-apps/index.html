@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Managing a Backlog using Microsoft 365 Apps - Matt Blogs IT</title>
+    <meta name="description" content="A blog about IT, technology, and life by Matt Griffin.">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Matt Blogs IT" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Creating and Managing a Backlog using Microsoft 365 Apps | Matt Blogs IT</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Creating and Managing a Backlog using Microsoft 365 Apps" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A blog about IT, technology, and life by Matt Griffin." />
+<meta property="og:description" content="A blog about IT, technology, and life by Matt Griffin." />
+<link rel="canonical" href="http://0.0.0.0:4000/posts/creating-and-managing-a-backlog-using-microsoft-365-apps/" />
+<meta property="og:url" content="http://0.0.0.0:4000/posts/creating-and-managing-a-backlog-using-microsoft-365-apps/" />
+<meta property="og:site_name" content="Matt Blogs IT" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-18T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Creating and Managing a Backlog using Microsoft 365 Apps" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-18T00:00:00-07:00","datePublished":"2020-06-18T00:00:00-07:00","description":"A blog about IT, technology, and life by Matt Griffin.","headline":"Creating and Managing a Backlog using Microsoft 365 Apps","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/posts/creating-and-managing-a-backlog-using-microsoft-365-apps/"},"url":"http://0.0.0.0:4000/posts/creating-and-managing-a-backlog-using-microsoft-365-apps/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="/">Matt Blogs IT</a>
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/about-me/">About</a>
+                <a href="/archive/">Archive</a>
+                <a href="/contact-me/">Contact</a>
+                <a href="/my-credentials/">Credentials</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="page">
+    <header class="page-header">
+        <h1 class="page-title">Creating and Managing a Backlog using Microsoft 365 Apps</h1>
+    </header>
+
+    <div class="page-content">
+        <p>In the last few months, I’ve spent a lot of time organizing and planning. Most of this time was spent on my personal life organization around the house, but contrary to my most recent blog posts, “<a href="https://mattblogsit.com/microsoft/getting-things-done-while-working-from-home-using-microsoft-to-do">Getting things done while working from home using Microsoft To Do!</a>” and “<a href="https://mattblogsit.com/oob/organizing-life-while-trapped-at-home-during-covid-19">Organizing life, while trapped at home during COVID-19.</a>” I have also put a significant focus on organizing tasks at work. </p>
+
+<p>I want to walk you through how I’ve created a workflow for incoming requests for training videos using Microsoft Forms, automated notifications using Power Automate, into Microsoft Teams, and automated the tracking inside of Microsoft Planner. All of this accomplished with our existing licensing with an Office 365 E3 license.</p>
+
+<!--more-->
+
+<h1 id="microsoft-forms">Microsoft Forms</h1>
+
+<p>Let’s start with how we will use Microsoft Forms. My use case was a simple data capture tool that I could share with people inside my organization; we could expand this and make it available to anyone, but that wasn’t necessary for my target audience.</p>
+
+<ol>
+  <li>Navigate to <a href="https://forms.microsoft.com">https://forms.microsoft.com</a></li>
+  <li>Login using an Organization Account</li>
+  <li>Click <strong>New Form</strong></li>
+  <li>Name it, in my example. I will name it <strong>Training Requests</strong></li>
+  <li>Give it an optional description. When I did this at work, I provided our training philosophy for our training videos. That way, it would help our audience understand what we would accept and develop.</li>
+  <li>Click <strong>Add new</strong> and select <strong>Text</strong></li>
+  <li>Title question <strong>Proposed Topic</strong></li>
+  <li>Select option for <strong>Required</strong></li>
+  <li>Click <strong>Add new</strong> and select <strong>Text</strong></li>
+  <li>Select option for <strong>Long answer</strong></li>
+  <li>Click <strong>Share</strong></li>
+  <li>Click <strong>Copy</strong></li>
+</ol>
+
+<p>The link you copied will be the link you send to people you want to have send requests to you.</p>
+
+<p>Now that you have created the Microsoft Form, you need to add it to the Microsoft (Office) 365 Group for the Microsoft Team you want to notify. We will not cover creating the group as I am assuming you already have one setup.</p>
+
+<ol>
+  <li>Navigate to <a href="https://forms.microsoft.com">https://forms.microsoft.com</a></li>
+  <li>On the Form you just created click the <strong>… in the top right of the Form</strong></li>
+  <li>Click <strong>Move</strong></li>
+  <li>Select the <strong>Microsoft (Office) 365 Group for your Microsoft Team</strong></li>
+  <li>Click <strong>Move</strong></li>
+</ol>
+
+<h1 id="microsoft-teamsplanner">Microsoft Teams/Planner</h1>
+
+<p>I’ve combined the Microsoft Teams and Microsoft Planner section, because we will be creating the Microsoft Planner Plan through the Microsoft Teams interface.</p>
+
+<ol>
+  <li>Open and login to Microsoft Teams</li>
+  <li>Click <strong>Teams</strong></li>
+  <li>Select the Team you want to have the requests routed to</li>
+  <li>(Optional) Create a channel for Incoming Requests</li>
+  <li>Click the <strong>+</strong> (Add app) icon at the top of the channel</li>
+  <li>Select <strong>Planner</strong></li>
+  <li>Give the Plan a name and click <strong>Save</strong></li>
+  <li>Rename and create buckets as you see fit. I use the following buckets
+    <ol>
+      <li>Requested</li>
+      <li>Script Development</li>
+      <li>Recording</li>
+      <li>Post-Production</li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="power-automate">Power Automate</h1>
+
+<p>Now we will bring it all together using Microsoft Power Automate. We will automatically Trigger the Flow when new items get submitted to the Form. We will post a message to a Teams Channel and add a Task to the Plan we created in Microsoft Teams.</p>
+
+<ol>
+  <li>Navigate to <a href="https://flow.microsoft.com">https://flow.microsoft.com</a></li>
+  <li>Login using an Organization Account</li>
+  <li>Click <strong>+ Create</strong></li>
+  <li>Click <strong>Automated flow</strong></li>
+  <li>Give the flow a descriptive name</li>
+  <li>for <strong>Choose your flow’s trigger</strong> search for <strong>Microsoft Forms</strong></li>
+  <li>Click <strong>When a new response is submitted</strong></li>
+  <li>Click <strong>Create</strong></li>
+  <li>Since you moved the Form to a Microsoft 365 Group, it will not show up in the dropdown. You will need to get the <strong>Form Id</strong> manually.</li>
+  <li>Login to <a href="https://forms.office.com">https://forms.office.com</a></li>
+  <li>Click <strong>Group forms</strong></li>
+  <li>Find the form you created earlier and click it.</li>
+  <li>Look at the URL to find the FormId
+    <ol>
+      <li>Ex: <a href="https://forms.office.com/Pages/DesignPage.aspx#FormId=mm7pT_FwhUGH6U47xwWi4B8otnoioudNozhEJ4HloBJUNEdEWElXWFVGS0hZNjU1Tjc4VFBEMVI0RSQlQCN0PWcu">https://forms.office.com/Pages/DesignPage.aspx#FormId=mm7pT_FwhUGH6U47YYYYYY8otnoioudNozhEJ4HloBJUNEdEWElXWFVGS0hZNjU1Tjc4VFBXXXXXQlQCN0PWcu</a></li>
+    </ol>
+  </li>
+  <li>Copy the long string after <strong>FormId=</strong></li>
+  <li>Paste the string into your Flow</li>
+  <li>Click <strong>+ New step</strong></li>
+  <li>Search <strong>Forms</strong></li>
+  <li>Click <strong>Get response details</strong></li>
+  <li>Paste the <strong>FormId</strong> in</li>
+  <li>For <strong>Response Id,</strong> select the Dynamic content for <strong>Response Id</strong></li>
+  <li>Click <strong>+ New step</strong></li>
+  <li>Search <strong>Planner</strong></li>
+  <li>Click <strong>Create a task</strong></li>
+  <li>Select the <strong>Plan Id</strong> that you created earlier in Microsoft Teams</li>
+  <li>For <strong>Title,</strong> select the Dynamic content for <strong>Proposed Topic</strong></li>
+  <li>For <strong>Bucket Id,</strong> Select <strong>Requested</strong>, or whatever you named your first bucket that you want requests to go to.</li>
+  <li>For <strong>Start Date Time,</strong> select the Dynamic content for <strong>Submission time</strong></li>
+  <li>Click <strong>+ New step</strong></li>
+  <li>Search <strong>Terminate</strong></li>
+  <li>Click <strong>Terminate</strong></li>
+  <li>Set <strong>Status</strong> to <strong>Succeeded</strong></li>
+  <li>Above the Terminate step click the <strong>+</strong> icon between steps</li>
+  <li>Click <strong>Add a parallel branch</strong></li>
+  <li>On the other leg of the branch search <strong>Post a message</strong></li>
+  <li>Click <strong>Post a message (V3) (preview)</strong> - note: depending on when you read this, it may no longer be in preview</li>
+  <li>For <strong>Team,</strong> select the team you used earlier to create the Microsoft Planner Plan</li>
+  <li>For <strong>Channel,</strong> select the Incoming Requests channel you created earlier, or the channel you wish to send notifications to for new requests.</li>
+  <li>For <strong>Message</strong>, add Dynamic content from the <strong>Get response details</strong> section for <strong>Responders’ Email</strong>, then add text along the lines of “has submitted a training request for “ and add Dynamic content from the <strong>Get response details</strong> section for <strong>Proposed Topic</strong>.</li>
+</ol>
+
+<p>Woohoo! That was a lot, but now when someone submits a topic proposal, it will kick off a flow that will do the following.</p>
+
+<ol>
+  <li>Add task to planner about Proposed Topic</li>
+  <li>Notify team in Microsoft Teams</li>
+</ol>
+
+<p>Plus, you will be able to manage the requests throughout its entire lifecycle!</p>
+
+    </div>
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Matt Blogs IT. All rights reserved.</p>
+            <p>
+                
+                <a href="https://github.com/mattgriffin">GitHub</a> |
+                
+                
+                <a href="https://twitter.com/mattgriffinit">Twitter</a>
+                
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

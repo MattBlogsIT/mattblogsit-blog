@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-08-04T19:02:27-07:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Matt Blogs IT</title><subtitle>A blog about IT, technology, and life by Matt Griffin.</subtitle><entry><title type="html">COVID is getting better, right?</title><link href="http://0.0.0.0:4000/covid-is-getting-better-right/" rel="alternate" type="text/html" title="COVID is getting better, right?" /><published>2020-10-27T00:00:00-07:00</published><updated>2020-10-27T00:00:00-07:00</updated><id>http://0.0.0.0:4000/covid-is-getting-better-right</id><content type="html" xml:base="http://0.0.0.0:4000/covid-is-getting-better-right/"><![CDATA[<p>I’ve been asked this question directly by more than one person, simply because I have friends who didn’t understand why I am still staying extremely socially distant. Why would they know? They are back in the office and doing ‘business as usual.’ I’ve even had some tongue-in-cheek remarks about traveling the world since I am not going into the office.</p>
+
+<p>I finally figured out how to describe why I take COVID-19 so seriously, and I wanted to share it with everyone.</p>
+
+<p>Let’s take a common cold, for example. If a perfectly healthy person gets a cold, they are out sick for a day or two. For me, it is 3-4 days.</p>
+
+<p>Let’s take it up a level, last time I had the flu, can you guess how long I was out of commission? I’d say that a week is a pretty bad case of the flu for a perfectly healthy person. The last time I had it, I was bed-ridden for a week and hardly moved around the house for another five days. My total recovery time, almost two weeks!</p>
+
+<p>Now the reason my recovery is extended when I am sick is due to having Muscular Dystrophy. I know the spectrum of symptoms people get from COVID-19 is vast, from an annoying cough to life-threatening. However, considering I have pre-existing conditions that could significantly complicate those symptoms.</p>
+
+<p>I choose to protect myself and try to reduce the spread of COVID-19, and I would ask anyone who knows me or anyone with a pre-existing condition to do the same. Wear a mask, socially distance, and the most honorable thing? <a href="https://www.youtube.com/watch?v=U_Vg_9jDuX8">Stay the f**k at home (uncensored video in link)</a>.</p>
+
+<figure>
+
+![matt in a mask at a doctor appointment](/assets/images/posts/20200925_153629943_iOS-576x1024.jpg)
+
+<figcaption>
+
+One of my few outings when I had to go to the Doctor for some testing - testing I delayed for months due to COVID-19.
+
+</figcaption>
+
+</figure>]]></content><author><name></name></author><category term="oob" /><category term="covid-19" /><summary type="html"><![CDATA[I’ve been asked this question directly by more than one person, simply because I have friends who didn’t understand why I am still staying extremely socially distant. Why would they know? They are back in the office and doing ‘business as usual.’ I’ve even had some tongue-in-cheek remarks about traveling the world since I am not going into the office.]]></summary></entry><entry><title type="html">Microsoft Teams The Hub for Modern Collaboration</title><link href="http://0.0.0.0:4000/microsoft-teams-the-hub-for-modern-collaboration/" rel="alternate" type="text/html" title="Microsoft Teams The Hub for Modern Collaboration" /><published>2020-10-01T00:00:00-07:00</published><updated>2020-10-01T00:00:00-07:00</updated><id>http://0.0.0.0:4000/microsoft-teams-the-hub-for-modern-collaboration</id><content type="html" xml:base="http://0.0.0.0:4000/microsoft-teams-the-hub-for-modern-collaboration/"><![CDATA[<p>We are getting deep and will wrap up the Modern Collaboration blog series by tying all of the products we have discussed together using Microsoft Teams as our hub! Before we do that, I’d recommend checking out the previous posts from this blog series below.</p>
+
+<ol>
+  <li><a href="https://mattblogsit.com/microsoft/what-is-modern-collaboration-and-how-does-it-impact-business">What is Modern Collaboration, and how does it impact business?</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams">Modern Collaboration with Microsoft OneDrive, SharePoint, and Teams!</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint">Accessing and Saving Files in OneDrive for Business and SharePoint</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-sharing-files-in-onedrive-for-business-and-sharepoint">Sharing Files in OneDrive for Business and SharePoint</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/restore-previous-versions-and-deleted-files-from-onedrive-for-business-and-sharepoint">Restore Previous Versions and Deleted Files from OneDrive for Business and SharePoint</a></li>
+</ol>
+
+<p>Now let’s dive into Microsoft Teams as a hub for collaboration!</p>
+
+<h1 id="what-is-microsoft-teams">What is Microsoft Teams</h1>
+
+<p>In our first blog post, I introduced Microsoft Teams as a basic chat application that integrates with other web applications. This description is an oversimplification. Ultimately it is designed to be your one-pane-of-glass into everything productivity. It does a surprisingly good job of this and is getting better every day with new third-party integrations in my experience. </p>
+
+<h1 id="bringing-modern-collaboration-together-with-teams">Bringing Modern Collaboration Together with Teams</h1>
+
+<p>Throughout this blog series, we have focused on files in OneDrive for Business and SharePoint. The reason being is collaboration can mean countless things depending on what your job functions all. However, the most common collaboration is working on Office Documents with people on your team and inside your organization. </p>
+
+<p>Using Microsoft Teams brings together many pieces of the Office 365 suite, including a Shared Mailbox, a Distribution List, a Shared Calendar, a Shared OneNote Notebook, and shared Files, all together in a single entity, where you can manage the permissions. Additionally, you can use the Microsoft Teams Application to chat and collaborate with your Team in a single pane of glass.</p>
+
+<p>With a couple of clicks, you can upload a Word, Excel, or PowerPoint document into a team’s channel, and solicit feedback and collaboration from your team. In real-time, spread across the entire world, from almost any device, your team can open that document, make changes, and see the changes the other team members are making.</p>
+
+<h1 id="organizing-teams">Organizing Teams</h1>
+
+<p>Microsoft Teams helps organize your collaboration into what else, Teams! Trying to understand the difference between Microsoft Teams and a Team inside Microsoft Teams can confuse people when describing where to find something. I always try to be clear when discussing the application and say Microsoft Teams. When talking about the different collaboration groups inside of Microsoft Teams, it is when I say, Teams.</p>
+
+<p>How you organize your Teams inside Microsoft Teams is most comfortable to understand when talking about raw permissions. If I add someone to my Team, everyone in my Team can see all the files, conversations, and apps added to the Team. They may be broken up by location, department, project, or any group you need to collaborate with and keep the data secured within that group.</p>
+
+<p>You can take your organization of the Team even further by creating Channels. Channels are like folders when you think about organizing your files; however, inside of Microsoft Teams is breaks not just your files up, it also helps you organize conversations, apps, and overall how you want to collaborate. Inside of your Team, you can structure your channels; however, you and your Team believe is best.</p>
+
+<p>By default, every Team has a General channel. I always recommend starting there and identifying additional channel needs. Maybe your department has a Team, and you have a small internal project that you want to keep organized within its own channel. Suppose this project will involve people from outside your department. You may want to consider creating a Team just for it.</p>
+
+<h1 id="creating-a-team">Creating a Team</h1>
+
+<p>Creating a Team is easy! Assuming your organization has not blocked this functionality, you can open Microsoft Teams, click Teams, and at the bottom will be a button to “Join or create a team.”</p>
+
+<p>There are many more things we could dive into in specific use-cases on how to collaborate in Microsoft Teams, and I’d love to engage with you to find out the best way for you to get the job done; please reach out! This will be the conclusion of our Modern Collaboration blog series, and I hope you learned a few things and have some general ideas into the possibilities it unlocks.</p>]]></content><author><name></name></author><category term="microsoft" /><category term="user" /><category term="microsoft-365" /><category term="microsoft-teams" /><category term="modern-collaboration" /><category term="office-365" /><summary type="html"><![CDATA[We are getting deep and will wrap up the Modern Collaboration blog series by tying all of the products we have discussed together using Microsoft Teams as our hub! Before we do that, I’d recommend checking out the previous posts from this blog series below.]]></summary></entry><entry><title type="html">Restore Previous Versions and Deleted Files from OneDrive for Business and SharePoint</title><link href="http://0.0.0.0:4000/restore-previous-versions-and-deleted-files-from-onedrive-for-business-and-sharepoint/" rel="alternate" type="text/html" title="Restore Previous Versions and Deleted Files from OneDrive for Business and SharePoint" /><published>2020-09-15T00:00:00-07:00</published><updated>2020-09-15T00:00:00-07:00</updated><id>http://0.0.0.0:4000/restore-previous-versions-and-deleted-files-from-onedrive-for-business-and-sharepoint</id><content type="html" xml:base="http://0.0.0.0:4000/restore-previous-versions-and-deleted-files-from-onedrive-for-business-and-sharepoint/"><![CDATA[<p>We are getting deep into the Modern Collaboration blog series. If you haven’t read the previous articles, I’d strongly recommend starting from the beginning.</p>
+
+<ol>
+  <li><a href="https://mattblogsit.com/microsoft/what-is-modern-collaboration-and-how-does-it-impact-business">What is Modern Collaboration, and how does it impact business?</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams">Modern Collaboration with Microsoft OneDrive, SharePoint, and Teams!</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint">Modern Collaboration: Accessing and Saving Files in OneDrive for Business and SharePoint</a></li>
+  <li><a href="https://mattblogsit.com/microsoft/modern-collaboration-sharing-files-in-onedrive-for-business-and-sharepoint">Modern Collaboration: Sharing Files in OneDrive for Business and SharePoint</a></li>
+</ol>
+
+<p>As you can see, we are diving into the how-to part of this blog series, and we will continue diving into OneDrive and SharePoint, focusing on restoring previous and deleted versions of files.</p>
+
+<h1 id="reverting-to-old-versions-of-the-file">Reverting to old versions of the file</h1>
+
+<p>Reverting files can be useful when you work on a file and decide you want to see an older copy. It becomes critical when you are collaborating with a group of people on the same document. Co-authoring is incredibly useful, especially when trying to accomplish work from anywhere on any device. You may not always be in the same physical office as your co-collaborators, and co-authoring office documents gives you the ability to accomplish the same task.</p>
+
+<p>However, co-authoring also introduces additional complications, and you may want to see or restore a previous version of the document. Restoring old versions is entirely possible and easy to do!</p>
+
+<h2 id="through-office-apps">Through Office Apps</h2>
+
+<ol>
+  <li>Click <strong>File</strong></li>
+  <li>Click <strong>Info</strong></li>
+  <li>Click <strong>Version History</strong></li>
+  <li>Choose the version you want. You can choose to <strong>Compare</strong> or <strong>Restore</strong> the file after opening it.</li>
+</ol>
+
+<h2 id="on-the-web">On the Web</h2>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click <strong>OneDrive</strong> or <strong>SharePoint,</strong> depending on where the file is saved.</li>
+  <li>Navigate to the file you want to restore</li>
+  <li>Select the file you want to see previous versions for</li>
+  <li>Click the three dots … icon in the top bar</li>
+  <li>Click <strong>Version history</strong></li>
+  <li>Select the file version to open it</li>
+</ol>
+
+<h2 id="using-the-sync-client">Using the Sync Client</h2>
+
+<ol>
+  <li>Navigate to the file you want to restore</li>
+  <li>Right-click the file you want to see previous versions for</li>
+  <li>Click <strong>Version history</strong></li>
+  <li>Choose to <strong>Download</strong> to see a copy of the file, or <strong>Restore</strong> to restore the file.</li>
+</ol>
+
+<h1 id="recovering-deleted-files">Recovering deleted files</h1>
+
+<p>There are times that you might have deleted a file, or another person with access to the file deleted a file. It doesn’t matter if it is intentional or not; restoring deleted files is possible! To recover deleted files, you will have to use the website to access the recycling bin.</p>
+
+<h2 id="recovering-onedrive-for-business-files">Recovering OneDrive for Business Files</h2>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click <strong>OneDrive</strong></li>
+  <li>On the left menu, click <strong>Recycle bin</strong>.</li>
+  <li>Select one, or more documents you wish to recover </li>
+  <li>Click <strong>Restore</strong> in the top menu</li>
+</ol>
+
+<h2 id="recovering-sharepoint-files">Recovering SharePoint Files</h2>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click <strong>SharePoint</strong></li>
+  <li>Click the SharePoint Site where the file is saved.</li>
+  <li>On the left menu, click <strong>Recycle Bin</strong>.</li>
+  <li>Select one, or more documents you wish to recover </li>
+  <li>Click <strong>Restore</strong> in the top menu</li>
+</ol>
+
+<p>Using OneDrive for Business and SharePoint to save your files gives you many capabilities on how accessible your information is; even old copies of your files are significantly easier to get to without creating multiple copies of the document! I hope you keep reading my blog series on Modern Collaboration and look forward to my next one! I’ll give you a hint. We are going to start exploring Microsoft Teams!</p>]]></content><author><name></name></author><category term="microsoft" /><category term="user" /><category term="microsoft-365" /><category term="modern-collaboration" /><category term="office-365" /><category term="onedrive-for-business" /><category term="sharepoint-online" /><summary type="html"><![CDATA[We are getting deep into the Modern Collaboration blog series. If you haven’t read the previous articles, I’d strongly recommend starting from the beginning.]]></summary></entry><entry><title type="html">Modern Collaboration: Sharing Files in OneDrive for Business and SharePoint</title><link href="http://0.0.0.0:4000/modern-collaboration-sharing-files-in-onedrive-for-business-and-sharepoint/" rel="alternate" type="text/html" title="Modern Collaboration: Sharing Files in OneDrive for Business and SharePoint" /><published>2020-09-10T00:00:00-07:00</published><updated>2020-09-10T00:00:00-07:00</updated><id>http://0.0.0.0:4000/modern-collaboration-sharing-files-in-onedrive-for-business-and-sharepoint</id><content type="html" xml:base="http://0.0.0.0:4000/modern-collaboration-sharing-files-in-onedrive-for-business-and-sharepoint/"><![CDATA[<p>I hope you are enjoying the Modern Collaboration blog series. If you haven’t read the previous articles in the series, I highly recommend you do. We started this series by broadly talking about <a href="https://mattblogsit.com/microsoft/what-is-modern-collaboration-and-how-does-it-impact-business">what Modern Collaboration is and how it impacts business</a>. The second post was a brief <a href="https://mattblogsit.com/microsoft/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams">introduction to some of the Microsoft Office 365 products, such as OneDrive, SharePoint, and Microsoft Teams</a>. Now we are diving deep into the different individual products and how-to-use them. The first deep-dive was on <a href="https://mattblogsit.com/microsoft/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint">Accessing and Saving files in OneDrive for Business and SharePoint</a>. Now we will talk about how you can share your files from OneDrive for Business and SharePoint!</p>
+
+<h1 id="sharing-options">Sharing Options</h1>
+
+<p>Before we dive exactly into the how-to share them, I’d like to review all of the sharing options that are available to you. When sharing a file, the permission in which you share is crucial so that you can understand who can use the link, how long it will work, and if they can cause more damage than you intended to your files.</p>
+
+<p>The following sharing options we will review give you the ability to ‘allow editing.’ The allow editing checkbox is critical to verify every time you create a sharing link. In most instances, you may only want people to look at a file and provide feedback to you. In this case, you should uncheck the ‘allow editing’ checkbox; if you leave it checked, they can change the file contents.</p>
+
+<p><img src="/assets/images/posts/2020-09-07_13-37-29-e1599500522308.png" alt="" /></p>
+
+<h2 id="anyone-with-the-link">Anyone with the link</h2>
+
+<p>Using the ‘Anyone with the link’ option is an easy one to select. You know if the email is forwarded, the link will work for anyone that receives it. Having the link work for anyone might sound appealing initially; however, you must consider that the link will work for <strong>ANYONE</strong>. Keep in mind; this means if the email is forwarded to someone nefarious, that person can delete content, move it around and mess the file up. Now, in the next blog post in the series, you will see how to restore previous versions and deleted files; but this may be unnecessary if you set your sharing permissions correctly initially.</p>
+
+<p>When using ‘Anyone with the link,’ you receive additional options that you won’t get with other links. For example, you can set an expiration date for the link. Setting an expiration is something I highly recommend you do if you have to use this type of link. </p>
+
+<p>Additionally, you can set a shared password that someone must enter before they can access the link. Using a shared password is slightly more secure than just a link that works; however, the password is typically in the same message as the link, which means if it is forwarded to someone nefarious, that person can still do significant harm.</p>
+
+<h2 id="people-in-organization-name-with-the-link">People in (Organization Name) with the link</h2>
+
+<p>I like this option quite a bit. It means the link will work for anyone else who works at your organization. It will require them to log in to their work or school account, and it will tie their name to any changes made to the file.</p>
+
+<p>Keep in mind, though, if the file’s content is sensitive, this does risk exposure to other people within the organization seeing it.</p>
+
+<h2 id="people-with-existing-access">People with existing access</h2>
+
+<p>The ‘People with existing access’ sharing link is unique. You may or may not use it frequently. I find myself only using it when I have someone on my team asking for a file that they could get to themselves, but maybe in the middle of a meeting and need it now, or when I am preparing an agenda for a meeting, and I want a quick link to the file. You will notice, this sharing option does not have the ‘Allow editing’ checkbox. The reason is that it isn’t granting new permissions, only giving you a quick link to access the file, and it uses their existing permissions to the file.</p>
+
+<h2 id="specific-people">Specific people</h2>
+
+<p>The specific people sharing link is by-far the most secure way to share files, especially if you grant editing access to sensitive content. The only way the link will work for people is to specify their name or email in the sharing dialog. If you only type one person, then copy the link to Outlook. Anyone you send it to; except, the person you entered into the sharing dialog, can not open the link.</p>
+
+<h1 id="sharing-files">Sharing files</h1>
+
+<p>Now that you know the different sharing options that are available to you. We can now dive into sharing the files with other people inside and outside of your organization.</p>
+
+<p>The fantastic part about sharing files in both OneDrive for Business and SharePoint is that the sharing dialog is the same for OneDrive for Business and SharePoint and across all of the different ways of accessing it.</p>
+
+<h2 id="through-microsoft-office-apps">Through Microsoft Office apps</h2>
+
+<p>To access the sharing dialog while using the Office Apps, you will need the document open and follow the below steps</p>
+
+<ol>
+  <li>Open the file you wish to share</li>
+  <li>In the top right of the Office App, click <strong>Share</strong></li>
+  <li>Verify which sharing option you want to use, staying mindful that it is best to be the most restrictive with your permissions to keep your data safe.</li>
+  <li>Type the email addresses you wish to share with</li>
+  <li>Optionally type a message to include with the file</li>
+  <li>Click <strong>Send</strong></li>
+</ol>
+
+<h2 id="through-the-onedrive-for-business-or-sharepoint-websites">Through the OneDrive for Business or SharePoint websites</h2>
+
+<p>To access the sharing dialog while using the web, you must first navigate where you wish to share the file or folder and follow the below steps.</p>
+
+<ol>
+  <li>Select the file or folder you wish to share</li>
+  <li>Click <strong>Share</strong> on the top bar</li>
+  <li>Verify which sharing option you want to use</li>
+  <li>Type the email addresses you want to share with</li>
+  <li>Optionally type a message to include with the file</li>
+  <li>Click <strong>Send</strong></li>
+</ol>
+
+<h2 id="by-using-the-sync-client-on-windows-10">By using the Sync Client on Windows 10</h2>
+
+<p>To access the sharing dialog while using the OneDrive Sync client, you must first navigate where you wish to share the file or folder and follow the below steps.</p>
+
+<ol>
+  <li>Right-click the file or folder you wish to share</li>
+  <li>Click <strong>Share</strong> on the menu that shows up</li>
+  <li>Verify which sharing option you want to use</li>
+  <li>Type the email addresses you want to share with</li>
+  <li>Optionally type a message to include with the file</li>
+  <li>Click <strong>Send</strong></li>
+</ol>
+
+<p>By sharing files through OneDrive for Business and SharePoint, you unlock many rich features that we will dive into in future blog posts. You will see automatic versioning and co-authoring highlighted, which will open a whole new world of possibilities for collaboration and access to information. Keep an eye out for the next post in the Modern Collaboration blog series on Restoring Files in OneDrive for Business and SharePoint.</p>]]></content><author><name></name></author><category term="microsoft" /><category term="user" /><category term="microsoft-365" /><category term="microsoft-office" /><category term="modern-collaboration" /><category term="office-365" /><category term="onedrive-for-business" /><category term="sharepoint-online" /><category term="sharing-files" /><summary type="html"><![CDATA[I hope you are enjoying the Modern Collaboration blog series. If you haven’t read the previous articles in the series, I highly recommend you do. We started this series by broadly talking about what Modern Collaboration is and how it impacts business. The second post was a brief introduction to some of the Microsoft Office 365 products, such as OneDrive, SharePoint, and Microsoft Teams. Now we are diving deep into the different individual products and how-to-use them. The first deep-dive was on Accessing and Saving files in OneDrive for Business and SharePoint. Now we will talk about how you can share your files from OneDrive for Business and SharePoint!]]></summary></entry><entry><title type="html">Modern Collaboration: Accessing and Saving Files in OneDrive for Business and SharePoint</title><link href="http://0.0.0.0:4000/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint/" rel="alternate" type="text/html" title="Modern Collaboration: Accessing and Saving Files in OneDrive for Business and SharePoint" /><published>2020-09-07T00:00:00-07:00</published><updated>2020-09-07T00:00:00-07:00</updated><id>http://0.0.0.0:4000/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint</id><content type="html" xml:base="http://0.0.0.0:4000/modern-collaboration-accessing-and-saving-files-in-onedrive-for-business-and-sharepoint/"><![CDATA[<p>The time has come in my Modern Collaboration blog series to start diving deep into the how-to. We started this series by broadly talking about <a href="https://mattblogsit.com/microsoft/what-is-modern-collaboration-and-how-does-it-impact-business">what Modern Collaboration is and how it impacts business</a>. The second post was a brief <a href="https://mattblogsit.com/microsoft/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams">introduction to some of the Microsoft Office 365 products, such as OneDrive, SharePoint, and Microsoft Teams</a>. Now is the time we start to dive deep into the different individual products and how-to-use them. This blog will dive into OneDrive for Business and SharePoint file storage, specifically finding and saving files.</p>
+
+<h2 id="microsoft-office-with-onedrive-for-business-and-sharepoint">Microsoft Office with OneDrive for Business and SharePoint</h2>
+
+<p>When working with cloud storage and Microsoft Products, everything is built right into the Office Suite! From the File menu, which is the screen you start on when launching the applications, you will automatically see recent files you have used in SharePoint and OneDrive for Business, as long as your accounts are connected. You even have the option to Pin files or see files that have been shared with you and who shared them.</p>
+
+<p>If the file isn’t something you have worked on recently, that is no problem! You can click on <strong>Open</strong> on the left menu and navigate through all of your connected accounts SharePoint sites and OneDrive for Business sites. </p>
+
+<p>If your files are not showing up, you will need to connect your account. To add accounts to your Office applications, follow the below steps.</p>
+
+<ol>
+  <li>Open an Office Application such as Word, Excel, PowerPoint.</li>
+  <li>Click <strong>Account</strong> on the bottom left of the application</li>
+  <li>Click <strong>Add a service</strong> </li>
+  <li>Hover over <strong>Storage</strong> and click <strong>OneDrive for Business</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+</ol>
+
+<p>If you just created a new document and need to save it, the interface is identical, and it will show all of your connected accounts OneDrive for Business and SharePoint sites. The unified experience inside the office applications gives you the full capability of quickly securing your files to be available anytime, anywhere on any device.</p>
+
+<h2 id="accessing-and-uploading-to-the-web">Accessing and Uploading to the Web</h2>
+
+<p>You won’t exclusively work with office documents, so using the office applications to open and save files will not be your only means of accessing OneDrive for Business and SharePoint. With OneDrive for Business and SharePoint storage, it is all web-based and accessible through a website.</p>
+
+<p>To upload your file, you need to think about who needs access to the file. Depending on your organization, you may have teams based on departments, locations, projects, or just any group you work with frequently across departments. However, let’s start with something easy. You have a brand new document you started working on, and you need to save it, but it isn’t quite ready to share with a team. The answer to where to keep it is straight forward. You can save it in your personal OneDrive for Business storage.</p>
+
+<p>To access your Onedrive for Business storage and upload a document, follow the below steps.</p>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click <strong>OneDrive</strong></li>
+  <li>Navigate to the folder you want to upload your saved file to</li>
+  <li>Click <strong>Upload</strong> at the top navigation bar</li>
+  <li>Select <strong>Files</strong></li>
+  <li>Select the files you want to upload and click <strong>Open</strong></li>
+</ol>
+
+<p>What about finding a file you uploaded a long time ago, or someone else on your team has uploaded? Unlike a mapped network drive or a file on your computer, the brilliant thing is that knowing exactly where the file is, isn’t that big of a deal. If you know precisely which SharePoint site the file was saved in, which Document Library and folder it is in, you are welcome to go straight to the file and open it. However, the search capabilities of OneDrive for Business and SharePoint are incredible; not only will it search the file name, but it will also examine the content of the file.</p>
+
+<p>To use OneDrive for Business and SharePoint’s search functionality, you can use almost any of the search boxes found in the Office 365 portal or connected SharePoint sites. If you are on a work computer running Windows 10, you can even search the start menu files and click see work and web results, assuming enterprise search is enabled.</p>
+
+<p>To search from the Office website, follow the below instructions.</p>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click the <strong>Search</strong> box at the top of the screen</li>
+  <li>Search any keyword related to the file, it could be the name of the file or a topic that the file is about, and you think it is referenced in the file.</li>
+</ol>
+
+<h2 id="sync-onedrive-for-business-and-sharepoint-to-windows-10-computer">Sync OneDrive for Business and SharePoint to Windows 10 computer</h2>
+
+<p>The last way I want to talk about accessing and saving files is using the OneDrive sync client. Now, I try to discourage the extensive use of the OneDrive Sync client to a Windows computer. It tends to confuse users, but it does make interacting with non-Office files significantly more accessible, so it becomes a necessary evil.</p>
+
+<p>Using it for personal OneDrive for Business files makes sense. You can automatically sync your Documents, Pictures Videos, and comfortably have those files backed up immediately and available on all devices. However, it gets a bit trickier when you are working with multiple SharePoint Sites.</p>
+
+<p>First, you must locate the SharePoint site that you wish to Sync with your computer. To do this, follow the below instructions for every SharePoint site you want to sync.</p>
+
+<ol>
+  <li>Open your favorite web browser and navigate to <strong><a href="https://www.office.com">https://www.office.com</a></strong> </li>
+  <li>Click <strong>Sign in</strong></li>
+  <li>Log in using your <strong>Work</strong> account</li>
+  <li>Click <strong>SharePoint</strong></li>
+  <li>Click the site you want to sync</li>
+  <li>Click <strong>Documents</strong> on the left side</li>
+  <li>Click <strong>Sync</strong> on the top menu</li>
+  <li>Click <strong>Open</strong> when prompted to open the OneDrive client</li>
+</ol>
+
+<p>By syncing the files to your Windows Computer, you will find them listed in Windows Explorer on the left navigation. You can open the files, create new ones and even share the files straight from Windows Explorer.</p>
+
+<p>As you can see, there are at least three ways to perform tasks when working with OneDrive for Business and SharePoint file storage. Each has specific pros and cons, and it comes down to how you work on what will be best for you. I encourage you to try them out and see what you like best!</p>
+
+<p>Keep an eye out for the next post in the Modern Collaboration blog series on Sharing Files in OneDrive for Business and SharePoint!</p>]]></content><author><name></name></author><category term="microsoft" /><category term="user" /><category term="microsoft-365" /><category term="microsoft-office" /><category term="office-365" /><category term="onedrive-for-business" /><category term="sharepoint-online" /><category term="windows-10" /><summary type="html"><![CDATA[The time has come in my Modern Collaboration blog series to start diving deep into the how-to. We started this series by broadly talking about what Modern Collaboration is and how it impacts business. The second post was a brief introduction to some of the Microsoft Office 365 products, such as OneDrive, SharePoint, and Microsoft Teams. Now is the time we start to dive deep into the different individual products and how-to-use them. This blog will dive into OneDrive for Business and SharePoint file storage, specifically finding and saving files.]]></summary></entry><entry><title type="html">Modern Collaboration with Microsoft OneDrive, SharePoint, and Teams!</title><link href="http://0.0.0.0:4000/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams/" rel="alternate" type="text/html" title="Modern Collaboration with Microsoft OneDrive, SharePoint, and Teams!" /><published>2020-08-06T00:00:00-07:00</published><updated>2020-08-06T00:00:00-07:00</updated><id>http://0.0.0.0:4000/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams</id><content type="html" xml:base="http://0.0.0.0:4000/modern-collaboration-with-microsoft-onedrive-sharepoint-and-teams/"><![CDATA[<p>I’ve recently worked a lot with the Microsoft Cloud, specifically around productivity and Modern Collaboration. I decided to start a series of posts, and this is the second post in the series of at least four blog posts. If you haven’t read the first post in the series, I strongly encourage you to start with “<a href="https://mattblogsit.com/microsoft/what-is-modern-collaboration-and-how-does-it-impact-business">What is Modern Collaboration, and how does it impact business?</a>”</p>
+
+<p>The Microsoft Cloud is exceptionally vast in the number of products available. We are going to focus on the Office 365 segment of the Microsoft Cloud. Now, you will see the branding Microsoft 365 occasionally also, Microsoft 365 is a product line that includes Office 365, along with Windows licensing, and other subscription products for security and managing computers and mobile devices. Recently, Microsoft started using the Microsoft 365 branding for some small business and consumer subscription services. This article will not cover any of the consumer subscriptions. However, it is still applicable to the small business plans.</p>
+
+<p>When thinking about Office 365, you need to understand that it is similar to Microsoft Office. When you purchase Microsoft Office, you get multiple pieces of software that install together as a suite of products. Office 365 is very similar. You are buying a subscription, and you get more than one product with that subscription.</p>
+
+<!--more-->
+
+<p>Most businesses that invested in Office 365 did so to get rid of their Exchange Servers and to use Exchange Online for email. I’ve worked with Office 365 for nearly a decade. During this time, when I was a consultant, companies were purchasing Office 365 exclusively for Exchange Online. They didn’t care about any of the other components, other than it having the installable version of Microsoft Office depending upon their plan.</p>
+
+<p>In addition to Exchange Online, Office 365 includes Microsoft Teams, SharePoint, Yammer, OneDrive for Business, Microsoft Delve, Microsoft Stream, Microsoft Sway, Power Apps, Power Automate, Microsoft Forms, Microsoft Planner, and Microsoft To Do.</p>
+
+<p><img src="/assets/images/posts/Office-365-Everywhere-e1596503934227.jpg" alt="Office 365 logo in a cloud connected to other Office 365 product logos" /></p>
+
+<p>In this blog post, we will focus on OneDrive for Business, SharePoint, and Microsoft Teams. If you are interested in learning more about the other products that come with Office 365, feel free to browse my blog! I’ve written articles on <a href="https://mattblogsit.com/tag/microsoft-forms">Microsoft Forms</a>, <a href="https://mattblogsit.com/tag/microsoft-planner">Microsoft Planner</a>, <a href="https://mattblogsit.com/tag/microsoft-to-do">Microsoft To Do</a>, and <a href="https://mattblogsit.com/tag/power-automate">Power Automate</a> as of writing this post.</p>
+
+<p>The first product in the Office 365 suite we will discuss is OneDrive for Business. OneDrive for Business is what is available to the Office 365 subscriptions. OneDrive for Business is a private storage per-employee. The private storage gives them space to store documents they are working on that are not ready to share with co-workers. Keep in mind the storage is in a business account, so if there is litigation or the business wants to access the files - they are private storage, not personal storage. The business still owns the data and can access it at any time. Even though OneDrive for Business is private storage, it is simple to share files with anyone you choose to share in just a few clicks.</p>
+
+<p>OneDrive is web-based file storage. There is a OneDrive app built into Windows 10 that can sync the web files to your computer and save them locally. Syncing your files makes accessing them feel like they are all local and ease the transition to using web-based storage. There is also a OneDrive app for mobile devices that can access all of your files from anywhere. Ultimately OneDrive for Business makes your files accessible from anywhere, anytime on any device.</p>
+
+<p>The second product in the Office 365 suite we will discuss is SharePoint Online. SharePoint Online as a product is massive. It is a web framework for building applications, storing files, creating lists, and creating internal websites. For this blog series, we will focus on Document Libraries for storing files and collaborating with team members on those files. If you have a business case for the other features in SharePoint Online, I strongly encourage you to test with it; it has tremendous power that would take an entire blog series to cover.</p>
+
+<p>The final product in the Office 365 suite we will discuss is Microsoft Teams. Microsoft Teams is probably one of the newest products that are a part of the Office 365 suite. Initially launched in March of 2017, it was fundamentally a basic chat application with the capability to IM, Video chat, and integrate apps for other products in the Office 365 suite and some third-party apps.</p>
+
+<p>Since it’s original launch, it has matured significantly in a short time. The best way to think about Microsoft Teams is a single pane of glass that helps bring together multiple applications and increase your productivity. It will give you the ability to switch between collaborating on different teams, projects, and initiatives rapidly.</p>
+
+<p>I know this is a lot of information. We are just setting the foundation of knowledge before diving deep into these different products, to ultimately bring them together to help make you a more productive employee who can do their job anytime, anywhere. Keep an eye out for the next post in the series where we will dive-deep into OneDrive for Business. We will cover how to save files through different OneDrive apps, open those files, share them, recover accidentally deleted files and revert to previous versions that it tracks automatically.</p>]]></content><author><name></name></author><category term="microsoft" /><category term="user" /><category term="microsoft-365" /><category term="microsoft-teams" /><category term="modern-collaboration" /><category term="office-365" /><category term="onedrive-for-business" /><category term="sharepoint" /><category term="sharepoint-online" /><summary type="html"><![CDATA[I’ve recently worked a lot with the Microsoft Cloud, specifically around productivity and Modern Collaboration. I decided to start a series of posts, and this is the second post in the series of at least four blog posts. If you haven’t read the first post in the series, I strongly encourage you to start with “What is Modern Collaboration, and how does it impact business?”]]></summary></entry><entry><title type="html">What is Modern Collaboration, and how does it impact business?</title><link href="http://0.0.0.0:4000/what-is-modern-collaboration-and-how-does-it-impact-business/" rel="alternate" type="text/html" title="What is Modern Collaboration, and how does it impact business?" /><published>2020-08-03T00:00:00-07:00</published><updated>2020-08-03T00:00:00-07:00</updated><id>http://0.0.0.0:4000/what-is-modern-collaboration-and-how-does-it-impact-business</id><content type="html" xml:base="http://0.0.0.0:4000/what-is-modern-collaboration-and-how-does-it-impact-business/"><![CDATA[<p>Modern Collaboration, Collaboration Transformation, Technology Revolution, Technology Transformation; I’m sure you have heard one or more of these terms before. They are very common to talk about in Enterprise IT, even Microsoft’s marketing hits on the Modern Collaboration term quite heavily with their cloud offerings.</p>
+
+<p>You are probably wondering, what does this all mean? How does it affect my business, and how do I get started!? Modern Collaboration is a term that Microsoft has coined for its cloud-first products to drive productivity for knowledge workers. The focus is to shift production from a workplace to a workspace.</p>
+
+<!--more-->
+
+<p><img src="/assets/images/posts/pexels-christina-morillo-1181403-1024x684.jpg" alt="Conference room full of people" /></p>
+
+<p>The key here is a workplace is somewhere you have to go to an office building or a coworking space to do work. A workspace is anywhere you can get the job done. A workspace could be your favorite coffee shop, home office, an office building, or a coworking space. The purpose of a workspace is your tools to be productive are available to you anytime, anywhere you need them.</p>
+
+<p>Now that you have a basic understanding of the subtle difference between workplace and workspace, let’s talk about how it impacts business.</p>
+
+<p>For a business to provide a proper workspace to its employees, they need to have their data and tools available anytime, anywhere. Anytime, anywhere are the most significant benefits of moving to cloud platforms. It is 100% possible to make your infrastructure highly available and accessible from anywhere. However, it requires a significant investment compared to using cloud products, and not many businesses can justify the ROI, simply because it isn’t there unless you are a large enterprise.</p>
+
+<p>By shifting to the cloud, you will gain a lot of benefits; however, you are also giving up specific controls. Controls that surround when maintenance happens on the product, and it’s unavailable, controls around when to roll out the new version that renames certain features or entire products. In some instances, you will also find that when you compare a cloud product to an on-premises product, you have significantly fewer options on customization or settings that you can adjust.</p>
+
+<p>Now, you may be wondering what the benefit of shifting to Modern Collaboration is? Let’s consider recent events. COVID-19 hits, within weeks of it hitting the US, it escalates from an epidemic to pandemic levels. The US Government starts shutting down the border, and States start issuing travel warnings demanding only essential travel. Businesses can no longer have people in the office. The question is, can your office employees do their job if they cannot all be in the same building?</p>
+
+<p>Great news, you had the foresight for your office employees to have Laptops, with docks and monitors. They can undock and go work from home, right? It is highly unlikely your office employees can be productive out of the office for several reasons. Let’s focus on their collaboration with co-workers. How common is it for you to walk next door to your co-worker to revise a document, ask questions or honestly; socialize to take a mental break?</p>
+
+<p>In the middle of a pandemic, that is not an option. You start working on a document to send to the entire team. You ask for feedback, something you usually have a 15-30 minute meeting on with your team, get the teams thoughts, make revisions, and then email out. However, you can’t do the meeting, and you jump straight into sending an email to the team. You get five responses back, all with different thoughts, and you have to compile it into one document to send again. The one document that you thought would take 30 minutes to revise and finalize has snowballed into an entire day, emailing back and forth with the whole team. It didn’t just stop your day. It disrupted half of your team too!</p>
+
+<p>Now, let’s take that same scenario and think about Modern Collaboration. You have Microsoft Teams, and Microsoft Office. All accessible from the cloud, available anytime, anywhere. You created the document, you open Microsoft Teams and posted a conversation about the file in your Team. You have a couple of people open the document. Some of them even on mobile devices adding comments about revisions they want to be made. There is some contention on proposed changes, so you set up a quick call in Microsoft Teams. The call wraps up in 10 minutes, you make the final revisions and let the team know the document is final and saved in Microsoft Teams.</p>
+
+<p><img src="/assets/images/posts/Managing-eDiscovery-for-modern-collaboration-SOCIAL-1066x600-1-1024x576.png" alt="Lady working from home in an online meeting" /></p>
+
+<p>You can easily trim a full day of back and forth emailed revisions into a single live document that can be updated discussed and finalized much quicker. The beauty of it, it automatically saves changes the entire time. If someone accidentally deleted a paragraph they didn’t mean to, it is easy to find that revision, revert it, or copy and paste the content from the old revision!</p>
+
+<p>Using cloud-based tools, makes it easy to shoot quick questions over an instant message instead of sending five different emails and getting buried in someone’s inbox. The benefit of this is it encourages quick conversation instead of formal email messages. The side-effect of this turns into relationship building among your employees. It helps drive a social culture that gives your employees the ability to decompress mentally over a quick conversation with a co-worker, instead of reaching burn out levels from being stuck at home, working all day and not getting much social interaction.</p>
+
+<p>What is best for your business is ultimately a reasonably significant conversation, and there are plenty of things to consider. Personally, I love cloud technologies and Modern Collaboration. I’ve been working from home 100% for four months, and initially, it was challenging; however, I truly believe if a business wants to be productive anytime, anywhere, it can be done! Keep an eye out for new blog posts about how to use some of the Microsoft Cloud to drive this Modern Collaboration adoption, or reach out to me and I’d be happy to have a conversation with you about it!</p>]]></content><author><name></name></author><category term="microsoft" /><category term="business" /><category term="microsoft-365" /><category term="microsoft-office" /><category term="microsoft-teams" /><category term="modern-collaboration" /><category term="office-365" /><summary type="html"><![CDATA[Modern Collaboration, Collaboration Transformation, Technology Revolution, Technology Transformation; I’m sure you have heard one or more of these terms before. They are very common to talk about in Enterprise IT, even Microsoft’s marketing hits on the Modern Collaboration term quite heavily with their cloud offerings.]]></summary></entry><entry><title type="html">Pre-load awesome background images for Microsoft Teams Virtual Background using PowerShell</title><link href="http://0.0.0.0:4000/pre-load-awesome-background-images-for-microsoft-teams-virtual-background-using-powershell/" rel="alternate" type="text/html" title="Pre-load awesome background images for Microsoft Teams Virtual Background using PowerShell" /><published>2020-07-09T00:00:00-07:00</published><updated>2020-07-09T00:00:00-07:00</updated><id>http://0.0.0.0:4000/pre-load-awesome-background-images-for-microsoft-teams-virtual-background-using-powershell</id><content type="html" xml:base="http://0.0.0.0:4000/pre-load-awesome-background-images-for-microsoft-teams-virtual-background-using-powershell/"><![CDATA[<p>Microsoft Teams officially rolled out Virtual Backgrounds back in March, around the time COVID-19 went crazy in the United States. With COVID-19 came a slew of people working from home, me included.</p>
+
+<p>I spend a considerable chunk of my week on conference calls for work, volunteering, and honesty - just keeping up with friends. After a while, I had to spice up my virtual background with something new. The current implementation of Virtual Backgrounds in Microsoft Teams is limited in user-friendliness to add custom background images.</p>
+
+<p>To add a custom background, you have to save the file to “%AppData%\Microsoft\Teams\Backgrounds\Uploads\” which isn’t bad once you know this. However, getting fresh background images is the problematic part. I love browsing Reddit and finding the beautiful pictures on EarthPorn or SpacePorn subreddits.</p>
+
+<p>I’m a massive fan of automation, so I choose to play around with PowerShell and create a quick script. Luckily, I was able to snag the bulk of my code from <a href="https://www.reddit.com/user/uspeoples/">u/uspeoples</a> from a comment posted on the PowerShell subreddit.</p>
+
+<p>All you need to do is change lines 2 and 4 to match your preference and run it. The script will automatically throw the images returned from Reddit into the correct directory.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#I also recommend SpacePorn, but any reddits will work.</span><span class="w">
+</span><span class="nv">$subReddit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"EarthPorn"</span><span class="w">
+</span><span class="c">#You can use hot, new, or top for the filter</span><span class="w">
+</span><span class="nv">$redditFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"top"</span><span class="w">
+
+</span><span class="c">#Don't change anything below this line</span><span class="w">
+</span><span class="nv">$teamsDirectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">AppData</span><span class="s2">\Microsoft\Teams\Backgrounds\Uploads\"</span><span class="w">
+</span><span class="nv">$redditData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">invoke-restmethod</span><span class="w"> </span><span class="s2">"http://www.reddit.com/r/</span><span class="nv">$subReddit</span><span class="s2">/</span><span class="nv">$redditFilter</span><span class="s2">/.json"</span><span class="p">)</span><span class="o">.</span><span class="nf">data</span><span class="o">.</span><span class="nf">children</span><span class="o">.</span><span class="nf">data</span><span class="o">.</span><span class="nf">url</span><span class="w">
+
+</span><span class="kr">foreach</span><span class="p">(</span><span class="nv">$data</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">$redditData</span><span class="p">){</span><span class="w">
+    </span><span class="n">Invoke-WebRequest</span><span class="w"> </span><span class="nt">-Uri</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="nt">-OutFile</span><span class="w"> </span><span class="p">(</span><span class="nv">$teamsDirectory</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$data</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="nt">-1</span><span class="p">])</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now, one major caveat when running this, Reddit won’t always have the best pictures; as my girlfriend put it, “They will also get ugly pictures, and it’ll flood their Teams.” With that said, I promised her I would let my readers know that they can navigate to “%AppData%\Microsoft\Teams\Backgrounds\Uploads\” and delete any that they do not like.</p>]]></content><author><name></name></author><category term="administrator" /><category term="microsoft" /><category term="user" /><category term="automation" /><category term="microsoft-teams" /><category term="powershell" /><category term="reddit" /><category term="virtual-background" /><summary type="html"><![CDATA[Microsoft Teams officially rolled out Virtual Backgrounds back in March, around the time COVID-19 went crazy in the United States. With COVID-19 came a slew of people working from home, me included.]]></summary></entry><entry><title type="html">Building a Smart Home focused on physical accessibility Part 2 - The Resources!</title><link href="http://0.0.0.0:4000/building-a-smart-home-focused-on-physical-accessibility-part-2-the-resources/" rel="alternate" type="text/html" title="Building a Smart Home focused on physical accessibility Part 2 - The Resources!" /><published>2020-07-08T00:00:00-07:00</published><updated>2020-07-08T00:00:00-07:00</updated><id>http://0.0.0.0:4000/building-a-smart-home-focused-on-physical-accessibility-part-2-the-resources</id><content type="html" xml:base="http://0.0.0.0:4000/building-a-smart-home-focused-on-physical-accessibility-part-2-the-resources/"><![CDATA[<p>Just over a week ago, I blogged about the <a href="https://mattblogsit.com/oob/building-a-smart-home-focused-on-physical-accessibility">Smart Home I’ve just started to build</a>. The post seems to have been wildly popular among my friends, with them even engaging and giving me suggestions on how I should do things moving forward.</p>
+
+<p>However, individuals affected with a physical disability are at a significant economic disadvantage. Having the target audience with financial difficulties is the crucial flaw in the article that wasn’t addressed. Having a few hundred dollars to spend on Smart Home technology is challenging to come by when facing the financial challenges that someone with a physical disability is likely to experience.</p>
+
+<p>My original approach to this in the article was to approach the Smart Home install by breaking it up into financially digestible chunks that you can afford to implement and spread it out over time. This approach isn’t realistic for people with disabilities in the United States who genuinely live paycheck to paycheck and are penalized by trying to save money. There are mechanisms around it, yes, but they are hard to understand and navigate.</p>
+
+<p>So why not share with the people of at least Indiana a resource that I hope they know exists, but I understand they might not!</p>
+
+<p><img src="/assets/images/posts/MDFF-Final-Logo_Color-300x232.png" alt="Muscular Dystrophy Family Foundation Logo" /></p>
+
+<p>The Muscular Dystrophy Family Foundation (MDFF) increases the quality of life and independence of people with Muscular Dystrophy, as well as empowers their families, through advocacy, education, and financial resources. You may be asking, ok, how does this help with a Smart Home? Easy, if you have a Muscular Dystrophy and live in the State of Indiana, you can submit an <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=p3an6NxT8UywQ1XFKvz46GWkZBG5U3pGo4KLAHiUcwpUQklMWElEVktKMjRQUzRQUkIxWFIzSlBLSS4u">assistance request</a> for devices that will increase the quality of life and independence for you (person affected by Muscular Dystrophy).</p>
+
+<p>I want to challenge anyone who has read this article, if you are affected by Muscular Dystrophy and live in Indiana, with an apparent financial strain. <a href="https://mdff.org/assistance/">Submit an Assistance Request</a> and see if you can start your journey to a Smart Home to make the house more accessible!</p>
+
+<p>If you are not affected with Muscular Dystrophy, and you think someone who is financially disadvantaged and sees the significant quality of life improvements they will receive. I encourage you to <a href="http://mdff.org/make-a-gift/">donate to the Muscular Dystrophy Family Foundation</a>!</p>
+
+<p>Now, please note. I am on the Board of Directors for the MDFF, so that I may have some bias in this article. However, I genuinely believe I am being 100% transparent and trying to drive our community to improve their independence!</p>]]></content><author><name></name></author><category term="oob" /><category term="muscular-dystrophy" /><category term="physical-disability" /><category term="smart-home" /><summary type="html"><![CDATA[Just over a week ago, I blogged about the Smart Home I’ve just started to build. The post seems to have been wildly popular among my friends, with them even engaging and giving me suggestions on how I should do things moving forward.]]></summary></entry><entry><title type="html">How to check Exchange Online Distribution List activity over 30, 60, 90+ days?</title><link href="http://0.0.0.0:4000/how-to-check-exchange-online-distribution-list-activity-over-30-60-90-days/" rel="alternate" type="text/html" title="How to check Exchange Online Distribution List activity over 30, 60, 90+ days?" /><published>2020-07-06T00:00:00-07:00</published><updated>2020-07-06T00:00:00-07:00</updated><id>http://0.0.0.0:4000/how-to-check-exchange-online-distribution-list-activity-over-30-60-90-days</id><content type="html" xml:base="http://0.0.0.0:4000/how-to-check-exchange-online-distribution-list-activity-over-30-60-90-days/"><![CDATA[<p>All growing and/or large organizations will experience this. We have all of these Distribution Lists, but does anyone even use them or know why they were created 5, 10, 15 years ago? I recently ran into this at work, where we are trying to figure out if we can safely delete specific Distribution Lists. They have members, but most of the members have no idea they are a member, or why they would even need the email address.</p>
+
+<p>As always, I start my investigation into how to do something with a quick Google Search. I stumbled upon a bunch of articles specific to Exchange on-premises, and a few items on how to see usage in the last 10 days, but nothing more. The next issue with the ones I did find for Exchange Online was only going to handle 1000 email messages, more than that, and you have to add additional parameters to the command and page through the command multiple times for more than 5000.</p>
+
+<p>I knew many of these lists most likely have infrequent usage, if any at all, so 10 days wasn’t going to cut it. My resolution to this problem? Scheduled tasks, and time!</p>
+
+<p>Before you can run this script, you need to make sure you install the <a href="https://www.powershellgallery.com/packages/ExchangeOnlineManagement/2.0.3-Preview">Exchange Online Management PowerShell Module</a>. The module is on the PowerShell Gallery.</p>
+
+<p>The script itself is pretty straightforward. It would be best if you had a secure way to store your passwords that the script will use for authenticating to Office 365. My example script will only work in interactive mode, and you need to dig a bit into storing credentials securely. I would recommend checking out David Lee’s post “<a href="https://purple.telstra.com.au/blog/using-saved-credentials-securely-in-powershell-scripts">Using saved credentials securely in PowerShell scripts</a>” for more information.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Connect-ExchangeOnline</span><span class="w"> </span><span class="nt">-UserPrincipalName</span><span class="w"> </span><span class="nx">user</span><span class="err">@</span><span class="nx">example.com</span><span class="w">
+
+</span><span class="nv">$date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-Date</span><span class="w">
+
+</span><span class="nv">$fullResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">@()</span><span class="w">
+</span><span class="nv">$i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="kr">do</span><span class="p">{</span><span class="w">
+    </span><span class="nv">$trace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-MessageTrace</span><span class="w"> </span><span class="nt">-Status</span><span class="w"> </span><span class="nx">expanded</span><span class="w"> </span><span class="nt">-startdate</span><span class="w"> </span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span><span class="o">.</span><span class="nf">AddDays</span><span class="p">(</span><span class="nt">-10</span><span class="p">)</span><span class="w"> </span><span class="nt">-EndDate</span><span class="w"> </span><span class="p">(</span><span class="nv">$date</span><span class="p">)</span><span class="w"> </span><span class="nt">-PageSize</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="nt">-Page</span><span class="w"> </span><span class="nv">$i</span><span class="o">|</span><span class="w"> </span><span class="n">Group-Object</span><span class="w"> </span><span class="nx">recipientaddress</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="nx">count</span><span class="w">
+    </span><span class="nv">$fullResults</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nv">$trace</span><span class="w">
+    </span><span class="nv">$i</span><span class="o">++</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="kr">until</span><span class="p">(</span><span class="bp">$null</span><span class="w"> </span><span class="o">-eq</span><span class="w"> </span><span class="nv">$trace</span><span class="p">)</span><span class="w">
+
+</span><span class="nv">$fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Get-Date</span><span class="w"> </span><span class="nt">-Format</span><span class="w"> </span><span class="s2">"yyyy.MM.dd"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"_DLUsage.csv"</span><span class="w">
+</span><span class="nv">$fullResults</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Export-Csv</span><span class="w"> </span><span class="s2">"C:\Reports\</span><span class="nv">$fileName</span><span class="s2">"</span><span class="w"> </span><span class="nt">-NoTypeInformation</span><span class="w">
+</span></code></pre></div></div>
+
+<p>All you need to do is update the script to use a securely stored credential and set a scheduled task to run at the same time every 10 days. After however long you want to look at historical data, you import to an Excel spreadsheet and compare!</p>]]></content><author><name></name></author><category term="administrator" /><category term="microsoft" /><category term="distribution-list" /><category term="exchange-online" /><category term="microsoft-365" /><category term="office-365" /><category term="powershell" /><category term="reports" /><summary type="html"><![CDATA[All growing and/or large organizations will experience this. We have all of these Distribution Lists, but does anyone even use them or know why they were created 5, 10, 15 years ago? I recently ran into this at work, where we are trying to figure out if we can safely delete specific Distribution Lists. They have members, but most of the members have no idea they are a member, or why they would even need the email address.]]></summary></entry></feed>
