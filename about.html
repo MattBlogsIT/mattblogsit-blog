@@ -33,6 +33,31 @@
             font-weight: bold;
             color: #2c3e50;
         }
+        .child-nav {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+        .child-nav-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .child-nav-links a {
+            display: block;
+            margin: 5px 0;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .child-nav-links a:hover {
+            text-decoration: underline;
+        }
+        .child-nav-links a.active {
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +65,10 @@
     
     <div class="nav" id="nav-container">
         <!-- Navigation will be populated by JavaScript -->
+    </div>
+    
+    <div class="child-nav" id="child-nav-container" style="display: none;">
+        <!-- Child navigation will be populated by JavaScript -->
     </div>
     
     <p>Matt Griffin is a Systems Architect passionate about technology, volunteering, and adaptive sports.</p>
