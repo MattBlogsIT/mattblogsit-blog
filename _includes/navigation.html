@@ -1,97 +1,54 @@
 {% comment %}
-Dynamic navigation that auto-discovers pages and collections
-Similar to navigation.js but implemented in Liquid templating
+Dynamic navigation that auto-discovers all pages in _pages collection
+Maintains dynamic nature - just add pages to _pages folder and they appear
 {% endcomment %}
 
 {% assign current_path = page.url %}
 {% assign current_collection = page.collection %}
 
-{% comment %} Determine main navigation items {% endcomment %}
-{% assign main_nav_items = "" | split: "" %}
-
-{% comment %} Always include Home {% endcomment %}
-{% assign home_item = '{"title": "Home", "url": "' | append: site.baseurl | append: '/", "id": "home"}' %}
-{% assign main_nav_items = main_nav_items | push: home_item %}
-
-{% comment %} Auto-discover pages in _pages collection {% endcomment %}
-{% for page_item in site.pages %}
-  {% unless page_item.path contains '_' or page_item.path == 'index.html' or page_item.path == 'index.md' %}
-    {% assign page_name = page_item.path | remove: '.html' | remove: '.md' %}
-    {% assign page_title = page_item.title | default: page_name | capitalize %}
-    {% assign nav_item = '{"title": "' | append: page_title | append: '", "url": "' | append: site.baseurl | append: page_item.url | append: '", "id": "' | append: page_name | append: '"}' %}
-    {% assign main_nav_items = main_nav_items | push: nav_item %}
-  {% endunless %}
-{% endfor %}
-
-{% comment %} Auto-discover collections as folders {% endcomment %}
-{% for collection in site.collections %}
-  {% unless collection.label == 'posts' %}
-    {% if collection.output %}
-      {% assign collection_title = collection.label | capitalize %}
-      {% assign collection_url = site.baseurl | append: '/' | append: collection.label | append: '/' %}
-      {% assign nav_item = '{"title": "' | append: collection_title | append: '", "url": "' | append: collection_url | append: '", "id": "' | append: collection.label | append: '"}' %}
-      {% assign main_nav_items = main_nav_items | push: nav_item %}
-    {% endif %}
-  {% endunless %}
-{% endfor %}
-
-{% comment %} Add Posts if there are any {% endcomment %}
-{% if site.posts.size > 0 %}
-  {% assign posts_item = '{"title": "Posts", "url": "' | append: site.baseurl | append: '/posts/", "id": "posts"}' %}
-  {% assign main_nav_items = main_nav_items | push: posts_item %}
-{% endif %}
-
 <div class="nav">
-  {% comment %} Home link {% endcomment %}
-  <a href="{{ site.baseurl }}/" {% if current_path == "/" or current_path == "/index.html" %}class="active"{% endif %}>Home</a>
+  {% comment %} Always show Home first {% endcomment %}
+  <a href="{{ site.baseurl }}/" {% if current_path == "/" or current_path == "/index.html" or current_path == site.baseurl or current_path == site.baseurl | append: "/" %}class="active"{% endif %}>Home</a>
   
-  {% comment %} Pages {% endcomment %}
-  {% for page_item in site.pages %}
-    {% unless page_item.path contains '_' or page_item.path == 'index.html' or page_item.path == 'index.md' or page_item.title == nil %}
-      {% assign page_title = page_item.title | default: page_item.path | remove: '.html' | remove: '.md' | capitalize %}
-      <a href="{{ site.baseurl }}{{ page_item.url }}" {% if current_path == page_item.url %}class="active"{% endif %}>{{ page_title }}</a>
-    {% endunless %}
+  {% comment %} Auto-discover all pages in _pages collection {% endcomment %}
+  {% assign sorted_pages = site.pages | sort: 'title' %}
+  {% for page_item in sorted_pages %}
+    {% if page_item.title and page_item.title != "Home" %}
+      <a href="{{ site.baseurl }}{{ page_item.url }}" {% if current_path == page_item.url %}class="active"{% endif %}>{{ page_item.title }}</a>
+    {% endif %}
   {% endfor %}
   
-  {% comment %} Collections {% endcomment %}
-  {% for collection in site.collections %}
-    {% unless collection.label == 'posts' %}
-      {% if collection.output %}
-        {% assign collection_title = collection.label | capitalize %}
-        <a href="{{ site.baseurl }}/{{ collection.label }}/" {% if current_collection == collection.label %}class="active"{% endif %}>{{ collection_title }}</a>
-      {% endif %}
-    {% endunless %}
-  {% endfor %}
-  
-  {% comment %} Posts {% endcomment %}
+  {% comment %} Always show Posts if there are any {% endcomment %}
   {% if site.posts.size > 0 %}
-    <a href="{{ site.baseurl }}/posts/" {% if current_path contains '/posts/' or current_collection == 'posts' %}class="active"{% endif %}>Posts</a>
+    <a href="{{ site.baseurl }}/posts/" {% if current_path contains '/posts/' or page.layout == 'post' %}class="active"{% endif %}>Posts</a>
   {% endif %}
 </div>
 
-{% comment %} Child navigation for collection items {% endcomment %}
-{% if current_collection and current_collection != 'posts' %}
-  {% assign collection_items = site[current_collection] %}
-  {% if collection_items.size > 0 %}
-    <div class="child-nav">
-      <div class="child-nav-title">{{ current_collection | capitalize }}</div>
-      <div class="child-nav-links">
-        {% for item in collection_items %}
+{% comment %} Child navigation for _pages collection when viewing a page {% endcomment %}
+{% if current_collection == 'pages' and site.pages.size > 1 %}
+  <div class="child-nav">
+    <div class="child-nav-title">Pages</div>
+    <div class="child-nav-links">
+      {% assign sorted_pages = site.pages | sort: 'title' %}
+      {% for item in sorted_pages %}
+        {% if item.title and item.title != "Home" %}
           <a href="{{ site.baseurl }}{{ item.url }}" {% if current_path == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% comment %} Child navigation for posts {% endcomment %}
+{% if current_path contains '/posts/' or page.layout == 'post' %}
+  {% if site.posts.size > 0 %}
+    <div class="child-nav">
+      <div class="child-nav-title">Recent Posts</div>
+      <div class="child-nav-links">
+        {% for post in site.posts limit: 10 %}
+          <a href="{{ site.baseurl }}{{ post.url }}" {% if current_path == post.url %}class="active"{% endif %}>{{ post.title }}</a>
         {% endfor %}
       </div>
     </div>
   {% endif %}
-{% endif %}
-
-{% comment %} Child navigation for posts {% endcomment %}
-{% if current_path contains '/posts/' and site.posts.size > 0 %}
-  <div class="child-nav">
-    <div class="child-nav-title">Posts</div>
-    <div class="child-nav-links">
-      {% for post in site.posts limit: 10 %}
-        <a href="{{ site.baseurl }}{{ post.url }}" {% if current_path == post.url %}class="active"{% endif %}>{{ post.title }}</a>
-      {% endfor %}
-    </div>
-  </div>
 {% endif %}
