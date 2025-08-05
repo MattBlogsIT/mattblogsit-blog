@@ -9,6 +9,7 @@
     --text-muted: #6c757d;
     --accent-primary: #007bff;
     --accent-secondary: #0056b3;
+    --accent-tertiary: #004085;
     --accent-hover: #e3f2fd;
     --border-color: #dee2e6;
     --border-accent: #007bff;
@@ -55,6 +56,7 @@
     --text-muted: #adb5bd;
     --accent-primary: #6ea8fe;
     --accent-secondary: #0d6efd;
+    --accent-tertiary: #3d8bfd;
     --accent-hover: #495057;
     --border-color: #495057;
     --border-accent: #0d6efd;
@@ -75,6 +77,7 @@
         --text-muted: #adb5bd;
         --accent-primary: #6ea8fe;
         --accent-secondary: #0d6efd;
+        --accent-tertiary: #3d8bfd;
         --accent-hover: #495057;
         --border-color: #495057;
         --border-accent: #0d6efd;
@@ -786,6 +789,28 @@ body {
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
+/* Base link styling */
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
+a:focus {
+    color: var(--accent-secondary);
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+a:active {
+    color: var(--accent-secondary);
+}
+
 /* Layout */
 .site-container {
     display: flex;
@@ -1364,7 +1389,7 @@ article:after {
 }
 
 .footer-links a {
-    color: #3498db;
+    color: var(--accent-primary);
     text-decoration: none;
 }
 
@@ -1534,7 +1559,7 @@ article:after {
 .menu-section-title {
     font-size: 14px;
     font-weight: 600;
-    color: #666;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 0 0 15px 0;
@@ -1556,7 +1581,7 @@ article:after {
     display: flex;
     align-items: center;
     padding: 12px 0;
-    color: #2c3e50;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.2s;
@@ -1564,7 +1589,7 @@ article:after {
 
 .menu-items a:hover,
 .menu-items a.active {
-    color: #3498db;
+    color: var(--accent-primary);
 }
 
 .menu-icon {
@@ -1576,8 +1601,8 @@ article:after {
 
 .menu-count {
     margin-left: auto;
-    background: #e3f2fd;
-    color: #3498db;
+    background: var(--accent-hover);
+    color: var(--accent-primary);
     font-size: 12px;
     padding: 2px 8px;
     border-radius: 12px;
