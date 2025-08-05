@@ -21,7 +21,7 @@ I choose to protect myself and try to reduce the spread of COVID-19, and I would
 
 <figure>
 
-![matt in a mask at a doctor appointment]({{ "/assets/images/20200925_153629943_iOS-576x1024.jpg" | relative_url }})
+![matt in a mask at a doctor appointment](/mattblogsit-dev/assets/images/20200925_153629943_iOS-576x1024.jpg)
 
 <figcaption>
 

@@ -17,7 +17,7 @@ I'm back!!! It's been almost a year to the day! I previously had claimed I was g
 
 However I am pushing myself to do more! When the HoloLens developer application opened sometime back in 2015 - my gut wants to say early 2015 but I can't say for certain I applied to be a developer, I thought for kicks it might be fun. I filled out the application 100% honestly and figured I'd never be accepted.
 
-![MSHoloLens_Image_1_CMYK]({{ "/assets/images/MSHoloLens_Image_1_CMYK.jpg" | relative_url }})
+![MSHoloLens_Image_1_CMYK](/mattblogsit-dev/assets/images/MSHoloLens_Image_1_CMYK.jpg)
 
 On February 29th of 2016 I received an email that I was accepted into wave 1 - I was shocked, thrilled and thought there is no way I can justify the cost. I spent weeks contemplating if I would drop the money and if I did what would I even program on it?
 

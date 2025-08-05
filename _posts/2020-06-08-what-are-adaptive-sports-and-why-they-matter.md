@@ -16,7 +16,7 @@ My entire blog has historically been about my background in technology and my te
 
 <figure>
 
-![Soccer picture of Matt]({{ "/assets/images/img06052020_0001-699x1024.png" | relative_url }})
+![Soccer picture of Matt](/mattblogsit-dev/assets/images/img06052020_0001-699x1024.png)
 
 <figcaption>
 
@@ -34,7 +34,7 @@ I want to say around age 15, I had a friend from MDA Camp named Jake, who decide
 
 <figure>
 
-![RHI Indy Storm team picture at 2008 Nationals]({{ "/assets/images/1930126_21664696401_1213_n.jpg" | relative_url }})
+![RHI Indy Storm team picture at 2008 Nationals](/mattblogsit-dev/assets/images/1930126_21664696401_1213_n.jpg)
 
 <figcaption>
 

@@ -27,7 +27,7 @@ Most businesses that invested in Office 365 did so to get rid of their Exchange 
 
 In addition to Exchange Online, Office 365 includes Microsoft Teams, SharePoint, Yammer, OneDrive for Business, Microsoft Delve, Microsoft Stream, Microsoft Sway, Power Apps, Power Automate, Microsoft Forms, Microsoft Planner, and Microsoft To Do.
 
-![Office 365 logo in a cloud connected to other Office 365 product logos]({{ "/assets/images/Office-365-Everywhere-e1596503934227.jpg" | relative_url }})
+![Office 365 logo in a cloud connected to other Office 365 product logos](/mattblogsit-dev/assets/images/Office-365-Everywhere-e1596503934227.jpg)
 
 In this blog post, we will focus on OneDrive for Business, SharePoint, and Microsoft Teams. If you are interested in learning more about the other products that come with Office 365, feel free to browse my blog! I've written articles on [Microsoft Forms](https://mattblogsit.com/tag/microsoft-forms), [Microsoft Planner](https://mattblogsit.com/tag/microsoft-planner), [Microsoft To Do](https://mattblogsit.com/tag/microsoft-to-do), and [Power Automate](https://mattblogsit.com/tag/power-automate) as of writing this post.
 

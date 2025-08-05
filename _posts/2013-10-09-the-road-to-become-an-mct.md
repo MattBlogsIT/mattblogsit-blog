@@ -14,7 +14,7 @@ tags:
 
 I have had a goal over the last two years to become a Microsoft Certified Trainer (MCT). I was already half way there by holding an MCITP certificate in Windows 7 and Server 2008; however I still had to finalize the last requirement of either obtaining my CompTIA CTT+ or attending a Train The Trainer course. Earlier this summer I had started the path to obtain my CTT+ by purchasing and began reading the book to prep me for the exam. About a month later the details for the MCT Summit along with the Train The Trainer course was posted. I spoke with my manager about the positives and negatives of the Train the Trainer path and we decided that was best.
 
-\[caption id="attachment\_289" align="aligncenter" width="720"\][![1239026_583642745026355_1992737302_n]({{ "/assets/images/1239026_583642745026355_1992737302_n.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/10/1239026_583642745026355_1992737302_n.jpg) 2013 MCT Summit Baby MCT's with their trainers\[/caption\]
+\[caption id="attachment\_289" align="aligncenter" width="720"\][![1239026_583642745026355_1992737302_n](/mattblogsit-dev/assets/images/1239026_583642745026355_1992737302_n.jpg)](http://mattblogsit.com/wp-content/uploads/2013/10/1239026_583642745026355_1992737302_n.jpg) 2013 MCT Summit Baby MCT's with their trainers\[/caption\]
 
 Last month the on September 16th and 17th I spent my entire day in a room with 25 other people wanting to become MCT's. A few weeks prior to this I had received a few emails with pre-course work that needed to be completed. Nothing too major just an evaluation asking what I was hoping to learn, a assessment quiz to gauge where I was with the CTT+, and a document I had to fill out, outlining what my presentation would be on.
 

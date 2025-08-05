@@ -29,7 +29,7 @@ I knew I enjoyed gardening, and I've enjoyed it on a small scale for the last tw
 
 <figure>
 
-![Completed raised garden beds with river rock landscape work]({{ "/assets/images/20200413_222112575_iOS-1024x768.jpg" | relative_url }})
+![Completed raised garden beds with river rock landscape work](/mattblogsit-dev/assets/images/20200413_222112575_iOS-1024x768.jpg)
 
 <figcaption>
 
@@ -41,7 +41,7 @@ Raised garden beds and additional river rock
 
 <figure>
 
-![Matt at MDA Telethon with a Fox 59 Newscaster]({{ "/assets/images/MVC-026S-2.jpg" | relative_url }})
+![Matt at MDA Telethon with a Fox 59 Newscaster](/mattblogsit-dev/assets/images/MVC-026S-2.jpg)
 
 <figcaption>
 
@@ -57,7 +57,7 @@ I still have more organizing I want to do around the house, and heck even in my 
 
 <figure>
 
-![Matt's messy office with his home studio equipment setup]({{ "/assets/images/20200607_171753603_iOS-1024x768.jpg" | relative_url }})
+![Matt's messy office with his home studio equipment setup](/mattblogsit-dev/assets/images/20200607_171753603_iOS-1024x768.jpg)
 
 <figcaption>
 

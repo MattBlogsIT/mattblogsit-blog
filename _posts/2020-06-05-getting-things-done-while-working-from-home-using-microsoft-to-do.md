@@ -22,7 +22,7 @@ I'm a huge fan of audiobooks, so I did a bit of digging and stumbled across "[Ge
 
 Being the technologist I am, there was no way I was hand-writing a to-do list for home, all the organizations I'm a part of, and work. I had always known about Microsoft To Do since the preview, and I am heavily invested in the Microsoft 365 cloud suite, so it made sense.
 
-![Microsoft To Do Logo]({{ "/assets/images/mstodo.png" | relative_url }})
+![Microsoft To Do Logo](/mattblogsit-dev/assets/images/mstodo.png)
 
 I am particular about keeping my personal and my work emails, contacts, and files separate - the same goes for my to-do list! With that in mind, I opened Microsoft To Do on my home computer and work computer, then started dumping everything in my brain. This included home projects that have been weighing on me for YEARS! I added any of the 'wish list' items for changes at work to my work list. This includes minor code revisions to PowerShell Scripts, investigating possible edge case bugs, and making code more resilient.
 
@@ -32,7 +32,7 @@ At home, I set up recurring weekly tasks as simple as when I need to take the tr
 
 <figure>
 
-![Using Microsoft To Do]({{ "/assets/images/To-Do-1b.gif" | relative_url }})
+![Using Microsoft To Do](/mattblogsit-dev/assets/images/To-Do-1b.gif)
 
 <figcaption>
 

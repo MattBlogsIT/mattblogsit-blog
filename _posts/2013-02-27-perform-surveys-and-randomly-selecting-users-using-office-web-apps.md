@@ -16,7 +16,7 @@ Next week we have the first **[Indianapolis PowerShell User Group](http://IndyPo
 
 The nice thing about SkyDrive is the Office Web Apps. These web apps include Word, Excel, PowerPoint and OneNote. With Excel you are able to create Survey's and provide anyone the link. These surveys are saved in an Excel document and synced with any computer that you have SkyDrive running on. These documents are being saved to my local machine gives me the ability to execute a PowerShell script on them which will throw out winners from the list of people who submitted the survey.
 
-[![Excel_Survey_WebApp]({{ "/assets/images/Excel_Survey_WebApp.jpg" | relative_url }})](http://mattblogsit.com/wp-content/uploads/2013/02/Excel_Survey_WebApp.jpg)
+[![Excel_Survey_WebApp](/mattblogsit-dev/assets/images/Excel_Survey_WebApp.jpg)](http://mattblogsit.com/wp-content/uploads/2013/02/Excel_Survey_WebApp.jpg)
 
 Lets start...
 

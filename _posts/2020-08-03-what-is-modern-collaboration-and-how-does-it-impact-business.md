@@ -18,7 +18,7 @@ You are probably wondering, what does this all mean? How does it affect my busin
 
 <!--more-->
 
-![Conference room full of people]({{ "/assets/images/pexels-christina-morillo-1181403-1024x684.jpg" | relative_url }})
+![Conference room full of people](/mattblogsit-dev/assets/images/pexels-christina-morillo-1181403-1024x684.jpg)
 
 The key here is a workplace is somewhere you have to go to an office building or a coworking space to do work. A workspace is anywhere you can get the job done. A workspace could be your favorite coffee shop, home office, an office building, or a coworking space. The purpose of a workspace is your tools to be productive are available to you anytime, anywhere you need them.
 
@@ -36,7 +36,7 @@ In the middle of a pandemic, that is not an option. You start working on a docum
 
 Now, let's take that same scenario and think about Modern Collaboration. You have Microsoft Teams, and Microsoft Office. All accessible from the cloud, available anytime, anywhere. You created the document, you open Microsoft Teams and posted a conversation about the file in your Team. You have a couple of people open the document. Some of them even on mobile devices adding comments about revisions they want to be made. There is some contention on proposed changes, so you set up a quick call in Microsoft Teams. The call wraps up in 10 minutes, you make the final revisions and let the team know the document is final and saved in Microsoft Teams.
 
-![Lady working from home in an online meeting]({{ "/assets/images/Managing-eDiscovery-for-modern-collaboration-SOCIAL-1066x600-1-1024x576.png" | relative_url }})
+![Lady working from home in an online meeting](/mattblogsit-dev/assets/images/Managing-eDiscovery-for-modern-collaboration-SOCIAL-1066x600-1-1024x576.png)
 
 You can easily trim a full day of back and forth emailed revisions into a single live document that can be updated discussed and finalized much quicker. The beauty of it, it automatically saves changes the entire time. If someone accidentally deleted a paragraph they didn't mean to, it is easy to find that revision, revert it, or copy and paste the content from the old revision!
 
