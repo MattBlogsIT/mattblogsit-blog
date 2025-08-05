@@ -33,17 +33,8 @@ Within 2 weeks of doing this for work, I made code security enhancements for Pow
 
 At home, I set up recurring weekly tasks as simple as when I need to take the trash to the curb, weekly cleaning of the house, watering house plants, and others. I also added big projects like a massive landscape project where I built raised garden beds, which turned into two projects because my girlfriend had me make them for her dad too! I replaced all the old blinds in my house since they were starting to crack, and I have tons of other projects. The main reason not many have been completed is that the project of 'organize office' took WAY longer than it should have - I had neglected my office way too long, and it needed to be sorted.
 
-<figure>
-
 ![Using Microsoft To Do]({{ site.baseurl }}/assets/img/To-Do-1b.gif)
-
-<figcaption>
-
-Using the Microsoft To Do Mobile App
-
-</figcaption>
-
-</figure>
+*Using the Microsoft To Do Mobile App*
 
 When I had tried using Microsoft To Do before, I hadn't fully committed to it. I would add stuff, then never look at it. I would never set deadlines, which meant I quickly lost track of items because I would create different 'lists' that I didn't see on the main tasks. I still use different lists. For example, I have one for the Alumni Association, one for the Muscular Dystrophy Family Foundation, Home Improvements - there are just on my personal Microsoft To Do account. I also have my work Microsoft To Do account, which pulls in tasks from Planner, I create lists for big projects, and I have just my generic 'Tasks' list.
 

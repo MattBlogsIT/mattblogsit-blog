@@ -24,11 +24,9 @@ title: All Posts
     <h3><a href="{{ site.baseurl }}/posts/sample-post/">Sample Post - Getting Started</a></h3>
     <div class="post-date">August 5, 2025</div>
     <div class="post-excerpt">
-      This is a sample post for the Jekyll-powered GitHub Pages site structure. The repository has been enhanced with Jekyll automation that converts markdown to HTML, provides dynamic navigation, and requires no complex build processes.
+      This is a sample post for the GitHub Pages site structure.
     </div>
     <a href="{{ site.baseurl }}/posts/sample-post/" class="read-more">Read more →</a>
   </article>
 </div>
 {% endif %}
-
-*All previous blog content has been backed up and can be migrated as needed.*

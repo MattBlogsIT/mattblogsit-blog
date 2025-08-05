@@ -4,27 +4,6 @@ Automatically generates category-based post summaries
 {% endcomment %}
 
 <aside class="sidebar">
-    {% comment %} Recent Posts Section {% endcomment %}
-    <div class="sidebar-section">
-        <h3>Recent Posts</h3>
-        {% if site.posts.size > 0 %}
-            <ul class="sidebar-posts">
-                {% for post in site.posts limit: 5 %}
-                    <li>
-                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                        <span class="sidebar-date">{{ post.date | date: "%b %d, %Y" }}</span>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <ul class="sidebar-posts">
-                <li>
-                    <a href="{{ site.baseurl }}/posts/sample-post/">Sample Post - Getting Started</a>
-                    <span class="sidebar-date">Aug 5, 2025</span>
-                </li>
-            </ul>
-        {% endif %}
-    </div>
 
     {% comment %} Categories Section {% endcomment %}
     <div class="sidebar-section">
@@ -63,14 +42,4 @@ Automatically generates category-based post summaries
         {% endif %}
     </div>
 
-    {% comment %} Quick Links Section {% endcomment %}
-    <div class="sidebar-section">
-        <h3>Quick Links</h3>
-        <ul class="sidebar-links">
-            <li><a href="{{ site.baseurl }}/about-me/">About Me</a></li>
-            <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
-            <li><a href="{{ site.baseurl }}/posts/">All Posts</a></li>
-            <li><a href="https://github.com/mattgriffin" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-    </div>
 </aside>
