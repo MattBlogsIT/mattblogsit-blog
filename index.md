@@ -33,6 +33,6 @@ title: Home
 </div>
 {% endif %}
 
-<div class="view-all-posts">
-  <a href="{{ site.baseurl }}/posts/" class="btn-view-all">View All Posts →</a>
-</div>
+<nav class="homepage-navigation">
+  <a href="{{ site.baseurl }}/posts/" class="back-link">View All Posts →</a>
+</nav>

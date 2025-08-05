@@ -25,9 +25,11 @@ Maintains dynamic nature - just add pages to _pages folder and they appear
   
   {% comment %} Search icon in top right {% endcomment %}
   <span class="search-icon" title="Search" onclick="toggleSearch()">🔍</span>
-  <div id="search-dropdown" class="search-dropdown">
-    <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
-    <div id="search-results"></div>
-  </div>
+</div>
+
+<!-- Search dropdown - moved outside nav so it works on mobile too -->
+<div id="search-dropdown" class="search-dropdown">
+  <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+  <div id="search-results"></div>
 </div>
 
