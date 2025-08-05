@@ -29,16 +29,17 @@
         .nav a:hover {
             text-decoration: underline;
         }
+        .nav a.active {
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
     <h1>About Matt Griffin</h1>
     
-    <div class="nav">
-        <a href="./">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./posts.html">Posts</a>
-        <a href="./contact.html">Contact</a>
+    <div class="nav" id="nav-container">
+        <!-- Navigation will be populated by JavaScript -->
     </div>
     
     <p>Matt Griffin is a Systems Architect passionate about technology, volunteering, and adaptive sports.</p>
@@ -46,5 +47,6 @@
     <p>This minimal site structure allows for easy expansion while using GitHub Pages' default static hosting capabilities.</p>
     
     <p><a href="./">← Back to Home</a></p>
+    <script src="./js/navigation.js"></script>
 </body>
 </html>

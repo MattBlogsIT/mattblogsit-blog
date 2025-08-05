@@ -29,16 +29,17 @@
         .nav a:hover {
             text-decoration: underline;
         }
+        .nav a.active {
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
     <h1>Matt Blogs IT</h1>
     
-    <div class="nav">
-        <a href="./">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./posts.html">Posts</a>
-        <a href="./contact.html">Contact</a>
+    <div class="nav" id="nav-container">
+        <!-- Navigation will be populated by JavaScript -->
     </div>
     
     <p>Welcome to my blog about IT, technology, and life. I'm Matt Griffin, a Systems Architect passionate about technology, volunteering, and adaptive sports.</p>
@@ -49,5 +50,6 @@
     </ul>
     
     <p><em>This is a minimal GitHub Pages site using the default GitHub Pages workflow.</em></p>
+    <script src="./js/navigation.js"></script>
 </body>
 </html>

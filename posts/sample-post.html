@@ -34,16 +34,17 @@
             font-style: italic;
             margin-bottom: 20px;
         }
+        .nav a.active {
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
     <h1>Sample Post - Getting Started</h1>
     
-    <div class="nav">
-        <a href="../">Home</a>
-        <a href="../about.html">About</a>
-        <a href="../posts.html">Posts</a>
-        <a href="../contact.html">Contact</a>
+    <div class="nav" id="nav-container">
+        <!-- Navigation will be populated by JavaScript -->
     </div>
     
     <div class="meta">Published: August 5, 2025</div>
@@ -62,5 +63,6 @@
     <p>All previous content has been preserved in the <code>_backup</code> directory and can be migrated as needed.</p>
     
     <p><a href="../posts.html">← Back to Posts</a></p>
+    <script src="../js/navigation.js"></script>
 </body>
 </html>
