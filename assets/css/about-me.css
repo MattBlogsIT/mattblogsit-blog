@@ -1,0 +1,33 @@
+/* About Me page specific styles */
+.about-me-profile {
+    max-width: 300px;
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.about-me-team-photo {
+    max-width: 500px;
+    display: block;
+    margin: 20px auto;
+}
+
+.about-me-action-photo {
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Clear floats after major sections */
+.about-me h2 {
+    clear: both;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-me-profile {
+        float: none;
+        margin: 20px auto;
+        max-width: 250px;
+        display: block;
+    }
+}

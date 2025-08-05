@@ -4,41 +4,7 @@ title: About Me
 permalink: /about-me/
 ---
 
-<style>
-/* About Me page specific image positioning */
-.about-me-profile {
-    max-width: 300px;
-    float: right;
-    margin: 0 0 20px 20px;
-}
-
-.about-me-team-photo {
-    max-width: 500px;
-    display: block;
-    margin: 20px auto;
-}
-
-.about-me-action-photo {
-    max-width: 600px;
-    display: block;
-    margin: 20px auto;
-}
-
-/* Clear floats after major sections */
-h2 {
-    clear: both;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .about-me-profile {
-        float: none;
-        margin: 20px auto;
-        max-width: 250px;
-        display: block;
-    }
-}
-</style>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/about-me.css">
 
 <img src="{{ site.baseurl }}/assets/img/20170216_213340-e1566312838997-576x1024.jpg" alt="Matt Griffin Profile Photo" class="about-me-profile" />
 

@@ -2,53 +2,55 @@
 layout: default
 permalink: /archive/
 title: Archives
+stylesheets:
+  - archive
 ---
 
 # All Archives
 
-{% assign posts_by_year = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% assign years = "" | split: "" %}
+{% for post in site.posts %}
+  {% assign post_year = post.date | date: "%Y" %}
+  {% unless years contains post_year %}
+    {% assign years = years | push: post_year %}
+  {% endunless %}
+{% endfor %}
+{% assign years = years | sort | reverse %}
 
-<div class="archive-list">
-{% for year_group in posts_by_year %}
-  <div class="archive-item">
-    <h3><a href="{{ site.baseurl }}/archive/{{ year_group.name }}/">{{ year_group.name }}</a></h3>
-    <p>{{ year_group.items.size }} post{% if year_group.items.size > 1 %}s{% endif %}</p>
+<div class="archive-container">
+{% for year in years %}
+  {% assign year_posts = "" | split: "" %}
+  {% for post in site.posts %}
+    {% assign post_year = post.date | date: "%Y" %}
+    {% if post_year == year %}
+      {% assign year_posts = year_posts | push: post %}
+    {% endif %}
+  {% endfor %}
+  
+  <div class="archive-section">
+    <h3 class="collapsible-header">
+      {{ year }} 
+      <span class="post-count">({{ year_posts.size }} post{% if year_posts.size > 1 %}s{% endif %})</span>
+      <span class="toggle-icon">▼</span>
+    </h3>
+    <div class="collapsible-content">
+      <div class="post-list">
+        {% for post in year_posts %}
+          <article class="post-preview">
+            <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+            <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+            {% if post.excerpt %}
+              <div class="post-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 20 }}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 {% endfor %}
 </div>
 
-<style>
-.archive-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.archive-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-.archive-item h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5em;
-}
-
-.archive-item h3 a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-.archive-item h3 a:hover {
-    text-decoration: underline;
-}
-
-.archive-item p {
-    margin: 0;
-    color: #666;
-}
-</style>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/archive.css">
+<script src="{{ site.baseurl }}/assets/js/collapsible.js"></script>

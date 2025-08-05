@@ -1,0 +1,104 @@
+/* Category page styles */
+.category-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.category-section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.category-section .collapsible-header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    transition: background 0.3s ease;
+}
+
+.category-section .collapsible-header:hover {
+    background: linear-gradient(135deg, #e67fe9 0%, #f3455a 100%);
+}
+
+.category-section .post-count {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.category-section .toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.category-section .collapsible-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.category-section .collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f8f9fa;
+}
+
+.category-section .collapsible-content.active {
+    max-height: 2000px;
+}
+
+.category-section .post-list {
+    padding: 20px;
+}
+
+.category-section .post-preview {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.category-section .post-preview:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.category-section .post-preview:last-child {
+    margin-bottom: 0;
+}
+
+.category-section .post-preview h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+}
+
+.category-section .post-preview h4 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.category-section .post-preview h4 a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.category-section .post-date {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.category-section .post-excerpt {
+    color: #495057;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
