@@ -3,10 +3,6 @@ layout: default
 title: Home
 ---
 
-# Welcome to Matt Blogs IT
-
-Welcome to my blog about IT, technology, and life. I'm Matt Griffin, a Systems Architect passionate about technology, volunteering, and adaptive sports.
-
 ## Latest Posts
 
 {% if site.posts.size > 0 %}
