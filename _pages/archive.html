@@ -6,11 +6,21 @@ permalink: /archive/:year/
 <script>
 // Dynamic archive page - gets year from URL
 document.addEventListener('DOMContentLoaded', function() {
-    // Get year from URL path
-    const pathParts = window.location.pathname.split('/');
-    const year = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1];
+    // Get year from URL path - handle both /archive/2020/ and /archive/2020
+    const pathParts = window.location.pathname.split('/').filter(part => part !== '');
+    let year = null;
     
-    if (!year || year === 'archive' || !/^\d{4}$/.test(year)) {
+    // Find year in path segments
+    for (let i = 0; i < pathParts.length; i++) {
+        if (pathParts[i] === 'archive' && i + 1 < pathParts.length) {
+            year = pathParts[i + 1];
+            break;
+        }
+    }
+    
+    console.log('Archive page - pathname:', window.location.pathname, 'year:', year);
+    
+    if (!year || !/^\d{4}$/.test(year)) {
         showAllArchives();
         return;
     }
@@ -20,10 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const posts = data.filter(item => item.type === 'post');
-            const yearPosts = posts.filter(post => 
-                post.date && post.date.includes(year)
-            );
+            console.log('Total posts found:', posts.length);
             
+            const yearPosts = posts.filter(post => {
+                if (!post.date) return false;
+                // Handle both "August 05, 2025" and "2025-08-05" formats
+                const postYear = post.date.includes(',') ? 
+                    post.date.split(', ')[1] : 
+                    post.date.substring(0, 4);
+                const matches = postYear === year;
+                if (matches) {
+                    console.log('Found matching post:', post.title, 'date:', post.date, 'year:', postYear);
+                }
+                return matches;
+            });
+            
+            console.log('Filtered posts for year', year, ':', yearPosts.length);
             displayYearPosts(year, yearPosts);
         })
         .catch(error => {
@@ -82,7 +104,10 @@ function showAllArchives() {
             
             posts.forEach(post => {
                 if (post.date) {
-                    const year = post.date.split(' ')[2] || post.date.substring(0, 4);
+                    // Handle both "August 05, 2025" and "2025-08-05" formats
+                    const year = post.date.includes(',') ? 
+                        post.date.split(', ')[1] : 
+                        post.date.substring(0, 4);
                     if (!years[year]) {
                         years[year] = 0;
                     }

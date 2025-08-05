@@ -6,11 +6,21 @@ permalink: /category/:slug/
 <script>
 // Dynamic category page - gets category from URL
 document.addEventListener('DOMContentLoaded', function() {
-    // Get category from URL path
-    const pathParts = window.location.pathname.split('/');
-    const categorySlug = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1];
+    // Get category from URL path - handle both /category/microsoft/ and /category/microsoft
+    const pathParts = window.location.pathname.split('/').filter(part => part !== '');
+    let categorySlug = null;
     
-    if (!categorySlug || categorySlug === 'category') {
+    // Find category in path segments
+    for (let i = 0; i < pathParts.length; i++) {
+        if (pathParts[i] === 'category' && i + 1 < pathParts.length) {
+            categorySlug = pathParts[i + 1];
+            break;
+        }
+    }
+    
+    console.log('Category page - pathname:', window.location.pathname, 'category:', categorySlug);
+    
+    if (!categorySlug) {
         showAllCategories();
         return;
     }
