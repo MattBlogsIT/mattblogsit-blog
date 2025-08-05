@@ -15,7 +15,7 @@ permalink: /posts-5/
   <div class="posts-per-page-selector">
     <label for="posts-per-page">Posts per page:</label>
     <select id="posts-per-page" class="per-page-select">
-      <option value="5" selected>5</option>
+      <option value="5">5</option>
       <option value="10">10</option>
       <option value="25">25</option>
     </select>

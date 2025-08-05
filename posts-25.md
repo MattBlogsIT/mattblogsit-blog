@@ -17,7 +17,7 @@ permalink: /posts-25/
     <select id="posts-per-page" class="per-page-select">
       <option value="5">5</option>
       <option value="10">10</option>
-      <option value="25" selected>25</option>
+      <option value="25">25</option>
     </select>
   </div>
 </div>

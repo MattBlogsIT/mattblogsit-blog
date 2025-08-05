@@ -76,24 +76,29 @@ jobs:
           cp -r _site _site_default
           
           # Build with 5 posts per page
-          echo "pagination:" > _config_override.yml
-          echo "  per_page: 5" >> _config_override.yml
-          echo "  permalink: '/posts-5/page/:num/'" >> _config_override.yml
-          bundle exec jekyll build --config _config.yml,_config_override.yml --baseurl "${{ steps.pages.outputs.base_path }}"
-          mkdir -p _site_default/posts-5
-          cp -r _site/posts/* _site_default/posts-5/ 2>/dev/null || true
+          mkdir -p posts-5
+          echo "---" > posts-5/index.md
+          echo "layout: page" >> posts-5/index.md
+          echo "title: All Posts" >> posts-5/index.md
+          echo "pagination:" >> posts-5/index.md
+          echo "  enabled: true" >> posts-5/index.md
+          echo "  per_page: 5" >> posts-5/index.md
+          echo "---" >> posts-5/index.md
+          cat posts.md | tail -n +7 >> posts-5/index.md
           
-          # Build with 25 posts per page
-          echo "pagination:" > _config_override.yml
-          echo "  per_page: 25" >> _config_override.yml
-          echo "  permalink: '/posts-25/page/:num/'" >> _config_override.yml
-          bundle exec jekyll build --config _config.yml,_config_override.yml --baseurl "${{ steps.pages.outputs.base_path }}"
-          mkdir -p _site_default/posts-25
-          cp -r _site/posts/* _site_default/posts-25/ 2>/dev/null || true
+          # Build with 25 posts per page  
+          mkdir -p posts-25
+          echo "---" > posts-25/index.md
+          echo "layout: page" >> posts-25/index.md
+          echo "title: All Posts" >> posts-25/index.md
+          echo "pagination:" >> posts-25/index.md
+          echo "  enabled: true" >> posts-25/index.md
+          echo "  per_page: 25" >> posts-25/index.md
+          echo "---" >> posts-25/index.md
+          cat posts.md | tail -n +7 >> posts-25/index.md
           
-          # Restore default site
-          rm -rf _site
-          mv _site_default _site
+          # Rebuild with all variations
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact

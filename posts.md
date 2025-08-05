@@ -13,9 +13,9 @@ pagination:
   <div class="posts-per-page-selector">
     <label for="posts-per-page">Posts per page:</label>
     <select id="posts-per-page" class="per-page-select">
-      <option value="5" {% if paginator.per_page == 5 %}selected{% endif %}>5</option>
-      <option value="10" {% if paginator.per_page == 10 %}selected{% endif %}>10</option>
-      <option value="25" {% if paginator.per_page == 25 %}selected{% endif %}>25</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="25">25</option>
     </select>
   </div>
 </div>
