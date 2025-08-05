@@ -1,0 +1,76 @@
+{% comment %}
+Right sidebar navigation - globally managed
+Automatically generates category-based post summaries
+{% endcomment %}
+
+<aside class="sidebar">
+    {% comment %} Recent Posts Section {% endcomment %}
+    <div class="sidebar-section">
+        <h3>Recent Posts</h3>
+        {% if site.posts.size > 0 %}
+            <ul class="sidebar-posts">
+                {% for post in site.posts limit: 5 %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                        <span class="sidebar-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <ul class="sidebar-posts">
+                <li>
+                    <a href="{{ site.baseurl }}/posts/sample-post/">Sample Post - Getting Started</a>
+                    <span class="sidebar-date">Aug 5, 2025</span>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+
+    {% comment %} Categories Section {% endcomment %}
+    <div class="sidebar-section">
+        <h3>Categories</h3>
+        {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+        {% if categories.size > 0 %}
+            <ul class="sidebar-categories">
+                {% for category in categories %}
+                    {% if category != "" %}
+                        {% assign category_posts = site.posts | where: 'categories', category %}
+                        <li>
+                            <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">
+                                {{ category | capitalize }} ({{ category_posts.size }})
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    {% comment %} Archives Section {% endcomment %}
+    <div class="sidebar-section">
+        <h3>Archives</h3>
+        {% assign posts_by_year = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+        {% if posts_by_year.size > 0 %}
+            <ul class="sidebar-archives">
+                {% for year_group in posts_by_year %}
+                    <li>
+                        <a href="{{ site.baseurl }}/archive/{{ year_group.name }}/">
+                            {{ year_group.name }} ({{ year_group.items.size }})
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    {% comment %} Quick Links Section {% endcomment %}
+    <div class="sidebar-section">
+        <h3>Quick Links</h3>
+        <ul class="sidebar-links">
+            <li><a href="{{ site.baseurl }}/about-me/">About Me</a></li>
+            <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
+            <li><a href="{{ site.baseurl }}/posts/">All Posts</a></li>
+            <li><a href="https://github.com/mattgriffin" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
+</aside>

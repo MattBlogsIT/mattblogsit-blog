@@ -8,10 +8,19 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
+        }
+        .site-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 0;
         }
         h1 {
             color: #2c3e50;
@@ -189,6 +198,73 @@
         .footer-links a:hover {
             text-decoration: underline;
         }
+        /* Sidebar styling */
+        .sidebar {
+            width: 300px;
+            flex-shrink: 0;
+        }
+        .sidebar-section {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .sidebar-section h3 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+        .sidebar-posts,
+        .sidebar-categories,
+        .sidebar-archives,
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-posts li,
+        .sidebar-categories li,
+        .sidebar-archives li,
+        .sidebar-links li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .sidebar-posts a,
+        .sidebar-categories a,
+        .sidebar-archives a,
+        .sidebar-links a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar-posts a:hover,
+        .sidebar-categories a:hover,
+        .sidebar-archives a:hover,
+        .sidebar-links a:hover {
+            text-decoration: underline;
+        }
+        .sidebar-date {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 2px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .site-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                order: -1;
+            }
+            .sidebar-section {
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -196,9 +272,13 @@
     
     {% include navigation.html %}
     
-    <main>
-        {{ content }}
-    </main>
+    <div class="site-container">
+        <main class="main-content">
+            {{ content }}
+        </main>
+        
+        {% include sidebar.html %}
+    </div>
     
     {% include footer.html %}
     
