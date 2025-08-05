@@ -17,7 +17,7 @@ My original approach to this in the article was to approach the Smart Home insta
 
 So why not share with the people of at least Indiana a resource that I hope they know exists, but I understand they might not!
 
-![Muscular Dystrophy Family Foundation Logo](/mattblogsit-dev/assets/images/MDFF-Final-Logo_Color-300x232.png)
+![Muscular Dystrophy Family Foundation Logo](../assets/images/MDFF-Final-Logo_Color-300x232.png)
 
 The Muscular Dystrophy Family Foundation (MDFF) increases the quality of life and independence of people with Muscular Dystrophy, as well as empowers their families, through advocacy, education, and financial resources. You may be asking, ok, how does this help with a Smart Home? Easy, if you have a Muscular Dystrophy and live in the State of Indiana, you can submit an [assistance request](https://forms.office.com/Pages/ResponsePage.aspx?id=p3an6NxT8UywQ1XFKvz46GWkZBG5U3pGo4KLAHiUcwpUQklMWElEVktKMjRQUzRQUkIxWFIzSlBLSS4u) for devices that will increase the quality of life and independence for you (person affected by Muscular Dystrophy).
 

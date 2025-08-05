@@ -22,7 +22,7 @@ We had an intern program over the summer in our office and a specific intern who
 
 These got boring, which is very unusual when making someone have a sexy background. However, because we became so bored with it, we decided to take it a step further. We thought, wouldn't it be cool to automate this with PowerShell? So our initial idea was changing the background to a random image. Looking through the ways of doing that was semi-complicated, and I was feeling lazy. So we ditched the idea, and it was on the back burner for a long time.
 
-![](/mattblogsit-dev/assets/images/p0d3l.jpg)
+![](../assets/images/p0d3l.jpg)
 
 One evening I came home from work and stumbled upon this fantastic post on the PowerShell Sub-Reddit "[A fun script for Friday - make your friend's computer start talking to him/her](http://www.reddit.com/r/PowerShell/comments/1khn9o/a_fun_script_for_friday_make_your_friends/)." To sum it up, it'll use Text to Speech to have the computer talk. In the example posted, it used PowerShell Remoting. Using PowerShell Remoting for such a malicious intent may cross a line, depends on who the target is and how much you abuse it. In my case, the computers were not domain joined, and so I couldn't use that as easily. So I decided to take my Friday night and make it quite a bit more "portable."
 

@@ -17,7 +17,7 @@ Two of the major changes with PowerShell v5.0 include two new modules; the OneGe
 
 Please note that this is just a very quick overview of the modules and we will dive into more depth on them in upcoming blog posts.
 
-[![psv5](/mattblogsit-dev/assets/images/psv5.png)](http://mattblogsit.com/wp-content/uploads/2014/06/psv5.png)<!--more-->
+[![psv5](../assets/images/psv5.png)](http://mattblogsit.com/wp-content/uploads/2014/06/psv5.png)<!--more-->
 
  
 
@@ -31,13 +31,13 @@ I personally have been using Chocolatey for about a year now, and I am very exci
 
 Currently detailed Help documents do not exist for the below cmdlets. I've provided a quick summary of what these cmdlets can do from what I've gathered by analyzing the parameters available with them.
 
-[![OneGetCmdlets](/mattblogsit-dev/assets/images/OneGetCmdlets.png)](http://mattblogsit.com/wp-content/uploads/2014/06/OneGetCmdlets.png)
+[![OneGetCmdlets](../assets/images/OneGetCmdlets.png)](http://mattblogsit.com/wp-content/uploads/2014/06/OneGetCmdlets.png)
 
 ### Add-PackageSource
 
 Add-PackageSource will add additional sources outside of the default ones provided with PowerShell OneGet. The below parameters are available.
 
-[![add-packagesource](/mattblogsit-dev/assets/images/add-packagesource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/add-packagesource.png)
+[![add-packagesource](../assets/images/add-packagesource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/add-packagesource.png)
 
 ### Find-Package
 
@@ -49,37 +49,37 @@ Fine-Package will perform a search of multiple Package Sources with ability to f
 - Hint
 - LeavePartialPackageInstalled
 
-[![find-package](/mattblogsit-dev/assets/images/find-package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/find-package.png)
+[![find-package](../assets/images/find-package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/find-package.png)
 
 ### Get-Package
 
 Get-Package will return a list of all packages currently installed with a few parameters you can use to filter the results a bit.
 
-[![get-package](/mattblogsit-dev/assets/images/get-package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/get-package.png)
+[![get-package](../assets/images/get-package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/get-package.png)
 
 ### Get-PackageSource
 
 Get-PackageSource will return a list of PackageSource repositories that you have setup with OneGet. It includes some minor filtering parameters you can use.
 
-[![Get-PackageSource](/mattblogsit-dev/assets/images/Get-PackageSource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Get-PackageSource.png)
+[![Get-PackageSource](../assets/images/Get-PackageSource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Get-PackageSource.png)
 
 ### Install-Package
 
 This is one of the more self explanatory cmdlets included with the OneGet Module. This will install a package that you specify or multiple packages that you specify. This cmdlet includes quite a few parameters that you can use to filter for where you want the package installed from all the way down to exactly which version of the package you want installed.
 
-[![Install-Package](/mattblogsit-dev/assets/images/Install-Package-959x1024.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Install-Package.png)
+[![Install-Package](../assets/images/Install-Package-959x1024.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Install-Package.png)
 
 ### Remove-PackageSource
 
 Remove-PackageSource is used to remove package repositories that have been added to your OneGet Module.
 
-[![Remove-PackageSource](/mattblogsit-dev/assets/images/Remove-PackageSource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Remove-PackageSource.png)
+[![Remove-PackageSource](../assets/images/Remove-PackageSource.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Remove-PackageSource.png)
 
 ### Uninstall-Package
 
 Another fairly self explanatory cmdlet. This will uninstall a package that you have previously installed using OneGet.
 
-[![Uninstall-Package](/mattblogsit-dev/assets/images/Uninstall-Package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Uninstall-Package.png)
+[![Uninstall-Package](../assets/images/Uninstall-Package.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Uninstall-Package.png)
 
 # PowerShellGet Module:
 
@@ -89,20 +89,20 @@ The PowerShellGet Module is new in the May preview and is similar to OneGet in t
 
 The nice thing about the PowerShellGet Module is that a lot of the help is already available if you run an Update-Help. The Module includes only 4 cmdlets, but that is all it really needs.
 
-[![PowerShellGetCmdlets](/mattblogsit-dev/assets/images/PowerShellGetCmdlets.png)](http://mattblogsit.com/wp-content/uploads/2014/06/PowerShellGetCmdlets.png)
+[![PowerShellGetCmdlets](../assets/images/PowerShellGetCmdlets.png)](http://mattblogsit.com/wp-content/uploads/2014/06/PowerShellGetCmdlets.png)
 
 ### Find-Module
 
-[![Find-Module](/mattblogsit-dev/assets/images/Find-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Find-Module.png)
+[![Find-Module](../assets/images/Find-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Find-Module.png)
 
 ### Install-Module
 
-[![Install-Module](/mattblogsit-dev/assets/images/Install-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Install-Module.png)
+[![Install-Module](../assets/images/Install-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Install-Module.png)
 
 ### Publish-Module
 
-[![Publish-Module](/mattblogsit-dev/assets/images/Publish-Module-876x1024.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Publish-Module.png)
+[![Publish-Module](../assets/images/Publish-Module-876x1024.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Publish-Module.png)
 
 ### Update-Module
 
-[![Update-Module](/mattblogsit-dev/assets/images/Update-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Update-Module.png)
+[![Update-Module](../assets/images/Update-Module.png)](http://mattblogsit.com/wp-content/uploads/2014/06/Update-Module.png)

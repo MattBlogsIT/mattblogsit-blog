@@ -12,7 +12,7 @@ tags:
 
 As a follow up to [Backups are Important! Here is How I do it!](http://mattblogsit.com/oob/backups-are-important-here-is-how-i-do-it "Backups are Important! Here is How I do it!") I decided I should let everyone know how I am handling remote backups on my blog. It's not hard to see that I am obviously a Windows guy, I am also glad to admit that I personally prefer Linux Servers for my blog, it's a smaller impact, and much much cheaper; although I have considered Azure more than once.
 
-![Weapon-overkill](/mattblogsit-dev/assets/images/Weapon-overkill.jpg)
+![Weapon-overkill](../assets/images/Weapon-overkill.jpg)
 
 So as I have listed on my last blog post I was bit in the rear on backups and decided to go for overkill. I already have a ton of storage at home so I figured there had to be a way for me to utilize that storage and have a remote backup that isn't in my Dropbox and isn't a manual process. So I began researching ways to interface with SFTP, I found out that **[WinSCP has .NET Assemblys available](http://winscp.net/eng/docs/library#downloading_and_installing_the_assembly)**, and I'll admit I am far from a programmer and didn't want to try to hook into that using PowerShell. So I let it sit for a couple of weeks and by god an example of exactly what I wanted to do was posted, and all I had to do was minor tweaks.
 

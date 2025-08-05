@@ -13,7 +13,7 @@ tags:
   - "windows"
 ---
 
-![](/mattblogsit-dev/assets/images/90dayshead.jpg)
+![](../assets/images/90dayshead.jpg)
 
 Hello Everyone! I apologize for my months disappearance from blogging, it's been a busy March and will continue to be busy throughout TechEd! That is not a bad thing, and I will strive to increase my blogging. One thing that is going to help me in the interim is my Journey to my Server 2012 MCSA!
 

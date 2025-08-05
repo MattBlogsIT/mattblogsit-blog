@@ -17,7 +17,7 @@ The last three years I have been extraordinarily lucky that I have been able to 
 
 # What is #TheKrewe?
 
-\[caption id="attachment\_233" align="aligncenter" width="620"\][![#TheKrewe 2013 Group Photo](/mattblogsit-dev/assets/images/MJM_1595-1024x680.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1595.jpg) #TheKrewe 2013 Group Photo\[/caption\]
+\[caption id="attachment\_233" align="aligncenter" width="620"\][![#TheKrewe 2013 Group Photo](../assets/images/MJM_1595-1024x680.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1595.jpg) #TheKrewe 2013 Group Photo\[/caption\]
 
 > _"The Krewe is a community organized professional networking group. Our mission is to build a dynamic networking community through various activities and gatherings. The Krewe primarily meets at Microsoft TechEd North America every year where we have The Krewe Meet 'N Greet the day prior to the opening of the conference. Our group takes Networking to a whole new level, we are all close friends and are open to helping each other in any way possible be it through charitable works or by helping solve a question that has you stumped in your professional life. We are IT people from every level of the career, you may find someone totally new to IT who is just starting off or meet someone who has 20 years’ experience and is an MVP, MCT, MCP and any other abbreviation you can think of."_
 
@@ -31,7 +31,7 @@ After a few weeks of hunting evening activities down I found this amazing group 
 
 I was lucky enough to have a friend also going to TechEd with me who sat in the corner with me at all the parties and we only talked to each other. I honestly do not believe I met a single person at TechEd in 2011.
 
-\[caption id="attachment\_14" align="aligncenter" width="400"\][![Tech Ed 2011 Closing Party at Coke-A-Cola Museum](/mattblogsit-dev/assets/images/summer2011.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/summer2011.jpg) Tech Ed 2011 Closing Party at Coke-A-Cola Museum\[/caption\]
+\[caption id="attachment\_14" align="aligncenter" width="400"\][![Tech Ed 2011 Closing Party at Coke-A-Cola Museum](../assets/images/summer2011.jpg)](http://mattblogsit.com/wp-content/uploads/2012/11/summer2011.jpg) Tech Ed 2011 Closing Party at Coke-A-Cola Museum\[/caption\]
 
 # Year 2 Experience
 
@@ -41,7 +41,7 @@ I had a lot of people encourage me that I was doing the right thing by socializi
 
 Overall from the second year at TechEd I was very proud of myself for breaking out of my shell and socializing more, but I knew I could exceed the amount of people that I had met and talked to the next year.
 
-\[caption id="attachment\_52" align="aligncenter" width="1024"\][![#TheKrewe Sunday Meet 'N Greet 2012](/mattblogsit-dev/assets/images/2012-06-11T06-04-22_20.jpg)](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_20.jpg) #TheKrewe Sunday Meet 'N Greet 2012\[/caption\]
+\[caption id="attachment\_52" align="aligncenter" width="1024"\][![#TheKrewe Sunday Meet 'N Greet 2012](../assets/images/2012-06-11T06-04-22_20.jpg)](http://mattblogsit.com/wp-content/uploads/2012/06/2012-06-11T06-04-22_20.jpg) #TheKrewe Sunday Meet 'N Greet 2012\[/caption\]
 
 # Year 3 Experience
 
@@ -55,6 +55,6 @@ TechEd finally rolls around, I am frantically making sure all of the things are 
 
 Once I realized this I knew it was my duty to get everyone else who would like to be part of #TheKrewe to feel the same way. I have tried my best to engage with people on a one by one basis and encourage them to get involved, no matter what their skill level is with Technology everyone can contribute in some way shape or form to the organization.
 
-\[caption id="attachment\_232" align="aligncenter" width="600"\][![Friends from around the world who are in #TheKrewe](/mattblogsit-dev/assets/images/MJM_1609.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1609.jpg) Friends from around the world who are in #TheKrewe\[/caption\]
+\[caption id="attachment\_232" align="aligncenter" width="600"\][![Friends from around the world who are in #TheKrewe](../assets/images/MJM_1609.jpg)](http://mattblogsit.com/wp-content/uploads/2013/06/MJM_1609.jpg) Friends from around the world who are in #TheKrewe\[/caption\]
 
 If you would like to view more pictures from TechEd 2013 please view **[my photos here](http://sdrv.ms/11LlPSm)**.
