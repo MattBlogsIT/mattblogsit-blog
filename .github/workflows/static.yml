@@ -34,8 +34,6 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
           cache-version: 0
-      - name: Install dependencies
-        run: bundle install
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -68,37 +66,7 @@ jobs:
             echo "---" >> "category/$slug/index.md"
           done
       - name: Build with Jekyll
-        run: |
-          # Build default (10 posts per page)
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-          
-          # Copy site to preserve the default build
-          cp -r _site _site_default
-          
-          # Build with 5 posts per page
-          mkdir -p posts-5
-          echo "---" > posts-5/index.md
-          echo "layout: page" >> posts-5/index.md
-          echo "title: All Posts" >> posts-5/index.md
-          echo "pagination:" >> posts-5/index.md
-          echo "  enabled: true" >> posts-5/index.md
-          echo "  per_page: 5" >> posts-5/index.md
-          echo "---" >> posts-5/index.md
-          cat posts.md | tail -n +7 >> posts-5/index.md
-          
-          # Build with 25 posts per page  
-          mkdir -p posts-25
-          echo "---" > posts-25/index.md
-          echo "layout: page" >> posts-25/index.md
-          echo "title: All Posts" >> posts-25/index.md
-          echo "pagination:" >> posts-25/index.md
-          echo "  enabled: true" >> posts-25/index.md
-          echo "  per_page: 25" >> posts-25/index.md
-          echo "---" >> posts-25/index.md
-          cat posts.md | tail -n +7 >> posts-25/index.md
-          
-          # Rebuild with all variations
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
