@@ -12,10 +12,31 @@ highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate-v2
 
 # Plugins
-safe: true
+safe: false  # Required for jekyll-paginate-v2
 incremental: false
+
+# Pagination Settings
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+  extension: html
+  indexpage: 'index'
 
 # Permalink settings
 permalink: /:categories/:title/

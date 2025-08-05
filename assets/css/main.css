@@ -327,6 +327,121 @@ article:after {
     color: #ccc;
 }
 
+/* Pagination styling */
+.pagination-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+}
+
+.pagination-info {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.posts-per-page-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.posts-per-page-selector label {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.per-page-select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+.per-page-select:hover {
+    border-color: #3498db;
+}
+
+.per-page-select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.pagination-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination-btn.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.page-number {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.page-number.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+    font-weight: 600;
+}
+
+.page-ellipsis {
+    padding: 0 5px;
+    color: #666;
+}
+
 /* Footer styling */
 .site-footer {
     margin-top: 50px;
@@ -583,6 +698,34 @@ article:after {
 @media (max-width: 768px) {
     body {
         padding: 15px 15px 15px 10px;
+    }
+    
+    /* Pagination mobile styles */
+    .pagination-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .pagination-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .page-numbers {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pagination-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+    
+    .page-number {
+        font-size: 0.9em;
+        padding: 5px 10px;
     }
     
     /* Hide regular navigation on mobile */

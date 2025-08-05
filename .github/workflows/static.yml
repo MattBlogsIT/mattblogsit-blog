@@ -34,6 +34,8 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
           cache-version: 0
+      - name: Install dependencies
+        run: bundle install
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -66,7 +68,32 @@ jobs:
             echo "---" >> "category/$slug/index.md"
           done
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          # Build default (10 posts per page)
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          
+          # Copy site to preserve the default build
+          cp -r _site _site_default
+          
+          # Build with 5 posts per page
+          echo "pagination:" > _config_override.yml
+          echo "  per_page: 5" >> _config_override.yml
+          echo "  permalink: '/posts-5/page/:num/'" >> _config_override.yml
+          bundle exec jekyll build --config _config.yml,_config_override.yml --baseurl "${{ steps.pages.outputs.base_path }}"
+          mkdir -p _site_default/posts-5
+          cp -r _site/posts/* _site_default/posts-5/ 2>/dev/null || true
+          
+          # Build with 25 posts per page
+          echo "pagination:" > _config_override.yml
+          echo "  per_page: 25" >> _config_override.yml
+          echo "  permalink: '/posts-25/page/:num/'" >> _config_override.yml
+          bundle exec jekyll build --config _config.yml,_config_override.yml --baseurl "${{ steps.pages.outputs.base_path }}"
+          mkdir -p _site_default/posts-25
+          cp -r _site/posts/* _site_default/posts-25/ 2>/dev/null || true
+          
+          # Restore default site
+          rm -rf _site
+          mv _site_default _site
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
