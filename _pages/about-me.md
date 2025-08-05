@@ -5,33 +5,27 @@ permalink: /about-me/
 ---
 
 <style>
-/* About Me page specific image styling */
+/* About Me page specific image positioning */
 .about-me-profile {
     max-width: 300px;
     float: right;
     margin: 0 0 20px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .about-me-team-photo {
     max-width: 500px;
     display: block;
     margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .about-me-action-photo {
     max-width: 600px;
     display: block;
     margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* Clear floats after major sections */
-.about-me h2 {
+h2 {
     clear: both;
 }
 

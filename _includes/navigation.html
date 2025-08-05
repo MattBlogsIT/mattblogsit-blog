@@ -24,31 +24,3 @@ Maintains dynamic nature - just add pages to _pages folder and they appear
   {% endif %}
 </div>
 
-{% comment %} Child navigation for _pages collection when viewing a page {% endcomment %}
-{% if current_collection == 'pages' and site.pages.size > 1 %}
-  <div class="child-nav">
-    <div class="child-nav-title">Pages</div>
-    <div class="child-nav-links">
-      {% assign sorted_pages = site.pages | sort: 'title' %}
-      {% for item in sorted_pages %}
-        {% if item.title and item.title != "Home" %}
-          <a href="{{ site.baseurl }}{{ item.url }}" {% if current_path == item.url %}class="active"{% endif %}>{{ item.title }}</a>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-{% endif %}
-
-{% comment %} Child navigation for posts {% endcomment %}
-{% if current_path contains '/posts/' or page.layout == 'post' %}
-  {% if site.posts.size > 0 %}
-    <div class="child-nav">
-      <div class="child-nav-title">Recent Posts</div>
-      <div class="child-nav-links">
-        {% for post in site.posts limit: 10 %}
-          <a href="{{ site.baseurl }}{{ post.url }}" {% if current_path == post.url %}class="active"{% endif %}>{{ post.title }}</a>
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-{% endif %}
