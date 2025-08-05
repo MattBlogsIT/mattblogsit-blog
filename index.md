@@ -32,7 +32,3 @@ title: Home
   </article>
 </div>
 {% endif %}
-
-<nav class="homepage-navigation">
-  <a href="{{ site.baseurl }}/posts/" class="back-link">View All Posts →</a>
-</nav>
