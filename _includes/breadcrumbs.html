@@ -23,7 +23,7 @@
         {% assign category_lower = category | downcase %}
         {% unless category_lower == "posts" or category_lower == "post" %}
           <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/category/{{ category | slugify }}/" class="breadcrumb-link">
+            <a href="{{ site.baseurl }}/category/" class="breadcrumb-link">
               <span class="breadcrumb-icon">🏷️</span>
               <span class="breadcrumb-text">{{ category | capitalize }}</span>
             </a>

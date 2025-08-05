@@ -10,28 +10,45 @@ function toggleSearch() {
         searchInput = document.getElementById('search-input');
         searchResults = document.getElementById('search-results');
         
+        if (!searchDropdown || !searchInput || !searchResults) {
+            console.error('Search elements not found');
+            return;
+        }
+        
         // Load search data if not already loaded
         if (posts.length === 0) {
             // Use relative path that works with GitHub Pages
             const basePath = window.location.pathname.includes('/mattblogsit-dev') ? '/mattblogsit-dev' : '';
             fetch(basePath + '/search.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     posts = data;
                 })
                 .catch(error => console.error('Error loading search data:', error));
         }
         
-        // Add search input listener
-        searchInput.addEventListener('input', function() {
-            performSearch(this.value);
-        });
+        // Add search input listener (remove existing first to avoid duplicates)
+        searchInput.removeEventListener('input', handleSearchInput);
+        searchInput.addEventListener('input', handleSearchInput);
     }
     
     searchDropdown.classList.toggle('active');
     if (searchDropdown.classList.contains('active')) {
-        searchInput.focus();
+        // Small delay to ensure the dropdown is visible before focusing
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100);
     }
+}
+
+// Separate function for handling search input
+function handleSearchInput(e) {
+    performSearch(e.target.value);
 }
 
 function performSearch(query) {
@@ -65,8 +82,13 @@ function performSearch(query) {
 
 // Close search dropdown when clicking outside
 document.addEventListener('click', function(e) {
-    if (searchDropdown && !e.target.closest('.search-icon') && !e.target.closest('.search-dropdown')) {
-        searchDropdown.classList.remove('active');
+    if (searchDropdown && searchDropdown.classList.contains('active')) {
+        // Check if click is outside search elements (including mobile search)
+        if (!e.target.closest('.search-icon') && 
+            !e.target.closest('.mobile-search') && 
+            !e.target.closest('.search-dropdown')) {
+            searchDropdown.classList.remove('active');
+        }
     }
 });
 
