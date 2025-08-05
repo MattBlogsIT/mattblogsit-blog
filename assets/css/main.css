@@ -229,6 +229,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .theme-toggle:hover {
@@ -994,6 +995,22 @@ article:after {
         margin-bottom: 0;
     }
     
+    /* Adjust theme toggle for mobile */
+    .theme-toggle {
+        top: 15px;
+        right: 80px; /* Leave space for hamburger menu */
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    
+    .theme-toggle-icon {
+        font-size: 1em;
+    }
+    
+    #theme-text {
+        display: none; /* Hide text on mobile to save space */
+    }
+    
     /* Mobile search icon */
     .mobile-search {
         display: block;
@@ -1002,16 +1019,18 @@ article:after {
         left: 20px;
         z-index: 1002;
         font-size: 18px;
-        background: #f8f9fa;
+        background: var(--bg-secondary);
+        color: var(--accent-primary);
         padding: 8px;
         border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px var(--shadow-color);
+        border: 1px solid var(--border-color);
         cursor: pointer;
         transition: background-color 0.2s;
     }
     
     .mobile-search:hover {
-        background: #e3f2fd;
+        background: var(--accent-hover);
     }
     
     /* Show combined menu and hamburger */
@@ -1047,6 +1066,14 @@ article:after {
         padding: 15px 15px 15px 5px;
     }
     
+    /* Adjust theme toggle for smaller screens */
+    .theme-toggle {
+        top: 15px;
+        right: 65px; /* More space for smaller hamburger */
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
     .hamburger-menu {
         top: 15px;
         right: 15px;
@@ -1056,6 +1083,13 @@ article:after {
     
     .hamburger-menu span {
         width: 18px;
+    }
+    
+    .mobile-search {
+        top: 15px;
+        left: 15px;
+        padding: 8px;
+        font-size: 1.3rem;
     }
 }/* Continue updating the main.css with remaining theme-aware components */
 

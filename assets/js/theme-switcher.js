@@ -14,6 +14,9 @@ class ThemeSwitcher {
     }
     
     init() {
+        // Mark as initialized
+        document.documentElement.setAttribute('data-theme-initialized', 'true');
+        
         // Set initial theme
         this.setTheme(this.currentTheme);
         
@@ -112,15 +115,43 @@ class ThemeSwitcher {
 }
 
 // Initialize theme switcher when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new ThemeSwitcher();
-});
-
-// Also handle the case where this script loads after DOMContentLoaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        new ThemeSwitcher();
-    });
-} else {
-    new ThemeSwitcher();
+function initThemeSwitcher() {
+    try {
+        // Check if elements exist before initializing
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        if (themeToggle && themeIcon && themeText) {
+            new ThemeSwitcher();
+            console.log('Theme switcher initialized successfully');
+        } else {
+            console.warn('Theme switcher elements not found:', {
+                toggle: !!themeToggle,
+                icon: !!themeIcon,
+                text: !!themeText
+            });
+        }
+    } catch (error) {
+        console.error('Error initializing theme switcher:', error);
+    }
 }
+
+// Multiple initialization strategies to ensure it works
+document.addEventListener('DOMContentLoaded', initThemeSwitcher);
+
+// Fallback for if DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeSwitcher);
+} else {
+    // DOM is already ready
+    setTimeout(initThemeSwitcher, 10);
+}
+
+// Additional fallback with window.onload
+window.addEventListener('load', () => {
+    // Only initialize if not already done
+    if (!document.documentElement.hasAttribute('data-theme-initialized')) {
+        initThemeSwitcher();
+    }
+});
