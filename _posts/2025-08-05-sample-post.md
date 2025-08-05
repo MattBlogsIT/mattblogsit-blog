@@ -2,7 +2,7 @@
 layout: post
 title: "Sample Post - Getting Started"
 date: 2025-08-05
-categories: posts
+categories: getting-started
 ---
 
 This is a sample post for the Jekyll-powered GitHub Pages site structure.
