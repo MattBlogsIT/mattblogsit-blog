@@ -49,10 +49,16 @@ class Navigation {
     }
 
     getCurrentFolder() {
-        // Remove repository name from path for analysis
+        // Extract the path after the repository name for analysis
         let analysisPath = this.currentPath;
-        if (analysisPath.includes(`/${this.repositoryName}/`)) {
-            analysisPath = analysisPath.replace(`/${this.repositoryName}/`, '/');
+        
+        // Find the repository segment and get everything after it
+        const repoIndex = analysisPath.indexOf(`/${this.repositoryName}/`);
+        if (repoIndex !== -1) {
+            // Get the path after /repositoryName/
+            analysisPath = analysisPath.substring(repoIndex + this.repositoryName.length + 2);
+            // Add leading slash back for consistent processing
+            analysisPath = '/' + analysisPath;
         }
         
         const pathSegments = analysisPath.split('/').filter(segment => segment && segment !== 'index.html');
@@ -78,7 +84,7 @@ class Navigation {
             text: 'Home',
             href: this.basePath,
             id: 'home',
-            isActive: this.currentPath.endsWith('index.html') || this.currentPath.endsWith('/') || this.currentPath.split('/').pop() === ''
+            isActive: this.isHomePage()
         });
 
         // Auto-discover navigation from site structure
@@ -90,7 +96,7 @@ class Navigation {
                 text: this.capitalize(page.replace('.html', '')),
                 href: this.basePath + page,
                 id: page.replace('.html', ''),
-                isActive: this.currentPath.endsWith(page)
+                isActive: this.isCurrentPage(page)
             });
         });
 
@@ -181,6 +187,21 @@ class Navigation {
 
     setActiveNavItem() {
         // Active states are now set during rendering
+    }
+
+    isHomePage() {
+        // Check if we're on the home page (index.html or root)
+        const path = this.currentPath;
+        return path.endsWith('index.html') || 
+               path.endsWith('/') || 
+               path === `/${this.repositoryName}` ||
+               path === `/${this.repositoryName}/` ||
+               path.split('/').pop() === '';
+    }
+
+    isCurrentPage(fileName) {
+        // Check if the current path matches the given file
+        return this.currentPath.endsWith(fileName);
     }
 
     capitalize(str) {
