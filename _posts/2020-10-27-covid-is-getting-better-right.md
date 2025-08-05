@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2020-10-27
 excerpt: I've been asked this question directly by more than one person, simply because
   I have friends who didn't understand why I am still staying extremely socially distant.

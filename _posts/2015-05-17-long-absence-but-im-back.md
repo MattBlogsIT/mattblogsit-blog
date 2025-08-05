@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2015-05-17
 excerpt: It has been nearly 8 months since my last blog post. For that I'd like to
   apologize, as I really would love to have been posting all of this time; it just

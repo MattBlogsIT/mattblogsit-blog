@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2013-06-18
 excerpt: Two weeks ago I was lucky enough to be sent to Microsoft TechEd by the company
   I work at. It was such a busy week and another week of catching up with real life

@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2012-06-19
 excerpt: “**The Krewe** is a group of hard working/fun-loving IT Pros and Developers.
   We gather every year at Microsoft TechEd North America, the largest Microsoft technology

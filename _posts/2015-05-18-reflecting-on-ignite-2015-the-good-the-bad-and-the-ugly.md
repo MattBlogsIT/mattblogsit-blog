@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2015-05-18
 excerpt: I know I am late to the game, Ignite ended over a week ago! I would just
   like to share my perspective on how the week went, as it was quite different than

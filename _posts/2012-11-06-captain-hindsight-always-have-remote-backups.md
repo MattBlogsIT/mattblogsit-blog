@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2012-11-06
 excerpt: 'On Thursday afternoon I started receiving alerts that both of my personal websites had gone offline. My provider had been attacked and the hackers nuked the drives.'
 tags:

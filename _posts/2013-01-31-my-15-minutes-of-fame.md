@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2013-01-31
 excerpt: Recently I was asked to be on the **[People Talking Tech Podcast](http://peopletalkingtech.com/)**
   to talk about my transition from college to my IT career. In the process I was also

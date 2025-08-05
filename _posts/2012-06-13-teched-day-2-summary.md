@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2012-06-13
 excerpt: Day 2 was a rough start, every day you progress through TechEd the more exhausted
   you feel in the morning. The day started with another Keynote that was all about

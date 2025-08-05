@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2012-06-08
 excerpt: Ever since last year when I first attended TechEd I knew I wanted to come
   back. I decided to wait until I was closer to becoming full time before I requested

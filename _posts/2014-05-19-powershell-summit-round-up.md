@@ -14,7 +14,7 @@ tags:
 - powershell-summit
 - scripting
 - virtualization
-- vmware
+- VMware
 title: PowerShell Summit Round Up
 ---
 

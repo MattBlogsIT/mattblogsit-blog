@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2013-10-09
 excerpt: I have had a goal over the last two years to become a Microsoft Certified
   Trainer (MCT). I was already half way there by holding an MCITP certificate in Windows

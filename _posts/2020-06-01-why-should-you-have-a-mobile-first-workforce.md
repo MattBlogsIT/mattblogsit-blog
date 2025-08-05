@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2020-06-01
 excerpt: In the last several months, many organizations have shut down, at a minimum,
   significantly slowed down due to the COVID-19 pandemic. The pandemic placed a strain

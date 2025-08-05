@@ -1,7 +1,7 @@
 ---
 categories:
 - microsoft
-- oob
+- Out of Band
 date: 2012-06-19
 excerpt: TechEd was an extremely busy week, and it was a ton of fun. There were many
   challenges throughout the week maintaining my schedule however it was overall another

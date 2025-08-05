@@ -9,7 +9,7 @@ tags:
 - powershell
 - scripting
 - virtualization
-- vmware
+- VMware
 title: Learning PowerCLI Book Review
 ---
 

@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2014-06-08
 excerpt: For the last 5 years, I've owned the same desktop computer that I do most
   of my work from at home. The computer was solid, a Dell XPS 630i. It still was performing

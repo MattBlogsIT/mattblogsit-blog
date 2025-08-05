@@ -14,7 +14,7 @@ tags:
 - powershell
 - scripting
 - virtualization
-- vmware
+- VMware
 title: IndyVMUG Conference PowerCLI - Community Session Slides
 ---
 

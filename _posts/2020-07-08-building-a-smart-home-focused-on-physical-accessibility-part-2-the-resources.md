@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2020-07-08
 excerpt: Just over a week ago, I blogged about the [Smart Home I've just started to
   build](https://mattblogsit.com/oob/building-a-smart-home-focused-on-physical-accessibility).

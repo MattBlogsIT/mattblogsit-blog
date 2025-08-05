@@ -1,6 +1,6 @@
 ---
 categories:
-- oob
+- Out of Band
 date: 2014-01-30
 excerpt: It's been quite a bit of time since I've made a true blog post. Things have
   been very exciting in my life lately and I've been chugging along to keep up with...
