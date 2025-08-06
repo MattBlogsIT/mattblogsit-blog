@@ -259,3 +259,95 @@ For each enhancement:
 - Test all changes thoroughly before deployment
 - Document any custom implementations
 - Keep security in mind for all enhancements
+
+---
+
+## 🔧 DevOps & Automation Tasks
+
+### GitHub Workflows
+
+- [ ] **PR Preview Deployments** (Issue #16)
+  - Set up GitHub Actions for preview builds
+  - Deploy to temporary URLs for review
+  - Auto-cleanup after PR merge
+  - Implement branch protection rules
+
+- [ ] **Automated Content Creation** (Issue #3)
+  - Create issue-to-blog-post workflow
+  - Use special label for blog post issues
+  - Require approval before publishing
+  - Auto-generate front matter
+
+- [ ] **Quality Checks** (Issue #14)
+  - Implement dead link checker action
+  - HTML validation with W3C validator
+  - Check for broken images
+  - Validate code snippet rendering
+  - Run accessibility checks automatically
+
+### Infrastructure
+
+- [ ] **Custom Domain Setup** (Issue #4)
+  - Migrate mattblogsit.com to GitHub Pages
+  - Configure DNS records (A and CNAME)
+  - Set up www subdomain redirect
+  - Verify HTTPS certificate
+  - Update site configuration
+
+- [ ] **Analytics Implementation** (Issue #5)
+  - Evaluate privacy-friendly alternatives (Plausible, Fathom)
+  - Implement Google Analytics (if chosen)
+  - Add cookie consent banner if required
+  - Configure goals and conversions
+  - Set up custom events tracking
+
+- [ ] **Custom Error Pages** (Issue #13)
+  - Create custom 404 page
+  - Design consistent error page template
+  - Add helpful navigation options
+  - Include search functionality on error pages
+  - Style to match site theme
+
+### Claude Integration
+
+- [ ] **Claude Workflows** (Issue #7)
+  - Evaluate GitHub integration options
+  - Set up automated code review
+  - Configure PR analysis
+  - Implement style guide enforcement
+
+---
+
+## Additional Enhancements from Issues
+
+### Content Strategy
+
+- [ ] **SEO Keywords Strategy** (Issue #15)
+  - Research relevant keywords for IT/Cloud/Security
+  - Implement keyword density analysis
+  - Add keywords to meta descriptions
+  - Create keyword mapping for categories
+  - Monitor keyword performance
+
+- [ ] **Verify RSS Feed** (Issue #11)
+  - Test RSS feed output
+  - Validate feed with online validators
+  - Add RSS autodiscovery link
+  - Style RSS feed with XSLT
+  - Submit to feed aggregators
+
+---
+
+## Mobile Fixes
+
+- [ ] **Mobile Search Icon Alignment** (Issue #17)
+  - Fix search icon positioning on mobile
+  - Ensure proper spacing from hamburger menu
+  - Test on various mobile devices
+  - Add responsive breakpoints if needed
+
+- [ ] **Mobile Sidebar Text Visibility** (Issue #2)
+  - Verify dark mode text contrast
+  - Test hamburger menu in both themes
+  - Ensure readable text in all states
+  - Fix any remaining contrast issues

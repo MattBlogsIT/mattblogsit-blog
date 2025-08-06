@@ -1,0 +1,159 @@
+---
+layout: default
+title: "404 - Page Not Found"
+permalink: /404.html
+---
+
+<div class="error-page">
+    <div class="error-content">
+        <h1 class="error-title">404</h1>
+        <h2>Oops! Page Not Found</h2>
+        <p>Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or the URL might be incorrect.</p>
+        
+        <div class="error-actions">
+            <h3>Here are some helpful options:</h3>
+            <ul class="error-options">
+                <li>Go back to the <a href="{{ site.baseurl }}/">homepage</a></li>
+                <li>Browse our <a href="{{ site.baseurl }}/posts/">recent posts</a></li>
+                <li>Check out the <a href="{{ site.baseurl }}/archive/">archives</a></li>
+                <li>View posts by <a href="{{ site.baseurl }}/category/">category</a></li>
+                <li>Use the search function above to find what you're looking for</li>
+            </ul>
+        </div>
+        
+        <div class="error-search">
+            <h3>Search the site:</h3>
+            <p>Try searching for the content you were looking for:</p>
+            <button onclick="toggleSearch()" class="error-search-button">
+                <span>🔍</span> Open Search
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    max-width: 600px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.error-title {
+    font-size: 120px;
+    font-weight: bold;
+    color: var(--accent-primary);
+    margin: 0;
+    line-height: 1;
+}
+
+.error-content h2 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: var(--text-primary);
+}
+
+.error-content p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 20px 0 40px;
+}
+
+.error-actions {
+    margin: 40px 0;
+    text-align: left;
+}
+
+.error-actions h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-options li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.error-options li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}
+
+.error-options a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.error-options a:hover {
+    text-decoration: underline;
+}
+
+.error-search {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.error-search h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.error-search p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.error-search-button {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color var(--transition-fast);
+}
+
+.error-search-button:hover {
+    background: var(--accent-secondary);
+}
+
+.error-search-button span {
+    font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .error-title {
+        font-size: 80px;
+    }
+    
+    .error-content h2 {
+        font-size: 24px;
+    }
+    
+    .error-content p {
+        font-size: 16px;
+    }
+    
+    .error-actions {
+        text-align: left;
+        padding: 0 20px;
+    }
+}
+</style>

@@ -1,0 +1,19 @@
+# Robots.txt for Matt Blogs IT
+# This file tells search engines which pages to crawl and index
+
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Disallow admin/temporary directories if any exist
+Disallow: /assets/js/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://mattgrif.github.io/mattblogsit-dev/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
