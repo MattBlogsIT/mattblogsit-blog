@@ -26,10 +26,6 @@ This document outlines the enhancement tasks for optimizing the Matt Blogs IT Je
   Sitemap: https://mattgrif.github.io/mattblogsit-dev/sitemap.xml
   ```
 
-- [ ] **Add security.txt file**
-  - Create `.well-known/security.txt`
-  - Include contact information and security policy
-
 - [ ] **Implement structured data**
   - Add Article schema markup to post layout
   - Add Person schema for author information

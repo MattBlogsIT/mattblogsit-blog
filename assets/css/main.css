@@ -1348,15 +1348,37 @@ article:after {
 
 .footer-links {
     text-align: center;
+    margin: 15px 0;
 }
 
-.footer-links a {
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 8px 16px;
+    border: 1px solid var(--accent-primary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.footer-link:hover {
+    background-color: var(--accent-primary);
+    color: white;
     text-decoration: none;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+.footer-link .rss-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Dark theme adjustments for RSS link */
+[data-theme="dark"] .footer-link:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
 }
 
 /* Sidebar styling */
