@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2020-09-10
 excerpt: I hope you are enjoying the Modern Collaboration blog series. If you haven't
   read the previous articles in the series, I highly recommend you do. We started

@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2014-01-09
 excerpt: Hello everyone! Long time no post; more details surrounding that will be
   coming! Tonight I would like to share the PowerPoint I used for the IndyPoSh/Indy

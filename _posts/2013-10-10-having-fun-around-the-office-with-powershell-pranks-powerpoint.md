@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 date: 2013-10-10
 excerpt: Last week I presented to the Indianapolis PowerShell User Group about PowerShell
   Pranks. I will be doing a much more in depth blog post about it in the near future.

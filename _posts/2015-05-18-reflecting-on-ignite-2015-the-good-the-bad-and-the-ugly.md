@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2015-05-18
 excerpt: I know I am late to the game, Ignite ended over a week ago! I would just
@@ -9,7 +9,7 @@ excerpt: I know I am late to the game, Ignite ended over a week ago! I would jus
 tags:
 - community
 - ignite
-- microsoft
+- "Microsoft"
 - teched
 - travel
 title: Reflecting on Ignite 2015 - The Good, The Bad and The Ugly

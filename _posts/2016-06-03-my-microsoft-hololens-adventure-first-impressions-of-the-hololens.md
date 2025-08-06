@@ -1,7 +1,7 @@
 ---
 categories:
-- developer
-- microsoft
+- "Developer"
+- "Microsoft"
 date: 2016-06-03
 excerpt: it's been over two weeks since my last post; however I have an excuse! It
   may not be a good excuse, however I went on a vacation to beautiful Las Vegas and
@@ -9,7 +9,7 @@ excerpt: it's been over two weeks since my last post; however I have an excuse! 
 tags:
 - adventure
 - hololense
-- microsoft
+- "Microsoft"
 - windows-10
 - windows-holographic
 title: My Microsoft HoloLens Adventure - First Impressions of the HoloLens

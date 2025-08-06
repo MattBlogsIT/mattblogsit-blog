@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 date: 2013-09-17
 excerpt: This week I am attending the MCT Summit in Bellevue Washington. After today
   I am going to be an MCT! For me to become an MCT I have presented a 10-15 minute

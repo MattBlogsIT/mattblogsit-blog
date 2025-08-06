@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2011-09-14
 excerpt: Tonight Windows 8 was released (LEGALLY) at least the Developer Preview edition
   was! You are able to get your own copy at [http://dev.windows.com/](http://dev.windows.com/).

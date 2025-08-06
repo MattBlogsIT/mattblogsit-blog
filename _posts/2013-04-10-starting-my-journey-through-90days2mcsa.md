@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2013-04-10
 excerpt: '![]({{ site.baseurl }}/assets/img/90dayshead.jpg) Hello Everyone! I apologize
   for my months disappearance from blogging, it''s been a busy March and will continue
@@ -10,7 +10,7 @@ tags:
 - 90days2mcsa
 - certification
 - hyper-v
-- microsoft
+- "Microsoft"
 - server-2012
 - windows
 title: 'Starting My Journey through #90Days2MCSA'

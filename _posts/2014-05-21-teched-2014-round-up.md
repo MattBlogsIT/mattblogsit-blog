@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 date: 2014-05-21
 excerpt: TechEd has come, and TechEd has gone... there were some cool announcements
   and some disappointments in the overall conference. Let's start with the cool announcements

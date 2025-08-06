@@ -1,6 +1,6 @@
 ---
 categories:
-- administrator
+- "Administrator"
 date: 2014-05-19
 excerpt: I've been fairly distant from my blog for quite a few months... work has
   been very busy and preparing for the PowerShell Summit really took quite a bit of
@@ -8,7 +8,7 @@ excerpt: I've been fairly distant from my blog for quite a few months... work ha
 tags:
 - centos
 - indyposh
-- microsoft
+- "Microsoft"
 - powercli
 - powershell
 - powershell-summit

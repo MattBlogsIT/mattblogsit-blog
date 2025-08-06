@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2012-06-05
 excerpt: If you read my post on [Important Resources](http://mattblogsit.com/2012/05/30/tech-ed-2012-important-resources/)

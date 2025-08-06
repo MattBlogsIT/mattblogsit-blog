@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2012-06-08
 excerpt: Ever since last year when I first attended TechEd I knew I wanted to come

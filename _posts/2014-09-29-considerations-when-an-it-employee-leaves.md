@@ -1,6 +1,6 @@
 ---
 categories:
-- Out of Band
+- "Out of Band"
 date: 2014-09-29
 excerpt: Recently I've helped clients and even off-boarded IT employees from our own
   team. There are quite a few considerations you must make when someone in IT leaves

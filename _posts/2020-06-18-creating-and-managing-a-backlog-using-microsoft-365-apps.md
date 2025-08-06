@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2020-06-18
 excerpt: In the last few months, I've spent a lot of time organizing and planning.
   Most of this time was spent on my personal life organization around the house, but

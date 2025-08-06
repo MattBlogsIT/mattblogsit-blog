@@ -1,13 +1,13 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2012-06-19
 excerpt: TechEd was an extremely busy week, and it was a ton of fun. There were many
   challenges throughout the week maintaining my schedule however it was overall another
   amazing year. I had 3 goals I wanted...
 tags:
-- microsoft
+- "Microsoft"
 - teched
 - thekrewe
 - windows-8

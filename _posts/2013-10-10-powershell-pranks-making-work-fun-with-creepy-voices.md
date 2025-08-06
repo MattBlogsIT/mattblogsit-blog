@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2013-10-10
 excerpt: In every IT office I have worked in, pulling pranks co-workers has been a
@@ -8,7 +8,7 @@ excerpt: In every IT office I have worked in, pulling pranks co-workers has been
   their background, and maybe change...
 tags:
 - indyposh
-- microsoft
+- "Microsoft"
 - powershell
 - scripting
 - skydrive

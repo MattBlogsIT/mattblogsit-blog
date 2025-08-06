@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2020-06-05
 excerpt: At the beginning of the COVID-19 pandemic, heck before the World Health Organization
   declared a pandemic. I started working 100% from home; this was primarily due to

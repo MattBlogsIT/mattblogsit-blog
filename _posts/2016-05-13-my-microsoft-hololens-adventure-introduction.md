@@ -1,7 +1,7 @@
 ---
 categories:
-- developer
-- microsoft
+- "Developer"
+- "Microsoft"
 date: 2016-05-13
 excerpt: I'm back!!! It's been almost a year to the day! I previously had claimed
   I was going to become much more active in my blogging and that turned out to be

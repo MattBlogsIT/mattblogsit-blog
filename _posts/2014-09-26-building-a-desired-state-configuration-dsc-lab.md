@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2014-09-26
 excerpt: Recently I presenting at the Indianapolis PowerShell User Group and talked
   about Desired State Configuration. The presentation was 100% demonstrations, and
@@ -12,7 +12,7 @@ tags:
 - dsc
 - dsc-resource
 - hyper-v
-- microsoft
+- "Microsoft"
 - powershell
 - powershell-v4
 - server-2012-r2

@@ -1,8 +1,8 @@
 ---
 categories:
-- administrator
-- microsoft
-- vmwave
+- "Administrator"
+- "Microsoft"
+- "VMware"
 date: 2013-07-25
 excerpt: Today I presented Intro to PowerCLI at the IndyVMUG Conference. As promised
   I am posting the PowerPoint slides that were used during that presentation. This

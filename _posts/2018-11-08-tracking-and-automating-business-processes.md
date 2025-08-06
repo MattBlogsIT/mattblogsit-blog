@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2018-11-08
 excerpt: As businesses grow, it becomes challenging to keep up with business processes.
   To keep up with a constant flow of tasks associated with these processes, you need

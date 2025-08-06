@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2013-06-19
 excerpt: 'The last three years I have been extraordinarily lucky that I have been
@@ -8,7 +8,7 @@ excerpt: 'The last three years I have been extraordinarily lucky that I have bee
   as #TheKrewe and I have striven to force...'
 tags:
 - community
-- microsoft
+- "Microsoft"
 - teched
 - thekrewe
 - travel

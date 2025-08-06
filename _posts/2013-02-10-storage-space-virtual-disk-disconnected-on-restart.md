@@ -1,14 +1,14 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2013-02-10
 excerpt: So I recently had to rebuild my Server 2012 virtual server. I had storage
   spaces setup and after I finished the install the Virtual Disk was not mounted.
   I realized that I was able to bring it all...
 tags:
 - hyper-v
-- microsoft
+- "Microsoft"
 - server-2012
 - vhd
 - virtualdisk

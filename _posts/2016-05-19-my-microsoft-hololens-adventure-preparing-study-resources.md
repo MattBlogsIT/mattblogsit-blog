@@ -1,7 +1,7 @@
 ---
 categories:
-- developer
-- microsoft
+- "Developer"
+- "Microsoft"
 date: 2016-05-19
 excerpt: As I continue my adventure of learning how to program for the HoloLens, the
   first step is actually learning how to program! I am lucky enough that I took some
@@ -10,7 +10,7 @@ tags:
 - adventure
 - development
 - hololens
-- microsoft
+- "Microsoft"
 - universal-app
 - windows
 - windows-10

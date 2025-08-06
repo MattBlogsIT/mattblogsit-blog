@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2014-05-26
 excerpt: There have been times in the past (more than I like to remember) where I've
   had a hard drive fail, a raid 5 fail, and eventually I am sure I'll have a Storage
@@ -9,7 +9,7 @@ excerpt: There have been times in the past (more than I like to remember) where 
 tags:
 - griffinmonitor-module
 - how-to
-- microsoft
+- "Microsoft"
 - monitoring
 - powershell
 - powershell-v4

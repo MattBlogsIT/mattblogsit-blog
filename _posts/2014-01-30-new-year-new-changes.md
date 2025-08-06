@@ -6,7 +6,7 @@ excerpt: It's been quite a bit of time since I've made a true blog post. Things 
   been very exciting in my life lately and I've been chugging along to keep up with...
 tags:
 - mct
-- microsoft
+- "Microsoft"
 - server-2012
 - server-2012-r2
 - work-in-it

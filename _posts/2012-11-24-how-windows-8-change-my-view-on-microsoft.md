@@ -1,13 +1,13 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2012-11-24
 excerpt: I have always loved the Windows Operating System, but their phones were a
   joke back it the day, and their in-house hardware was just accessories and a game
   console. I have come to the conclusion that...
 tags:
-- microsoft
+- "Microsoft"
 - microsoft-surface
 - surface-rt
 - windows-8

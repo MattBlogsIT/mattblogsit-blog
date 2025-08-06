@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2018-11-01
 excerpt: '[![]({{ site.baseurl }}/assets/img/msteams-150x150.png)]({{ site.baseurl
   }}/assets/img/10/msteams.png) I ran into a scenario where I wanted to use Microsoft

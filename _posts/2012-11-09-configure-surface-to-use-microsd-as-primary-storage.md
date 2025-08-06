@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 date: 2012-11-09
 excerpt: After about a week of excitement and playing around with features, I decided
   it was time to start optimizing and making this thing run the way I wanted. The

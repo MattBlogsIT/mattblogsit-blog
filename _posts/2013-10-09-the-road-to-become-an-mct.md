@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2013-10-09
 excerpt: I have had a goal over the last two years to become a Microsoft Certified
