@@ -124,16 +124,12 @@ function initThemeSwitcher() {
         
         if (themeToggle && themeIcon && themeText) {
             new ThemeSwitcher();
-            console.log('Theme switcher initialized successfully');
+            // Theme switcher initialized successfully
         } else {
-            console.warn('Theme switcher elements not found:', {
-                toggle: !!themeToggle,
-                icon: !!themeIcon,
-                text: !!themeText
-            });
+            // Theme switcher elements not found - fail silently
         }
     } catch (error) {
-        console.error('Error initializing theme switcher:', error);
+        // Error initializing theme switcher - fail silently
     }
 }
 

@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.github.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="Matt Griffin">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 </head>
 <body>
@@ -133,6 +147,8 @@
         <img id="modalImage" src="" alt="">
     </div>
     
+    <!-- Scripts -->
+    <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
     <script src="{{ site.baseurl }}/assets/js/search.js"></script>
     <script src="{{ site.baseurl }}/assets/js/modal.js"></script>
     <script src="{{ site.baseurl }}/assets/js/hamburger.js"></script>
