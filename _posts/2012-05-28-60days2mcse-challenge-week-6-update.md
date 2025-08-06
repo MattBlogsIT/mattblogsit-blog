@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2012-05-28
 excerpt: '[![]({{ site.baseurl }}/assets/img/MCSE_WebBanners_180x150_jpg-550x0.jpg
   "MCSE_WebBanners_180x150_jpg-550x0")]({{ site.baseurl...'

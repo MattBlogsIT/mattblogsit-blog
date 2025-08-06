@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2013-02-27
 excerpt: Next week we have the first **[Indianapolis PowerShell User Group](http://IndyPowerShell.org)**
   meeting and I was tasked with getting the survey for our meetings setup. I did not

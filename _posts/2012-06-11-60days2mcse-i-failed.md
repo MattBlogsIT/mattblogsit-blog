@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2012-06-11
 excerpt: Today is the day that I was hoping to call myself an MCSE, I am thrilled
   to hear that some who have taken the challenge have completed it and I am not shy

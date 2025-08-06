@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2012-04-20
 excerpt: On April 15th **[@MichaelBender](http://twitter.com/#/MichaelBender)** challenged
   the readers of MS Learning’s **[Born To Learn](http://borntolearn.mslearn.net/)**
@@ -10,7 +10,7 @@ tags:
 - 60days2mcse
 - certification
 - hyper-v
-- microsoft
+- "Microsoft"
 - server-2008-r2
 - system-center-2012
 - teched

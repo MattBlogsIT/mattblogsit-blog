@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2013-07-01
 excerpt: During my time at Microsoft TechEd many new things were announced. My all
   time favorite announcement was PowerShell v4. There are many great things coming

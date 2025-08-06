@@ -1,14 +1,14 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2012-10-20
 excerpt: I personally have been using Windows 8 off and on since the Developer Preview
   was released over a year ago, more frequently after I received a Samsung Series
   7 Slate in February to start working on...
 tags:
 - hyper-v
-- microsoft
+- "Microsoft"
 - microsoft-surface
 - windows-8
 title: Windows 8 is Nearly Here!

@@ -1,12 +1,12 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 date: 2012-10-26
 excerpt: Today was a big day for Microsoft. Today was the release of Windows 8 and
   of the Surface RT. I have been using Windows 8 quite a bit already and so I wasn't expecting
   much aside from my excitement...
 tags:
-- microsoft
+- "Microsoft"
 - microsoft-surface
 - surface-rt
 - windows-8

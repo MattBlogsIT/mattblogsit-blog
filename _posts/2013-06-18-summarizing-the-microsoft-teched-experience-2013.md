@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2013-06-18
 excerpt: Two weeks ago I was lucky enough to be sent to Microsoft TechEd by the company

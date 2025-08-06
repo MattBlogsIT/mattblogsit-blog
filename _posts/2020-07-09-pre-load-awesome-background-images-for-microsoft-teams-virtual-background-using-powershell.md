@@ -1,8 +1,8 @@
 ---
 categories:
-- administrator
-- microsoft
-- user
+- "Administrator"
+- "Microsoft"
+- "User"
 date: 2020-07-09
 excerpt: Microsoft Teams officially rolled out Virtual Backgrounds back in March,
   around the time COVID-19 went crazy in the United States. With COVID-19 came a slew

@@ -1,7 +1,7 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2020-07-06
 excerpt: All growing and/or large organizations will experience this. We have all
   of these Distribution Lists, but does anyone even use them or know why they were

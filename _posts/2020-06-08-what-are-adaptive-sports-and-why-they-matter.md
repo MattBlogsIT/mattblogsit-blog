@@ -1,6 +1,6 @@
 ---
 categories:
-- athletics
+- "Athletics"
 - Out of Band
 date: 2020-06-08
 excerpt: My entire blog has historically been about my background in technology and

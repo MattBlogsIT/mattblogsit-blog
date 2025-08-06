@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2020-10-01
 excerpt: We are getting deep and will wrap up the Modern Collaboration blog series
   by tying all of the products we have discussed together using Microsoft Teams as

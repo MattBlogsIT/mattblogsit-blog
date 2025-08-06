@@ -1,7 +1,7 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2020-08-06
 excerpt: I've recently worked a lot with the Microsoft Cloud, specifically around
   productivity and Modern Collaboration. I decided to start a series of posts, and

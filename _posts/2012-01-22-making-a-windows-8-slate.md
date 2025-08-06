@@ -1,8 +1,8 @@
 ---
 categories:
-- administrator
-- microsoft
-- user
+- "Administrator"
+- "Microsoft"
+- "User"
 date: 2012-01-22
 excerpt: Back when Windows 8 was shown off at the Developers conference someone I
   work with mentioned it in a meeting, I went into depth about what I knew about it

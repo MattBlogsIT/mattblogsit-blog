@@ -1,7 +1,7 @@
 ---
 categories:
-- developer
-- microsoft
+- "Developer"
+- "Microsoft"
 date: 2016-05-16
 excerpt: I've started my adventure of learning how to program for the Microsoft HoloLens.
   If you haven't heard about this new adventure please check out my blog post [My
@@ -10,7 +10,7 @@ tags:
 - adventure
 - development
 - hololens
-- microsoft
+- "Microsoft"
 - windows-10
 title: My Microsoft HoloLens Adventure - Setting up the Development Tools
 ---

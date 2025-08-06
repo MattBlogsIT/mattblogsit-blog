@@ -1,13 +1,13 @@
 ---
 categories:
-- administrator
-- microsoft
+- "Administrator"
+- "Microsoft"
 date: 2013-08-25
 excerpt: Lately I have been putting a lot of my time into developing useful PowerShell
   scripts for managing Windows environments. While working on these scripts I've developed
   some really cool 1-liner scripts...
 tags:
-- microsoft
+- "Microsoft"
 - powershell
 - scripting
 - sharepoint-2010

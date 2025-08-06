@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2012-06-11
 excerpt: Day 1 is coming to a close as I write it sitting pool side using the Samsung

@@ -1,6 +1,6 @@
 ---
 categories:
-- review
+- "Review"
 date: 2014-02-27
 excerpt: I was recently asked to write a review for [Learning...
 tags:

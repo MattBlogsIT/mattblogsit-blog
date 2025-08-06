@@ -1,6 +1,6 @@
 ---
 categories:
-- microsoft
+- "Microsoft"
 - Out of Band
 date: 2012-06-13
 excerpt: Day 2 was a rough start, every day you progress through TechEd the more exhausted

@@ -1,13 +1,13 @@
 ---
 categories:
-- microsoft
-- user
+- "Microsoft"
+- "User"
 date: 2012-10-27
 excerpt: In the last 2 days the biggest question I've heard is what makes this device
   good for me? The best response I've had for that is if you are a standard user,
   the Surface can be your only computer and...
 tags:
-- microsoft
+- "Microsoft"
 - microsoft-surface
 - surface-rt
 - windows-8
