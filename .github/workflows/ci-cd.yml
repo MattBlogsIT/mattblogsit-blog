@@ -1,11 +1,9 @@
-# Comprehensive CI/CD Pipeline
+# Production Deployment Pipeline  
 name: CI/CD Pipeline
 
 on:
-  pull_request:
-    branches: ["main"]
   push:
-    branches: ["main", "develop"]
+    branches: ["main"]
   workflow_dispatch:
 
 concurrency:
@@ -14,137 +12,17 @@ concurrency:
 
 permissions:
   contents: read
-  pull-requests: write
-  checks: write
-  security-events: write
+  pages: write
+  id-token: write
 
 jobs:
-  # Code quality and security checks
-  quality-checks:
-    name: Code Quality & Security
+  # Production deployment - validation already done in PR
+  deploy:
+    name: Deploy to Production
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-
-      - name: Lint Jekyll configuration
-        run: |
-          echo "🔍 Validating Jekyll configuration..."
-          bundle exec jekyll doctor
-          
-          # Check for required configuration
-          if ! grep -q "title:" _config.yml; then
-            echo "❌ Missing site title in _config.yml"
-            exit 1
-          fi
-          
-          if ! grep -q "description:" _config.yml; then
-            echo "❌ Missing site description in _config.yml"
-            exit 1
-          fi
-          
-          echo "✅ Jekyll configuration is valid"
-
-      - name: Validate post frontmatter
-        run: |
-          echo "🔍 Validating post frontmatter..."
-          
-          error_count=0
-          
-          for file in _posts/*.md; do
-            if [ -f "$file" ]; then
-              echo "Checking $file..."
-              
-              # Extract just the frontmatter section (between the --- markers)
-              frontmatter=$(sed -n '/^---$/,/^---$/p' "$file")
-              
-              # Check for required frontmatter fields
-              if ! echo "$frontmatter" | grep -q "^title:"; then
-                echo "❌ Missing title in $file"
-                ((error_count++))
-              fi
-              
-              if ! echo "$frontmatter" | grep -q "^date:"; then
-                echo "❌ Missing date in $file"
-                ((error_count++))
-              fi
-              
-              if ! echo "$frontmatter" | grep -q "^categories:"; then
-                echo "❌ Missing categories in $file"
-                ((error_count++))
-              fi
-              
-              # Validate date format (YYYY-MM-DD)
-              if ! echo "$frontmatter" | grep -q "^date: [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}"; then
-                echo "⚠️  Date format may be incorrect in $file (expected YYYY-MM-DD)"
-              fi
-            fi
-          done
-          
-          if [ $error_count -gt 0 ]; then
-            echo "❌ Found $error_count frontmatter errors"
-            exit 1
-          fi
-          
-          echo "✅ All post frontmatter is valid"
-
-      - name: Check for security issues in posts
-        run: |
-          echo "🔍 Scanning for security issues in posts..."
-          
-          # Check for hardcoded credentials without warnings
-          if grep -r -i --include="*.md" "password.*=" _posts/ | grep -v "security-warning"; then
-            echo "⚠️  Found potential hardcoded credentials without security warnings"
-            echo "Consider adding {:.security-warning} blocks to posts with demo credentials"
-          fi
-          
-          # Check for potentially unsafe HTML
-          if grep -r --include="*.md" "<script" _posts/; then
-            echo "❌ Found script tags in markdown posts"
-            exit 1
-          fi
-          
-          if grep -r --include="*.md" "javascript:" _posts/; then
-            echo "❌ Found javascript: URLs in posts"
-            exit 1
-          fi
-          
-          echo "✅ No obvious security issues found"
-
-      - name: Validate internal links
-        run: |
-          echo "🔍 Checking internal link formatting..."
-          
-          # Check for properly formatted internal links
-          grep -r --include="*.md" -n "\[.*\](" _posts/ | while read line; do
-            if echo "$line" | grep -q "](http"; then
-              # External link - skip
-              continue
-            elif echo "$line" | grep -q "](\/"; then
-              # Absolute internal link - good
-              continue  
-            elif echo "$line" | grep -q "](\.\.\/"; then
-              echo "⚠️  Relative link found: $line"
-              echo "Consider using absolute paths for internal links"
-            fi
-          done
-          
-          echo "✅ Internal link validation complete"
-
-  # Build validation
-  build-validation:
-    name: Build Validation
-    runs-on: ubuntu-latest
-    needs: quality-checks
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
       - name: Checkout code
@@ -158,9 +36,10 @@ jobs:
 
       - name: Generate dynamic pages
         run: |
-          # Create archive and category pages (same as main workflow)
+          echo "📄 Generating dynamic pages..."
           mkdir -p archive category
           
+          # Create archive pages for each year
           for year in $(grep -h "^date:" _posts/*.md | sed 's/date: //' | cut -d'-' -f1 | sort -u); do
             mkdir -p "archive/$year"
             {
@@ -173,6 +52,7 @@ jobs:
             } > "archive/$year/index.md"
           done
           
+          # Create category pages
           for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sed 's/"//g' | sort -u); do
             slug=$(echo "$category" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
             mkdir -p "category/$slug"
@@ -185,210 +65,31 @@ jobs:
               echo "---"
             } > "category/$slug/index.md"
           done
-
-      - name: Test build (development)
-        run: |
-          echo "🔨 Testing development build..."
-          bundle exec jekyll build --drafts --baseurl ""
           
-          # Validate build artifacts
-          test -f "_site/index.html" || (echo "❌ Missing index.html" && exit 1)
-          test -d "_site/assets" || (echo "❌ Missing assets directory" && exit 1)
-          test -f "_site/assets/css/main.css" || (echo "❌ Missing main CSS file" && exit 1)
-          
-          echo "✅ Development build successful"
+          echo "✅ Dynamic pages generated"
 
-      - name: Test build (production)
+      - name: Build Jekyll site
         run: |
-          echo "🔨 Testing production build..."
+          echo "🔨 Building production site..."
           bundle exec jekyll build --baseurl "/mattblogsit-dev"
-          
-          # Validate production build
-          test -f "_site/index.html" || (echo "❌ Missing production index.html" && exit 1)
-          
-          # Check for proper asset paths in production
-          if grep -q 'href="/' _site/index.html && ! grep -q 'href="/mattblogsit-dev' _site/index.html; then
-            echo "⚠️  Found absolute paths that may not work with baseurl"
-          fi
-          
-          echo "✅ Production build successful"
+          echo "✅ Production build complete"
         env:
           JEKYLL_ENV: production
 
-      - name: Performance validation
-        run: |
-          echo "⚡ Running basic performance checks..."
-          
-          # Check CSS file size
-          css_size=$(stat -f%z "_site/assets/css/main.css" 2>/dev/null || stat -c%s "_site/assets/css/main.css")
-          if [ "$css_size" -gt 100000 ]; then
-            echo "⚠️  CSS file is large (${css_size} bytes). Consider optimization."
-          fi
-          
-          # Check for large image files
-          find _site -name "*.jpg" -o -name "*.png" -o -name "*.gif" | while read img; do
-            size=$(stat -f%z "$img" 2>/dev/null || stat -c%s "$img")
-            if [ "$size" -gt 500000 ]; then
-              echo "⚠️  Large image found: $img (${size} bytes)"
-            fi
-          done
-          
-          echo "✅ Performance validation complete"
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Accessibility validation
-        run: |
-          echo "♿ Running accessibility checks..."
-          
-          # Check for missing alt attributes
-          if grep -r --include="*.html" '<img[^>]*>' _site/ | grep -v 'alt=' | head -5; then
-            echo "⚠️  Found images without alt attributes (showing first 5)"
-          fi
-          
-          # Check for proper heading structure
-          echo "🔍 Validating heading structure..."
-          for file in _site/*.html _site/**/*.html; do
-            if [ -f "$file" ]; then
-              if grep -q '<h1' "$file" && ! grep -q '<h2' "$file"; then
-                continue # Single H1 is fine
-              fi
-            fi
-          done
-          
-          echo "✅ Basic accessibility checks complete"
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        if: success()
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: jekyll-build-${{ github.sha }}
-          path: _site/
-          retention-days: 7
+          path: '_site'
 
-  # Integration tests
-  integration-tests:
-    name: Integration Tests
-    runs-on: ubuntu-latest
-    needs: build-validation
-    if: github.event_name == 'pull_request'
-    
-    steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: jekyll-build-${{ github.sha }}
-          path: _site/
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
-      - name: Setup Python for testing
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install testing dependencies
+      - name: Post-deployment verification
         run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 html5lib
-
-      - name: Start local server for testing
-        run: |
-          cd _site
-          python -m http.server 8000 &
-          sleep 5
-
-      - name: Run integration tests
-        run: |
-          python << 'EOF'
-          import requests
-          import time
-          from bs4 import BeautifulSoup
-          
-          base_url = "http://localhost:8000"
-          
-          def test_page(path, expected_title=None):
-              try:
-                  response = requests.get(f"{base_url}{path}", timeout=10)
-                  assert response.status_code == 200, f"Page {path} returned {response.status_code}"
-                  
-                  soup = BeautifulSoup(response.content, 'html.parser')
-                  title = soup.find('title')
-                  
-                  if expected_title:
-                      assert expected_title in title.get_text(), f"Title mismatch on {path}"
-                  
-                  print(f"✅ {path} - OK")
-                  return True
-              except Exception as e:
-                  print(f"❌ {path} - Error: {e}")
-                  return False
-          
-          # Test key pages
-          tests = [
-              ("/", "Matt Blogs IT"),
-              ("/about-me/", None),
-              ("/contact/", None),
-              ("/feed.xml", None),
-          ]
-          
-          passed = 0
-          for path, title in tests:
-              if test_page(path, title):
-                  passed += 1
-          
-          print(f"\n🏁 Integration tests complete: {passed}/{len(tests)} passed")
-          
-          if passed < len(tests):
-              exit(1)
-          EOF
-
-  # Report results
-  report-results:
-    name: Report Results
-    runs-on: ubuntu-latest
-    needs: [quality-checks, build-validation, integration-tests]
-    if: always() && github.event_name == 'pull_request'
-    
-    steps:
-      - name: Comment on PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { data: checks } = await github.rest.checks.listForRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: context.payload.pull_request.head.sha,
-            });
-            
-            const qualityStatus = '${{ needs.quality-checks.result }}';
-            const buildStatus = '${{ needs.build-validation.result }}';
-            const testStatus = '${{ needs.integration-tests.result }}';
-            
-            const statusIcon = (status) => {
-              switch(status) {
-                case 'success': return '✅';
-                case 'failure': return '❌';
-                case 'cancelled': return '⏹️';
-                case 'skipped': return '⏭️';
-                default: return '⏳';
-              }
-            };
-            
-            const commentBody = `🔍 **CI/CD Pipeline Results**
-
-            | Check | Status | Result |
-            |-------|--------|---------|
-            | Code Quality & Security | ${statusIcon(qualityStatus)} | ${qualityStatus} |
-            | Build Validation | ${statusIcon(buildStatus)} | ${buildStatus} |
-            | Integration Tests | ${statusIcon(testStatus)} | ${testStatus} |
-
-            ${qualityStatus === 'success' && buildStatus === 'success' && testStatus === 'success' 
-              ? '🎉 All checks passed! This PR is ready for review.' 
-              : '⚠️  Some checks failed. Please review the errors above.'}
-              
-            ---
-            *Automated report generated by CI/CD pipeline*`;
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: commentBody
-            });
+          echo "✅ Deployment completed successfully"
+          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "📊 Deployment info available in GitHub Pages settings"

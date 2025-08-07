@@ -75,20 +75,17 @@ Current categories (use exact formatting):
 2. Test locally thoroughly (failures will block PR merging)
 3. Push branch: `git push origin feature/descriptive-name`
 4. Create pull request via GitHub
-5. Wait for all 4 automated status checks to pass:
-   - Code Quality & Security (security scans, frontmatter validation)
-   - Build Validation (dev and production builds)
-   - Integration Tests (site structure, performance checks)
-   - PR Preview Build & Test (preview deployment)
-6. Review PR preview at: `https://mattgrif.github.io/mattblogsit-dev/pr-{number}`
+5. Wait for automated status check to pass:
+   - PR Build & Test (comprehensive validation: security, frontmatter, builds, structure checks)
+6. Review build validation results in PR comments
 7. Get required review approval (minimum 1)
 8. Merge only after ALL checks pass and conversations resolved
 9. Never commit sensitive information
 
-**PR Preview System:**
-- Every PR automatically creates preview deployment
-- Automated testing checklist added to PR comments
-- HTMLProofer validation runs when available
+**PR Build Validation:**
+- Every PR runs comprehensive build validation
+- Automated build status comments with detailed results
+- Security, performance, and accessibility checks included
 
 ## Common Tasks
 
@@ -155,9 +152,10 @@ bundle exec htmlproofer ./_site
 - Client-side search only (no server-side processing)
 - No database functionality (static site only)
 - **NEW**: All changes require PR workflow (no direct commits to main)
-- **NEW**: Build failures block all merging until resolved
+- **NEW**: Build failures block all merging until resolved  
 - **NEW**: Minimum 1 review required for all PRs
-- **NEW**: All 4 CI/CD status checks must pass before merging
+- **NEW**: PR Build & Test validation must pass before merging
+- **NEW**: CI/CD Pipeline only runs on main (deployment-focused, no duplicate validation)
 
 ## Future Considerations
 - Implement Progressive Web App features
@@ -179,7 +177,7 @@ When working on this blog:
 9. **NEW**: All blog posts require valid frontmatter (title, date, categories)
 10. **NEW**: Security scanning enforced (no `<script>` tags, `javascript:` URLs)
 11. **NEW**: Performance monitoring (warnings for large files)
-12. **NEW**: PR previews available at custom URLs for testing
+12. **NEW**: PR build validation with comprehensive automated testing
 
 ## Contact
 Blog Owner: Matt Griffin
