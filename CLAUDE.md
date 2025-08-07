@@ -55,6 +55,8 @@ assets/
 - **Test**: Always verify GitHub Pages compatibility
 
 ### Category Management
+**CRITICAL**: Always use YAML array format for categories, never single strings.
+
 Current categories (use exact formatting):
 - "Administrator"
 - "Microsoft"
@@ -66,6 +68,17 @@ Current categories (use exact formatting):
 - "Infrastructure"
 - "Athletics"
 - "Review"
+
+**Correct format:**
+```yaml
+categories:
+- "Category Name"
+```
+
+**WRONG format (breaks category parsing):**
+```yaml
+categories: "Category Name"
+```
 
 ### Git Workflow (CI/CD Protected)
 **CRITICAL: Direct commits to `main` are BLOCKED by branch protection rules**
@@ -108,8 +121,8 @@ Current categories (use exact formatting):
 ---
 title: "Your Title Here"        # REQUIRED - validation enforced
 date: YYYY-MM-DD               # REQUIRED - must be YYYY-MM-DD format
-categories:                    # REQUIRED - at least one category
-- "Category Name"
+categories:                    # REQUIRED - MUST use YAML array format
+- "Category Name"               # CRITICAL: Never use single string format
 excerpt: "Brief description for SEO and previews..."
 tags:
 - relevant-tag
