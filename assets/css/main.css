@@ -424,6 +424,15 @@
     border: 1px solid var(--border-color);
 }
 
+/* Override for syntax highlighted code blocks */
+.post-body .highlight {
+    background: transparent !important;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+
 .post-body pre code {
     background: none;
     padding: 0;
@@ -2458,6 +2467,23 @@ article:after {
   background-color: #f8f8f8;
   border-radius: var(--radius-md);
   overflow-x: auto;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+/* Line numbers styling */
+.highlight .linenos {
+  background-color: transparent;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding-right: var(--spacing-sm);
+  margin-right: var(--spacing-sm);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Dark theme - Base16 Dark style */
@@ -2582,13 +2608,19 @@ article:after {
   background-color: #1d1f21;
   border-radius: var(--radius-md);
   overflow-x: auto;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+/* Dark theme line numbers */
+[data-theme="dark"] .highlight .linenos {
+  border-right-color: var(--border-color);
+  color: var(--text-muted);
 }
 
 /* Code copy button */
-.highlight-wrapper {
-    position: relative;
-}
-
 .copy-code-button {
     position: absolute;
     top: var(--spacing-sm);
@@ -2600,18 +2632,22 @@ article:after {
     font-size: 0.75em;
     color: var(--text-secondary);
     cursor: pointer;
-    opacity: 0;
-    transition: opacity var(--transition-fast);
-    z-index: 1;
+    opacity: 0.7;
+    transition: all var(--transition-fast);
+    z-index: 2;
+    font-family: inherit;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-.highlight-wrapper:hover .copy-code-button {
+.highlight:hover .copy-code-button {
     opacity: 1;
 }
 
 .copy-code-button:hover {
     background: var(--accent-hover);
     color: var(--accent-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .copy-code-button:focus {
@@ -2620,8 +2656,21 @@ article:after {
     opacity: 1;
 }
 
+.copy-code-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
 .copy-code-button.copied {
     background: var(--success-color);
     color: white;
     opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* Ensure copy button works in dark theme */
+[data-theme="dark"] .copy-code-button {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
 }
