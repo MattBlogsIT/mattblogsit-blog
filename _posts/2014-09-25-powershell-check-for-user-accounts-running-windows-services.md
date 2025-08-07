@@ -23,7 +23,7 @@ Recently I worked with a client to validate that if a user account were to be di
 
 The biggest concern I had was the Windows Services. It is easy enough for a junior admin to install SQL and specify their account as the Service Account, **THIS IS BAD!** However, with some pure PowerShell, we can perform a visual inspection, or with some minor adjustments, we could look for a service running with a specific user.
 
-```
+```powershell
 Get-CimInstance -ComputerName (Get-ADComputer -Filter 'OperatingSystem -like "Windows Server*"' | Select -ExpandProperty Name) -Query "SELECT Name, StartName FROM Win32_Service WHERE StartName <> 'LocalSystem'" | ? { $_.StartName -notlike 'NT AUTHORITY*' -and $_.StartName -notlike 'NT SERVICE*' } | Select Name, StartName, PSComputerName
 ```
 

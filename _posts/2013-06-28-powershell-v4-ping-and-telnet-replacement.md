@@ -36,7 +36,7 @@ I was hoping for something in PowerShell v3, but sadly nothing showed up. Howeve
 
 Let's not stop at something that simple now, because PowerShell is all about automating. So let's try to do something crazy. I know on my virtual lab at home, I have a few VM's running, so let's verify RDP is open on all of these servers. Luckily for me, most of them are joined to an Active Directory, so let's do some magic.
 
-```
+```powershell
 (Get-ADComputer -LDAPFilter "(name=griffin*)").DNSHostName | Test-NetConnection -Port 3389
 ```
 

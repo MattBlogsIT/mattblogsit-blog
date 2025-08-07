@@ -35,13 +35,13 @@ This is a fairly straightforward cmdlet, only 3 mandatory parameters and it work
 
 ## Example:
 
-```
+```powershell
 Alert-GMUnhealthyStoragePool -SMTPServer smtp.example.com -ToAddress Joe@example.com -FromAddress alert@example.com
 ```
 
 #  The Module Code:
 
-```
+```powershell
 #Requires -Version 3 
 #Requires -Module Storage
 <#
@@ -117,7 +117,7 @@ function Alert-GMUnhealthyStoragePool
     1. (Note: If the directory doesn't exists you must create it.)
 2. Save the above code in a file named GriffinMonitor.psm1 under the above directory
 3. Create a Scheduled Job using PowerShell
-    1. ```
+    1. ```powershell
         #The below PowerShell commands will schedule the cmdlet to run every 30 minutes using the SMTPServer xxx.xxx.xxx.xxx, emailing to joe@example.com and coming from noreply@example.com - Make sure you update the parameter values.
         $trig = New-JobTrigger -Once -At "5/22/2014 0am" -RepetitionInterval (New-TimeSpan -Minute 30) -RepetitionDuration ([TimeSpan]::MaxValue)
         Register-ScheduledJob -Name CheckStoragePoolHealth -ScriptBlock { Alert-GMUnhealthyStoragePool -SMTPServer xxx.xxx.xxx.xxx -ToAddress joe@example.com -FromAddress noreply@example.com} -Trigger $trig

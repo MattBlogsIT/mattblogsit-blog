@@ -22,13 +22,13 @@ So as I have listed on my last blog post I was bit in the rear on backups and de
 
 I found [Session.SynchronizeDirectories method and Session.FileTransferred event](http://winscp.net/eng/docs/library_session_synchronizedirectories#example) example on the WinSCP site and thought by god this will do an rsync using PowerShell! So I downloaded it reviewed the code, added my login information and changed line 72 from
 
-```
+```powershell
 SynchronizationMode.Remote
 ```
 
 to
 
-```
+```powershell
 SynchronizationMode.Local
 ```
 
@@ -36,7 +36,9 @@ along with the directories I was synchronizing. Once that was completed all I 
 
 I decided to make modifications to the script for end users not to have to scroll looking for variables to edit, so please feel free to use my very lightly tweaked version.
 
-```
+> **⚠️ Security Warning**: The following code contains hardcoded credentials for demonstration purposes only. In production environments, use secure credential storage methods like `Get-Credential`, Windows Credential Manager, or Azure Key Vault. Never store passwords in plain text in production scripts.
+
+```powershell
 [Reflection.Assembly]::LoadFrom("WinSCP.dll") | Out-Null
 
 # Authentication Information

@@ -35,7 +35,7 @@ One evening I came home from work and stumbled upon this fantastic post on the P
 
 Now writing the script was going to be easy. It was almost already written for me a few tweaks here and there and boom done. The first iteration of this script read from a file I copied to the system when initially deploying it. I decided that wasn't nearly as much fun as controlling it remotely. So the current version, when executed, downloads the newest phrase file from a web service and save to buried directory on the file system. Knowing the majority of my targets were male, and the phrases I'd be using would have extra effect coming from a male voice, I decided to add a Voice Hint of Male.
 
-```
+```powershell
 <# File: voice.ps1 
     By: Matt Griffin 
     Website: MattBlogsIT.com 
@@ -89,7 +89,7 @@ So we have the voice script written, but we need the phrases! So I spent a fair 
 
 Now that the majority of the script was written, I needed a way for it to repeat. I was aware of PowerShell Jobs, but I had never set one up and wasn't 100% sure on how to do it. Setting up the job was probably the most time consuming aside from writing the phrases. I had quite a bit of learning, but I was able to throw together what to the target would seem to be random, but to me, I know the exact time it executes, and I can make sure I am around the area when it runs.
 
-```
+```powershell
 <#  File: prankschedule.ps1
     By: Matt Griffin
     Website: MattBlogsIT.com
@@ -116,7 +116,7 @@ So I had a solid script written now I was down to how it would be delivered. I s
 
 Those are simple enough, right? Let's just write a quick PowerShell script to copy our files and run the schedule script.
 
-```
+```powershell
 <#  File: prankInstall.ps1
     By: Matt Griffin
     Website: MattBlogsIT.com
@@ -133,7 +133,7 @@ Copy-Item -Path $dir\voice\* -Destination .
 
 Well, great, we have our files copied, but I still have to open PowerShell and change the Execution Policy. We can write a batch file to fix that! The thing I ran into is I was so lazy I didn't want to right-click, so UAC is going to be an issue. Luckily with some quick Google... I mean, Binging! I was able to find [a fantastic answer on StackOverflow](http://stackoverflow.com/questions/7044985/how-can-i-auto-elevate-my-batch-file-so-that-it-requests-from-uac-admin-rights). Once UAC was bypassed, it was a simple call Powershell.exe and passed an argument that runs a cmdlet. Please note that I am also doing some fancy stuff with the directory the file is executing from, I have no idea where I found that, but it was some easy searching that found that too.
 
-```
+```batch
 REM	File: prankInstall.bat
 REM	By: Matt Griffin
 REM	Website: MattBlogsIT.com

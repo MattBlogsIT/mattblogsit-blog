@@ -22,19 +22,19 @@ This cmdlet is very similar to the Alert-GMUnhealthyStoragePool as it has 3 mand
 
 ## Example:
 
-```
+```powershell
 Alert-GMLowDiskSpace -SMTPServer smtp.example.com -ToAddress Joe@example.com -FromAddress alert@example.com
 ```
 
 \-OR-
 
-```
+```powershell
 Alert-GMLowDiskSpace -SMTPServer smtp.example.com -ToAddress Joe@example.com -FromAddress alert@example.com -PctThreshold 15
 ```
 
 #  The Module Code:
 
-```
+```powershell
 #Requires -Version 3 
 #Requires -Module Storage
 
@@ -182,7 +182,7 @@ function Alert-GMLowDiskSpace
 1. Open C:\\Users\\_<username>_\\Documents\\WindowsPowerShell\\Modules\\GriffinMonitor with the PowerShell ISE or your favorite text editing document
 2. Replace the code with the above script
 3. Create a Scheduled Job for the new PowerShell cmdlet
-    1. ```
+    1. ```powershell
         #The below PowerShell commands will schedule the cmdlet to run every 30 minutes using the SMTPServer xxx.xxx.xxx.xxx, emailing to joe@example.com and coming from noreply@example.com - Make sure you update the parameter values.
         $trig = New-JobTrigger -Once -At "5/22/2014 0am" -RepetitionInterval (New-TimeSpan -Minute 30) -RepetitionDuration ([TimeSpan]::MaxValue)
         Register-ScheduledJob -Name CheckStoragePoolHealth -ScriptBlock { Alert-GMLowDiskSpace -SMTPServer xxx.xxx.xxx.xxx -ToAddress joe@example.com -FromAddress noreply@example.com} -Trigger $trig
@@ -195,7 +195,7 @@ function Alert-GMLowDiskSpace
     1. (Note: If the directory doesn't exists you must create it.)
 2. Save the above code in a file named GriffinMonitor.psm1 under the above directory
 3. Create a Scheduled Job using PowerShell
-    1. ```
+    1. ```powershell
         #The below PowerShell commands will schedule the cmdlet to run every 30 minutes using the SMTPServer xxx.xxx.xxx.xxx, emailing to joe@example.com and coming from noreply@example.com - Make sure you update the parameter values.
         $trig = New-JobTrigger -Once -At "5/22/2014 0am" -RepetitionInterval (New-TimeSpan -Minute 30) -RepetitionDuration ([TimeSpan]::MaxValue)
         Register-ScheduledJob -Name CheckStoragePoolHealth -ScriptBlock { Alert-GMLowDiskSpace -SMTPServer xxx.xxx.xxx.xxx -ToAddress joe@example.com -FromAddress noreply@example.com} -Trigger $trig

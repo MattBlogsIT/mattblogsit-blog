@@ -34,7 +34,7 @@ The first step, in utilizing the DSC is creating the DSC Script. This script is 
 
 You will notice in the below example script the keyword configuration, with a nested identifier of Node.
 
-```
+```powershell
 Configuration MattBlogsITDemo
 {
     Node Server1
@@ -91,7 +91,7 @@ Once you have finalized, or possibly updated your DSC Script you now have to gen
 
 Once you have setup your script, and created the MOF Configuration File all you have to do is execute a single cmdlet and it will run and deploy to 1-many servers depending on the script.
 
-```
+```powershell
 Start-DscConfiguration -ComputerName -Path MattBlogsITDemo -Credential Get-Credential
 ```
 

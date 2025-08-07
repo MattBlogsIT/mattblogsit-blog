@@ -19,12 +19,12 @@ Lately I have been putting a lot of my time into developing useful PowerShell sc
 
 # Top 10 Document Libraries:
 
-```
+```powershell
 Get-SPSite -Limit All | Get-SPWeb -Limit All | % { $_.Lists} | ? { $_ -is [Microsoft.SharePoint.SPDocumentLibrary] } | Sort-Object { $_.ItemCount } -Descending | Select-Object Title, Description, ItemCount, ParentWebUrl -First 10
 ```
 
 #  Top 10 Lists:
 
-```
+```powershell
 Get-SPSite -Limit All | Get-SPWeb -Limit All | % { $_.Lists} | ? { $_ -isnot [Microsoft.SharePoint.SPDocumentLibrary] } | Sort-Object { $_.ItemCount } -Descending | Select-Object Title, Description, ItemCount, ParentWebUrl -First 10
 ```

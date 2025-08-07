@@ -44,7 +44,13 @@ Now before we dive into the scripting component of this blog post I want you to 
 
 The first task is going to be to create the Differencing Disks and Virtual Machines from the parent disk that you have previously created. This demonstration consists of four different Virtual Machines.
 
-```
+> **⚠️ Security Warning**: This lab configuration contains hardcoded passwords and insecure settings for demonstration purposes only. In production environments:
+> - Use secure credential storage methods like `Get-Credential` or Azure Key Vault
+> - Enable certificate-based authentication for DSC
+> - Never use `AllowUnencryptedTraffic` in production
+> - Follow security best practices for domain controller and web server configurations
+
+```powershell
 New-VHD -ParentPath D:\Templates\Server2012R2.vhdx -Path 'D:\Hyper-V\Virtual Hard Disks\IndyPoSh-DC1.vhdx' -Differencing -SizeBytes 80GB
 New-VHD -ParentPath D:\Templates\Server2012R2.vhdx -Path 'D:\Hyper-V\Virtual Hard Disks\IndyPoSh-DSC1.vhdx' -Differencing -SizeBytes 80GB
 New-VHD -ParentPath D:\Templates\Server2012R2.vhdx -Path 'D:\Hyper-V\Virtual Hard Disks\IndyPoSh-IIS1.vhdx' -Differencing -SizeBytes 80GB
@@ -62,7 +68,7 @@ This step could be further automated with some non-PowerShell tasks. To setup th
 
 ## IndyPoSh-DC1
 
-```
+```powershell
 $int = Get-NetIPAddress | Where-Object { $_.InterfaceAlias -eq 'Ethernet' -and $_.AddressFamily -eq 'IPv4' }
 New-NetIPAddress -InterfaceIndex $int.InterfaceIndex -IPAddress 10.10.0.10 -PrefixLength 24 -DefaultGateway 10.10.0.1
 Set-DnsClientServerAddress -InterfaceIndex $int.InterfaceIndex -ServerAddresses 127.0.0.1,10.10.0.10
@@ -76,7 +82,7 @@ Get-WindowsFeature *GUI* | Uninstall-WindowsFeature -Restart
 
 ##  IndyPoSh-DSC1
 
-```
+```powershell
 $int = Get-NetIPAddress | Where-Object { $_.InterfaceAlias -eq 'Ethernet' -and $_.AddressFamily -eq 'IPv4' }
 New-NetIPAddress -InterfaceIndex $int.InterfaceIndex -IPAddress 10.10.0.11 -PrefixLength 24 -DefaultGateway 10.10.0.1
 Set-DnsClientServerAddress -InterfaceIndex $int.InterfaceIndex -ServerAddresses 10.10.0.10
@@ -91,7 +97,7 @@ Add-Computer -DomainName IndyPoSh.Demo -Restart -Credential $Credential
 
 ##  IndyPoSh-IIS1
 
-```
+```powershell
 $int = Get-NetIPAddress | Where-Object { $_.InterfaceAlias -eq 'Ethernet' -and $_.AddressFamily -eq 'IPv4' }
 New-NetIPAddress -InterfaceIndex $int.InterfaceIndex -IPAddress 10.10.0.12 -PrefixLength 24 -DefaultGateway 10.10.0.1
 Set-DnsClientServerAddress -InterfaceIndex $int.InterfaceIndex -ServerAddresses 10.10.0.10
@@ -108,7 +114,7 @@ Add-Computer -DomainName IndyPoSh.Demo -Restart -Credential $Credential
 
 ##  IndyPoSh-IIS2
 
-```
+```powershell
 $int = Get-NetIPAddress | Where-Object { $_.InterfaceAlias -eq 'Ethernet' -and $_.AddressFamily -eq 'IPv4' }
 New-NetIPAddress -InterfaceIndex $int.InterfaceIndex -IPAddress 10.10.0.13 -PrefixLength 24 -DefaultGateway 10.10.0.1
 Set-DnsClientServerAddress -InterfaceIndex $int.InterfaceIndex -ServerAddresses 10.10.0.10
@@ -138,7 +144,7 @@ Within this DSC Configuration we are also importing an experimental resource - k
 
 At the very end we call the WebDeploy Configuration Function to generate this configuration for IndyPoSh-IIS1.
 
-```
+```powershell
 configuration WebDeploy {
 
     param(
@@ -234,7 +240,7 @@ In this step we are going to perform a mix of manual and automated steps to crea
 
 An example of what your Sample\_xDscWebResource file should look like what is below. Please note that this may change slightly in future Resource Wave Releases.
 
-```
+```powershell
 # DSC configuration for Pull Server and Compliance Server
 # Prerequisite: Certificate "CN=PSDSCPullServerCert" in "CERT:\LocalMachine\MY\" store
 # Note: A Certificate may be generated using MakeCert.exe: http://msdn.microsoft.com/en-us/library/windows/desktop/aa386968%28v=vs.85%29.aspx
@@ -304,7 +310,7 @@ Once you have setup the Pull Server Web Service on IndyPoSh-DSC1 you need to cre
 
 In the below code we are using a .NET Method to generate a valid GUID. We will then use that generated GUID to copy the IndyPoSh-IIS1.mof file and rename it to a new location that the DSC WebService is looking in for configurations. At the very end we are also running a command named New-DscCheckSum, which will generate a check sum file that the node will use to verify the configuration has not become corrupted.
 
-```
+```powershell
 $guid = [guid]::NewGuid()
 $Path = "C:\PoSh\WebDeploy\IndyPoSh-IIS1.mof"
 $Destination = "C:\Program Files\WindowsPowerShell\DscService\Configuration\$guid.mof"
@@ -321,7 +327,7 @@ In this step we are actually going to Push a new DSC Local Configuration Manager
 1. Save the below example PullConfig to the local machine on IndyPoSh-DSC1
 2. Run the script
 
-```
+```powershell
 Configuration ConfigPull {
     param(
         [string[]]
