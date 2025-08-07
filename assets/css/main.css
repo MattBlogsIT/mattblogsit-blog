@@ -1691,7 +1691,7 @@ article:after {
     h1 {
         position: relative;
         text-align: center;
-        padding: 0 60px;
+        padding: 0 60px 0 50px; /* More space on left for search button */
         margin-bottom: 0;
     }
     
@@ -1714,14 +1714,15 @@ article:after {
     /* Mobile search icon */
     .mobile-search {
         display: block;
-        position: fixed;
-        top: 25px;
-        left: 20px;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
         z-index: 1002;
-        font-size: 18px;
+        font-size: 16px;
         background: var(--bg-secondary);
         color: var(--accent-primary);
-        padding: 8px;
+        padding: 6px;
         border-radius: 50%;
         box-shadow: 0 2px 8px var(--shadow-color);
         border: 1px solid var(--border-color);
@@ -1766,6 +1767,11 @@ article:after {
         padding: 15px 15px 15px 5px;
     }
     
+    /* Adjust H1 padding for smaller screens */
+    h1 {
+        padding: 0 50px 0 40px; /* Less space on smaller screens */
+    }
+    
     /* Adjust theme toggle for smaller screens */
     .theme-toggle {
         top: 15px;
@@ -1786,15 +1792,16 @@ article:after {
     }
     
     .mobile-search {
-        top: 15px;
-        left: 15px;
-        padding: 8px;
-        font-size: 1.3rem;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        padding: 5px;
+        font-size: 14px;
     }
     
     /* Adjust search dropdown for mobile */
     .search-dropdown {
-        top: 70px;
+        top: 60px; /* Positioned below H1 header area */
         left: 15px;
         right: 15px;
         width: auto;
