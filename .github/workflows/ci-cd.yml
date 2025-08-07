@@ -163,32 +163,27 @@ jobs:
           
           for year in $(grep -h "^date:" _posts/*.md | sed 's/date: //' | cut -d'-' -f1 | sort -u); do
             mkdir -p "archive/$year"
-            cat > "archive/$year/index.md" <<'EOF'
----
-layout: archive
-year: "YEAR_PLACEHOLDER"
-title: YEAR_PLACEHOLDER Archive
-permalink: /archive/YEAR_PLACEHOLDER/
----
-EOF
-            # Replace placeholders with actual values
-            sed -i "s/YEAR_PLACEHOLDER/$year/g" "archive/$year/index.md"
+            {
+              echo "---"
+              echo "layout: archive"
+              echo "year: \"$year\""
+              echo "title: $year Archive"
+              echo "permalink: /archive/$year/"
+              echo "---"
+            } > "archive/$year/index.md"
           done
           
           for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sed 's/"//g' | sort -u); do
             slug=$(echo "$category" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
             mkdir -p "category/$slug"
-            cat > "category/$slug/index.md" <<'EOF'
----
-layout: category
-category: "CATEGORY_PLACEHOLDER"
-title: CATEGORY_PLACEHOLDER Posts
-permalink: /category/SLUG_PLACEHOLDER/
----
-EOF
-            # Replace placeholders with actual values, ensuring proper YAML quoting
-            sed -i "s/CATEGORY_PLACEHOLDER/$category/g" "category/$slug/index.md"
-            sed -i "s/SLUG_PLACEHOLDER/$slug/g" "category/$slug/index.md"
+            {
+              echo "---"
+              echo "layout: category"
+              echo "category: \"$category\""
+              echo "title: $category Posts"
+              echo "permalink: /category/$slug/"
+              echo "---"
+            } > "category/$slug/index.md"
           done
 
       - name: Test build (development)
