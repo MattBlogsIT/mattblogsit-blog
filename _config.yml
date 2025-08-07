@@ -9,11 +9,9 @@ url: "https://mattgrif.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-
-# Rouge configuration
-rouge:
-  line_numbers: true
-  css_class: 'code-highlight'
+kramdown:
+  syntax_highlighter_opts:
+    line_numbers: table
 
 plugins:
   - jekyll-feed

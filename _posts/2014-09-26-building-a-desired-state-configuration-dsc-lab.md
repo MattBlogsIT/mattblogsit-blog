@@ -45,10 +45,11 @@ Now before we dive into the scripting component of this blog post I want you to 
 The first task is going to be to create the Differencing Disks and Virtual Machines from the parent disk that you have previously created. This demonstration consists of four different Virtual Machines.
 
 > **⚠️ Security Warning**: This lab configuration contains hardcoded passwords and insecure settings for demonstration purposes only. In production environments:
-> - Use secure credential storage methods like `Get-Credential` or Azure Key Vault
+> - Use secure credential storage methods like **Get-Credential** or **Azure Key Vault**
 > - Enable certificate-based authentication for DSC
-> - Never use `AllowUnencryptedTraffic` in production
+> - Never use **AllowUnencryptedTraffic** in production
 > - Follow security best practices for domain controller and web server configurations
+{:.security-warning}
 
 ```powershell
 New-VHD -ParentPath D:\Templates\Server2012R2.vhdx -Path 'D:\Hyper-V\Virtual Hard Disks\IndyPoSh-DC1.vhdx' -Differencing -SizeBytes 80GB

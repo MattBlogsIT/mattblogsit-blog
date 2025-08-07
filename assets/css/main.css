@@ -424,12 +424,11 @@
     border: 1px solid var(--border-color);
 }
 
-/* Override for syntax highlighted code blocks */
-.post-body .highlight {
-    background: transparent !important;
+/* Override for syntax highlighted code blocks to prevent double styling */
+.post-body .highlight pre {
+    background: transparent;
     padding: 0;
     border: none;
-    border-radius: 0;
     margin: 0;
 }
 
@@ -2253,8 +2252,6 @@ article:after {
    ======================================================================== */
 
 /* Light theme - GitHub style */
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
 .highlight .cm {
   color: #999988;
   font-style: italic;
@@ -2465,6 +2462,7 @@ article:after {
 }
 .highlight {
   background-color: #f8f8f8;
+  color: #333333;
   border-radius: var(--radius-md);
   overflow-x: auto;
   padding: var(--spacing-lg);
@@ -2473,22 +2471,51 @@ article:after {
   position: relative;
 }
 
-/* Line numbers styling */
-.highlight .linenos {
-  background-color: transparent;
+/* Ensure code and pre elements inherit the color */
+.highlight code,
+.highlight pre {
+  color: inherit;
+  background: transparent;
+}
+
+/* Line numbers styling for table format */
+.highlight table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.highlight table td {
+  padding: 0;
+  vertical-align: top;
+}
+
+.highlight table td.gutter,
+.highlight table td.rouge-gutter {
+  width: auto;
+  padding-right: var(--spacing-md);
   border-right: 1px solid var(--border-color);
-  color: var(--text-muted);
-  padding-right: var(--spacing-sm);
-  margin-right: var(--spacing-sm);
+  text-align: right;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
 }
 
+.highlight table td.code,
+.highlight table td.rouge-code {
+  padding-left: var(--spacing-md);
+  width: 100%;
+}
+
+.highlight .linenos,
+.highlight .rouge-gutter pre {
+  color: var(--text-muted);
+  margin: 0;
+  padding: 0;
+}
+
 /* Dark theme - Base16 Dark style */
-[data-theme="dark"] .highlight table td { padding: 5px; }
-[data-theme="dark"] .highlight table pre { margin: 0; }
 [data-theme="dark"] .highlight .c, [data-theme="dark"] .highlight .ch, [data-theme="dark"] .highlight .cd, [data-theme="dark"] .highlight .cm, [data-theme="dark"] .highlight .cpf, [data-theme="dark"] .highlight .c1, [data-theme="dark"] .highlight .cs {
   color: #969896;
 }
@@ -2615,62 +2642,129 @@ article:after {
 }
 
 /* Dark theme line numbers */
-[data-theme="dark"] .highlight .linenos {
+[data-theme="dark"] .highlight .linenos,
+[data-theme="dark"] .highlight .rouge-gutter pre {
   border-right-color: var(--border-color);
   color: var(--text-muted);
 }
 
-/* Code copy button */
-.copy-code-button {
+/* Dark theme table borders */
+[data-theme="dark"] .highlight table td.gutter,
+[data-theme="dark"] .highlight table td.rouge-gutter {
+  border-right-color: var(--border-color);
+}
+
+/* Native browser selection improvements for code blocks */
+.highlight {
+    user-select: all; /* Select entire block when clicked */
+}
+
+.highlight table td.rouge-gutter {
+    user-select: none; /* Prevent line numbers from being selected */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Security warning boxes using Kramdown block attributes */
+blockquote.security-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-left: 4px solid #f39c12;
+    color: #856404;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--radius-md);
+    font-size: 0.95em;
+    line-height: 1.6;
+    quotes: none;
+}
+
+/* Override blockquote default styles for security warnings */
+blockquote.security-warning::before,
+blockquote.security-warning::after {
+    content: none;
+}
+
+.security-warning strong {
+    color: #d73502;
+    font-weight: var(--font-weight-semibold);
+}
+
+.security-warning code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: #c7254e;
+}
+
+/* Dark theme security warning */
+[data-theme="dark"] .security-warning {
+    background-color: #3e2723;
+    border-color: #5d4037;
+    color: #ffccbc;
+}
+
+[data-theme="dark"] .security-warning strong {
+    color: #ff6b6b;
+}
+
+[data-theme="dark"] .security-warning code {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ff8787;
+}
+
+/* Enhanced native copy functionality for code blocks */
+.highlight {
+    position: relative;
+}
+
+/* Add visual indication that code blocks are copyable */
+.highlight::before {
+    content: "Click to select all";
     position: absolute;
-    top: var(--spacing-sm);
+    top: var(--spacing-xs);
     right: var(--spacing-sm);
-    background: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.75em;
+    background: var(--bg-secondary);
     color: var(--text-secondary);
-    cursor: pointer;
-    opacity: 0.7;
-    transition: all var(--transition-fast);
-    z-index: 2;
-    font-family: inherit;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    padding: 2px 6px;
+    border-radius: var(--radius-xs);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.highlight:hover .copy-code-button {
-    opacity: 1;
+.highlight:hover::before {
+    opacity: 0.8;
 }
 
-.copy-code-button:hover {
-    background: var(--accent-hover);
-    color: var(--accent-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px var(--shadow-color);
+/* Improve code block selection behavior */
+.highlight pre {
+    cursor: copy;
 }
 
-.copy-code-button:focus {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 1px;
-    opacity: 1;
+.highlight pre:hover {
+    background-color: var(--bg-hover);
 }
 
-.copy-code-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px var(--shadow-color);
+/* Visual feedback when code is selected */
+.highlight pre::selection,
+.highlight pre *::selection {
+    background-color: var(--accent-primary);
+    color: var(--text-inverse);
 }
 
-.copy-code-button.copied {
-    background: var(--success-color);
-    color: white;
-    opacity: 1;
-    transform: translateY(-1px);
+/* Dark theme adjustments */
+[data-theme="dark"] .highlight::before {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
 }
 
-/* Ensure copy button works in dark theme */
-[data-theme="dark"] .copy-code-button {
-    background: var(--bg-primary);
-    border-color: var(--border-color);
-    color: var(--text-secondary);
+[data-theme="dark"] .highlight pre:hover {
+    background-color: var(--bg-tertiary);
 }

@@ -100,7 +100,10 @@ tags:
 
 ### Testing Commands
 ```bash
-# Local development
+# Local development (use full path on this system)
+/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl ""
+
+# Alternative local development (if bundle is in PATH)
 bundle exec jekyll serve --baseurl ""
 
 # Build for production
@@ -108,7 +111,18 @@ bundle exec jekyll build
 
 # Check for broken links
 bundle exec htmlproofer ./_site
+
+# Quick local test with drafts
+/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl "" --drafts
 ```
+
+**Important Notes for Local Testing:**
+- Always use `--baseurl ""` to override the GitHub Pages baseurl for local testing
+- The server runs at `http://127.0.0.1:4000/` (not localhost:4000)
+- Use the full bundle path `/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle` if bundle command not found
+- Press Ctrl+C to stop the local server
+- The site auto-regenerates when files change (except _config.yml)
+- Test both light and dark themes during local development
 
 ## Current Limitations
 - Cannot use jekyll-paginate-v2 (not GitHub Pages compatible)

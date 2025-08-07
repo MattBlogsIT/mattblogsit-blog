@@ -36,7 +36,8 @@ along with the directories I was synchronizing. Once that was completed all I 
 
 I decided to make modifications to the script for end users not to have to scroll looking for variables to edit, so please feel free to use my very lightly tweaked version.
 
-> **⚠️ Security Warning**: The following code contains hardcoded credentials for demonstration purposes only. In production environments, use secure credential storage methods like `Get-Credential`, Windows Credential Manager, or Azure Key Vault. Never store passwords in plain text in production scripts.
+> **⚠️ Security Warning**: The following code contains hardcoded credentials for demonstration purposes only. In production environments, use secure credential storage methods like **Get-Credential**, **Windows Credential Manager**, or **Azure Key Vault**. Never store passwords in plain text in production scripts.
+{:.security-warning}
 
 ```powershell
 [Reflection.Assembly]::LoadFrom("WinSCP.dll") | Out-Null

@@ -24,7 +24,8 @@ After jumping into this, I decided it was appropriate to build a PowerShell Modu
 
 Inside of this PowerShell Module, you find a collection of 7 functions. The most critical one is Get-BirdDogAccessToken. To invoke this function, you need to provide an APIKey, UserName, and Password that has API Access that your BirdDogHR Account Representative can provide you. As an Administrator inside of BirdDog, you cannot create your API Access. Take a look at a snippet of the module below.
 
-> **⚠️ Security Warning**: This example demonstrates credential handling for educational purposes. The conversion of secure strings to plain text should only be done when absolutely necessary for API integration. Always use `Get-Credential` and avoid storing credentials in scripts.
+> **⚠️ Security Warning**: This example demonstrates credential handling for educational purposes. The conversion of secure strings to plain text should only be done when absolutely necessary for API integration. Always use **Get-Credential** and avoid storing credentials in scripts.
+{:.security-warning}
 
 ```powershell
 function Get-BirdDogAccessToken {
