@@ -71,16 +71,27 @@ Current categories (use exact formatting):
 **CRITICAL: Direct commits to `main` are BLOCKED by branch protection rules**
 
 **Required Development Process:**
-1. Create feature branch: `git checkout -b feature/descriptive-name`
-2. Test locally thoroughly (failures will block PR merging)
-3. Push branch: `git push origin feature/descriptive-name`
-4. Create pull request via GitHub
-5. Wait for automated status check to pass:
+1. **Check if current work is on main branch after previous PR merge:**
+   ```bash
+   git status  # Check current branch
+   git pull origin main  # Pull latest if on main
+   ```
+2. **Create new feature branch** (always required for new changes):
+   ```bash
+   git checkout -b feature/descriptive-name
+   ```
+3. Test locally thoroughly (failures will block PR merging)
+4. Push branch: `git push -u origin feature/descriptive-name`
+5. **Create pull request automatically:**
+   ```bash
+   gh pr create --title "Descriptive PR title" --body "PR description"
+   ```
+6. Wait for automated status check to pass:
    - PR Build & Test (comprehensive validation: security, frontmatter, builds, structure checks)
-6. Review build validation results in PR comments
-7. Get required review approval (minimum 1)
-8. Merge only after ALL checks pass and conversations resolved
-9. Never commit sensitive information
+7. Review build validation results in PR comments
+8. Get required review approval (minimum 1)
+9. Merge only after ALL checks pass and conversations resolved
+10. Never commit sensitive information
 
 **PR Build Validation:**
 - Every PR runs comprehensive build validation
@@ -90,7 +101,7 @@ Current categories (use exact formatting):
 ## Common Tasks
 
 ### Adding a New Post
-1. Create feature branch first: `git checkout -b feature/new-post-name`
+1. **Follow Git Workflow above** - ensure on new feature branch first
 2. Create file in `_posts/` with format: `YYYY-MM-DD-descriptive-title.md`
 3. Include **MANDATORY** frontmatter (CI/CD validation will fail without these):
 ```yaml
@@ -105,7 +116,7 @@ tags:
 ---
 ```
 4. Test locally before pushing (builds must pass for PR approval)
-5. Follow Git Workflow above for PR creation and review
+5. Create PR automatically with `gh pr create`
 
 ### Updating Categories
 - Always use title case with quotes for multi-word categories
@@ -167,17 +178,19 @@ bundle exec htmlproofer ./_site
 ## Helpful Context for Claude
 When working on this blog:
 1. **MANDATORY**: All changes must go through pull requests (direct commits blocked)
-2. Always consider GitHub Pages limitations
-3. Prioritize accessibility and performance
-4. Focus on defensive security practices
-5. Maintain consistent code style
-6. **CRITICAL**: Test all changes locally before pushing (build failures block PRs)
-7. Consider mobile-first responsive design
-8. Follow SEO best practices for technical content
-9. **NEW**: All blog posts require valid frontmatter (title, date, categories)
-10. **NEW**: Security scanning enforced (no `<script>` tags, `javascript:` URLs)
-11. **NEW**: Performance monitoring (warnings for large files)
-12. **NEW**: PR build validation with comprehensive automated testing
+2. **CRITICAL**: Always check git status and create new feature branches before starting work
+3. Always consider GitHub Pages limitations
+4. Prioritize accessibility and performance
+5. Focus on defensive security practices
+6. Maintain consistent code style
+7. **CRITICAL**: Test all changes locally before pushing (build failures block PRs)
+8. Consider mobile-first responsive design
+9. Follow SEO best practices for technical content
+10. **NEW**: All blog posts require valid frontmatter (title, date, categories)
+11. **NEW**: Security scanning enforced (no `<script>` tags, `javascript:` URLs)
+12. **NEW**: Performance monitoring (warnings for large files)
+13. **NEW**: PR build validation with comprehensive automated testing
+14. **NEW**: Use `gh pr create` for automatic PR creation with detailed descriptions
 
 ## Contact
 Blog Owner: Matt Griffin
