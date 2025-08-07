@@ -64,4 +64,4 @@ Once I realized this I knew it was my duty to get everyone else who would like t
 ![Friends from around the world who are in #TheKrewe]({{ site.baseurl }}/assets/img/MJM_1609.jpg)
 *Friends from around the world who are in #TheKrewe*
 
-If you would like to view more pictures from TechEd 2013 please view **[my photos here](http://sdrv.ms/11LlPSm)**.
+If you would like to view more pictures from TechEd 2013, the photo album is no longer available online.

@@ -118,7 +118,7 @@ Overall it was an amazing week where I met hundreds of new people, a fraction of
 
 Please keep on eye on my blog for some more #TheKrewe specific posts!
 
-Check out my pictures from TechEd on [**My Skydrive**](http://sdrv.ms/11LlPSm)!
+My pictures from TechEd are no longer available online!
 
 ![Many thanks to Michael McAtee for this picture!]({{ site.baseurl }}/assets/img/MJM_1595-1024x680.jpg)
 *Many thanks to Michael McAtee for this picture!*

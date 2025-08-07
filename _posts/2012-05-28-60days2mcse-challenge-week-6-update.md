@@ -24,9 +24,9 @@ In the past 3 weeks most of my time has been spent building my lab; but I’ve a
 
 ## Useful Resources:
 
-- MMS Video: [FI-B307 - Cloud Clustering Leveraging System Center 2012 for Continual Availability in the Private Cloud](http://cdn.tri-digital.com/MMS/video/FI-B307.wmv)
-- MMS Video: [FI-B318](http://cdn.tri-digital.com/MMS/video/FI-B318.wmv) [\- System Center 2012: Managing Multiple Hypervisors, VMware and Xen, and How They Fit into the Microsoft Private Cloud](http://cdn.tri-digital.com/MMS/video/FI-B318.wmv)
-- [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+- MMS Video: [FI-B307 - Cloud Clustering Leveraging System Center 2012 for Continual Availability in the Private Cloud]((video no longer available: FI-B307)
+- MMS Video: [FI-B318]((video no longer available: FI-B318) [\- System Center 2012: Managing Multiple Hypervisors, VMware and Xen, and How They Fit into the Microsoft Private Cloud]((video no longer available: FI-B318)
+- [Microsoft Learn](https://learn.microsoft.com/) (formerly Microsoft Virtual Academy)
 
 ## Moving Forward:
 
