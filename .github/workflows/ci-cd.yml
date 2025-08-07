@@ -163,27 +163,32 @@ jobs:
           
           for year in $(grep -h "^date:" _posts/*.md | sed 's/date: //' | cut -d'-' -f1 | sort -u); do
             mkdir -p "archive/$year"
-            cat > "archive/$year/index.md" <<EOF
-          ---
-          layout: archive
-          year: "$year"
-          title: $year Archive
-          permalink: /archive/$year/
-          ---
-          EOF
+            cat > "archive/$year/index.md" <<'EOF'
+---
+layout: archive
+year: "YEAR_PLACEHOLDER"
+title: YEAR_PLACEHOLDER Archive
+permalink: /archive/YEAR_PLACEHOLDER/
+---
+EOF
+            # Replace placeholders with actual values
+            sed -i "s/YEAR_PLACEHOLDER/$year/g" "archive/$year/index.md"
           done
           
-          for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sort -u); do
+          for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sed 's/"//g' | sort -u); do
             slug=$(echo "$category" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
             mkdir -p "category/$slug"
-            cat > "category/$slug/index.md" <<EOF
-          ---
-          layout: category
-          category: "$category"
-          title: $category Posts
-          permalink: /category/$slug/
-          ---
-          EOF
+            cat > "category/$slug/index.md" <<'EOF'
+---
+layout: category
+category: "CATEGORY_PLACEHOLDER"
+title: CATEGORY_PLACEHOLDER Posts
+permalink: /category/SLUG_PLACEHOLDER/
+---
+EOF
+            # Replace placeholders with actual values, ensuring proper YAML quoting
+            sed -i "s/CATEGORY_PLACEHOLDER/$category/g" "category/$slug/index.md"
+            sed -i "s/SLUG_PLACEHOLDER/$slug/g" "category/$slug/index.md"
           done
 
       - name: Test build (development)
@@ -202,8 +207,6 @@ jobs:
         run: |
           echo "🔨 Testing production build..."
           bundle exec jekyll build --baseurl "/mattblogsit-dev"
-          env:
-            JEKYLL_ENV: production
           
           # Validate production build
           test -f "_site/index.html" || (echo "❌ Missing production index.html" && exit 1)
@@ -214,6 +217,8 @@ jobs:
           fi
           
           echo "✅ Production build successful"
+        env:
+          JEKYLL_ENV: production
 
       - name: Performance validation
         run: |

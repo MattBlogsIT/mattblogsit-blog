@@ -48,25 +48,29 @@ jobs:
           mkdir -p archive
           for year in $(grep -h "^date:" _posts/*.md | sed 's/date: //' | cut -d'-' -f1 | sort -u); do
             mkdir -p "archive/$year"
-            echo "---" > "archive/$year/index.md"
-            echo "layout: archive" >> "archive/$year/index.md"
-            echo "year: \"$year\"" >> "archive/$year/index.md"
-            echo "title: $year Archive" >> "archive/$year/index.md"
-            echo "permalink: /archive/$year/" >> "archive/$year/index.md"
-            echo "---" >> "archive/$year/index.md"
+            cat > "archive/$year/index.md" <<EOF
+---
+layout: archive
+year: "$year"
+title: $year Archive
+permalink: /archive/$year/
+---
+EOF
           done
           
           # Create category directories and pages for each category
           mkdir -p category
-          for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sort -u); do
+          for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sed 's/"//g' | sort -u); do
             slug=$(echo "$category" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
             mkdir -p "category/$slug"
-            echo "---" > "category/$slug/index.md"
-            echo "layout: category" >> "category/$slug/index.md"
-            echo "category: \"$category\"" >> "category/$slug/index.md"
-            echo "title: $category Posts" >> "category/$slug/index.md"
-            echo "permalink: /category/$slug/" >> "category/$slug/index.md"
-            echo "---" >> "category/$slug/index.md"
+            cat > "category/$slug/index.md" <<EOF
+---
+layout: category
+category: "$category"
+title: $category Posts
+permalink: /category/$slug/
+---
+EOF
           done
 
       - name: Build Jekyll site for preview
