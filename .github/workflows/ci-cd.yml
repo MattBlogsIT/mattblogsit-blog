@@ -28,11 +28,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
+      - name: Setup Ruby (GitHub Pages compatible)
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
+          ruby-version: '3.1.7'
+          bundler-cache: false  # Disable cache to avoid version conflicts
+
+      - name: Install compatible bundler and gems
+        run: |
+          gem install bundler -v "~> 2.6.0"
+          bundle install --retry=3
 
       - name: Generate dynamic pages
         run: |

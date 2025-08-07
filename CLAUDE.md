@@ -157,6 +157,12 @@ bundle exec htmlproofer ./_site
 - Test both light and dark themes during local development
 - **Local testing is now mandatory** - build failures will block PR merging
 
+**Ruby Version Compatibility:**
+- **Local Development**: Uses your installed Ruby version (any 3.x compatible)
+- **GitHub Actions**: Uses Ruby 3.1.7 with Bundler ~2.6.0 (GitHub Pages compatible)
+- **Gemfile.lock ignored**: Each environment generates its own compatible lockfile
+- **No version conflicts**: Local and CI can use different Ruby/Bundler versions safely
+
 ## Current Limitations
 - Cannot use jekyll-paginate-v2 (not GitHub Pages compatible)
 - Limited to GitHub Pages safe plugins

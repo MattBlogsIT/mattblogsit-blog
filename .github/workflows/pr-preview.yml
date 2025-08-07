@@ -31,12 +31,16 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      - name: Setup Ruby
+      - name: Setup Ruby (GitHub Pages compatible)
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
+          ruby-version: '3.1.7'
+          bundler-cache: false  # Disable cache to avoid version conflicts
+
+      - name: Install compatible bundler and gems
+        run: |
+          gem install bundler -v "~> 2.6.0"
+          bundle install --retry=3
 
       - name: Remove backup directory
         run: rm -rf _backup
