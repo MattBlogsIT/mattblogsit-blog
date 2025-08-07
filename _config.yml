@@ -10,8 +10,9 @@ url: "https://mattgrif.github.io"
 markdown: kramdown
 highlighter: rouge
 kramdown:
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    line_numbers: table
+    line_numbers: true
 
 plugins:
   - jekyll-feed
