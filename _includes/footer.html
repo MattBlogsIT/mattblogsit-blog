@@ -17,6 +17,11 @@ Global footer for all pages - update content here to change across entire site
                 </svg>
                 RSS Feed
             </a>
+            {% if site.google_analytics_id %}
+            <a href="#" onclick="openCookieSettings(); return false;" class="footer-link">
+                🍪 Cookie Settings
+            </a>
+            {% endif %}
         </div>
         
         <div class="footer-disclaimer">

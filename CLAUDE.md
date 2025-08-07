@@ -211,6 +211,32 @@ When working on this blog:
 13. **NEW**: PR build validation with comprehensive automated testing
 14. **NEW**: Use `gh pr create` for automatic PR creation with detailed descriptions
 
+## Analytics Implementation
+
+**Google Analytics 4 Setup:**
+- **Tracking ID**: G-XPX6WGJE8W configured in `_config.yml`
+- **Privacy Compliance**: GDPR-compliant with cookie consent banner
+- **Implementation**: JavaScript files in `assets/js/analytics.js` and `assets/js/cookie-consent.js`
+- **Features**: Core Web Vitals tracking, technical content events, external link tracking
+
+**Privacy Features:**
+- Cookie consent banner appears on first visit
+- Google Consent Mode v2 implementation
+- User can manage preferences via footer "Cookie Settings" link
+- Analytics disabled by default until user consent
+- No personal data collection - anonymous usage only
+
+**Google Search Console Integration:**
+1. Add property for `https://mattgrif.github.io/mattblogsit-dev`
+2. Verify ownership via Analytics property (automatic)
+3. Submit sitemap: `https://mattgrif.github.io/mattblogsit-dev/sitemap.xml`
+4. Enable GA4 + Search Console data linking
+
+**Analytics Dashboard Access:**
+- View reports: [Google Analytics 4](https://analytics.google.com)
+- Property: Matt Blogs IT (G-XPX6WGJE8W)
+- Custom events: code interactions, external links, theme changes, search usage
+
 ## Contact
 Blog Owner: Matt Griffin
 Blog Focus: IT Professional sharing knowledge about cloud, security, and infrastructure

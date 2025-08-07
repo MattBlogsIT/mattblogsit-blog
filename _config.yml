@@ -6,6 +6,9 @@ description: >-
 baseurl: "/mattblogsit-dev"
 url: "https://mattgrif.github.io"
 
+# Analytics
+google_analytics_id: G-XPX6WGJE8W
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

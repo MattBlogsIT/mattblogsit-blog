@@ -1,0 +1,8 @@
+{% comment %}
+Analytics include - loads GA4 JavaScript
+Only loads if Google Analytics ID is configured
+{% endcomment %}
+
+{% if site.google_analytics_id %}
+<script src="{{ site.baseurl }}/assets/js/analytics.js"></script>
+{% endif %}
