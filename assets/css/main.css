@@ -1721,7 +1721,7 @@ article:after {
         font-size: 18px;
         background: var(--bg-secondary);
         color: var(--accent-primary);
-        padding: 8px;
+        padding: 5px;
         border-radius: 50%;
         box-shadow: 0 2px 8px var(--shadow-color);
         border: 1px solid var(--border-color);
@@ -1788,7 +1788,7 @@ article:after {
     .mobile-search {
         top: 15px;
         left: 15px;
-        padding: 8px;
+        padding: 5px;
         font-size: 1.3rem;
     }
     
