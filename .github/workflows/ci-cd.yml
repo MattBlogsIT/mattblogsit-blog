@@ -64,20 +64,28 @@ jobs:
             if [ -f "$file" ]; then
               echo "Checking $file..."
               
-              # Check for required frontmatter
-              if ! head -20 "$file" | grep -q "^title:"; then
+              # Extract just the frontmatter section (between the --- markers)
+              frontmatter=$(sed -n '/^---$/,/^---$/p' "$file")
+              
+              # Check for required frontmatter fields
+              if ! echo "$frontmatter" | grep -q "^title:"; then
                 echo "❌ Missing title in $file"
                 ((error_count++))
               fi
               
-              if ! head -20 "$file" | grep -q "^date:"; then
+              if ! echo "$frontmatter" | grep -q "^date:"; then
                 echo "❌ Missing date in $file"
                 ((error_count++))
               fi
               
-              if ! head -20 "$file" | grep -q "^categories:"; then
+              if ! echo "$frontmatter" | grep -q "^categories:"; then
                 echo "❌ Missing categories in $file"
                 ((error_count++))
+              fi
+              
+              # Validate date format (YYYY-MM-DD)
+              if ! echo "$frontmatter" | grep -q "^date: [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}"; then
+                echo "⚠️  Date format may be incorrect in $file (expected YYYY-MM-DD)"
               fi
             fi
           done
