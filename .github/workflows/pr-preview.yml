@@ -37,10 +37,12 @@ jobs:
           ruby-version: '3.1.7'
           bundler-cache: false  # Disable cache to avoid version conflicts
 
-      - name: Install compatible bundler and gems
+      - name: Install compatible bundler and dependencies
         run: |
-          gem install bundler -v "~> 2.6.0"
-          bundle install --retry=3
+          echo "Ruby version: $(ruby --version)"
+          gem install bundler -v "2.6.14" 
+          echo "Bundler version: $(bundle --version)"
+          bundle install --retry=3 --jobs=4
 
       - name: Remove backup directory
         run: rm -rf _backup
