@@ -1530,7 +1530,7 @@ article:after {
 .hamburger-menu {
     display: none;
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
     z-index: 1001;
     background: var(--accent-primary);
@@ -1720,10 +1720,12 @@ article:after {
     
     /* Adjust theme toggle for mobile */
     .theme-toggle {
-        top: 15px;
+        top: 10px;
         right: 80px; /* Leave space for hamburger menu */
-        font-size: 0.9rem;
-        padding: 6px 10px;
+        font-size: 0.8rem;
+        padding: 8px;
+        width: 40px;
+        height: 40px;
     }
     
     .theme-toggle-icon {
@@ -1741,15 +1743,19 @@ article:after {
         top: 10px;
         left: 20px;
         z-index: 1002;
-        font-size: 18px;
+        font-size: 16px;
         background: var(--bg-secondary);
         color: var(--accent-primary);
-        padding: 5px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         box-shadow: 0 2px 8px var(--shadow-color);
         border: 1px solid var(--border-color);
         cursor: pointer;
         transition: background-color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .mobile-search:hover {
@@ -1791,14 +1797,16 @@ article:after {
     
     /* Adjust theme toggle for smaller screens */
     .theme-toggle {
-        top: 15px;
+        top: 10px;
         right: 65px; /* More space for smaller hamburger */
-        padding: 4px 8px;
+        padding: 8px;
         font-size: 0.8rem;
+        width: 40px;
+        height: 40px;
     }
     
     .hamburger-menu {
-        top: 15px;
+        top: 10px;
         right: 15px;
         width: 40px;
         height: 40px;
@@ -1811,8 +1819,9 @@ article:after {
     .mobile-search {
         top: 10px;
         left: 15px;
-        padding: 5px;
-        font-size: 1.3rem;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
     
     /* Adjust search dropdown for mobile */
