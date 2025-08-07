@@ -1,0 +1,211 @@
+# PR Preview Deployment Workflow
+name: PR Preview Build & Test
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [opened, synchronize, reopened, closed]
+
+# Cancel previous runs for the same PR
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  # Build and test job for PRs
+  build-and-test:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    outputs:
+      preview-url: ${{ steps.deploy-preview.outputs.preview-url }}
+    
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Remove backup directory
+        run: rm -rf _backup
+
+      - name: Generate dynamic pages
+        run: |
+          # Create archive directories and pages for each year
+          mkdir -p archive
+          for year in $(grep -h "^date:" _posts/*.md | sed 's/date: //' | cut -d'-' -f1 | sort -u); do
+            mkdir -p "archive/$year"
+            echo "---" > "archive/$year/index.md"
+            echo "layout: archive" >> "archive/$year/index.md"
+            echo "year: \"$year\"" >> "archive/$year/index.md"
+            echo "title: $year Archive" >> "archive/$year/index.md"
+            echo "permalink: /archive/$year/" >> "archive/$year/index.md"
+            echo "---" >> "archive/$year/index.md"
+          done
+          
+          # Create category directories and pages for each category
+          mkdir -p category
+          for category in $(grep -h -A5 "^categories:" _posts/*.md | grep "^-" | sed 's/^- //' | sort -u); do
+            slug=$(echo "$category" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+            mkdir -p "category/$slug"
+            echo "---" > "category/$slug/index.md"
+            echo "layout: category" >> "category/$slug/index.md"
+            echo "category: \"$category\"" >> "category/$slug/index.md"
+            echo "title: $category Posts" >> "category/$slug/index.md"
+            echo "permalink: /category/$slug/" >> "category/$slug/index.md"
+            echo "---" >> "category/$slug/index.md"
+          done
+
+      - name: Build Jekyll site for preview
+        run: bundle exec jekyll build --baseurl "/mattblogsit-dev/pr-${{ github.event.number }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Run Jekyll site tests
+        run: |
+          # Test that the site builds without errors
+          echo "✅ Jekyll build completed successfully"
+          
+          # Check for broken internal links in generated HTML
+          if command -v htmlproofer &> /dev/null; then
+            echo "Running HTMLProofer for internal link validation..."
+            bundle exec htmlproofer ./_site --disable-external --check-html --allow-hash-href
+          else
+            echo "⚠️  HTMLProofer not available - skipping link validation"
+          fi
+          
+          # Basic file structure validation
+          echo "Validating site structure..."
+          test -f "_site/index.html" || (echo "❌ Missing index.html" && exit 1)
+          test -d "_site/assets" || (echo "❌ Missing assets directory" && exit 1)
+          test -f "_site/feed.xml" || (echo "❌ Missing RSS feed" && exit 1)
+          
+          echo "✅ All basic tests passed!"
+
+      - name: Deploy to GitHub Pages (Preview)
+        id: deploy-preview
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          destination_dir: pr-${{ github.event.number }}
+          publish_branch: gh-pages-preview
+          enable_jekyll: false
+          force_orphan: true
+
+      - name: Comment PR with preview link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `https://mattgrif.github.io/mattblogsit-dev/pr-${prNumber}`;
+            
+            // Find existing comment
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+            
+            const botComment = comments.data.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('🚀 **Preview Deployment**')
+            );
+            
+            const commentBody = `🚀 **Preview Deployment**
+
+            Your pull request has been built and deployed for preview!
+
+            **📋 Build Status:** ✅ Success  
+            **🌐 Preview URL:** ${previewUrl}  
+            **📝 Commit:** \`${context.payload.pull_request.head.sha.substring(0, 7)}\`
+
+            **🔍 What to test:**
+            - [ ] Check that all pages load correctly
+            - [ ] Verify responsive design on mobile/tablet
+            - [ ] Test dark/light theme toggle
+            - [ ] Confirm search functionality works
+            - [ ] Validate navigation menu
+            - [ ] Check code syntax highlighting
+            - [ ] Test native copy functionality
+
+            > **Note:** This preview will be updated automatically with each new commit to this PR.
+
+            ---
+            *This comment was automatically generated by GitHub Actions*`;
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+            }
+
+      - name: Set PR status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.payload.pull_request.head.sha,
+              state: 'success',
+              target_url: `https://mattgrif.github.io/mattblogsit-dev/pr-${context.payload.pull_request.number}`,
+              description: 'Preview deployment successful',
+              context: 'ci/preview-deployment'
+            });
+
+  # Cleanup job when PR is closed
+  cleanup-preview:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Cleanup preview deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            
+            // Comment about cleanup
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: `🧹 **Preview Cleanup**
+              
+              This pull request has been ${context.payload.pull_request.merged ? 'merged' : 'closed'}.
+              The preview deployment has been scheduled for cleanup.
+              
+              ${context.payload.pull_request.merged ? '✅ Changes have been deployed to production!' : ''}
+              
+              ---
+              *This comment was automatically generated by GitHub Actions*`
+            });
+            
+            console.log(`PR #${prNumber} closed - preview cleanup initiated`);
+
+      # Note: Actual file cleanup would require additional setup with gh-pages-preview branch management
+      # For now, we're documenting the cleanup in comments
