@@ -1,0 +1,119 @@
+name: "📝 New Blog Post"
+description: Create a new blog post for Matt Blogs IT
+title: "[BLOG]: "
+labels: ["new post"]
+assignees:
+  - MattBlogsIT
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Post Title
+      description: The title of your blog post
+      placeholder: "How to Configure Azure Virtual Networks"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the primary category for this post
+      options:
+        - Administrator
+        - Microsoft
+        - VMware
+        - Out of Band
+        - Getting Started
+        - User
+        - Developer
+        - Infrastructure
+        - Athletics
+        - Review
+    validations:
+      required: true
+      
+  - type: textarea
+    id: excerpt
+    attributes:
+      label: Post Excerpt
+      description: A brief summary of the post (used for SEO and previews)
+      placeholder: "Learn how to configure and secure Azure Virtual Networks with best practices for hybrid cloud environments..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: content
+    attributes:
+      label: Post Content
+      description: |
+        The main content of your blog post. Use Markdown formatting.
+        - Use ## for main headings (H2)
+        - Use ### for subheadings (H3)
+        - Include code blocks with appropriate language tags
+        - Add images using ![alt text](url) format
+      placeholder: |
+        ## Introduction
+        
+        Start your blog post content here...
+        
+        ## Main Topic
+        
+        ### Subtopic
+        
+        ```bash
+        # Example code block
+        echo "Hello World"
+        ```
+        
+        ## Conclusion
+        
+        Wrap up your post...
+      render: markdown
+    validations:
+      required: true
+      
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated list of tags (optional)
+      placeholder: "azure, networking, cloud, security"
+    validations:
+      required: false
+      
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Post author (defaults to Matt Griffin if not specified)
+      placeholder: "Matt Griffin"
+      value: "Matt Griffin"
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please verify the following before submitting
+      options:
+        - label: I have reviewed the content for spelling and grammar
+          required: true
+        - label: All code examples have been tested
+          required: false
+        - label: Images have alt text for accessibility
+          required: false
+        - label: Links have been verified
+          required: false
+        - label: The post follows the blog's style guidelines
+          required: true
+          
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any additional notes or requirements for this post (optional)
+      placeholder: "This post should be published on Monday morning..."
+    validations:
+      required: false
