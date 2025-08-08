@@ -56,13 +56,10 @@ exclude:
   - vendor/
   - .sass-cache/
   - .jekyll-cache/
-  - mattblogsit.WordPress.2025-08-05.xml
   # Exclude instructional and development files
   - CLAUDE.md
   - GITHUB_ISSUES_COMPARISON.md  
   - SECURITY_AUDIT.md
   - enhancements.md
-  - accessible-theme-mockups.html
-  - theme-mockups.html
   # Exclude GitHub workflows and configs from public site
   - .github/
