@@ -237,6 +237,48 @@ When working on this blog:
 - Property: Matt Blogs IT (G-XPX6WGJE8W)
 - Custom events: code interactions, external links, theme changes, search usage
 
+## Style Guidelines
+
+### Visual Design
+- **Theme**: Clean, accessible design with light/dark mode support
+- **Color Scheme**: 
+  - Primary accent: Blue (#007bff light, #6ea8fe dark)
+  - Text: High contrast (#212529 light, #ffffff dark)
+  - Backgrounds: White/light gray (light), Dark gray/black (dark)
+- **Typography**: System fonts for optimal performance
+- **Spacing**: Consistent use of spacing variables (xs: 4px to xxl: 48px)
+- **Border Radius**: Subtle rounded corners (4px-12px)
+
+### Code Style
+- **CSS**: Use CSS custom properties for theming
+- **JavaScript**: Vanilla JS, no frameworks required
+- **HTML**: Semantic HTML5, ARIA labels for accessibility
+- **Liquid**: Jekyll/Liquid templating for dynamic content
+
+### Content Guidelines
+- **Images**: Optimize before upload, use WebP with fallbacks
+- **Code Blocks**: Use Rouge syntax highlighting with line numbers
+- **Links**: Descriptive text, avoid "click here"
+- **Headings**: Proper hierarchy (h1 → h2 → h3)
+
+### Accessibility Standards
+- **WCAG 2.1 AA Compliance**: Minimum contrast ratios
+- **Keyboard Navigation**: All interactive elements accessible
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Focus Indicators**: Visible focus states (yellow outline)
+- **Skip Links**: Available for main navigation
+
+### Performance Targets
+- **CSS**: Keep main.css under 100KB
+- **Images**: Max 500KB per image
+- **JavaScript**: Bundle and minify for production
+- **Core Web Vitals**: LCP < 2.5s, FID < 100ms, CLS < 0.1
+
+### File Organization
+- **Mockups**: Remove from production (theme-mockups.html, accessible-theme-mockups.html)
+- **Exports**: Remove WordPress XML exports from repository
+- **Documentation**: Keep in markdown files, not in production
+
 ## Contact
 Blog Owner: Matt Griffin
 Blog Focus: IT Professional sharing knowledge about cloud, security, and infrastructure
