@@ -26,8 +26,8 @@
             
             // Load search data if not already loaded
             if (posts.length === 0) {
-                // Use relative path that works with GitHub Pages
-                const basePath = window.location.pathname.includes('/mattblogsit-dev') ? '/mattblogsit-dev' : '';
+                // Use relative path that works with GitHub Pages and custom domain
+                const basePath = '';
                 fetch(basePath + '/search.json')
                     .then(response => {
                         if (!response.ok) {
