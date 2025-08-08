@@ -13,7 +13,7 @@ Disallow: /vendor/
 Disallow: /node_modules/
 
 # Sitemap location
-Sitemap: https://mattgrif.github.io/mattblogsit-dev/sitemap.xml
+Sitemap: https://mattblogsit.com/sitemap.xml
 
 # Crawl delay (optional - be nice to servers)
 Crawl-delay: 1

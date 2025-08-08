@@ -3,8 +3,8 @@ title: Matt Blogs IT
 description: >-
   A blog about IT, technology, and life by Matt Griffin.
   Systems Architect passionate about technology, volunteering, and adaptive sports.
-baseurl: "/mattblogsit-dev"
-url: "https://mattgrif.github.io"
+baseurl: ""
+url: "https://mattblogsit.com"
 
 # Analytics
 google_analytics_id: G-XPX6WGJE8W

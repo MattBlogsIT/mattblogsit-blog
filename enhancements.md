@@ -23,7 +23,7 @@ This document outlines the enhancement tasks for optimizing the Matt Blogs IT Je
   ```
   User-agent: *
   Allow: /
-  Sitemap: https://mattgrif.github.io/mattblogsit-dev/sitemap.xml
+  Sitemap: https://mattblogsit.com/sitemap.xml
   ```
 
 - [ ] **Implement structured data**
