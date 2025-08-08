@@ -60,7 +60,7 @@ bundle install
 bundle exec jekyll serve --baseurl ""
 
 # Test production build
-JEKYLL_ENV=production bundle exec jekyll build --baseurl "/mattblogsit-dev"
+JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
 ```
 
 ## Workflow Permissions
