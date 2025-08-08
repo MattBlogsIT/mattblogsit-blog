@@ -1,0 +1,144 @@
+name: Convert Issue to Blog Post
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  create-post:
+    # Only run when the 'new post' label is added
+    if: github.event.label.name == 'new post'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+          
+      - name: Parse issue body and create blog post
+        id: create-post
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueBody = context.payload.issue.body;
+            const issueNumber = context.payload.issue.number;
+            const issueTitle = context.payload.issue.title.replace('[BLOG]: ', '');
+            
+            // Parse the issue body to extract form fields
+            const parseField = (fieldName) => {
+              const regex = new RegExp(`### ${fieldName}\\s*\\n\\n([\\s\\S]*?)(?=\\n\\n###|$)`, 'i');
+              const match = issueBody.match(regex);
+              return match ? match[1].trim() : '';
+            };
+            
+            // Extract all fields
+            const title = parseField('Post Title');
+            const category = parseField('Category');
+            const excerpt = parseField('Post Excerpt');
+            const content = parseField('Post Content');
+            const tags = parseField('Tags');
+            const author = parseField('Author') || 'Matt Griffin';
+            
+            // Generate filename
+            const date = new Date().toISOString().split('T')[0];
+            const slug = title.toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '');
+            const filename = `${date}-${slug}.md`;
+            
+            // Format tags for frontmatter
+            const tagList = tags ? tags.split(',').map(t => t.trim()).filter(t => t) : [];
+            const tagYaml = tagList.length > 0 
+              ? '\ntags:\n' + tagList.map(t => `- ${t}`).join('\n')
+              : '';
+            
+            // Create the blog post content
+            const postContent = `---
+            title: "${title}"
+            date: ${date}
+            categories:
+            - "${category}"
+            excerpt: "${excerpt}"
+            author: "${author}"${tagYaml}
+            ---
+            
+            ${content}`;
+            
+            // Write file using Node.js fs
+            const fs = require('fs');
+            const path = require('path');
+            const filepath = path.join('_posts', filename);
+            
+            // Ensure _posts directory exists
+            if (!fs.existsSync('_posts')) {
+              fs.mkdirSync('_posts', { recursive: true });
+            }
+            
+            // Write the file
+            fs.writeFileSync(filepath, postContent.replace(/^            /gm, ''));
+            
+            // Set outputs
+            core.setOutput('filename', filename);
+            core.setOutput('title', title);
+            core.setOutput('filepath', filepath);
+            
+      - name: Create branch and commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Create and checkout new branch
+          git checkout -b blog-post/issue-${{ github.event.issue.number }}
+          
+          # Add the new blog post file
+          git add _posts/${{ steps.create-post.outputs.filename }}
+          
+          # Commit
+          git commit -m "Add blog post: ${{ steps.create-post.outputs.title }}
+          
+          Generated from issue #${{ github.event.issue.number }}"
+          
+          # Push the branch
+          git push origin blog-post/issue-${{ github.event.issue.number }}
+          
+      - name: Convert issue to pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Create PR from the branch we just pushed
+            const { data: pr } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: context.payload.issue.title,
+              head: `blog-post/issue-${context.issue.number}`,
+              base: 'main',
+              body: context.payload.issue.body + `\n\n---\n\n📄 **Generated file**: \`_posts/${{ steps.create-post.outputs.filename }}\`\n\n### Checklist\n- [ ] Review post content for accuracy\n- [ ] Verify frontmatter is correct\n- [ ] Check that images load properly\n- [ ] Ensure code blocks render correctly\n- [ ] Confirm category is appropriate\n- [ ] Test locally if needed\n\n---\n\n*Original issue: #${context.issue.number}*`,
+              issue: context.issue.number  // This links the PR to the issue
+            });
+            
+            // Add labels to the PR
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              labels: ['blog-post']
+            });
+            
+            // Add a comment to note the conversion
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## ✅ Converted to Pull Request\n\nThis issue has been converted to pull request #${pr.number}.\n\n📄 **Blog post file**: \`_posts/${{ steps.create-post.outputs.filename }}\`\n\nYou can now review and merge the PR when ready to publish.`
+            });
+            
+            // Add 'processed' label to the original issue
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['processed']
+            });
