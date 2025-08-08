@@ -5,7 +5,7 @@ This is a personal blog focused on IT, Cloud, and Cybersecurity topics built wit
 
 ## Key Technical Details
 - **Framework**: Jekyll 3.10.0 (GitHub Pages compatible)
-- **Hosting**: GitHub Pages (https://mattgrif.github.io/mattblogsit-dev)
+- **Hosting**: GitHub Pages (https://mattblogsit.com)
 - **Theme**: Custom accessible theme with light/dark mode support
 - **Languages**: HTML, CSS, JavaScript, Liquid templating
 - **Plugins**: jekyll-feed, jekyll-sitemap (must be GitHub Pages safe)
@@ -151,7 +151,7 @@ tags:
 bundle exec jekyll serve --baseurl ""
 
 # Production build testing (CRITICAL - CI/CD enforces this)
-JEKYLL_ENV=production bundle exec jekyll build --baseurl "/mattblogsit-dev"
+JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
 
 # Check for broken links
 bundle exec htmlproofer ./_site
@@ -227,9 +227,9 @@ When working on this blog:
 - No personal data collection - anonymous usage only
 
 **Google Search Console Integration:**
-1. Add property for `https://mattgrif.github.io/mattblogsit-dev`
+1. Add property for `https://mattblogsit.com`
 2. Verify ownership via Analytics property (automatic)
-3. Submit sitemap: `https://mattgrif.github.io/mattblogsit-dev/sitemap.xml`
+3. Submit sitemap: `https://mattblogsit.com/sitemap.xml`
 4. Enable GA4 + Search Console data linking
 
 **Analytics Dashboard Access:**

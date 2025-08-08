@@ -46,7 +46,7 @@ This document outlines the recommended branch protection settings for the `main`
 
 ```bash
 # Enable branch protection for main branch
-gh api repos/mattgrif/mattblogsit-dev/branches/main/protection \
+gh api repos/MattBlogsIT/mattblogsit-blog/branches/main/protection \
   --method PUT \
   --field required_status_checks='{"strict":true,"contexts":["CI/CD Pipeline / Code Quality & Security","CI/CD Pipeline / Build Validation","CI/CD Pipeline / Integration Tests","PR Preview Build & Test / build-and-test"]}' \
   --field enforce_admins=true \
@@ -63,7 +63,7 @@ Create `.github/settings.yml` for use with the Settings app:
 
 ```yaml
 repository:
-  name: mattblogsit-dev
+  name: mattblogsit-blog
   description: Personal blog focused on IT, Cloud, and Cybersecurity topics
   private: false
   has_issues: true
