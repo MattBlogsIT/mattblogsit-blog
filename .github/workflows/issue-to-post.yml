@@ -91,7 +91,13 @@ jobs:
           git config --local user.name "GitHub Action"
           
           # Create and checkout new branch
-          git checkout -b blog-post/issue-${{ github.event.issue.number }}
+          BRANCH_NAME="blog-post/issue-${{ github.event.issue.number }}"
+          
+          # Delete the branch if it exists (from previous failed runs)
+          git push origin --delete $BRANCH_NAME 2>/dev/null || true
+          
+          # Create fresh branch
+          git checkout -b $BRANCH_NAME
           
           # Add the new blog post file
           git add _posts/${{ steps.create-post.outputs.filename }}
@@ -102,7 +108,7 @@ jobs:
           Generated from issue #${{ github.event.issue.number }}"
           
           # Push the branch
-          git push origin blog-post/issue-${{ github.event.issue.number }}
+          git push origin $BRANCH_NAME
           
       - name: Convert issue to pull request
         uses: actions/github-script@v7
