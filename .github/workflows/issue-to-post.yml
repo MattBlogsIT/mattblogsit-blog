@@ -38,7 +38,7 @@ jobs:
             const title = parseField('Post Title');
             const category = parseField('Category');
             const excerpt = parseField('Post Excerpt');
-            const content = parseField('Post Content');
+            let content = parseField('Post Content');
             const tags = parseField('Tags');
             const author = parseField('Author') || 'Matt Griffin';
             
@@ -48,6 +48,51 @@ jobs:
               .replace(/[^a-z0-9]+/g, '-')
               .replace(/^-+|-+$/g, '');
             const filename = `${date}-${slug}.md`;
+            
+            // Find and collect image URLs from HTML img tags
+            // Matches: <img src="https://github.com/user-attachments/assets/..." alt="..." />
+            const imgTagRegex = /<img[^>]+src="(https:\/\/github\.com\/user-attachments\/assets\/[^"]+)"[^>]*(?:alt="([^"]*)")?[^>]*>/g;
+            const imageUrls = [];
+            const imageReplacements = new Map();
+            
+            let match;
+            let imageCounter = 1;
+            while ((match = imgTagRegex.exec(content)) !== null) {
+              const fullMatch = match[0];
+              const url = match[1];
+              const altText = match[2] || `Image ${imageCounter}`;
+              
+              // Generate local filename for image
+              const imageId = url.split('/').pop().split('?')[0];
+              const localImagePath = `/assets/img/${date}-${slug}-${imageId}`;
+              
+              imageUrls.push({ url, localPath: localImagePath, altText });
+              
+              // Replace HTML img tag with markdown image syntax
+              imageReplacements.set(fullMatch, `![${altText}]({{ site.baseurl }}${localImagePath})`);
+              imageCounter++;
+            }
+            
+            // Also check for direct GitHub attachment URLs that might not be in img tags
+            const directUrlRegex = /(?<!src=")https:\/\/github\.com\/user-attachments\/assets\/[^\s<>"]+/g;
+            let directMatch;
+            while ((directMatch = directUrlRegex.exec(content)) !== null) {
+              const url = directMatch[0];
+              // Skip if this URL was already found in an img tag
+              if (!Array.from(imageReplacements.keys()).some(key => key.includes(url))) {
+                const imageId = url.split('/').pop().split('?')[0];
+                const localImagePath = `/assets/img/${date}-${slug}-${imageId}`;
+                
+                imageUrls.push({ url, localPath: localImagePath, altText: `Image ${imageCounter}` });
+                imageReplacements.set(url, `![Image ${imageCounter}]({{ site.baseurl }}${localImagePath})`);
+                imageCounter++;
+              }
+            }
+            
+            // Replace image URLs in content
+            for (const [original, replacement] of imageReplacements) {
+              content = content.replace(new RegExp(original.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), replacement);
+            }
             
             // Format tags for frontmatter
             const tagList = tags ? tags.split(',').map(t => t.trim()).filter(t => t) : [];
@@ -84,7 +129,44 @@ jobs:
             core.setOutput('filename', filename);
             core.setOutput('title', title);
             core.setOutput('filepath', filepath);
+            core.setOutput('slug', slug);
+            core.setOutput('date', date);
+            core.setOutput('images', JSON.stringify(imageUrls));
             
+      - name: Download images from issue
+        if: steps.create-post.outputs.images != '[]'
+        run: |
+          # Parse images JSON
+          IMAGES='${{ steps.create-post.outputs.images }}'
+          DATE='${{ steps.create-post.outputs.date }}'
+          SLUG='${{ steps.create-post.outputs.slug }}'
+          
+          # Ensure assets/img directory exists
+          mkdir -p assets/img
+          
+          # Download each image
+          echo "$IMAGES" | jq -c '.[]' | while read -r image; do
+            URL=$(echo "$image" | jq -r '.url')
+            LOCAL_PATH=$(echo "$image" | jq -r '.localPath')
+            
+            # Extract just the filename from the local path
+            FILENAME=$(basename "$LOCAL_PATH")
+            
+            echo "Downloading image from $URL to assets/img/$FILENAME"
+            
+            # Download the image using curl with GitHub token for authentication
+            curl -L -H "Authorization: token ${{ github.token }}" \
+                 -H "Accept: application/octet-stream" \
+                 "$URL" -o "assets/img/$FILENAME"
+            
+            # Check if download was successful
+            if [ -f "assets/img/$FILENAME" ]; then
+              echo "Successfully downloaded $FILENAME"
+            else
+              echo "Failed to download $FILENAME"
+            fi
+          done
+          
       - name: Create branch and commit
         run: |
           git config --local user.email "action@github.com"
@@ -99,8 +181,13 @@ jobs:
           # Create fresh branch
           git checkout -b $BRANCH_NAME
           
-          # Add the new blog post file
+          # Add the new blog post file and any downloaded images
           git add _posts/${{ steps.create-post.outputs.filename }}
+          
+          # Add images if they exist
+          if [ -d "assets/img" ] && [ "$(ls -A assets/img 2>/dev/null)" ]; then
+            git add assets/img/*
+          fi
           
           # Commit
           git commit -m "Add blog post: ${{ steps.create-post.outputs.title }}
