@@ -62,9 +62,13 @@ jobs:
               const url = match[1];
               const altText = match[2] || `Image ${imageCounter}`;
               
-              // Generate local filename for image
-              const imageId = url.split('/').pop().split('?')[0];
-              const localImagePath = `/assets/img/${date}-${slug}-${imageId}`;
+              // Generate local filename for image - preserve extension if present
+              const urlParts = url.split('/').pop().split('?')[0];
+              const imageId = urlParts;
+              // Check if the URL has a file extension, if not, try to detect from URL or default to .png
+              const hasExtension = /\.[a-z0-9]{2,4}$/i.test(imageId);
+              const finalImageName = hasExtension ? imageId : `${imageId}.png`;
+              const localImagePath = `/assets/img/${date}-${slug}-${finalImageName}`;
               
               imageUrls.push({ url, localPath: localImagePath, altText });
               
@@ -80,8 +84,12 @@ jobs:
               const url = directMatch[0];
               // Skip if this URL was already found in an img tag
               if (!Array.from(imageReplacements.keys()).some(key => key.includes(url))) {
-                const imageId = url.split('/').pop().split('?')[0];
-                const localImagePath = `/assets/img/${date}-${slug}-${imageId}`;
+                // Generate local filename for direct URL - preserve extension if present
+                const urlParts = url.split('/').pop().split('?')[0];
+                const imageId = urlParts;
+                const hasExtension = /\.[a-z0-9]{2,4}$/i.test(imageId);
+                const finalImageName = hasExtension ? imageId : `${imageId}.png`;
+                const localImagePath = `/assets/img/${date}-${slug}-${finalImageName}`;
                 
                 imageUrls.push({ url, localPath: localImagePath, altText: `Image ${imageCounter}` });
                 imageReplacements.set(url, `![Image ${imageCounter}]({{ site.baseurl }}${localImagePath})`);
