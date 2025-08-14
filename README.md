@@ -80,6 +80,16 @@ bundle exec jekyll serve --baseurl ""
 
 ### Creating a New Post
 
+#### Option 1: Automated via GitHub Issue
+1. Go to [Issues](https://github.com/MattBlogsIT/mattblogsit-blog/issues/new/choose)
+2. Select "📝 New Blog Post" template
+3. Fill out the form with your post content
+4. Submit the issue - it will automatically:
+   - Create a properly formatted blog post
+   - Open a pull request for review
+   - Convert the issue to a PR
+
+#### Option 2: Manual Creation
 1. Create a new branch:
 ```bash
 git checkout -b feature/new-post
