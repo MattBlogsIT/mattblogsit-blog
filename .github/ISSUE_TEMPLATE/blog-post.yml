@@ -69,7 +69,6 @@ body:
         ## Conclusion
         
         Wrap up your post...
-      render: markdown
     validations:
       required: true
       
