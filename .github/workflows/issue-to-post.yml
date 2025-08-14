@@ -114,15 +114,13 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            // Create PR from the branch we just pushed
+            // Create PR from the branch we just pushed - using issue number to link them
             const { data: pr } = await github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: context.payload.issue.title,
+              issue: context.issue.number,  // This converts the issue to a PR
               head: `blog-post/issue-${context.issue.number}`,
-              base: 'main',
-              body: context.payload.issue.body + `\n\n---\n\n📄 **Generated file**: \`_posts/${{ steps.create-post.outputs.filename }}\`\n\n### Checklist\n- [ ] Review post content for accuracy\n- [ ] Verify frontmatter is correct\n- [ ] Check that images load properly\n- [ ] Ensure code blocks render correctly\n- [ ] Confirm category is appropriate\n- [ ] Test locally if needed\n\n---\n\n*Original issue: #${context.issue.number}*`,
-              issue: context.issue.number  // This links the PR to the issue
+              base: 'main'
             });
             
             // Add labels to the PR
