@@ -1538,31 +1538,39 @@ article:after {
 .hamburger-menu {
     display: none;
     position: fixed;
-    top: 10px;
-    right: 20px;
-    z-index: 1001;
-    background: var(--accent-primary);
-    border: none;
-    border-radius: 5px;
-    width: 45px;
-    height: 45px;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1101;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    width: 48px;
+    height: 48px;
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .hamburger-menu:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.hamburger-menu:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 .hamburger-menu span {
     display: block;
     width: 20px;
     height: 2px;
-    background: white;
-    margin: 2px 0;
+    background: var(--text-primary);
+    margin: 3px 0;
     transition: all 0.3s ease;
     transform-origin: center;
 }
@@ -1726,18 +1734,32 @@ article:after {
         margin-bottom: 0;
     }
     
-    /* Adjust theme toggle for mobile */
+    /* Unified mobile button styles */
+    .theme-toggle,
+    .hamburger-menu {
+        top: var(--spacing-md);
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+    }
+    
     .theme-toggle {
-        top: 10px;
-        right: 80px; /* Leave space for hamburger menu */
-        font-size: 0.8rem;
-        padding: 8px;
-        width: 40px;
-        height: 40px;
+        right: calc(44px + var(--spacing-md) * 2); /* Position next to hamburger */
+        min-width: auto;
+    }
+    
+    .hamburger-menu {
+        right: var(--spacing-md);
     }
     
     .theme-toggle-icon {
-        font-size: 1em;
+        font-size: 1.1em;
+        margin: 0;
     }
     
     #theme-text {
@@ -1770,7 +1792,7 @@ article:after {
         background: var(--accent-hover);
     }
     
-    /* Show combined menu and hamburger */
+    /* Show hamburger menu on mobile */
     .hamburger-menu {
         display: flex;
     }
@@ -1803,25 +1825,31 @@ article:after {
         padding: 15px 15px 15px 5px;
     }
     
-    /* Adjust theme toggle for smaller screens */
-    .theme-toggle {
-        top: 10px;
-        right: 65px; /* More space for smaller hamburger */
-        padding: 8px;
-        font-size: 0.8rem;
+    /* Unified mobile button styles for small screens */
+    .theme-toggle,
+    .hamburger-menu {
+        top: var(--spacing-sm);
         width: 40px;
         height: 40px;
+        border-radius: var(--radius-md);
+    }
+    
+    .theme-toggle {
+        right: calc(40px + var(--spacing-sm) * 2);
     }
     
     .hamburger-menu {
-        top: 10px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
+        right: var(--spacing-sm);
     }
     
     .hamburger-menu span {
         width: 18px;
+        height: 2px;
+        margin: 2px 0;
+    }
+    
+    .theme-toggle-icon {
+        font-size: 1em;
     }
     
     .mobile-search {
@@ -2767,4 +2795,32 @@ blockquote.security-warning::after {
 
 [data-theme="dark"] .highlight pre:hover {
     background-color: var(--bg-tertiary);
+}
+
+/* Tablet-specific styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Unified tablet button styles */
+    .theme-toggle {
+        top: var(--spacing-lg);
+        right: var(--spacing-lg);
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+        height: 44px;
+        min-height: 44px; /* Touch-friendly size */
+    }
+    
+    /* Hide hamburger on tablets - use full nav */
+    .hamburger-menu {
+        display: none !important;
+    }
+    
+    /* Ensure navigation is visible on tablets */
+    .nav {
+        display: block;
+    }
+    
+    /* Adjust main content padding for tablet */
+    body {
+        padding: 20px;
+    }
 }
