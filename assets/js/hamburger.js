@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close menu when window is resized to desktop size
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && combinedMenu.classList.contains('active')) {
+        if (window.innerWidth > 1024 && combinedMenu.classList.contains('active')) {
             closeMenu();
         }
     });

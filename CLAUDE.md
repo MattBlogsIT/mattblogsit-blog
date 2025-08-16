@@ -142,6 +142,21 @@ tags:
 3. Use lazy loading for images
 4. Implement caching strategies
 
+### Responsive Design Standards
+**CRITICAL**: Only use 2 responsive modes - NO tablet-specific breakpoints
+- **Mobile/Tablet**: `@media (max-width: 1024px)` - covers phones and tablets
+- **Desktop**: Default styles (min-width: 1025px) - covers desktop and large screens
+
+**NEVER use these patterns:**
+- ❌ `@media (min-width: 481px) and (max-width: 1024px)` (tablet-specific)
+- ❌ `@media (max-width: 768px)` and separate tablet queries
+- ❌ Multiple breakpoints for different device sizes
+
+**Always use:**
+- ✅ Single mobile/tablet query: `@media (max-width: 1024px)`
+- ✅ Mobile-first approach with progressive enhancement
+- ✅ Consistent spacing variables (`var(--spacing-md)`) instead of hardcoded values
+
 ### Testing Commands
 ```bash
 # Local development (use full path on this system)
