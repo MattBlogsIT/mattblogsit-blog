@@ -79,8 +79,23 @@ jobs:
               
               imageUrls.push({ url, localPath: localImagePath, altText });
               
-              // Replace HTML img tag with markdown image syntax
-              imageReplacements.set(fullMatch, `![${altText}]({{ site.baseurl }}${localImagePath})`);
+              // Check if there's text immediately after the img tag that could be a caption
+              const remainingContent = content.substr(content.indexOf(fullMatch) + fullMatch.length);
+              const captionMatch = remainingContent.match(/^\s*([^\n<]+)/);
+              const hasCaption = captionMatch && captionMatch[1].trim().length > 0;
+              
+              if (hasCaption) {
+                // Use HTML figure/figcaption for images with captions
+                const caption = captionMatch[1].trim();
+                const figureHtml = `<figure class="aligncenter">
+  <img src="{{ site.baseurl }}${localImagePath}" alt="${altText}">
+  <figcaption>${caption}</figcaption>
+</figure>`;
+                imageReplacements.set(fullMatch + captionMatch[0], figureHtml);
+              } else {
+                // Use markdown for images without captions
+                imageReplacements.set(fullMatch, `![${altText}]({{ site.baseurl }}${localImagePath})`);
+              }
               imageCounter++;
             }
             

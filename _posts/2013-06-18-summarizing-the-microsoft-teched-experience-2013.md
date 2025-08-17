@@ -31,8 +31,10 @@ My day started at 6:00am when I had to wake up to prepare for my flight to New O
 
 First thing on my agenda was opening box of #TheKrewe swag we were giving away that year. It was an interesting experience opening a 20 pound box of lanyards but they turned out fantastic and it was great to see #TheKrewe representing.
 
-![#TheKrewe TechEd 2013 Lanyards]({{ site.baseurl }}/assets/img/WP_20130601_004.jpg)
-*#TheKrewe TechEd 2013 Lanyards*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/WP_20130601_004.jpg" alt="#TheKrewe TechEd 2013 Lanyards">
+  <figcaption>#TheKrewe TechEd 2013 Lanyards</figcaption>
+</figure>
 
 After a short break to re-charge in the hotel we decided to meet up and start browsing the convention center and surrounding area, while browsing the convention center we decided to sneak around a bit to get a glimpse into the next day. We walked over near the registration area to check things out to get a sneak peak.
 
@@ -70,8 +72,10 @@ I was lucky enough to talk to a few vendors about backup solutions which was one
 
 That evening I got to spend about an hour at the Welcome Reception talking to vendors before heading to The Rusty Nail to get setup for #TheKrewe Monday Mixer.  I was amazed at how much work it was to make The Monday Mixer go off without a flaw, and I got much more respect for Michael Bender for the work he has put in over the years to get #TheKrewe to where we are now. It takes a lot of passion and hard work to pull off an event and by the amount of people I met that evening I would say it was a huge success.
 
-![Massive Thanks to Kenji D'Aguiar for this picture!]({{ site.baseurl }}/assets/img/02Mon_MondayMixer-1.jpg)
-*Massive Thanks to Kenji D'Aguiar for this picture!*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/02Mon_MondayMixer-1.jpg" alt="Massive Thanks to Kenji D'Aguiar for this picture!">
+  <figcaption>Massive Thanks to Kenji D'Aguiar for this picture!</figcaption>
+</figure>
 
 # Day 2 - Tuesday June 4th
 
@@ -95,8 +99,10 @@ Tonight was the night of the biggest, craziest party of the week, however I had 
 
 Luckily I was a few blocks away from the Microsoft Springboard Party so I went over there and started hanging out with a few of my friends from #TheKrewe. While waiting I got a chance to network with many new people, and people I had not had a chance to have an actual conversation with that week. Time flew by and the party started. They had some of the most amazing food, music and overall a fantastic time! During my evening at the Springboard Party I was lucky enough to meet one of the coordinators for TechEd Europe and talk about various topics relating to it.
 
-![Many Thanks to Michael McAtee for this picture!]({{ site.baseurl }}/assets/img/MJM_1609.jpg)
-*Many Thanks to Michael McAtee for this picture!*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/MJM_1609.jpg" alt="Many Thanks to Michael McAtee for this picture!">
+  <figcaption>Many Thanks to Michael McAtee for this picture!</figcaption>
+</figure>
 
 Day 4 - Thursday June 6th
 
@@ -120,5 +126,7 @@ Please keep on eye on my blog for some more #TheKrewe specific posts!
 
 My pictures from TechEd are no longer available online!
 
-![Many thanks to Michael McAtee for this picture!]({{ site.baseurl }}/assets/img/MJM_1595-1024x680.jpg)
-*Many thanks to Michael McAtee for this picture!*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/MJM_1595-1024x680.jpg" alt="Many thanks to Michael McAtee for this picture!">
+  <figcaption>Many thanks to Michael McAtee for this picture!</figcaption>
+</figure>

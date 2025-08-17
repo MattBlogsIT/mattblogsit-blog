@@ -16,8 +16,10 @@ title: Is the Microsoft Surface for Me?
 
 In the last 2 days the biggest question I've heard is what makes this device good for me? The best response I've had for that is if you are a standard user, the Surface can be your only computer and you will not skip a beat with your day to day life.
 
-![Microsoft Surface with Cyan Touch Cover]({{ site.baseurl }}/assets/img/bgr-surface-cyan-touch-cover-front-view.jpg)
-*Microsoft Surface with Cyan Touch Cover*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/bgr-surface-cyan-touch-cover-front-view.jpg" alt="Microsoft Surface with Cyan Touch Cover">
+  <figcaption>Microsoft Surface with Cyan Touch Cover</figcaption>
+</figure>
 
 First I would like to start out by defining what I consider a “Standard User”. A standard user is someone who uses a computer for email, social media, blogging, consuming media (Music/Video) and casual gaming. This user can potentially be on the go and doing all of these things but this is not a requirement nor does it hurt if they are.<!--more-->
 
@@ -40,7 +42,9 @@ So to summarize the moral of this blog post I would like to note the following.
 
 ### **If you do then the Surface is your new best friend!**
 
-![Microsoft Surface with all Touch Cover Colors]({{ site.baseurl }}/assets/img/bgr-surface-layered-touch-cover.jpg)
-*Microsoft Surface with all Touch Cover Colors*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/bgr-surface-layered-touch-cover.jpg" alt="Microsoft Surface with all Touch Cover Colors">
+  <figcaption>Microsoft Surface with all Touch Cover Colors</figcaption>
+</figure>
 
 Image Source: [BGR](http://bgr.com/gallery/microsoft-surface-press-images/)

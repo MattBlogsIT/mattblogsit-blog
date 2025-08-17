@@ -17,8 +17,10 @@ title: Reflecting on Ignite 2015 - The Good, The Bad and The Ugly
 
 I know I am late to the game, Ignite ended over a week ago! I would just like to share my perspective on how the week went, as it was quite different than I am used to. This year I went to Ignite as Staff, I've never worked a conference, let alone one the size of Ignite.
 
-![Note: I thought it would be a good idea to shave - not doing this again for a long time!]({{ site.baseurl }}/assets/img/WP_20150501_17_51_53_Pro-1-300x279.jpg)
-*Note: I thought it would be a good idea to shave - not doing this again for a long time!*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/WP_20150501_17_51_53_Pro-1-300x279.jpg" alt="Note: I thought it would be a good idea to shave - not doing this again for a long time!">
+  <figcaption>Note: I thought it would be a good idea to shave - not doing this again for a long time!</figcaption>
+</figure>
 
 My week of Ignite actually started quite early, I arrived Friday May 1st in the evening to Chicago. My first thought it holy cow I'm going to hate Chicago, they had the NFL Draft going, and traffic was crazy. I've been to Chicago before but did not remember how much traffic there was! After missing a turn and adding an additional 20 minutes to my 2 1/2 hour drive from Indianapolis I was ready to unwind in the hotel. Check-in was fairly easy, aside from the long wait to check in.
 
@@ -26,8 +28,10 @@ My week of Ignite actually started quite early, I arrived Friday May 1st in the 
 
 After settling in, it was time for some food - after all it was Chicago! We decided to head over to [Giordano's - Famous Stuffed Pizza](http://giordanos.com/our-locations/chicago/). I've been to one before in Indianapolis and I knew it was good, plus I had to start my week with stuffed pizza! I was wanting something meaty so we went with the "Meat & More Meat" Stuffed Pizza, also got a side of their cheesy garlic bread. I have to say it was the best cheesy garlic bread I've ever had!
 
-![Meat & More Meat]({{ site.baseurl }}/assets/img/WP_20150501_21_48_19_Pro-1-300x271.jpg)
-*Meat & More Meat*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/WP_20150501_21_48_19_Pro-1-300x271.jpg" alt="Meat & More Meat">
+  <figcaption>Meat & More Meat</figcaption>
+</figure>
 
 After dinner I headed back to the hotel and crashed, I had a huge week ahead of me. Saturday started nice and slow, I picked up my badge at the Microsoft Store in Chicago, grabbed a coffee and once it was time I attended the MCT Day 2015, and it was quite fun. I got to hear from some very intelligent people and tour the Chicago Microsoft Office! During the MCT Day I won a Western Digital My Cloud EX2. Once MCT Day was over it was time for the first social event of the week. We went to [Buddy Guy's](http://www.buddyguy.com/) and it was a very neat venue, they have their own 'Buddy Brew' which is a fantastic beer!
 

@@ -154,11 +154,19 @@
     <!-- Scripts -->
     <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
     <script src="{{ site.baseurl }}/assets/js/search.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/modal.js"></script>
     <script src="{{ site.baseurl }}/assets/js/hamburger.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/pagination.js"></script>
     <script src="{{ site.baseurl }}/assets/js/theme-switcher.js"></script>
     <script src="{{ site.baseurl }}/assets/js/cookie-consent.js"></script>
+    
+    <!-- Conditional loading: Modal only on pages with images -->
+    {% if page.layout == 'post' or page.title == 'About Me' or page.url contains '/posts/' %}
+    <script src="{{ site.baseurl }}/assets/js/modal.js"></script>
+    {% endif %}
+    
+    <!-- Conditional loading: Pagination only on posts page -->
+    {% if page.title == 'All Posts' or page.url == '/posts/' %}
+    <script src="{{ site.baseurl }}/assets/js/pagination.js"></script>
+    {% endif %}
     
     <!-- Analytics -->
     {% include analytics.html %}

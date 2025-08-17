@@ -15,8 +15,10 @@ title: Making a Windows 8 Slate
 
 Back when Windows 8 was shown off at the Developers conference someone I work with mentioned it in a meeting, I went into depth about what I knew about it which somehow lead me into being the person spearheading a project of trying to get Apparatus to buy a Slate device we can install Windows 8 on. I went back and forth in some emails with our CTO a couple times about getting a device and keeping cost low. This ended up with us looking at the HP Slate 500 mostly. I noticed that the requirements document for Windows 8 was released and found out that the minimum resolution for a Windows 8 Slate would be 1366 x 768 looking at the technical details of the HP Slate 500 mentioned it’s max resolution of 1024×768.
 
-![Samsung Series 7 Slate Running Windows 8]({{ site.baseurl }}/assets/img/IMG_0544.jpg)
-*Samsung Series 7 Slate Running Windows 8*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/IMG_0544.jpg" alt="Samsung Series 7 Slate Running Windows 8">
+  <figcaption>Samsung Series 7 Slate Running Windows 8</figcaption>
+</figure>
 
 <!--more-->My first task was to figure out what Slates offered the minimum resolution which my results turned up that the Samsung Series 7 Slate was the only one on the market currently. After looking at the price I looked to see what we would miss out on not having the minimum resolution which would be the side-by-side apps using the metro UI. I couldn’t find anything else specifically however there may be more.
 
@@ -61,8 +63,10 @@ Before installing Windows 8 make sure you update the BIOS with the Windows 7 ins
 
 1. Boot the system by holding the Windows button and pressing the Power button, hold it while powering on if you want in the BIOS.
 
-![Samsung Series 7 Slate Boot Selection]({{ site.baseurl }}/assets/img/IMG_0538.jpg)
-*Samsung Series 7 Slate Boot Selection*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/IMG_0538.jpg" alt="Samsung Series 7 Slate Boot Selection">
+  <figcaption>Samsung Series 7 Slate Boot Selection</figcaption>
+</figure>
 2. If you just tapped the buttons to power it on a Boot selection screen will appear
 3. Select your USB flash drive
 4. Use volume up/down to move, and the screen lock button to select

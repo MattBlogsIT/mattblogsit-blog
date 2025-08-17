@@ -106,6 +106,25 @@ categories: "Category Name"
 9. Merge only after ALL checks pass and conversations resolved
 10. Never commit sensitive information
 
+### Post-PR Cleanup (After Merge)
+1. **Switch back to main and pull latest:**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+2. **Delete local feature branch:**
+   ```bash
+   git branch -d feature/branch-name
+   ```
+3. **Optional: Delete remote branch:**
+   ```bash
+   git push origin --delete feature/branch-name
+   ```
+4. **Verify clean state:**
+   ```bash
+   git status  # Should show "nothing to commit, working tree clean"
+   ```
+
 **PR Build Validation:**
 - Every PR runs comprehensive build validation
 - Automated build status comments with detailed results
@@ -114,6 +133,35 @@ categories: "Category Name"
 ## Common Tasks
 
 ### Adding a New Post
+
+#### Method 1: Automated Blog Post Creation (Recommended)
+1. **Create new issue** using "📝 New Blog Post" template
+2. **Fill out all required fields:**
+   - Post Title (required)
+   - Category (dropdown with current blog categories)
+   - Post Excerpt (required for SEO)
+   - Post Content (markdown supported)
+   - Tags (optional, comma-separated)
+   - Author (defaults to Matt Griffin)
+3. **Add "new post" label** to trigger automation
+4. **Workflow automatically:**
+   - Creates markdown file in `_posts/`
+   - Downloads images from issue attachments to `assets/img/`
+   - Converts HTML img tags to semantic HTML or markdown
+   - Generates `<figure>/<figcaption>` tags when captions detected
+   - Preserves alt text for accessibility
+   - Creates PR with complete blog post
+5. **Review and merge PR** to publish
+
+**Issue Template Features:**
+- Form validation for required fields
+- Category dropdown with current blog categories
+- Image upload support with automatic processing
+- Smart image handling: HTML figures for captioned images
+- Alt text preservation for accessibility
+- Automatic filename generation based on date and title
+
+#### Method 2: Manual Blog Post Creation
 1. **Follow Git Workflow above** - ensure on new feature branch first
 2. Create file in `_posts/` with format: `YYYY-MM-DD-descriptive-title.md`
 3. Include **MANDATORY** frontmatter (CI/CD validation will fail without these):
@@ -136,11 +184,34 @@ tags:
 - Update only in YAML frontmatter, not post content
 - Maintain consistency across all posts
 
+### Image Handling Best Practices
+
+**GitHub Pages Standard:** Use semantic HTML for images with captions
+```html
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/photo.jpg" alt="Descriptive alt text">
+  <figcaption>Caption text describing the image</figcaption>
+</figure>
+```
+
+**When to use each format:**
+- **HTML `<figure>/<figcaption>`**: For images with captions (semantic, accessible)
+- **Markdown `![alt](url)`**: For simple inline images without captions
+- **Never use**: Markdown image + italic text for captions (not semantic)
+
+**Image optimization requirements:**
+- Maximum file size: 500KB (warnings triggered above this)
+- Preferred formats: WebP with JPEG/PNG fallbacks
+- Always include descriptive alt text for accessibility
+- Use `class="aligncenter"` for centered images
+- Use `class="alignleft"` or `class="alignright"` for floated images
+
 ### Performance Optimization
 1. Compress images before uploading (use WebP when possible)
 2. Minimize CSS/JS in production
 3. Use lazy loading for images
 4. Implement caching strategies
+5. Conditional JavaScript loading (only load on pages that need it)
 
 ### Responsive Design Standards
 **CRITICAL**: Only use 2 responsive modes - NO tablet-specific breakpoints
@@ -157,6 +228,18 @@ tags:
 - ✅ Mobile-first approach with progressive enhancement
 - ✅ Consistent spacing variables (`var(--spacing-md)`) instead of hardcoded values
 
+### Mobile UI Standards
+- **Button Alignment**: All mobile UI elements must use `var(--spacing-md)` for positioning
+- **Theme Consistency**: Components must adapt to light/dark themes using CSS variables
+- **Touch Targets**: Minimum 44px × 44px for mobile buttons
+- **Unified Design**: Mobile elements should share consistent borders, shadows, hover states
+
+### Mobile Button Best Practices
+- Use semantic class names (`.hamburger-line` not generic spans)
+- Theme-aware colors: `var(--text-primary)`, `var(--accent-primary)`
+- Consistent spacing: CSS variables instead of hardcoded values
+- Simple state transitions: Prefer opacity/scale over complex transforms
+
 ### Testing Commands
 ```bash
 # Local development (use full path on this system)
@@ -165,7 +248,7 @@ tags:
 # Alternative local development (if bundle is in PATH)
 bundle exec jekyll serve --baseurl ""
 
-# Production build testing (CRITICAL - CI/CD enforces this)
+# Production build testing (matches live site with custom domain)
 JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
 
 # Check for broken links
@@ -174,6 +257,14 @@ bundle exec htmlproofer ./_site
 # Quick local test with drafts
 /opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl "" --drafts
 ```
+
+**Critical Testing Checklist:**
+- ✅ Local dev build works (`jekyll serve`)
+- ✅ Production build works (`JEKYLL_ENV=production jekyll build`)
+- ✅ Mobile/tablet responsive design (≤1024px)
+- ✅ Desktop layout (>1024px)
+- ✅ Light/dark theme switching
+- ✅ Button alignment on mobile devices
 
 **Important Notes for Local Testing:**
 - **CRITICAL**: Test BOTH development and production builds before creating PR
@@ -190,6 +281,16 @@ bundle exec htmlproofer ./_site
 - **GitHub Actions**: Uses Ruby 3.1.7 with Bundler ~2.6.0 (GitHub Pages compatible)
 - **Gemfile.lock ignored**: Each environment generates its own compatible lockfile
 - **No version conflicts**: Local and CI can use different Ruby/Bundler versions safely
+
+### Pre-PR Validation Checklist
+- [ ] **Build**: Both dev and production builds successful
+- [ ] **Responsive**: Tested mobile/tablet (≤1024px) and desktop (>1024px)
+- [ ] **Themes**: Light and dark mode work correctly
+- [ ] **Mobile UI**: Buttons aligned using CSS variables
+- [ ] **Accessibility**: Images have alt attributes
+- [ ] **Performance**: CSS <100KB, images <500KB
+- [ ] **Security**: No `<script>` tags or `javascript:` URLs
+- [ ] **Categories**: YAML array format, not single strings
 
 ## Current Limitations
 - Cannot use jekyll-paginate-v2 (not GitHub Pages compatible)
@@ -225,6 +326,39 @@ When working on this blog:
 12. **NEW**: Performance monitoring (warnings for large files)
 13. **NEW**: PR build validation with comprehensive automated testing
 14. **NEW**: Use `gh pr create` for automatic PR creation with detailed descriptions
+
+## Troubleshooting
+
+### Jekyll Server Issues
+- **Server won't start**: Check bundle path `/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle`
+- **Site not loading**: Use `127.0.0.1:4000` not `localhost:4000`
+- **Changes not reflecting**: Restart server for `_config.yml` changes
+- **CSS not updating**: Clear browser cache or hard refresh (`Cmd+Shift+R`)
+- **Port already in use**: Kill existing Jekyll process with `pkill -f jekyll`
+
+### Git Workflow Issues
+- **PR blocked**: Check build validation status in PR comments
+- **Branch protection**: All changes must go through PRs, direct commits blocked
+- **Review required**: PRs need minimum 1 approval before merge
+- **Build failures**: Check automated PR comments for specific error details
+- **Merge conflicts**: Resolve in feature branch before merge
+
+### Responsive Design Issues
+- **Button misalignment**: Ensure all mobile elements use `var(--spacing-md)`
+- **Theme conflicts**: Check that components use CSS variables not hardcoded colors
+- **Tablet-specific styles**: NOT ALLOWED - use only mobile/tablet (≤1024px) and desktop
+- **Hamburger menu not working**: Verify JavaScript breakpoint is 1024px
+
+### Content Issues
+- **Category parsing errors**: Use YAML array format `- "Category"` not single strings
+- **Frontmatter validation**: All posts require title, date, categories
+- **Image optimization**: Compress images >500KB before upload
+- **Security scanning**: Remove any `<script>` tags or `javascript:` URLs
+
+### Performance Issues
+- **Slow builds**: Check for large images or CSS files >100KB
+- **CSS not loading**: Verify file paths and Jekyll regeneration
+- **Search not working**: Check JavaScript console for errors
 
 ## Analytics Implementation
 
@@ -293,6 +427,28 @@ When working on this blog:
 - **Mockups**: Remove from production (theme-mockups.html, accessible-theme-mockups.html)
 - **Exports**: Remove WordPress XML exports from repository
 - **Documentation**: Keep in markdown files, not in production
+
+## Recent Optimizations (2025)
+
+### Code Quality Improvements
+- **Removed dead CSS**: Deleted unused `archive.css` file (3KB reduction)
+- **Fixed responsive breakpoints**: Standardized all CSS to use 1024px breakpoint
+- **Conditional JavaScript loading**: Scripts only load on pages that need them
+  - `pagination.js`: Only on `/posts/` page
+  - `modal.js`: Only on pages with images (posts, About Me)
+- **CSS consolidation**: Added utility classes for common patterns
+
+### Image & Caption Improvements
+- **Converted 31 blog posts** to use semantic HTML `<figure>/<figcaption>` tags
+- **Updated workflow** to automatically generate proper HTML figures
+- **Improved accessibility** with semantic image-caption relationships
+- **Fixed alignment issues** with centered images and styled captions
+
+### Performance Metrics
+- **CSS optimization**: Main CSS kept under 60KB despite extensive features
+- **JavaScript loading**: Reduced unnecessary script loads by ~50%
+- **Semantic HTML**: Improved screen reader compatibility
+- **Build validation**: Automated checks prevent performance regressions
 
 ## Contact
 Blog Owner: Matt Griffin

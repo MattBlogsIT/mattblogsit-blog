@@ -2,8 +2,6 @@
 layout: default
 permalink: /archive/
 title: Archives
-stylesheets:
-  - archive
 ---
 
 # All Archives
@@ -52,5 +50,4 @@ stylesheets:
 {% endfor %}
 </div>
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/archive.css">
 <script src="{{ site.baseurl }}/assets/js/collapsible.js"></script>

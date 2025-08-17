@@ -20,8 +20,10 @@ The last three years I have been extraordinarily lucky that I have been able to 
 
 # What is #TheKrewe?
 
-![#TheKrewe 2013 Group Photo]({{ site.baseurl }}/assets/img/MJM_1595-1024x680.jpg)
-*#TheKrewe 2013 Group Photo*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/MJM_1595-1024x680.jpg" alt="#TheKrewe 2013 Group Photo">
+  <figcaption>#TheKrewe 2013 Group Photo</figcaption>
+</figure>
 
 > _"The Krewe is a community organized professional networking group. Our mission is to build a dynamic networking community through various activities and gatherings. The Krewe primarily meets at Microsoft TechEd North America every year where we have The Krewe Meet 'N Greet the day prior to the opening of the conference. Our group takes Networking to a whole new level, we are all close friends and are open to helping each other in any way possible be it through charitable works or by helping solve a question that has you stumped in your professional life. We are IT people from every level of the career, you may find someone totally new to IT who is just starting off or meet someone who has 20 years’ experience and is an MVP, MCT, MCP and any other abbreviation you can think of."_
 
@@ -35,8 +37,10 @@ After a few weeks of hunting evening activities down I found this amazing group 
 
 I was lucky enough to have a friend also going to TechEd with me who sat in the corner with me at all the parties and we only talked to each other. I honestly do not believe I met a single person at TechEd in 2011.
 
-![Tech Ed 2011 Closing Party at Coke-A-Cola Museum]({{ site.baseurl }}/assets/img/summer2011.jpg)
-*Tech Ed 2011 Closing Party at Coke-A-Cola Museum*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/summer2011.jpg" alt="Tech Ed 2011 Closing Party at Coke-A-Cola Museum">
+  <figcaption>Tech Ed 2011 Closing Party at Coke-A-Cola Museum</figcaption>
+</figure>
 
 # Year 2 Experience
 
@@ -46,8 +50,10 @@ I had a lot of people encourage me that I was doing the right thing by socializi
 
 Overall from the second year at TechEd I was very proud of myself for breaking out of my shell and socializing more, but I knew I could exceed the amount of people that I had met and talked to the next year.
 
-![#TheKrewe Sunday Meet 'N Greet 2012]({{ site.baseurl }}/assets/img/2012-06-11T06-04-22_20.jpg)
-*#TheKrewe Sunday Meet 'N Greet 2012*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/2012-06-11T06-04-22_20.jpg" alt="#TheKrewe Sunday Meet 'N Greet 2012">
+  <figcaption>#TheKrewe Sunday Meet 'N Greet 2012</figcaption>
+</figure>
 
 # Year 3 Experience
 
@@ -61,7 +67,9 @@ TechEd finally rolls around, I am frantically making sure all of the things are 
 
 Once I realized this I knew it was my duty to get everyone else who would like to be part of #TheKrewe to feel the same way. I have tried my best to engage with people on a one by one basis and encourage them to get involved, no matter what their skill level is with Technology everyone can contribute in some way shape or form to the organization.
 
-![Friends from around the world who are in #TheKrewe]({{ site.baseurl }}/assets/img/MJM_1609.jpg)
-*Friends from around the world who are in #TheKrewe*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/MJM_1609.jpg" alt="Friends from around the world who are in #TheKrewe">
+  <figcaption>Friends from around the world who are in #TheKrewe</figcaption>
+</figure>
 
 If you would like to view more pictures from TechEd 2013, the photo album is no longer available online.

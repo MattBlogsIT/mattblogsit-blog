@@ -17,8 +17,10 @@ title: My Microsoft HoloLens Adventure - First Impressions of the HoloLens
 
 it's been over two weeks since my last post; however I have an excuse! It may not be a good excuse, however I went on a vacation to beautiful Las Vegas and shockingly decided I didn't want to do anything computer related while out there (who would have thought?) Also before you ask - no I didn't take the HoloLens to Vegas with me - in retrospect I think I could have made some decent money if I had and let people take pictures with it, everyone dressed like Mickey Mouse and Minions on the strip seem to make a good of enough of a living!
 
-![On the High Roller in Las Vegas]({{ site.baseurl }}/assets/img/20160521_173245-300x225.jpg)
-*On the High Roller in Las Vegas*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/20160521_173245-300x225.jpg" alt="On the High Roller in Las Vegas">
+  <figcaption>On the High Roller in Las Vegas</figcaption>
+</figure>
 
 Anyway, I have now been back to reality for about a week and it is time to get my butt back in gear! So let's talk the well over-due first impressions I need to share regarding the Microsoft HoloLens.
 
