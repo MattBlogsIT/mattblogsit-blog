@@ -14,8 +14,10 @@ title: Building The New Battle Station
 
 For the last 5 years, I've owned the same desktop computer that I do most of my work from at home. The computer was solid, a Dell XPS 630i. It still was performing like a champ with an occasional blue screen, I believed caused by the SLI video cards. I don't have much time for video games so I figured there was no point in replacing it for the longest time.
 
-![Before monitor replacement]({{ site.baseurl }}/assets/img/WP_20140526_002-1024x576.jpg)
-*Before monitor replacement*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/WP_20140526_002-1024x576.jpg" alt="Before monitor replacement">
+  <figcaption>Before monitor replacement</figcaption>
+</figure>
 
 After two random blue screens in the same evening I decided it was time to bite the bullet and replace the system. I had no interest in spending hours troubleshooting the issues when I knew I wanted a new computer anyway. Now was the time to decide if I was going to purchase a new system or build my own. I did quite a bit of research and I wanted to buy a fairly solid gaming rig that will last me at least another 5 years. Looking at the options out there and comparing the cost associated I decided to build my own machine.
 
@@ -81,8 +83,10 @@ This was the real challenge. I wanted to go with a mid-size case and did some se
 
 This was my final decision to make; did I really want to drop the money to replace all of my desk monitors to get them up to 1080p and the same make/model? I've got this setup at work and it makes me feel like I've got a half-assed build at home by having different resolutions on the screens and slightly different display quality. I did some research into the best quality monitor out there and landed on (3) ASUS VG248QE 24" LED screens. I couldn't be happier with my decision to replace these.
 
-![The new monitor setup]({{ site.baseurl }}/assets/img/WP_20140607_002-1024x576.jpg)
-*The new monitor setup*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/WP_20140607_002-1024x576.jpg" alt="The new monitor setup">
+  <figcaption>The new monitor setup</figcaption>
+</figure>
 
 # The Final Specs:
 

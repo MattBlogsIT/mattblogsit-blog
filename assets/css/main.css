@@ -729,6 +729,77 @@
     box-sizing: border-box;
 }
 
+/* Utility Classes for Common Patterns */
+.elevated-surface {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: all var(--transition-normal);
+}
+
+.elevated-surface:hover {
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transform: translateY(-1px);
+}
+
+.button-base {
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-primary {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+}
+
+.button-primary:hover {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+}
+
+.button-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.button-secondary:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-primary);
+}
+
+/* Common spacing utilities */
+.section-spacing {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.card-spacing {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Common transition utility */
+.smooth-transition {
+    transition: all var(--transition-normal);
+}
+
+/* Focus utility for consistent focus states */
+.focus-ring:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
 html {
     font-size: var(--font-base);
     scroll-behavior: smooth;

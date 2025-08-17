@@ -22,5 +22,7 @@ Now the reason my recovery is extended when I am sick is due to having Muscular 
 
 I choose to protect myself and try to reduce the spread of COVID-19, and I would ask anyone who knows me or anyone with a pre-existing condition to do the same. Wear a mask, socially distance, and the most honorable thing? [Stay the f\*\*k at home (uncensored video in link)](https://www.youtube.com/watch?v=U_Vg_9jDuX8).
 
-![Matt in a mask at a doctor appointment]({{ site.baseurl }}/assets/img/20200925_153629943_iOS-576x1024.jpg)
-*One of my few outings when I had to go to the Doctor for some testing - testing I delayed for months due to COVID-19.*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/20200925_153629943_iOS-576x1024.jpg" alt="Matt in a mask at a doctor appointment">
+  <figcaption>One of my few outings when I had to go to the Doctor for some testing - testing I delayed for months due to COVID-19.</figcaption>
+</figure>

@@ -65,5 +65,7 @@ Now the option I went with was being as close as possible to the TechEd 2012 Con
 
 This is going to be short simply because I am driving and this isn’t relevant to me. If you decide you are going to fly; I highly suggest Southwest, I’ve always flown them and it is a good deal with the 2 bags free. During your week at TechEd you will get a ton of free stuff you and you will need an empty suite case just for it NO JOKE! Look at the below picture, that suite case was completely empty on arrival at the conference. Currently from Indianapolis to Orlando Florida you are looking at paying $291.60 for round trip. I wouldn’t be surprised to see the price drop at some point and go back up as usual.
 
-![TechEd 2011 Swag]({{ site.baseurl }}/assets/img/IMG_0403.jpg)
-*TechEd 2011 Swag*
+<figure class="aligncenter">
+  <img src="{{ site.baseurl }}/assets/img/IMG_0403.jpg" alt="TechEd 2011 Swag">
+  <figcaption>TechEd 2011 Swag</figcaption>
+</figure>

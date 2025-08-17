@@ -289,7 +289,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .cookie-banner-content {
         flex-direction: column;
         text-align: center;
