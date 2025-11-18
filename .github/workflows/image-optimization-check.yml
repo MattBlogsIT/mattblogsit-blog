@@ -1,0 +1,241 @@
+# Image Optimization Check
+# Automatically validates image sizes in PRs and provides warnings
+
+name: Image Optimization Check
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - 'assets/img/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed image files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: |
+            assets/img/**/*.{jpg,jpeg,png,gif,webp}
+
+      - name: Install image optimization tools
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick optipng jpegoptim webp
+
+      - name: Check image sizes and quality
+        if: steps.changed-files.outputs.any_changed == 'true'
+        id: check-images
+        run: |
+          # Configuration
+          MAX_SIZE_KB=500
+          MAX_WIDTH=2000
+
+          # Initialize counters
+          warnings=0
+          errors=0
+          report=""
+
+          # Function to get file size in KB
+          get_size_kb() {
+              stat -c%s "$1" | awk '{print int($1/1024)}'
+          }
+
+          # Function to get image dimensions
+          get_dimensions() {
+              identify -format "%wx%h" "$1" 2>/dev/null
+          }
+
+          echo "## 🖼️ Image Optimization Report" > report.md
+          echo "" >> report.md
+
+          # Check each changed image
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+              if [ ! -f "$file" ]; then
+                  continue
+              fi
+
+              filename=$(basename "$file")
+              size_kb=$(get_size_kb "$file")
+              dimensions=$(get_dimensions "$file")
+
+              # Check file size
+              if [ "$size_kb" -gt "$MAX_SIZE_KB" ]; then
+                  echo "### ❌ \`$filename\` - **${size_kb}KB** (exceeds ${MAX_SIZE_KB}KB limit)" >> report.md
+                  echo "" >> report.md
+                  echo "**Dimensions:** $dimensions" >> report.md
+                  echo "" >> report.md
+
+                  # Provide optimization suggestions
+                  ext="${filename##*.}"
+                  case "$ext" in
+                      jpg|jpeg)
+                          echo "**Suggested fix:**" >> report.md
+                          echo "\`\`\`bash" >> report.md
+                          echo "# Optimize JPEG (reduce quality to 85%)" >> report.md
+                          echo "mogrify -quality 85 -resize '1200>' $file" >> report.md
+                          echo "jpegoptim --max=85 --strip-all $file" >> report.md
+                          echo "" >> report.md
+                          echo "# Create WebP version" >> report.md
+                          echo "cwebp -q 85 $file -o ${file%.*}.webp" >> report.md
+                          echo "\`\`\`" >> report.md
+                          ;;
+                      png)
+                          echo "**Suggested fix:**" >> report.md
+                          echo "\`\`\`bash" >> report.md
+                          echo "# Optimize PNG" >> report.md
+                          echo "mogrify -resize '1200>' $file" >> report.md
+                          echo "optipng -o2 $file" >> report.md
+                          echo "" >> report.md
+                          echo "# Create WebP version" >> report.md
+                          echo "cwebp -q 85 $file -o ${file%.*}.webp" >> report.md
+                          echo "\`\`\`" >> report.md
+                          ;;
+                      gif)
+                          echo "**Suggested fix:**" >> report.md
+                          echo "- Use https://ezgif.com/optimize to compress GIF" >> report.md
+                          echo "- Consider converting to video (MP4) for better compression" >> report.md
+                          ;;
+                  esac
+                  echo "" >> report.md
+                  echo "---" >> report.md
+                  echo "" >> report.md
+
+                  ((errors++))
+              elif [ "$size_kb" -gt 300 ]; then
+                  echo "### ⚠️ \`$filename\` - **${size_kb}KB** (consider optimizing)" >> report.md
+                  echo "" >> report.md
+                  echo "**Dimensions:** $dimensions" >> report.md
+                  echo "**Suggestion:** Image is moderately large. Consider optimization for better performance." >> report.md
+                  echo "" >> report.md
+                  echo "---" >> report.md
+                  echo "" >> report.md
+                  ((warnings++))
+              else
+                  echo "### ✅ \`$filename\` - **${size_kb}KB** (optimized)" >> report.md
+                  echo "" >> report.md
+                  echo "**Dimensions:** $dimensions" >> report.md
+                  echo "" >> report.md
+                  echo "---" >> report.md
+                  echo "" >> report.md
+              fi
+          done
+
+          # Add summary
+          if [ "$errors" -gt 0 ] || [ "$warnings" -gt 0 ]; then
+              echo "" >> report.md
+              echo "## 📊 Summary" >> report.md
+              echo "" >> report.md
+              echo "- **Errors (>500KB):** $errors" >> report.md
+              echo "- **Warnings (300-500KB):** $warnings" >> report.md
+              echo "" >> report.md
+              echo "## 🛠️ Quick Fix" >> report.md
+              echo "" >> report.md
+              echo "Run the image optimization script:" >> report.md
+              echo "\`\`\`bash" >> report.md
+              echo "./scripts/optimize-images.sh" >> report.md
+              echo "\`\`\`" >> report.md
+              echo "" >> report.md
+              echo "Or manually optimize specific files using the commands above." >> report.md
+          else
+              echo "" >> report.md
+              echo "## ✅ All images are optimized!" >> report.md
+              echo "" >> report.md
+              echo "All images are under 300KB and properly optimized." >> report.md
+          fi
+
+          # Set outputs
+          echo "errors=$errors" >> $GITHUB_OUTPUT
+          echo "warnings=$warnings" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('report.md', 'utf8');
+
+            const prNumber = context.payload.pull_request.number;
+
+            // Find existing comment
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.data.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('🖼️ Image Optimization Report')
+            );
+
+            const commentBody = report + `
+
+            ---
+            *Automated image optimization check - [View workflow run](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${{ github.run_id }})*`;
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+            }
+
+      - name: Check if optimization needed
+        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-images.outputs.errors > 0
+        run: |
+          echo "::warning::${{ steps.check-images.outputs.errors }} image(s) exceed 500KB size limit"
+          echo "::warning::Please optimize images before merging"
+          echo "Run: ./scripts/optimize-images.sh"
+
+      - name: Set status
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const errors = parseInt('${{ steps.check-images.outputs.errors }}');
+            const warnings = parseInt('${{ steps.check-images.outputs.warnings }}');
+
+            let state = 'success';
+            let description = 'All images optimized';
+
+            if (errors > 0) {
+              state = 'failure';
+              description = `${errors} image(s) exceed size limit`;
+            } else if (warnings > 0) {
+              state = 'success';
+              description = `${warnings} image(s) could be optimized`;
+            }
+
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.payload.pull_request.head.sha,
+              state: state,
+              target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${{ github.run_id }}`,
+              description: description,
+              context: 'ci/image-optimization'
+            });

@@ -87,14 +87,14 @@ jobs:
               if (hasCaption) {
                 // Use HTML figure/figcaption for images with captions
                 const caption = captionMatch[1].trim();
-                const figureHtml = `<figure class="aligncenter">
-  <img src="{{ site.baseurl }}${localImagePath}" alt="${altText}">
-  <figcaption>${caption}</figcaption>
-</figure>`;
+                const figureHtml = '<figure class="aligncenter">\n' +
+                  '  <img src="' + '{{ site.baseurl }}' + localImagePath + '" alt="' + altText + '">\n' +
+                  '  <figcaption>' + caption + '</figcaption>\n' +
+                  '</figure>';
                 imageReplacements.set(fullMatch + captionMatch[0], figureHtml);
               } else {
                 // Use markdown for images without captions
-                imageReplacements.set(fullMatch, `![${altText}]({{ site.baseurl }}${localImagePath})`);
+                imageReplacements.set(fullMatch, '![' + altText + '](' + '{{ site.baseurl }}' + localImagePath + ')');
               }
               imageCounter++;
             }
