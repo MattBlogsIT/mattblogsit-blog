@@ -31,7 +31,9 @@ This is a personal blog focused on IT, Cloud, and Cybersecurity topics built wit
 - **Accessibility**: Maintain WCAG 2.1 AA compliance (images require alt attributes)
 - **Performance**: Optimize for Core Web Vitals (LCP, CLS, FID)
   - **NEW**: CSS files >100KB trigger warnings
-  - **NEW**: Images >500KB trigger warnings
+  - **CRITICAL**: Images >500KB are **BLOCKED** by pre-commit hook
+  - **Automated**: GitHub Actions validates all PR images
+  - See [IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md) for full workflow
 - **SEO**: Include meta descriptions, structured data, proper headings
 - **Security**: Sanitize code examples, use HTTPS, follow responsible disclosure
   - **NEW**: Automated security scanning blocks `<script>` tags and `javascript:` URLs
@@ -183,6 +185,33 @@ tags:
 - Always use title case with quotes for multi-word categories
 - Update only in YAML frontmatter, not post content
 - Maintain consistency across all posts
+
+### Image Optimization (CRITICAL)
+**All images MUST be optimized before committing to prevent performance issues.**
+
+**Quick Start:**
+```bash
+# One-time setup (install tools and git hooks)
+./scripts/setup-git-hooks.sh
+brew install imagemagick optipng jpegoptim webp  # macOS
+# OR
+sudo apt-get install imagemagick optipng jpegoptim webp  # Linux
+
+# Optimize all images
+./scripts/optimize-images.sh
+```
+
+**Size Limits (Enforced):**
+- **>500KB**: ❌ Commit BLOCKED by pre-commit hook
+- **300-500KB**: ⚠️ Warning issued
+- **<300KB**: ✅ Optimized
+
+**Automated Protection:**
+1. **Pre-commit Hook**: Validates images locally before commit
+2. **GitHub Actions**: Checks all PR images, comments with report
+3. **CI/CD Status**: Blocks merge if images >500KB
+
+**See [IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md) for complete guide**
 
 ### Image Handling Best Practices
 
