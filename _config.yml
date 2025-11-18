@@ -9,6 +9,20 @@ url: "https://mattblogsit.com"
 # Analytics
 google_analytics_id: G-XPX6WGJE8W
 
+# Author information for SEO
+author:
+  name: Matt Griffin
+
+# Social profiles for SEO
+social:
+  name: Matt Griffin
+  links:
+    - https://github.com/MattBlogsIT
+    - https://www.linkedin.com/in/mattgriffinit
+
+# SEO settings
+logo: /assets/img/logo.png
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -20,6 +34,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Plugins
 safe: true

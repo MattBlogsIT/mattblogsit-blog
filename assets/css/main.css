@@ -2849,3 +2849,16 @@ blockquote.security-warning::after {
     background-color: var(--bg-tertiary);
 }
 
+
+/* Reading time indicator */
+.reading-time {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.reading-time-icon {
+    margin-right: var(--spacing-xs);
+    font-size: 1rem;
+}

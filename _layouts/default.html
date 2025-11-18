@@ -13,16 +13,18 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="Matt Griffin">
-    
+    <!-- SEO Meta Tags (jekyll-seo-tag handles Open Graph, Twitter Cards, etc.) -->
+    {% seo %}
+
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ site.baseurl }}/feed.xml">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/analytics.css">
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    {% include structured-data.html %}
 </head>
 <body>
     <!-- Skip navigation link for accessibility -->
@@ -152,6 +154,7 @@
     </div>
     
     <!-- Scripts -->
+    <script src="{{ site.baseurl }}/assets/js/lazy-loading.js"></script>
     <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
     <script src="{{ site.baseurl }}/assets/js/search.js"></script>
     <script src="{{ site.baseurl }}/assets/js/hamburger.js"></script>
