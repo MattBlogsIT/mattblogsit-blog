@@ -1,0 +1,88 @@
+{% comment %}
+  Related Posts Component
+  Displays 3-5 related blog posts based on shared categories
+  Place at the end of blog posts to increase engagement
+{% endcomment %}
+
+{% assign maxRelated = 5 %}
+{% assign relatedPosts = "" | split: "" %}
+{% assign currentUrl = page.url %}
+
+{% comment %} Find posts with shared categories {% endcomment %}
+{% for post in site.posts %}
+  {% if post.url != currentUrl %}
+    {% assign commonCategories = 0 %}
+    {% for category in post.categories %}
+      {% if page.categories contains category %}
+        {% assign commonCategories = commonCategories | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if commonCategories >= 1 %}
+      {% assign relatedPosts = relatedPosts | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} If no related posts found, show recent posts {% endcomment %}
+{% if relatedPosts.size == 0 %}
+  {% assign relatedPosts = site.posts | where_exp: "post", "post.url != currentUrl" | slice: 0, maxRelated %}
+  {% assign fallbackMode = true %}
+{% endif %}
+
+{% comment %} Limit to maxRelated posts {% endcomment %}
+{% if relatedPosts.size > maxRelated %}
+  {% assign relatedPosts = relatedPosts | slice: 0, maxRelated %}
+{% endif %}
+
+{% if relatedPosts.size > 0 %}
+<aside class="related-posts">
+  <h2 class="related-posts-title">
+    {% if fallbackMode %}
+      Recent Articles
+    {% else %}
+      Related Articles
+    {% endif %}
+  </h2>
+
+  <div class="related-posts-grid">
+    {% for post in relatedPosts %}
+      <article class="related-post-card">
+        {% if post.image %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="related-post-image">
+          <img src="{{ site.baseurl }}{{ post.image }}"
+               alt="{{ post.title }}"
+               loading="lazy"
+               decoding="async">
+        </a>
+        {% endif %}
+
+        <div class="related-post-content">
+          <h3 class="related-post-title">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </h3>
+
+          {% if post.excerpt %}
+          <p class="related-post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </p>
+          {% endif %}
+
+          <div class="related-post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%b %d, %Y" }}
+            </time>
+            {% if post.content %}
+              <span class="post-separator">•</span>
+              {% assign words = post.content | number_of_words %}
+              {% assign minutes = words | divided_by: 225 %}
+              {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
+              <span class="reading-time">{{ minutes }} min read</span>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}
