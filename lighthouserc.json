@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "python3 -m http.server 8080 --directory ./_site",
+      "startServerCommand": "http-server ./_site -p 8080",
       "url": [
         "http://localhost:8080/index.html",
         "http://localhost:8080/about/index.html",

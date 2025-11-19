@@ -36,11 +36,12 @@ jobs:
           google-chrome-stable --version || google-chrome --version || chromium-browser --version || echo "Cannot get version"
           echo "CHROME_PATH=$(which google-chrome-stable || which google-chrome || which chromium-browser)" >> $GITHUB_ENV
 
-      - name: Install Lighthouse CI
+      - name: Install Lighthouse CI and HTTP server
         run: |
-          npm install -g @lhci/cli@0.12.x
+          npm install -g @lhci/cli@0.12.x http-server
           echo "lhci installed at: $(which lhci)"
           lhci --version
+          echo "http-server installed at: $(which http-server)"
 
       - name: Build Jekyll site
         run: |
