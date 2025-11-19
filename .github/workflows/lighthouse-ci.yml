@@ -27,9 +27,16 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
       - name: Install Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.12.x
+          which lhci
+          lhci --version
 
       - name: Build Jekyll site
         run: |
@@ -44,25 +51,53 @@ jobs:
           echo "Checking for HTML files..."
           find _site -name "*.html" | head -10
           echo ""
+          echo "Total HTML files: $(find _site -name "*.html" | wc -l)"
+          echo ""
+          echo "Sample HTML file content:"
+          find _site -name "*.html" -type f | head -1 | xargs ls -lh
+          echo ""
           echo "Build verification complete"
 
       - name: Run Lighthouse CI
         id: lighthouse
         continue-on-error: true
         run: |
-          echo "Starting Lighthouse CI..."
+          echo "=== Starting Lighthouse CI ==="
+          echo "Chrome path: $(which google-chrome || which chromium-browser || which chrome || echo 'Chrome not found in PATH')"
+          echo "Chrome version: $(google-chrome --version 2>/dev/null || chromium-browser --version 2>/dev/null || echo 'Unable to get Chrome version')"
+
           mkdir -p .lighthouseci
+          echo "Created .lighthouseci directory"
 
-          echo "Step 1: Collect Lighthouse data..."
-          lhci collect --config=lighthouserc.json || echo "Collect failed with exit code $?"
+          echo ""
+          echo "=== Step 1: Collect Lighthouse data ==="
+          lhci collect --config=lighthouserc.json --verbose
+          COLLECT_EXIT=$?
+          echo "Collect exit code: $COLLECT_EXIT"
 
-          echo "Step 2: Assert against budgets..."
-          lhci assert --config=lighthouserc.json || echo "Assert failed with exit code $?"
+          if [ $COLLECT_EXIT -eq 0 ]; then
+            echo "✓ Collect succeeded"
+            echo "Files created:"
+            ls -la .lighthouseci/ 2>/dev/null || echo "No files in .lighthouseci/"
+          else
+            echo "✗ Collect failed"
+          fi
 
-          echo "Step 3: Upload results..."
-          lhci upload --config=lighthouserc.json || echo "Upload failed with exit code $?"
+          echo ""
+          echo "=== Step 2: Assert against budgets ==="
+          lhci assert --config=lighthouserc.json
+          ASSERT_EXIT=$?
+          echo "Assert exit code: $ASSERT_EXIT"
 
-          echo "Lighthouse CI complete."
+          echo ""
+          echo "=== Step 3: Upload results ==="
+          lhci upload --config=lighthouserc.json
+          UPLOAD_EXIT=$?
+          echo "Upload exit code: $UPLOAD_EXIT"
+
+          echo ""
+          echo "=== Lighthouse CI complete ==="
+          echo "Final file count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
