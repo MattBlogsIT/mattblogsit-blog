@@ -205,8 +205,9 @@ jobs:
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
-        if: always() && hashFiles('.lighthouseci/*.json') != ''
+        if: success()
         with:
           name: lighthouse-results
           path: .lighthouseci/
           retention-days: 30
+          include-hidden-files: true
