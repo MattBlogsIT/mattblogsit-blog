@@ -20,8 +20,10 @@ social:
     - https://github.com/MattBlogsIT
     - https://www.linkedin.com/in/mattgriffinit
 
-# SEO settings
-logo: /assets/img/logo.png
+# SEO settings (fallback for posts without featured images)
+# TODO: Create default Open Graph image (1200x630px) and logo (square)
+# logo: /assets/img/logo.png  # Square logo for schema.org (512x512 or similar)
+# image: /assets/img/og-default.png  # Default OG image for social sharing (1200x630px)
 
 # Build settings
 markdown: kramdown
