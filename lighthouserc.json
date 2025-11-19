@@ -4,9 +4,9 @@
       "startServerCommand": "npx http-server ./_site -p 9001 -a localhost",
       "url": [
         "http://localhost:9001/",
-        "http://localhost:9001/about/",
-        "http://localhost:9001/posts/",
-        "http://localhost:9001/categories/"
+        "http://localhost:9001/about-me/",
+        "http://localhost:9001/posts",
+        "http://localhost:9001/category/"
       ],
       "numberOfRuns": 1
     },
