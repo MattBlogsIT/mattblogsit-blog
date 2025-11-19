@@ -50,7 +50,19 @@ jobs:
         id: lighthouse
         continue-on-error: true
         run: |
-          lhci autorun --verbose
+          echo "Starting Lighthouse CI..."
+          mkdir -p .lighthouseci
+
+          echo "Step 1: Collect Lighthouse data..."
+          lhci collect --config=lighthouserc.json || echo "Collect failed with exit code $?"
+
+          echo "Step 2: Assert against budgets..."
+          lhci assert --config=lighthouserc.json || echo "Assert failed with exit code $?"
+
+          echo "Step 3: Upload results..."
+          lhci upload --config=lighthouserc.json || echo "Upload failed with exit code $?"
+
+          echo "Lighthouse CI complete."
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
