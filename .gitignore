@@ -21,3 +21,7 @@ node_modules/
 
 # WordPress export files
 *.WordPress.*.xml
+# Lighthouse CI
+.lighthouseci/
+node_modules/
+package-lock.json
