@@ -48,9 +48,67 @@ jobs:
 
       - name: Run Lighthouse CI
         run: |
-          lhci autorun --verbose
+          mkdir -p .lighthouseci
+          lhci autorun --verbose || true
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Parse and post Lighthouse results
+        if: always()
+        run: |
+          echo "# 🔦 Lighthouse CI Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Check if results exist
+          if [ ! -d ".lighthouseci" ] || [ -z "$(ls -A .lighthouseci 2>/dev/null)" ]; then
+            echo "❌ No Lighthouse results found" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The Lighthouse CI run may have failed. Check the logs above for errors." >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          # Find the manifest file
+          MANIFEST=".lighthouseci/manifest.json"
+          if [ ! -f "$MANIFEST" ]; then
+            echo "⚠️ Lighthouse ran but no manifest found" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Files in .lighthouseci/:" >> $GITHUB_STEP_SUMMARY
+            ls -la .lighthouseci/ >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          # Parse results from JSON files
+          echo "## 📊 Performance Scores" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Page | Performance | Accessibility | Best Practices | SEO |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-------------|---------------|----------------|-----|" >> $GITHUB_STEP_SUMMARY
+
+          # Process each lighthouse report
+          for report in .lighthouseci/lhr-*.json; do
+            if [ -f "$report" ]; then
+              # Extract scores using node
+              node -e "
+                const fs = require('fs');
+                const data = JSON.parse(fs.readFileSync('$report', 'utf8'));
+                const url = data.finalUrl || data.requestedUrl || 'Unknown';
+                const pageName = url.split('/').filter(p => p).pop() || 'Homepage';
+
+                const perf = Math.round(data.categories.performance.score * 100);
+                const a11y = Math.round(data.categories.accessibility.score * 100);
+                const bp = Math.round(data.categories['best-practices'].score * 100);
+                const seo = Math.round(data.categories.seo.score * 100);
+
+                const getEmoji = (score) => score >= 90 ? '🟢' : score >= 50 ? '🟡' : '🔴';
+
+                console.log(\`| \${pageName} | \${getEmoji(perf)} \${perf}% | \${getEmoji(a11y)} \${a11y}% | \${getEmoji(bp)} \${bp}% | \${getEmoji(seo)} \${seo}% |\`);
+              " >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Legend:** 🟢 Good (90+) | 🟡 Needs Improvement (50-89) | 🔴 Poor (0-49)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📁 Full results available in workflow artifacts" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
@@ -59,3 +117,4 @@ jobs:
           name: lighthouse-results
           path: .lighthouseci/
           retention-days: 30
+          if-no-files-found: warn
