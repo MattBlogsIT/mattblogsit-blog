@@ -47,37 +47,52 @@ jobs:
           echo "Build verification complete"
 
       - name: Run Lighthouse CI
+        id: lighthouse
+        continue-on-error: true
         run: |
-          mkdir -p .lighthouseci
-          lhci autorun --verbose || true
+          lhci autorun --verbose
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Parse and post Lighthouse results
+      - name: Check Lighthouse output
         if: always()
+        run: |
+          echo "=== Lighthouse CI Output Check ==="
+          if [ -d ".lighthouseci" ]; then
+            echo "✓ .lighthouseci directory exists"
+            echo "Contents:"
+            ls -lah .lighthouseci/ || echo "Directory is empty or inaccessible"
+            echo ""
+            echo "File count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
+            echo ""
+            if [ -n "$(ls -A .lighthouseci 2>/dev/null)" ]; then
+              echo "Files found:"
+              find .lighthouseci -type f -exec echo "  - {}" \;
+            else
+              echo "❌ No files generated in .lighthouseci directory"
+              echo "Lighthouse CI likely failed to run. Check the 'Run Lighthouse CI' step above."
+            fi
+          else
+            echo "❌ .lighthouseci directory does not exist"
+            echo "Lighthouse CI did not create any output."
+          fi
+          echo "==================================="
+
+      - name: Parse and post Lighthouse results
+        if: always() && hashFiles('.lighthouseci/*.json') != ''
         run: |
           echo "# 🔦 Lighthouse CI Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          # Check if results exist
-          if [ ! -d ".lighthouseci" ] || [ -z "$(ls -A .lighthouseci 2>/dev/null)" ]; then
-            echo "❌ No Lighthouse results found" >> $GITHUB_STEP_SUMMARY
+          # Check if reports exist
+          REPORT_COUNT=$(find .lighthouseci -name "lhr-*.json" 2>/dev/null | wc -l)
+          if [ "$REPORT_COUNT" -eq 0 ]; then
+            echo "❌ No Lighthouse reports found" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "The Lighthouse CI run may have failed. Check the logs above for errors." >> $GITHUB_STEP_SUMMARY
+            echo "The Lighthouse CI run failed. Check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
             exit 0
           fi
 
-          # Find the manifest file
-          MANIFEST=".lighthouseci/manifest.json"
-          if [ ! -f "$MANIFEST" ]; then
-            echo "⚠️ Lighthouse ran but no manifest found" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "Files in .lighthouseci/:" >> $GITHUB_STEP_SUMMARY
-            ls -la .lighthouseci/ >> $GITHUB_STEP_SUMMARY
-            exit 0
-          fi
-
-          # Parse results from JSON files
           echo "## 📊 Performance Scores" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Page | Performance | Accessibility | Best Practices | SEO |" >> $GITHUB_STEP_SUMMARY
@@ -86,7 +101,6 @@ jobs:
           # Process each lighthouse report
           for report in .lighthouseci/lhr-*.json; do
             if [ -f "$report" ]; then
-              # Extract scores using node
               node -e "
                 const fs = require('fs');
                 const data = JSON.parse(fs.readFileSync('$report', 'utf8'));
@@ -112,9 +126,8 @@ jobs:
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && hashFiles('.lighthouseci/*.json') != ''
         with:
           name: lighthouse-results
           path: .lighthouseci/
           retention-days: 30
-          if-no-files-found: warn
