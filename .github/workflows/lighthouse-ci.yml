@@ -1,3 +1,5 @@
+# Lighthouse CI - Performance monitoring for pull requests
+# Tests site performance, accessibility, SEO, and best practices
 name: Lighthouse CI
 
 on:
