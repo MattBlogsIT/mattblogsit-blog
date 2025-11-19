@@ -36,9 +36,19 @@ jobs:
           bundle install
           JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
 
+      - name: Verify build output
+        run: |
+          echo "Checking _site directory contents..."
+          ls -la _site/
+          echo ""
+          echo "Checking for HTML files..."
+          find _site -name "*.html" | head -10
+          echo ""
+          echo "Build verification complete"
+
       - name: Run Lighthouse CI
         run: |
-          lhci autorun
+          lhci autorun --verbose
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
