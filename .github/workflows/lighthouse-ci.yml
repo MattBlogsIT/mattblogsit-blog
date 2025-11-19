@@ -29,15 +29,17 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: stable
+      - name: Verify Chrome installation
+        run: |
+          echo "Checking for Chrome..."
+          which google-chrome-stable || which google-chrome || which chromium-browser || echo "Chrome not found"
+          google-chrome-stable --version || google-chrome --version || chromium-browser --version || echo "Cannot get version"
+          echo "CHROME_PATH=$(which google-chrome-stable || which google-chrome || which chromium-browser)" >> $GITHUB_ENV
 
       - name: Install Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.12.x
-          which lhci
+          echo "lhci installed at: $(which lhci)"
           lhci --version
 
       - name: Build Jekyll site
@@ -62,44 +64,55 @@ jobs:
 
       - name: Run Lighthouse CI
         id: lighthouse
-        continue-on-error: true
         run: |
+          set -e  # Exit on any error
+
           echo "=== Starting Lighthouse CI ==="
-          echo "Chrome path: $(which google-chrome || which chromium-browser || which chrome || echo 'Chrome not found in PATH')"
-          echo "Chrome version: $(google-chrome --version 2>/dev/null || chromium-browser --version 2>/dev/null || echo 'Unable to get Chrome version')"
+          echo "Chrome path: $CHROME_PATH"
+          echo "Chrome version: $($CHROME_PATH --version)"
+          echo "Working directory: $(pwd)"
+          echo "_site directory exists: $([ -d '_site' ] && echo 'yes' || echo 'no')"
 
           mkdir -p .lighthouseci
           echo "Created .lighthouseci directory"
 
           echo ""
           echo "=== Step 1: Collect Lighthouse data ==="
-          lhci collect --config=lighthouserc.json --verbose
-          COLLECT_EXIT=$?
+          echo "Running: lhci collect --config=lighthouserc.json"
+          lhci collect --config=lighthouserc.json 2>&1 | tee /tmp/lhci-collect.log
+          COLLECT_EXIT=${PIPESTATUS[0]}
+
+          echo ""
           echo "Collect exit code: $COLLECT_EXIT"
 
           if [ $COLLECT_EXIT -eq 0 ]; then
             echo "✓ Collect succeeded"
-            echo "Files created:"
-            ls -la .lighthouseci/ 2>/dev/null || echo "No files in .lighthouseci/"
           else
-            echo "✗ Collect failed"
+            echo "✗ Collect failed - see logs above"
+            echo "Last 20 lines of collect output:"
+            tail -20 /tmp/lhci-collect.log
+            exit 1
           fi
 
           echo ""
-          echo "=== Step 2: Assert against budgets ==="
-          lhci assert --config=lighthouserc.json
-          ASSERT_EXIT=$?
-          echo "Assert exit code: $ASSERT_EXIT"
+          echo "Files in .lighthouseci/:"
+          ls -lah .lighthouseci/ || echo "Directory listing failed"
+          echo ""
+          echo "JSON files:"
+          find .lighthouseci -name "*.json" -type f || echo "No JSON files found"
 
           echo ""
-          echo "=== Step 3: Upload results ==="
+          echo "=== Step 2: Assert against budgets ==="
+          lhci assert --config=lighthouserc.json || echo "Assertions produced warnings (expected)"
+
+          echo ""
+          echo "=== Step 3: Upload results to filesystem ==="
           lhci upload --config=lighthouserc.json
-          UPLOAD_EXIT=$?
-          echo "Upload exit code: $UPLOAD_EXIT"
 
           echo ""
           echo "=== Lighthouse CI complete ==="
           echo "Final file count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
+          echo "Final JSON count: $(find .lighthouseci -name "*.json" -type f 2>/dev/null | wc -l)"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
