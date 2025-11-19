@@ -196,7 +196,97 @@ jobs:
               echo "Failed to download $FILENAME"
             fi
           done
-          
+
+      - name: Optimize images and generate WebP versions
+        if: steps.create-post.outputs.images != '[]'
+        run: |
+          # Install image optimization tools
+          sudo apt-get update
+          sudo apt-get install -y imagemagick optipng jpegoptim webp
+
+          # Parse images JSON to get list of downloaded files
+          IMAGES='${{ steps.create-post.outputs.images }}'
+
+          echo "Starting automatic image optimization with WebP generation..."
+
+          # Process each downloaded image
+          echo "$IMAGES" | jq -c '.[]' | while read -r image; do
+            LOCAL_PATH=$(echo "$image" | jq -r '.localPath')
+            FILENAME=$(basename "$LOCAL_PATH")
+            FILEPATH="assets/img/$FILENAME"
+
+            if [ ! -f "$FILEPATH" ]; then
+              echo "⚠️  File not found: $FILEPATH"
+              continue
+            fi
+
+            # Get original size
+            ORIGINAL_SIZE=$(stat -c%s "$FILEPATH")
+            ORIGINAL_SIZE_KB=$((ORIGINAL_SIZE / 1024))
+
+            echo ""
+            echo "📸 Processing: $FILENAME (${ORIGINAL_SIZE_KB}KB)"
+
+            # Get file extension
+            EXT="${FILENAME##*.}"
+            EXT_LOWER=$(echo "$EXT" | tr '[:upper:]' '[:lower:]')
+
+            # Optimize based on file type
+            case "$EXT_LOWER" in
+              jpg|jpeg)
+                echo "  → Optimizing JPEG..."
+                convert "$FILEPATH" -resize '1920x1920>' -quality 85 -strip "$FILEPATH"
+                jpegoptim --max=85 --strip-all "$FILEPATH"
+                ;;
+              png)
+                echo "  → Optimizing PNG..."
+                convert "$FILEPATH" -resize '1920x1920>' -strip "$FILEPATH"
+                optipng -o2 "$FILEPATH"
+                # If still too large, convert to JPEG
+                NEW_SIZE=$(stat -c%s "$FILEPATH")
+                if [ $NEW_SIZE -gt 512000 ]; then
+                  echo "  → PNG still large, converting to JPEG..."
+                  NEW_FILEPATH="${FILEPATH%.png}.jpg"
+                  convert "$FILEPATH" -quality 85 "$NEW_FILEPATH"
+                  rm "$FILEPATH"
+                  FILEPATH="$NEW_FILEPATH"
+                fi
+                ;;
+              webp)
+                echo "  → Optimizing WebP..."
+                convert "$FILEPATH" -resize '1920x1920>' "$FILEPATH"
+                ;;
+            esac
+
+            # Generate WebP version
+            if [ "$EXT_LOWER" != "webp" ]; then
+              WEBP_PATH="${FILEPATH%.*}.webp"
+              echo "  → Generating WebP version..."
+              cwebp -q 85 "$FILEPATH" -o "$WEBP_PATH"
+
+              WEBP_SIZE=$(stat -c%s "$WEBP_PATH")
+              WEBP_SIZE_KB=$((WEBP_SIZE / 1024))
+              echo "  ✅ WebP created: ${WEBP_SIZE_KB}KB"
+            fi
+
+            # Get final size
+            FINAL_SIZE=$(stat -c%s "$FILEPATH")
+            FINAL_SIZE_KB=$((FINAL_SIZE / 1024))
+            SAVINGS=$((ORIGINAL_SIZE - FINAL_SIZE))
+            SAVINGS_KB=$((SAVINGS / 1024))
+            PERCENT=$((SAVINGS * 100 / ORIGINAL_SIZE))
+
+            echo "  ✅ Optimized: ${ORIGINAL_SIZE_KB}KB → ${FINAL_SIZE_KB}KB (saved ${SAVINGS_KB}KB, ${PERCENT}%)"
+
+            # Check if still too large
+            if [ $FINAL_SIZE -gt 512000 ]; then
+              echo "  ⚠️  WARNING: Image still exceeds 500KB limit!"
+            fi
+          done
+
+          echo ""
+          echo "✨ Image optimization and WebP generation complete!"
+
       - name: Create branch and commit
         run: |
           git config --local user.email "action@github.com"
