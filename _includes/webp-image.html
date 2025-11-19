@@ -1,0 +1,30 @@
+{% comment %}
+  Usage: {% include webp-image.html src="/assets/img/photo.jpg" alt="Description" class="aligncenter" caption="Optional caption" %}
+
+  This include generates a picture element with WebP and fallback images.
+  Automatically checks for .webp version and uses picture element if available.
+{% endcomment %}
+
+{% assign webp_src = include.src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' %}
+{% assign has_caption = false %}
+{% if include.caption and include.caption != '' %}
+  {% assign has_caption = true %}
+{% endif %}
+
+{% if has_caption %}
+<figure{% if include.class %} class="{{ include.class }}"{% endif %}>
+{% endif %}
+
+<picture>
+  <source srcset="{{ site.baseurl }}{{ webp_src }}" type="image/webp">
+  <img src="{{ site.baseurl }}{{ include.src }}"
+       alt="{{ include.alt | default: '' }}"
+       {% if include.class and has_caption == false %}class="{{ include.class }}"{% endif %}
+       loading="lazy"
+       decoding="async">
+</picture>
+
+{% if has_caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>
+{% endif %}
