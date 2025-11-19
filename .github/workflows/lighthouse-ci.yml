@@ -65,54 +65,70 @@ jobs:
       - name: Run Lighthouse CI
         id: lighthouse
         run: |
-          set -e  # Exit on any error
+          set -eo pipefail  # Exit on any error, including in pipelines
 
           echo "=== Starting Lighthouse CI ==="
           echo "Chrome path: $CHROME_PATH"
-          echo "Chrome version: $($CHROME_PATH --version)"
+          $CHROME_PATH --version
           echo "Working directory: $(pwd)"
-          echo "_site directory exists: $([ -d '_site' ] && echo 'yes' || echo 'no')"
+          ls -la _site/ | head -5
 
           mkdir -p .lighthouseci
           echo "Created .lighthouseci directory"
 
           echo ""
           echo "=== Step 1: Collect Lighthouse data ==="
-          echo "Running: lhci collect --config=lighthouserc.json"
-          lhci collect --config=lighthouserc.json 2>&1 | tee /tmp/lhci-collect.log
-          COLLECT_EXIT=${PIPESTATUS[0]}
+          echo "Config file contents:"
+          cat lighthouserc.json
+          echo ""
 
+          # Run lhci collect - this should create JSON files in .lighthouseci/
+          set +e  # Temporarily disable exit on error to capture output
+          lhci collect --config=lighthouserc.json > /tmp/lhci-collect.log 2>&1
+          COLLECT_EXIT=$?
+          set -e  # Re-enable exit on error
+
+          echo "Collect output:"
+          cat /tmp/lhci-collect.log
           echo ""
           echo "Collect exit code: $COLLECT_EXIT"
 
-          if [ $COLLECT_EXIT -eq 0 ]; then
-            echo "✓ Collect succeeded"
-          else
-            echo "✗ Collect failed - see logs above"
-            echo "Last 20 lines of collect output:"
-            tail -20 /tmp/lhci-collect.log
+          if [ $COLLECT_EXIT -ne 0 ]; then
+            echo "✗ COLLECT FAILED"
             exit 1
           fi
 
+          echo "✓ Collect succeeded"
           echo ""
-          echo "Files in .lighthouseci/:"
-          ls -lah .lighthouseci/ || echo "Directory listing failed"
-          echo ""
-          echo "JSON files:"
-          find .lighthouseci -name "*.json" -type f || echo "No JSON files found"
 
+          # Verify files were created
+          echo "Checking for generated files..."
+          ls -lah .lighthouseci/
           echo ""
+
+          JSON_COUNT=$(find .lighthouseci -name "*.json" -type f 2>/dev/null | wc -l)
+          echo "JSON files found: $JSON_COUNT"
+
+          if [ "$JSON_COUNT" -eq 0 ]; then
+            echo "✗ ERROR: No JSON files created by lhci collect"
+            echo "This is unexpected since collect exited with code 0"
+            exit 1
+          fi
+
+          echo "✓ JSON files created successfully"
+          find .lighthouseci -name "*.json" -type f -exec echo "  {}" \;
+          echo ""
+
           echo "=== Step 2: Assert against budgets ==="
           lhci assert --config=lighthouserc.json || echo "Assertions produced warnings (expected)"
-
           echo ""
+
           echo "=== Step 3: Upload results to filesystem ==="
           lhci upload --config=lighthouserc.json
-
           echo ""
+
           echo "=== Lighthouse CI complete ==="
           echo "Final file count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
-          echo "Final JSON count: $(find .lighthouseci -name "*.json" -type f 2>/dev/null | wc -l)"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
