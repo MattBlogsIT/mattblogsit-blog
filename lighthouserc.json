@@ -2,8 +2,21 @@
   "ci": {
     "collect": {
       "startServerCommand": "npx http-server ./_site -p 9001 -a localhost",
-      "url": ["http://localhost:9001/"],
+      "url": [
+        "http://localhost:9001/",
+        "http://localhost:9001/about/",
+        "http://localhost:9001/posts/",
+        "http://localhost:9001/categories/"
+      ],
       "numberOfRuns": 1
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", {"minScore": 0.7}],
+        "categories:accessibility": ["warn", {"minScore": 0.9}],
+        "categories:best-practices": ["warn", {"minScore": 0.9}],
+        "categories:seo": ["warn", {"minScore": 0.9}]
+      }
     },
     "upload": {
       "target": "filesystem",
