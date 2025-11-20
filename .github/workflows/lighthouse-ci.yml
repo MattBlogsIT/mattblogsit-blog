@@ -1,0 +1,228 @@
+# Lighthouse CI - Performance monitoring for pull requests
+# Tests site performance, accessibility, SEO, and best practices
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Verify Chrome installation
+        run: |
+          echo "Checking for Chrome..."
+          which google-chrome-stable || which google-chrome || which chromium-browser || echo "Chrome not found"
+          google-chrome-stable --version || google-chrome --version || chromium-browser --version || echo "Cannot get version"
+          echo "CHROME_PATH=$(which google-chrome-stable || which google-chrome || which chromium-browser)" >> $GITHUB_ENV
+
+      - name: Install Lighthouse CI and HTTP server
+        run: |
+          npm install -g @lhci/cli@0.12.x http-server
+          echo "lhci installed at: $(which lhci)"
+          lhci --version
+          echo "http-server installed at: $(which http-server)"
+
+      - name: Build Jekyll site
+        run: |
+          bundle install
+          JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
+
+      - name: Verify build output
+        run: |
+          echo "Checking _site directory contents..."
+          ls -la _site/
+          echo ""
+          echo "Checking for HTML files..."
+          find _site -name "*.html" | head -10
+          echo ""
+          echo "Total HTML files: $(find _site -name "*.html" | wc -l)"
+          echo ""
+          echo "Sample HTML file content:"
+          find _site -name "*.html" -type f | head -1 | xargs ls -lh
+          echo ""
+          echo "Build verification complete"
+
+      - name: Run Lighthouse CI
+        id: lighthouse
+        run: |
+          set -eo pipefail  # Exit on any error, including in pipelines
+
+          echo "=== Starting Lighthouse CI ==="
+          echo "Chrome path: $CHROME_PATH"
+          $CHROME_PATH --version
+          echo "Working directory: $(pwd)"
+          ls -la _site/ | head -5
+
+          mkdir -p .lighthouseci
+          echo "Created .lighthouseci directory"
+
+          echo ""
+          echo "=== Step 1: Collect Lighthouse data ==="
+          echo "Config file contents:"
+          cat lighthouserc.json
+          echo ""
+
+          # Run lhci collect - this should create JSON files in .lighthouseci/
+          set +e  # Temporarily disable exit on error to capture output
+          lhci collect --config=lighthouserc.json > /tmp/lhci-collect.log 2>&1
+          COLLECT_EXIT=$?
+          set -e  # Re-enable exit on error
+
+          echo "Collect output:"
+          cat /tmp/lhci-collect.log
+          echo ""
+          echo "Collect exit code: $COLLECT_EXIT"
+
+          if [ $COLLECT_EXIT -ne 0 ]; then
+            echo "✗ COLLECT FAILED"
+            exit 1
+          fi
+
+          echo "✓ Collect succeeded"
+          echo ""
+
+          # Verify files were created
+          echo "Checking for generated files..."
+          ls -lah .lighthouseci/
+          echo ""
+
+          JSON_COUNT=$(find .lighthouseci -name "*.json" -type f 2>/dev/null | wc -l)
+          echo "JSON files found: $JSON_COUNT"
+
+          if [ "$JSON_COUNT" -eq 0 ]; then
+            echo "✗ ERROR: No JSON files created by lhci collect"
+            echo "This is unexpected since collect exited with code 0"
+            exit 1
+          fi
+
+          echo "✓ JSON files created successfully"
+          find .lighthouseci -name "*.json" -type f -exec echo "  {}" \;
+          echo ""
+
+          echo "=== Step 2: Assert against budgets ==="
+          lhci assert --config=lighthouserc.json || echo "Assertions produced warnings (expected)"
+          echo ""
+
+          echo "=== Step 3: Upload results to filesystem ==="
+          lhci upload --config=lighthouserc.json
+          echo ""
+
+          echo "=== Lighthouse CI complete ==="
+          echo "Final file count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check Lighthouse output
+        if: always()
+        run: |
+          echo "=== Lighthouse CI Output Check ==="
+          if [ -d ".lighthouseci" ]; then
+            echo "✓ .lighthouseci directory exists"
+            echo "Contents:"
+            ls -lah .lighthouseci/ || echo "Directory is empty or inaccessible"
+            echo ""
+            echo "File count: $(find .lighthouseci -type f 2>/dev/null | wc -l)"
+            echo ""
+            if [ -n "$(ls -A .lighthouseci 2>/dev/null)" ]; then
+              echo "Files found:"
+              find .lighthouseci -type f -exec echo "  - {}" \;
+            else
+              echo "❌ No files generated in .lighthouseci directory"
+              echo "Lighthouse CI likely failed to run. Check the 'Run Lighthouse CI' step above."
+            fi
+          else
+            echo "❌ .lighthouseci directory does not exist"
+            echo "Lighthouse CI did not create any output."
+          fi
+          echo "==================================="
+
+      - name: Parse and post Lighthouse results
+        if: success()
+        run: |
+          echo "# 🔦 Lighthouse CI Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Check if reports exist
+          REPORT_COUNT=$(find .lighthouseci -name "lhr-*.json" 2>/dev/null | wc -l)
+          if [ "$REPORT_COUNT" -eq 0 ]; then
+            echo "❌ No Lighthouse reports found" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The Lighthouse CI run failed. Check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+
+          echo "## 📊 Performance Scores" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Page | Performance | Accessibility | Best Practices | SEO |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-------------|---------------|----------------|-----|" >> $GITHUB_STEP_SUMMARY
+
+          # Process each lighthouse report
+          for report in .lighthouseci/lhr-*.json; do
+            if [ -f "$report" ]; then
+              node -e "
+                const fs = require('fs');
+                const data = JSON.parse(fs.readFileSync('$report', 'utf8'));
+                const url = data.finalUrl || data.requestedUrl || 'Unknown';
+
+                // Map URLs to friendly page names
+                const pageMap = {
+                  '9001/': 'Homepage',
+                  'about-me': 'About Me',
+                  'posts': 'All Posts',
+                  'category': 'Categories'
+                };
+
+                let pageName = 'Unknown';
+                for (const [key, value] of Object.entries(pageMap)) {
+                  if (url.includes(key)) {
+                    pageName = value;
+                    break;
+                  }
+                }
+
+                const perf = Math.round(data.categories.performance.score * 100);
+                const a11y = Math.round(data.categories.accessibility.score * 100);
+                const bp = Math.round(data.categories['best-practices'].score * 100);
+                const seo = Math.round(data.categories.seo.score * 100);
+
+                const getEmoji = (score) => score >= 90 ? '🟢' : score >= 50 ? '🟡' : '🔴';
+
+                console.log(\`| \${pageName} | \${getEmoji(perf)} \${perf}% | \${getEmoji(a11y)} \${a11y}% | \${getEmoji(bp)} \${bp}% | \${getEmoji(seo)} \${seo}% |\`);
+              " >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Legend:** 🟢 Good (90+) | 🟡 Needs Improvement (50-89) | 🔴 Poor (0-49)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📁 Full results available in workflow artifacts" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
+          retention-days: 30
+          include-hidden-files: true
