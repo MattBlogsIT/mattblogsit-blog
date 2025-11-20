@@ -126,10 +126,15 @@ jobs:
             
             // Format tags for frontmatter
             const tagList = tags ? tags.split(',').map(t => t.trim()).filter(t => t) : [];
-            const tagYaml = tagList.length > 0 
+            const tagYaml = tagList.length > 0
               ? '\ntags:\n' + tagList.map(t => `- ${t}`).join('\n')
               : '';
-            
+
+            // Set featured image (first image) for Open Graph
+            const featuredImage = imageUrls.length > 0
+              ? `\nimage: ${imageUrls[0].localPath}`
+              : '';
+
             // Create the blog post content
             const postContent = `---
             title: "${title}"
@@ -137,9 +142,9 @@ jobs:
             categories:
             - "${category}"
             excerpt: "${excerpt}"
-            author: "${author}"${tagYaml}
+            author: "${author}"${tagYaml}${featuredImage}
             ---
-            
+
             ${content}`;
             
             // Write file using Node.js fs
