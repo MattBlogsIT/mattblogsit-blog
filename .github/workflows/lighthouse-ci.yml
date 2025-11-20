@@ -158,7 +158,7 @@ jobs:
           echo "==================================="
 
       - name: Parse and post Lighthouse results
-        if: always() && hashFiles('.lighthouseci/*.json') != ''
+        if: success()
         run: |
           echo "# 🔦 Lighthouse CI Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -184,7 +184,22 @@ jobs:
                 const fs = require('fs');
                 const data = JSON.parse(fs.readFileSync('$report', 'utf8'));
                 const url = data.finalUrl || data.requestedUrl || 'Unknown';
-                const pageName = url.split('/').filter(p => p).pop() || 'Homepage';
+
+                // Map URLs to friendly page names
+                const pageMap = {
+                  '9001/': 'Homepage',
+                  'about-me': 'About Me',
+                  'posts': 'All Posts',
+                  'category': 'Categories'
+                };
+
+                let pageName = 'Unknown';
+                for (const [key, value] of Object.entries(pageMap)) {
+                  if (url.includes(key)) {
+                    pageName = value;
+                    break;
+                  }
+                }
 
                 const perf = Math.round(data.categories.performance.score * 100);
                 const a11y = Math.round(data.categories.accessibility.score * 100);
