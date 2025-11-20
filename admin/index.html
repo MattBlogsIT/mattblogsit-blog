@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager - Matt Blogs IT</title>
+
+    <!-- Sveltia CMS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sveltia/cms/dist/sveltia-cms.css" />
+
+    <!-- Optional: Custom CMS styling -->
+    <style>
+      :root {
+        /* Customize CMS colors to match your blog theme */
+        --primary-color: #007bff;
+        --text-color: #212529;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sveltia CMS will mount here -->
+    <script src="https://cdn.jsdelivr.net/npm/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+
+    <!-- Optional: Analytics for CMS usage (respects cookie consent) -->
+    <script>
+      // Track CMS access if analytics is enabled
+      if (window.gtag) {
+        gtag('event', 'cms_access', {
+          event_category: 'CMS',
+          event_label: 'Admin Panel Access'
+        });
+      }
+    </script>
+  </body>
+</html>
