@@ -45,6 +45,9 @@ _posts/          # Blog posts in YYYY-MM-DD-title.md format
 _pages/          # Static pages (about, contact, etc.)
 _includes/       # Reusable components
 _layouts/        # Page templates
+admin/           # Sveltia CMS (web-based content editor)
+  ├── index.html # CMS application
+  └── config.yml # CMS configuration
 assets/
   ├── css/       # Stylesheets
   ├── js/        # JavaScript files
@@ -163,7 +166,49 @@ categories: "Category Name"
 - Alt text preservation for accessibility
 - Automatic filename generation based on date and title
 
-#### Method 2: Manual Blog Post Creation
+#### Method 2: Sveltia CMS - WYSIWYG Editor (NEW)
+**Web-based content editor with visual interface and mobile support.**
+
+1. **Access the CMS:**
+   - Navigate to: `https://mattblogsit.com/admin`
+   - Login with GitHub OAuth or Personal Access Token
+   - See [SVELTIA_CMS_SETUP.md](SVELTIA_CMS_SETUP.md) for initial setup
+
+2. **Create new post:**
+   - Click **"New Blog Post"** button
+   - Fill in form fields with validation:
+     - **Title**: Required for SEO and display
+     - **Date**: Auto-filled with today (YYYY-MM-DD format)
+     - **Categories**: Dropdown with approved categories (1-3 required)
+     - **Excerpt**: 50-200 characters for SEO (validated)
+     - **Tags**: Optional, lowercase-with-hyphens
+     - **Body**: Markdown editor with formatting toolbar
+
+3. **Upload images:**
+   - Drag-and-drop images into editor
+   - Images saved to `assets/img/`
+   - CI/CD auto-optimizes images >500KB
+
+4. **Save and publish:**
+   - Click **"Save"** → Auto-commits to GitHub
+   - GitHub Actions triggers build
+   - Post live in 2-3 minutes
+
+**CMS Features:**
+- ✅ WYSIWYG markdown editor with preview
+- ✅ Category dropdown prevents typos
+- ✅ Field validation (excerpt length, date format)
+- ✅ Mobile-responsive (edit from phone/tablet)
+- ✅ Drag-and-drop image uploads
+- ✅ Search existing posts
+- ✅ Auto-commits to GitHub with proper frontmatter
+
+**Authentication Options:**
+- **OAuth (Recommended)**: One-click "Login with GitHub" via free Cloudflare Workers
+- **PAT Alternative**: Authenticate with GitHub Personal Access Token
+- Both methods are 100% free forever
+
+#### Method 3: Manual Blog Post Creation
 1. **Follow Git Workflow above** - ensure on new feature branch first
 2. Create file in `_posts/` with format: `YYYY-MM-DD-descriptive-title.md`
 3. Include **MANDATORY** frontmatter (CI/CD validation will fail without these):
