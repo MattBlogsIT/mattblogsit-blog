@@ -24,7 +24,7 @@ backend:
   branch: main
   # OAuth endpoint (METHOD 1) - Replace with your Cloudflare Worker URL
   # After deploying Cloudflare Worker, uncomment and update this line:
-  # base_url: https://YOUR-WORKER-NAME.workers.dev
+  base_url: https://sveltia-cms-auth.mattgrif90.workers.dev
   #
   # For PAT authentication (METHOD 2): Keep base_url commented out
 
