@@ -36,17 +36,7 @@
             timeout = setTimeout(later, wait);
         };
     }
-    
-    // Safe console logging that only works in development
-    function safeLog(...args) {
-        // Only log if not in production (check for localhost or development indicators)
-        if (window.location.hostname === 'localhost' || 
-            window.location.hostname === '127.0.0.1' ||
-            window.location.hostname.includes('dev')) {
-            console.log(...args);
-        }
-    }
-    
+
     // Error display function for user-friendly messages
     function displayError(message, containerId) {
         const container = document.getElementById(containerId);
@@ -64,7 +54,6 @@
         escapeHtml: escapeHtml,
         sanitizeInput: sanitizeInput,
         debounce: debounce,
-        safeLog: safeLog,
         displayError: displayError
     };
     

@@ -77,61 +77,57 @@
             searchResults.innerHTML = '';
             return;
         }
-        
+
         if (query.length > MAX_QUERY_LENGTH) {
             searchResults.innerHTML = '<div class="search-no-results">Search query too long</div>';
             return;
         }
 
-        try {
-            const searchQuery = query.toLowerCase();
-            const results = posts.filter(post => {
-                const searchText = (
-                    (post.title || '') + ' ' + 
-                    (post.excerpt || '') + ' ' + 
-                    (post.content || '')
-                ).toLowerCase();
-                return searchText.includes(searchQuery);
+        const searchQuery = query.toLowerCase();
+        const results = posts.filter(post => {
+            const searchText = (
+                (post.title || '') + ' ' +
+                (post.excerpt || '') + ' ' +
+                (post.content || '')
+            ).toLowerCase();
+            return searchText.includes(searchQuery);
+        });
+
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+            return;
+        }
+
+        // Clear previous results
+        searchResults.innerHTML = '';
+
+        // Create results using DOM manipulation to prevent XSS
+        results.slice(0, MAX_RESULTS).forEach(post => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.style.cursor = 'pointer';
+
+            // Add click handler
+            resultItem.addEventListener('click', function() {
+                window.location.href = post.url;
             });
 
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
-                return;
+            // Title
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'search-result-title';
+            titleDiv.textContent = post.title || 'Untitled';
+            resultItem.appendChild(titleDiv);
+
+            // Excerpt
+            if (post.excerpt) {
+                const excerptDiv = document.createElement('div');
+                excerptDiv.className = 'search-result-excerpt';
+                excerptDiv.textContent = post.excerpt.substring(0, 100) + '...';
+                resultItem.appendChild(excerptDiv);
             }
 
-            // Clear previous results
-            searchResults.innerHTML = '';
-            
-            // Create results using DOM manipulation to prevent XSS
-            results.slice(0, MAX_RESULTS).forEach(post => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
-                resultItem.style.cursor = 'pointer';
-                
-                // Add click handler
-                resultItem.addEventListener('click', function() {
-                    window.location.href = post.url;
-                });
-                
-                // Title
-                const titleDiv = document.createElement('div');
-                titleDiv.className = 'search-result-title';
-                titleDiv.textContent = post.title || 'Untitled';
-                resultItem.appendChild(titleDiv);
-                
-                // Excerpt
-                if (post.excerpt) {
-                    const excerptDiv = document.createElement('div');
-                    excerptDiv.className = 'search-result-excerpt';
-                    excerptDiv.textContent = post.excerpt.substring(0, 100) + '...';
-                    resultItem.appendChild(excerptDiv);
-                }
-                
-                searchResults.appendChild(resultItem);
-            });
-        } catch (error) {
-            searchResults.innerHTML = '<div class="search-no-results">An error occurred while searching</div>';
-        }
+            searchResults.appendChild(resultItem);
+        });
     }
 
 // Close search dropdown when clicking outside

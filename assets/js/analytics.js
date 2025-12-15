@@ -49,12 +49,12 @@ function trackWebVitals() {
                 onFCP(metric => gtag('event', metric.name, metric));
                 onLCP(metric => gtag('event', metric.name, metric));
                 onTTFB(metric => gtag('event', metric.name, metric));
-            }).catch(error => {
-                console.warn('Web Vitals tracking failed:', error);
+            }).catch(() => {
+                // Web Vitals tracking failed silently
             });
         }
     } catch (error) {
-        console.warn('Web Vitals tracking initialization failed:', error);
+        // Web Vitals tracking initialization failed silently
     }
 }
 
@@ -125,15 +125,11 @@ function setAnalyticsConsent(consent) {
         // Initialize tracking features
         trackWebVitals();
         trackTechnicalContent();
-        
-        console.log('Analytics consent granted - tracking enabled');
     } else {
         // Revoke consent
         gtag('consent', 'update', {
             'analytics_storage': 'denied'
         });
-        
-        console.log('Analytics consent denied - tracking disabled');
     }
 }
 

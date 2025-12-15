@@ -14,9 +14,6 @@ class ThemeSwitcher {
     }
     
     init() {
-        // Mark as initialized
-        document.documentElement.setAttribute('data-theme-initialized', 'true');
-        
         // Set initial theme
         this.setTheme(this.currentTheme);
         
@@ -116,38 +113,18 @@ class ThemeSwitcher {
 
 // Initialize theme switcher when DOM is loaded
 function initThemeSwitcher() {
-    try {
-        // Check if elements exist before initializing
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const themeText = document.getElementById('theme-text');
-        
-        if (themeToggle && themeIcon && themeText) {
-            new ThemeSwitcher();
-            // Theme switcher initialized successfully
-        } else {
-            // Theme switcher elements not found - fail silently
-        }
-    } catch (error) {
-        // Error initializing theme switcher - fail silently
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+
+    if (themeToggle && themeIcon && themeText) {
+        new ThemeSwitcher();
     }
 }
 
-// Multiple initialization strategies to ensure it works
-document.addEventListener('DOMContentLoaded', initThemeSwitcher);
-
-// Fallback for if DOMContentLoaded already fired
+// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initThemeSwitcher);
 } else {
-    // DOM is already ready
-    setTimeout(initThemeSwitcher, 10);
+    initThemeSwitcher();
 }
-
-// Additional fallback with window.onload
-window.addEventListener('load', () => {
-    // Only initialize if not already done
-    if (!document.documentElement.hasAttribute('data-theme-initialized')) {
-        initThemeSwitcher();
-    }
-});

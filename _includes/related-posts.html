@@ -1,14 +1,7 @@
-{% comment %}
-  Related Posts Component
-  Displays 3-5 related blog posts based on shared categories
-  Place at the end of blog posts to increase engagement
-{% endcomment %}
-
 {% assign maxRelated = 5 %}
 {% assign relatedPosts = "" | split: "" %}
 {% assign currentUrl = page.url %}
 
-{% comment %} Find posts with shared categories {% endcomment %}
 {% for post in site.posts %}
   {% if post.url != currentUrl %}
     {% assign commonCategories = 0 %}
@@ -24,13 +17,11 @@
   {% endif %}
 {% endfor %}
 
-{% comment %} If no related posts found, show recent posts {% endcomment %}
 {% if relatedPosts.size == 0 %}
   {% assign relatedPosts = site.posts | where_exp: "post", "post.url != currentUrl" | slice: 0, maxRelated %}
   {% assign fallbackMode = true %}
 {% endif %}
 
-{% comment %} Limit to maxRelated posts {% endcomment %}
 {% if relatedPosts.size > maxRelated %}
   {% assign relatedPosts = relatedPosts | slice: 0, maxRelated %}
 {% endif %}
