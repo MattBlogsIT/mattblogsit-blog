@@ -21,7 +21,7 @@ social:
     - https://www.linkedin.com/in/mattgriffinit
 
 # SEO settings
-logo: /assets/img/logo.png
+logo: /assets/img/logo.webp
 
 # Build settings
 markdown: kramdown
