@@ -1432,7 +1432,10 @@ article:after {
 }
 
 .footer-links {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
     margin: 15px 0;
 }
 
