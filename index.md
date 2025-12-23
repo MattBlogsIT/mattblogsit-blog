@@ -9,14 +9,25 @@ title: Home
 <div class="post-list">
   {% for post in site.posts limit: 5 %}
     <article class="post-preview">
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-      {% if post.excerpt %}
-        <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </div>
+      {% if post.featured_image %}
+      <div class="post-thumbnail">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          <img src="{{ site.baseurl }}{{ post.featured_image }}"
+               alt="{{ post.featured_image_alt | default: post.title }}"
+               class="thumbnail-image">
+        </a>
+      </div>
       {% endif %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
+      <div class="post-preview-content">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
+      </div>
     </article>
   {% endfor %}
 </div>

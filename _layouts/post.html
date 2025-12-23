@@ -18,6 +18,14 @@ layout: default
     </div>
   </header>
 
+  {% if page.featured_image %}
+  <div class="featured-image-container">
+    <img src="{{ site.baseurl }}{{ page.featured_image }}"
+         alt="{{ page.featured_image_alt | default: page.title }}"
+         class="featured-image">
+  </div>
+  {% endif %}
+
   <div class="post-body">
     {{ content }}
   </div>
