@@ -73,7 +73,9 @@ exclude:
   - .jekyll-cache/
   # Exclude instructional and development files
   - CLAUDE.md
-  - GITHUB_ISSUES_COMPARISON.md  
+  - LOCAL_DEVELOPMENT.md
+  - IMAGE_OPTIMIZATION.md
+  - GITHUB_ISSUES_COMPARISON.md
   - SECURITY_AUDIT.md
   - enhancements.md
   # Exclude GitHub workflows and configs from public site

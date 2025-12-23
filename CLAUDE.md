@@ -52,6 +52,9 @@ assets/
   ├── css/       # Stylesheets
   ├── js/        # JavaScript files
   └── img/       # Images (optimize before adding)
+LOCAL_DEVELOPMENT.md  # Comprehensive local testing guide
+IMAGE_OPTIMIZATION.md # Image optimization workflow
+CLAUDE.md        # This file - Claude AI instructions
 ```
 
 ### Jekyll/Liquid Compatibility
@@ -314,47 +317,78 @@ sudo apt-get install imagemagick optipng jpegoptim webp  # Linux
 - Consistent spacing: CSS variables instead of hardcoded values
 - Simple state transitions: Prefer opacity/scale over complex transforms
 
-### Testing Commands
-```bash
-# Local development (use full path on this system)
-/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl ""
+### Local Development & Testing
 
-# Alternative local development (if bundle is in PATH)
+**📖 COMPREHENSIVE GUIDE:** See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for complete setup, troubleshooting, and testing procedures.
+
+#### Quick Start
+
+**First Time Setup:**
+```bash
+# 1. Install dependencies
+bundle install
+
+# 2. Start development server
 bundle exec jekyll serve --baseurl ""
 
-# Production build testing (matches live site with custom domain)
-JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
-
-# Check for broken links
-bundle exec htmlproofer ./_site
-
-# Quick local test with drafts
-/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl "" --drafts
+# 3. Open browser to http://127.0.0.1:4000/
 ```
 
-**Critical Testing Checklist:**
-- ✅ Local dev build works (`jekyll serve`)
-- ✅ Production build works (`JEKYLL_ENV=production jekyll build`)
-- ✅ Mobile/tablet responsive design (≤1024px)
-- ✅ Desktop layout (>1024px)
-- ✅ Light/dark theme switching
-- ✅ Button alignment on mobile devices
+**Common Commands:**
+```bash
+# Standard development server
+bundle exec jekyll serve --baseurl ""
 
-**Important Notes for Local Testing:**
-- **CRITICAL**: Test BOTH development and production builds before creating PR
-- Always use `--baseurl ""` to override the GitHub Pages baseurl for local testing
-- The server runs at `http://127.0.0.1:4000/` (not localhost:4000)
-- Use the full bundle path `/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle` if bundle command not found
-- Press Ctrl+C to stop the local server
-- The site auto-regenerates when files change (except _config.yml)
-- Test both light and dark themes during local development
-- **Local testing is now mandatory** - build failures will block PR merging
+# With drafts
+bundle exec jekyll serve --baseurl "" --drafts
 
-**Ruby Version Compatibility:**
-- **Local Development**: Uses your installed Ruby version (any 3.x compatible)
-- **GitHub Actions**: Uses Ruby 3.1.7 with Bundler ~2.6.0 (GitHub Pages compatible)
-- **Gemfile.lock ignored**: Each environment generates its own compatible lockfile
-- **No version conflicts**: Local and CI can use different Ruby/Bundler versions safely
+# Production build testing
+JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
+
+# macOS users (if bundle not in PATH)
+/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle exec jekyll serve --baseurl ""
+
+# Stop server
+# Press Ctrl+C
+```
+
+**Access:** `http://127.0.0.1:4000/` (use 127.0.0.1, not localhost)
+
+#### Critical Testing Requirements
+
+**Before creating any PR, you MUST:**
+- ✅ Test development build (`bundle exec jekyll serve`)
+- ✅ Test production build (`JEKYLL_ENV=production jekyll build`)
+- ✅ Verify responsive design: Mobile/tablet (≤1024px) and Desktop (>1024px)
+- ✅ Test light AND dark theme switching
+- ✅ Verify all navigation links work correctly
+- ✅ Check browser console for errors (F12 > Console)
+- ✅ Confirm all assets load (CSS, JS, images)
+- ✅ Test mobile hamburger menu functionality
+
+**Quick Verification:**
+1. **Navigation:** Test all menu links, categories, archives
+2. **Assets:** CSS styling loads, images display, no 404 errors
+3. **Features:** Theme switcher, search, mobile menu, image modals
+4. **Responsive:** Test at >1024px (desktop) and ≤1024px (mobile/tablet)
+
+**Important Notes:**
+- Server auto-regenerates on file changes (except `_config.yml`)
+- Restart server after modifying `_config.yml`
+- Hard refresh browser (Cmd+Shift+R / Ctrl+Shift+R) to clear CSS cache
+- **Build failures will block PR merging** - test locally first!
+
+**Ruby Compatibility:**
+- **Local:** Any Ruby 3.x version works
+- **GitHub Actions:** Ruby 3.1.7 with Bundler ~2.6.0
+- **Gemfile.lock:** Intentionally not committed (environment-specific)
+
+**Need detailed help?** See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for:
+- Complete setup instructions from scratch
+- Comprehensive verification checklist (navigation, assets, functionality)
+- Advanced testing scenarios (drafts, production builds, performance)
+- Detailed troubleshooting guide (all common issues covered)
+- Environment differences (dev vs production, local vs GitHub Pages)
 
 ### Pre-PR Validation Checklist
 - [ ] **Build**: Both dev and production builds successful
@@ -403,36 +437,47 @@ When working on this blog:
 
 ## Troubleshooting
 
-### Jekyll Server Issues
-- **Server won't start**: Check bundle path `/opt/homebrew/lib/ruby/gems/3.4.0/bin/bundle`
-- **Site not loading**: Use `127.0.0.1:4000` not `localhost:4000`
-- **Changes not reflecting**: Restart server for `_config.yml` changes
-- **CSS not updating**: Clear browser cache or hard refresh (`Cmd+Shift+R`)
-- **Port already in use**: Kill existing Jekyll process with `pkill -f jekyll`
+**📖 DETAILED TROUBLESHOOTING:** See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md#troubleshooting) for comprehensive solutions to all common issues.
 
-### Git Workflow Issues
+### Quick Fixes (Most Common Issues)
+
+**Jekyll Server Issues:**
+- **Server won't start**: Run `bundle install` first, then `bundle exec jekyll serve --baseurl ""`
+- **Site not loading**: Use `http://127.0.0.1:4000/` not `localhost:4000`
+- **Port already in use**: Kill existing process with `pkill -f jekyll`
+- **Changes not reflecting**: Restart server after `_config.yml` changes
+- **CSS not updating**: Hard refresh browser (`Cmd+Shift+R` or `Ctrl+Shift+R`)
+
+**Git Workflow Issues:**
 - **PR blocked**: Check build validation status in PR comments
-- **Branch protection**: All changes must go through PRs, direct commits blocked
+- **Branch protection**: All changes must go through PRs (direct commits blocked)
 - **Review required**: PRs need minimum 1 approval before merge
-- **Build failures**: Check automated PR comments for specific error details
+- **Build failures**: Review automated PR comments for specific error details
 - **Merge conflicts**: Resolve in feature branch before merge
 
-### Responsive Design Issues
+**Responsive Design Issues:**
 - **Button misalignment**: Ensure all mobile elements use `var(--spacing-md)`
-- **Theme conflicts**: Check that components use CSS variables not hardcoded colors
+- **Theme conflicts**: Check components use CSS variables, not hardcoded colors
 - **Tablet-specific styles**: NOT ALLOWED - use only mobile/tablet (≤1024px) and desktop
-- **Hamburger menu not working**: Verify JavaScript breakpoint is 1024px
+- **Hamburger menu broken**: Verify JavaScript breakpoint is 1024px
 
-### Content Issues
+**Content Issues:**
 - **Category parsing errors**: Use YAML array format `- "Category"` not single strings
-- **Frontmatter validation**: All posts require title, date, categories
-- **Image optimization**: Compress images >500KB before upload
+- **Frontmatter validation**: All posts require `title`, `date`, `categories`
+- **Image optimization**: Compress images >500KB before upload (see [IMAGE_OPTIMIZATION.md](IMAGE_OPTIMIZATION.md))
 - **Security scanning**: Remove any `<script>` tags or `javascript:` URLs
 
-### Performance Issues
-- **Slow builds**: Check for large images or CSS files >100KB
-- **CSS not loading**: Verify file paths and Jekyll regeneration
-- **Search not working**: Check JavaScript console for errors
+**Performance Issues:**
+- **Slow builds**: Check for large images (>500KB) or CSS files (>100KB)
+- **Assets not loading**: Verify paths use `{{ site.baseurl }}` prefix
+- **Search not working**: Check browser console (F12) for JavaScript errors
+
+**For complete troubleshooting:**
+- Server startup issues → [LOCAL_DEVELOPMENT.md#server-wont-start](LOCAL_DEVELOPMENT.md#server-wont-start)
+- Page navigation 404s → [LOCAL_DEVELOPMENT.md#pages-not-loading-404-errors](LOCAL_DEVELOPMENT.md#pages-not-loading-404-errors)
+- Assets not loading → [LOCAL_DEVELOPMENT.md#assets-not-loading-cssjsimages](LOCAL_DEVELOPMENT.md#assets-not-loading-cssjsimages)
+- Changes not appearing → [LOCAL_DEVELOPMENT.md#changes-not-reflecting](LOCAL_DEVELOPMENT.md#changes-not-reflecting)
+- Ruby/Bundler issues → [LOCAL_DEVELOPMENT.md#rubybundler-issues](LOCAL_DEVELOPMENT.md#rubybundler-issues)
 
 ## Analytics Implementation
 
