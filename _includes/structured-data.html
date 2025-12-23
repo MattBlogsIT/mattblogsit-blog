@@ -23,7 +23,9 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ page.url | absolute_url }}"
-  }{% if page.image %},
+  }{% if page.featured_image %},
+  "image": "{{ site.url }}{{ page.featured_image }}"
+  {% elsif page.image %},
   "image": "{{ page.image | absolute_url }}"
   {% endif %}
 }

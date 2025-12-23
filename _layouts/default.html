@@ -13,6 +13,22 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://api.github.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"">
     
+    <!-- Featured Image Meta Tags for Social Sharing -->
+    {% if page.featured_image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.featured_image }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.featured_image }}">
+    {% if page.featured_image_alt %}
+    <meta property="og:image:alt" content="{{ page.featured_image_alt }}">
+    <meta name="twitter:image:alt" content="{{ page.featured_image_alt }}">
+    {% endif %}
+    {% elsif page.layout == 'post' %}
+    <!-- Fallback to site logo for posts without featured images -->
+    <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.logo }}">
+    <meta property="og:image:alt" content="{{ site.title }}">
+    <meta name="twitter:image:alt" content="{{ site.title }}">
+    {% endif %}
+
     <!-- SEO Meta Tags (jekyll-seo-tag handles Open Graph, Twitter Cards, etc.) -->
     {% seo %}
 
