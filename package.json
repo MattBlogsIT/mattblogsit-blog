@@ -1,0 +1,19 @@
+{
+  "name": "mattblogsit-blog",
+  "version": "1.0.0",
+  "description": "Matt Blogs IT - Jekyll blog with automated performance monitoring",
+  "private": true,
+  "scripts": {
+    "lhci": "lhci autorun",
+    "lhci:local": "bundle exec jekyll build --baseurl '' && lhci autorun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattBlogsIT/mattblogsit-blog.git"
+  },
+  "author": "Matt Griffin",
+  "license": "MIT",
+  "devDependencies": {
+    "@lhci/cli": "^0.12.0"
+  }
+}
